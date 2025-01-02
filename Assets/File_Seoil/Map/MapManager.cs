@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
-    [SerializeField] private Canvas map;
+    [SerializeField] private GameObject map;
     [SerializeField] private KeyManager keyManager;
     
     private bool isMapEnable = false;
@@ -17,28 +17,28 @@ public class MapManager : MonoBehaviour
     }
     void Update()
     {
-        HandleMapState(map);
+        HandleMapState();
     }
-    private void HandleMapState(Canvas mapCanvas)
+    private void HandleMapState()
     {
         if (Input.GetKeyDown(keyManager.MapKey))
         {
-            if (mapCanvas.gameObject.activeSelf)
+            if (map.activeSelf)
             {
-                DisableMap(mapCanvas);
+                DisableMap();
             }
             else
             {
-                EnableMap(mapCanvas);
+                EnableMap();
             }
         }
     }
-    public void EnableMap(Canvas mapCanvas)
+    public void EnableMap()
     {
-        mapCanvas.gameObject.SetActive(true);
+        map.SetActive(true);
     }
-    public void DisableMap(Canvas mapCanvas)
+    public void DisableMap()
     {
-        mapCanvas.gameObject.SetActive(false);
+        map.SetActive(false);
     }
 }

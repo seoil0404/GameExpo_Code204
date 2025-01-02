@@ -345,15 +345,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1480075909640963313, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595564828724413120, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6761481759424569996, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: m_Name
       value: Map Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6761481759424569996, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8454228719394775074, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,6 +394,10 @@ PrefabInstance:
     - target: {fileID: 8454228719394775074, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693437228532686170, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

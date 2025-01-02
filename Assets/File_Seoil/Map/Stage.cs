@@ -1,11 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Stage
 {
     public List<Stage> connect;
+
     private GameObject allocatedStageObject;
     private RectTransform stageObjectRectTransform;
+
+    public Stage()
+    {
+        connect = new List<Stage>();
+    }
 
     public RectTransform rectTransform
     {
