@@ -56,16 +56,16 @@ public class GridSquare : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (SquareOccupied == false)
+        if(SquareOccupied == false )
         {
             Selected = true;
-            hooverImage.gameObject.SetActive(true);
+        hooverImage.gameObject.SetActive(true);
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Selected = true;
+            Selected = true;
         if (SquareOccupied == false)
         {
             hooverImage.gameObject.SetActive(true);
@@ -79,7 +79,6 @@ public class GridSquare : MonoBehaviour
             Selected = false;
             hooverImage.gameObject.SetActive(false);
         }
-
+        
     }
 }
-    

@@ -16,7 +16,7 @@ public class Grid : MonoBehaviour
     public Text winText;
     public Text loseText;
 
-    private int playerHP = 10;
+    private int playerHP = 10; 
     private int enemyHP = 10;
     private int blockCount = 0;
 
@@ -40,7 +40,7 @@ public class Grid : MonoBehaviour
         hpManager = FindObjectOfType<HPManager>();
         CreateGrid();
 
-
+        
         resetButton.onClick.AddListener(ResetGrid);
     }
 
@@ -146,7 +146,7 @@ public class Grid : MonoBehaviour
             GameEvents.MoveShapeToStartPosition();
         }
 
-
+        
         CheckIfGameEnded();
     }
 
@@ -178,7 +178,7 @@ public class Grid : MonoBehaviour
             hpManager.TakeDamage(false, completedLines * 2);
         }
 
-
+        
         CheckIfGameEnded();
     }
 
@@ -220,10 +220,10 @@ public class Grid : MonoBehaviour
         return linesCompleted;
     }
 
-
+   
     public void ResetGrid()
     {
-
+       
         foreach (var square in _gridSquares)
         {
             var gridSquare = square.GetComponent<GridSquare>();
@@ -231,17 +231,17 @@ public class Grid : MonoBehaviour
             gridSquare.Deactivate();
         }
 
-
+       
         playerHP -= 2;
         hpManager.TakeDamage(true, 2);
 
-
+       
         CheckIfGameEnded();
     }
 
     private void CheckIfGameEnded()
     {
-
+      
         if (playerHP <= 0)
         {
             loseText.gameObject.SetActive(true);
@@ -249,7 +249,7 @@ public class Grid : MonoBehaviour
             return;
         }
 
-
+       
         if (enemyHP <= 0)
         {
             winText.gameObject.SetActive(true);
