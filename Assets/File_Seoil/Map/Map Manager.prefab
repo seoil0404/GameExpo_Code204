@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3747644709906495519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -326,6 +326,17 @@ MonoBehaviour:
   stageVerticalOffset: -100
   stageHorizontalInterval: 100
   stageVerticalInterval: 125
+  specialCombatProbablity: 10
+  chestProbability: 10
+  restProbability: 10
+  eventProbability: 10
+  combatProbability: 60
+  specialCombatSprite: {fileID: -6415976754368812979, guid: cde3379e3c47de645bec7218e93e93a0, type: 3}
+  chestSprite: {fileID: -5281422124547630143, guid: 22931ef26ad6f6749b8bbb126c9fb4f7, type: 3}
+  restSprite: {fileID: -7895601659516305588, guid: 3b7d652114aed7b438e4d6b249ecba88, type: 3}
+  eventSprite: {fileID: -2273958870705210090, guid: 4fdc7c27988e7724c8878ce50f02e594, type: 3}
+  combatSprite: {fileID: -1482510244612873774, guid: 696970497f9ac3249a60aa3d09e54d6e, type: 3}
+  bossSprite: {fileID: -6248741079362886434, guid: e53010af451e94c419ddf53aebabaa9b, type: 3}
 --- !u!1 &8693437228532686170
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7596557448149972694
 RectTransform:
   m_ObjectHideFlags: 0
