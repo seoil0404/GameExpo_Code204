@@ -304,8 +304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc62dc558d9700e4e815d8163abd1a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   map: {fileID: 5595564828724413120}
   keyManager: {fileID: 11400000, guid: a3dc505679128054da943b8486d08042, type: 2}
+  mapGenerater: {fileID: 8182459156880451314}
 --- !u!114 &8182459156880451314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +324,7 @@ MonoBehaviour:
   edgePrefab: {fileID: 42194054095915014, guid: c4cdfac68382fdb4f9dca87d5f1fa15c, type: 3}
   map: {fileID: 5595564828724413120}
   mapScrollView: {fileID: 5529152479462073525}
+  mapManager: {fileID: 2635813539601055982}
   mapTransform: {fileID: 8454228719394775074}
   stageVerticalOffset: -100
   stageHorizontalInterval: 100
@@ -329,14 +332,15 @@ MonoBehaviour:
   specialCombatProbablity: 10
   chestProbability: 10
   restProbability: 10
-  eventProbability: 10
-  combatProbability: 60
+  eventProbability: 20
+  combatProbability: 50
   specialCombatSprite: {fileID: -6415976754368812979, guid: cde3379e3c47de645bec7218e93e93a0, type: 3}
   chestSprite: {fileID: -5281422124547630143, guid: 22931ef26ad6f6749b8bbb126c9fb4f7, type: 3}
   restSprite: {fileID: -7895601659516305588, guid: 3b7d652114aed7b438e4d6b249ecba88, type: 3}
   eventSprite: {fileID: -2273958870705210090, guid: 4fdc7c27988e7724c8878ce50f02e594, type: 3}
   combatSprite: {fileID: -1482510244612873774, guid: 696970497f9ac3249a60aa3d09e54d6e, type: 3}
   bossSprite: {fileID: -6248741079362886434, guid: e53010af451e94c419ddf53aebabaa9b, type: 3}
+  clearSprite: {fileID: -2879146970348422962, guid: 09377bcdbab12b34591fc20ecdfa39fa, type: 3}
 --- !u!1 &8693437228532686170
 GameObject:
   m_ObjectHideFlags: 0
