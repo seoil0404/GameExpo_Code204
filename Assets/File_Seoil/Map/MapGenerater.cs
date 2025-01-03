@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-
+using UnityEngine.InputSystem.iOS;
 using Random = UnityEngine.Random;
 
 public class MapGenerater : MonoBehaviour
@@ -15,6 +15,7 @@ public class MapGenerater : MonoBehaviour
     [Header("MonoBahavior")]
     [SerializeField] private GameObject map;
     [SerializeField] private MapScrollView mapScrollView;
+    [SerializeField] private MapManager mapManager;
     [SerializeField] private Transform mapTransform;
     
     [Header("Place Offset")]
@@ -36,9 +37,14 @@ public class MapGenerater : MonoBehaviour
     [SerializeField] private Sprite eventSprite;
     [SerializeField] private Sprite combatSprite;
     [SerializeField] private Sprite bossSprite;
+    [SerializeField] private Sprite clearSprite;
 
     private List<List<Stage>> mapInfo;
+    private StageCountInfo stageCountInfo;
     public readonly int floorNumber = 15;
+
+    public IReadOnlyList<IReadOnlyList<Stage>> MapInfo => mapInfo;
+    public Sprite ClearSprite => clearSprite;
     
     private void Awake()
     {
@@ -97,30 +103,30 @@ public class MapGenerater : MonoBehaviour
             foreach(var stage in floor)
             {
                 stage.AllocatedStageObject = Instantiate(stagePrefab, mapScrollView.transform);
-
-                switch(stage.Type)
-                {
-                    case Stage.StageType.SpecialCombat:
-                        stage.objectSpriteRenderer.sprite = specialCombatSprite;
-                        break;
-                    case Stage.StageType.Event:
-                        stage.objectSpriteRenderer.sprite = eventSprite;
-                        break;
-                    case Stage.StageType.Rest:
-                        stage.objectSpriteRenderer.sprite = restSprite;
-                        break;
-                    case Stage.StageType.Chest:
-                        stage.objectSpriteRenderer.sprite = chestSprite;
-                        break;
-                    case Stage.StageType.Combat:
-                        stage.objectSpriteRenderer.sprite = combatSprite;
-                        break;
-                    case Stage.StageType.Boss:
-                        stage.objectSpriteRenderer.sprite = bossSprite;
-                        break;
-                }
+                
+                stage.AllocatedStageObject.GetComponent<StageMonoBehavior>().mapManager = mapManager;
+                
+                SetStageType(stage, GetRandomStageType());
             }
         }
+
+        foreach(var stage in mapInfo[0]) SetStageType(stage, Stage.StageType.Combat);
+
+        SetStageType(mapInfo[^1][^1], Stage.StageType.Boss);
+
+        while(stageCountInfo.GetZeroStageCount() != Stage.StageType.None)
+        {
+            AddMissingTypeStage(stageCountInfo.GetZeroStageCount());
+        }
+    }
+    private void AddMissingTypeStage(Stage.StageType type)
+    {
+        int floorRand = Random.Range(1, mapInfo.Count - 1);
+        int indexRand = Random.Range(0, mapInfo[floorRand].Count);
+        
+        SetStageType(mapInfo[floorRand][indexRand], type);
+
+        Debug.Log("Added Missing Type Stage");
     }
     private void GenerateEdges()
     {
@@ -181,10 +187,10 @@ public class MapGenerater : MonoBehaviour
 
             List<Stage> currentList = mapInfo[^1];
 
-            int roomCount = UnityEngine.Random.Range(2, 4);
+            int roomCount = Random.Range(2, 4);
             for (int roomIndex = 0; roomIndex < roomCount; roomIndex++)
             {
-                currentList.Add(new(GetRandomStageType()));
+                currentList.Add(new());
             }
         }
 
@@ -225,13 +231,94 @@ public class MapGenerater : MonoBehaviour
 
         return Stage.StageType.Combat;
     }
-
     // Add boss map at last index of the list
     private void GenerateBossMap()
     {
         mapInfo.Add(new());
 
         List<Stage> currentList = mapInfo[^1];
-        currentList.Add(new(Stage.StageType.Boss));
+        
+        currentList.Add(new());
+    }
+    private void SetStageType(Stage stage, Stage.StageType type)
+    {
+        switch (stage.type)
+        {
+            case Stage.StageType.SpecialCombat:
+                stageCountInfo.specialCombatCount--;
+                break;
+            case Stage.StageType.Chest:
+                stageCountInfo.chestCount--;
+                break;
+            case Stage.StageType.Event:
+                stageCountInfo.eventCount--;
+                break;
+            case Stage.StageType.Rest:
+                stageCountInfo.restCount--;
+                break;
+            case Stage.StageType.Combat:
+                stageCountInfo.combatCount--;
+                break;
+            case Stage.StageType.Boss:
+                stageCountInfo.bossCount--;
+                break;
+            default:
+                break;
+        }
+
+        stage.type = type;
+        
+        switch (type)
+        {
+            case Stage.StageType.SpecialCombat:
+                stage.objectSpriteRenderer.sprite = specialCombatSprite;
+                stageCountInfo.specialCombatCount++;
+                break;
+            case Stage.StageType.Chest:
+                stage.objectSpriteRenderer.sprite = chestSprite;
+                stageCountInfo.chestCount++;
+                break;
+            case Stage.StageType.Event:
+                stage.objectSpriteRenderer.sprite = eventSprite;
+                stageCountInfo.eventCount++;
+                break;
+            case Stage.StageType.Rest:
+                stage.objectSpriteRenderer.sprite = restSprite;
+                stageCountInfo.restCount++;
+                break;
+            case Stage.StageType.Combat:
+                stage.objectSpriteRenderer.sprite = combatSprite;
+                stageCountInfo.combatCount++;
+                break;
+            case Stage.StageType.Boss:
+                stage.objectSpriteRenderer.sprite = bossSprite;
+                stageCountInfo.bossCount++;
+                break;
+            default:
+                Debug.LogError("Invalid Stage Type Error");
+                stage.objectSpriteRenderer.sprite = null;
+                break;
+        }
+
+    }
+    private struct StageCountInfo
+    {
+        public int specialCombatCount;
+        public int chestCount;
+        public int restCount;
+        public int eventCount;
+        public int combatCount;
+        public int bossCount;
+
+        public Stage.StageType GetZeroStageCount()
+        {
+            if(specialCombatCount == 0) return Stage.StageType.SpecialCombat;
+            if(chestCount == 0) return Stage.StageType.Chest;
+            if(restCount == 0) return Stage.StageType.Rest;
+            if (eventCount == 0) return Stage.StageType.Event;
+            if (combatCount == 0) return Stage.StageType.Combat;
+            if (bossCount == 0) return Stage.StageType.Boss;
+            return Stage.StageType.None;
+        }
     }
 }

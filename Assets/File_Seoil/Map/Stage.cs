@@ -11,18 +11,18 @@ public class Stage
     private GameObject allocatedStageObject;
     private RectTransform stageObjectRectTransform;
 
-    public StageType Type { get; private set; }
+    public StageType type;
 
 
     public enum StageType
     {
-        SpecialCombat, Combat, Chest, Rest, Event, Boss
+        None, SpecialCombat, Combat, Chest, Rest, Event, Boss
     }
 
-    public Stage(StageType type)
+    public Stage()
     {
         connect = new List<Stage>();
-        Type = type;
+        type = StageType.None;
     }
 
     public RectTransform rectTransform
@@ -50,5 +50,6 @@ public class Stage
             stageObjectRectTransform = allocatedStageObject.GetComponent<RectTransform>();
             objectSpriteRenderer = allocatedStageObject.GetComponent<Image>();
         }
+        get => allocatedStageObject;
     }
 }
