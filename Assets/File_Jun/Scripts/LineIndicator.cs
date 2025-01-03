@@ -4,7 +4,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LineIndicator : MonoBehaviour
+public class LineIndicator: MonoBehaviour
 {
     public int[,] line_data = new int[8, 8]
     {
@@ -24,14 +24,14 @@ public class LineIndicator : MonoBehaviour
         0, 1, 2, 3, 4, 5, 6, 7
     };
 
-    private (int, int) GetSquarePosition(int square_index)
+    private (int , int) GetSquarePosition(int square_index)
     {
         int pos_row = -1;
         int pos_col = -1;
 
-        for (int row = 0; row < 8; row++)
+        for(int row = 0; row < 8; row++)
         {
-            for (int col = 0; col < 8; col++)
+            for(int col = 0; col < 8; col++)
             {
                 if (line_data[row, col] == square_index)
                 {
@@ -48,7 +48,7 @@ public class LineIndicator : MonoBehaviour
 
         var square_position_col = GetSquarePosition(square_index).Item2;
 
-        for (int index = 0; index < 8; index++)
+        for(int index = 0; index < 8; index++)
         {
             line[index] = line_data[index, square_position_col];
         }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.ProbeAdjustmentVolume;
 
 public class ShapeStorage : MonoBehaviour
 {
@@ -24,11 +23,11 @@ public class ShapeStorage : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEvents.RequestNewShapes += RequestNewShapes;
+        GameEvents.RequestNewShapes += RequestNewShapes;    
     }
 
 
-        
+
     public Shape GetCurrentSelectedShape()
     {
         foreach (var shape in shapeList)
@@ -41,7 +40,7 @@ public class ShapeStorage : MonoBehaviour
 
     private void RequestNewShapes()
     {
-        foreach (var shape in shapeList)
+        foreach(var shape in shapeList)
         {
             var shapeIndex = UnityEngine.Random.Range(0, shapeData.Count);
             shape.RequestNewShape(shapeData[shapeIndex]);

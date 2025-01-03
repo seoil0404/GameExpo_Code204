@@ -38,11 +38,16 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+<<<<<<< Updated upstream
+  - name: Background
+    uniqueID: 1970805853
+=======
+  - name: Back
+    uniqueID: 372495513
+>>>>>>> Stashed changes
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Canvas
-    uniqueID: 2340802451
     locked: 0
   m_RenderingLayers:
   - Default

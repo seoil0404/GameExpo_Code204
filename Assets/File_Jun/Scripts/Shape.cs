@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
+public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , IBeginDragHandler , IDragHandler , IEndDragHandler , IPointerDownHandler
 {
     public GameObject squareShapeImage;
     public Vector3 shapeSelectedScale;
@@ -22,7 +22,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     private bool _shapeActive = true;
 
 
-
+     
     public void Awake()
     {
         _shapeStartScale = this.GetComponent<RectTransform>().localScale;
@@ -35,13 +35,13 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     private void OnDisable()
     {
         GameEvents.MoveShapeToStartPosition -= MoveShapeToStartPosition;
-        GameEvents.SetShapeInactive -= SetShapeInactive;
+        GameEvents.SetShapeInactive -= SetShapeInactive; 
     }
 
     private void OnEnable()
     {
         GameEvents.MoveShapeToStartPosition += MoveShapeToStartPosition;
-        GameEvents.SetShapeInactive += SetShapeInactive;
+        GameEvents.SetShapeInactive += SetShapeInactive;    
     }
 
 
@@ -62,13 +62,13 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     private void SetShapeInactive()
     {
-        if (IsOnStartPosition() == false && IsAnyOfShapeSquareActive())
+        if(IsOnStartPosition() == false && IsAnyOfShapeSquareActive())
         {
-            foreach (var square in _currentShape)
+            foreach(var square in _currentShape)
             {
                 square.gameObject.SetActive(false);
             }
-        }
+        } 
     }
     public void DeactivateShape()
     {
@@ -97,7 +97,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     void Start()
     {
-
+        
     }
 
     public void RequestNewShape(ShapeData shapeData)
@@ -144,7 +144,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
         int currentIndexInList = 0;
 
-
+        
         for (var row = 0; row < shapeData.rows; row++)
         {
             for (var column = 0; column < shapeData.columns; column++)
@@ -164,7 +164,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     public float GetXPositionForShapeSquare(ShapeData shapeData, int column, Vector2 moveDistance)
     {
-
+       
         int middleIndex = (shapeData.columns - 1) / 2;
         float shiftX = (column - middleIndex) * moveDistance.x;
         return shiftX;
@@ -173,7 +173,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     private float GetYPositionForShapeSquare(ShapeData shapeData, int row, Vector2 moveDistance)
     {
-
+        
         int middleIndex = (shapeData.rows - 1) / 2;
         float shiftY = -(row - middleIndex) * moveDistance.y;
         return shiftY;
@@ -181,7 +181,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
+        
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -192,10 +192,11 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+       
+        this.GetComponent<RectTransform>().localScale = Vector3.one;
 
         RectTransform rectTransform = GetComponent<RectTransform>();
         Canvas canvas = _canvas;
-
 
         Vector2 localMousePosition;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -208,6 +209,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         offset = (Vector2)rectTransform.localPosition - localMousePosition;
     }
 
+
     public void OnDrag(PointerEventData eventData)
     {
         Vector2 localMousePosition;
@@ -217,7 +219,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
                 Camera.main,
                 out localMousePosition))
         {
-
+            
             _transform.localPosition = localMousePosition + offset;
         }
     }
@@ -238,6 +240,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     {
         _transform.transform.localPosition = _startPosition;
     }
-
+   
 
 }

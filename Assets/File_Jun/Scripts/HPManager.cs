@@ -13,25 +13,25 @@ public class HPManager : MonoBehaviour
 
     void Start()
     {
-        
+        // HP 초기화
         playerCurrentHP = playerMaxHP;
         enemyCurrentHP = enemyMaxHP;
 
-       
+        // 슬라이더 초기화
         playerHPSlider.maxValue = playerMaxHP;
         enemyHPSlider.maxValue = enemyMaxHP;
 
         UpdateHPUI();
     }
 
-    
+    // HP가 변할 때 UI 업데이트
     private void UpdateHPUI()
     {
         playerHPSlider.value = playerCurrentHP;
         enemyHPSlider.value = enemyCurrentHP;
     }
 
-    
+    // 플레이어 또는 적의 HP를 줄이는 메서드
     public void TakeDamage(bool isPlayer, int damage)
     {
         if (isPlayer)
