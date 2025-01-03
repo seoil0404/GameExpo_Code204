@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1cdb50a0722b2b94b8f3e17a86d392e8
+guid: 6793c316dee7df24eaf2e1927ff44032
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5569261578014389789
-    second: "\uBA54\uC778\uD654\uBA74_0"
+      213: 5695393790061984308
+    second: LightEffect_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uBA54\uC778\uD654\uBA74_0"
+      name: LightEffect_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1518
-        height: 888
+        width: 886
+        height: 886
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e9883d1a1206b2b0800000000000000
-      internalID: -5569261578014389789
+      spriteID: 43a3c900a7a1a0f40800000000000000
+      internalID: 5695393790061984308
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uBA54\uC778\uD654\uBA74_0": -5569261578014389789
+      LightEffect_0: 5695393790061984308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
