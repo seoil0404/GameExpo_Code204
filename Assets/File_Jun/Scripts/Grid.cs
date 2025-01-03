@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class Grid : MonoBehaviour
 {
     public ShapeStorage shapeStorage;
-    public HPManager hpManager;
     public int columns = 8;
     public int rows = 8;
     public float squaresGap = 0.1f;
@@ -15,10 +14,6 @@ public class Grid : MonoBehaviour
     public Button resetButton;
     public Text winText;
     public Text loseText;
-
-    private int playerHP = 10; 
-    private int enemyHP = 10;
-    private int blockCount = 0;
 
     private Vector2 _offset = new Vector2(0.0f, 0.0f);
     private List<GameObject> _gridSquares = new List<GameObject>();
@@ -37,10 +32,8 @@ public class Grid : MonoBehaviour
     void Start()
     {
         _lineIndicator = GetComponent<LineIndicator>();
-        hpManager = FindObjectOfType<HPManager>();
         CreateGrid();
 
-        
         resetButton.onClick.AddListener(ResetGrid);
     }
 
@@ -130,8 +123,6 @@ public class Grid : MonoBehaviour
 
             if (shapeLeft == 0)
             {
-                playerHP--;
-                hpManager.TakeDamage(true, 1);
                 GameEvents.RequestNewShapes();
             }
             else
@@ -146,7 +137,6 @@ public class Grid : MonoBehaviour
             GameEvents.MoveShapeToStartPosition();
         }
 
-        
         CheckIfGameEnded();
     }
 
@@ -174,11 +164,9 @@ public class Grid : MonoBehaviour
 
         if (completedLines > 0)
         {
-            enemyHP -= completedLines * 2;
-            hpManager.TakeDamage(false, completedLines * 2);
+            Debug.Log($"{completedLines} 줄 완성!");
         }
 
-        
         CheckIfGameEnded();
     }
 
@@ -220,10 +208,8 @@ public class Grid : MonoBehaviour
         return linesCompleted;
     }
 
-   
     public void ResetGrid()
     {
-       
         foreach (var square in _gridSquares)
         {
             var gridSquare = square.GetComponent<GridSquare>();
@@ -231,29 +217,14 @@ public class Grid : MonoBehaviour
             gridSquare.Deactivate();
         }
 
-       
-        playerHP -= 2;
-        hpManager.TakeDamage(true, 2);
+        Debug.Log("그리드가 리셋되었습니다.");
 
-       
         CheckIfGameEnded();
     }
 
     private void CheckIfGameEnded()
     {
-      
-        if (playerHP <= 0)
-        {
-            loseText.gameObject.SetActive(true);
-            Debug.Log("패배하였습니다.");
-            return;
-        }
-
-       
-        if (enemyHP <= 0)
-        {
-            winText.gameObject.SetActive(true);
-            Debug.Log("승리하였습니다.");
-        }
+        // 게임 종료 조건을 여기에 추가
+        Debug.Log("게임 상태를 확인합니다.");
     }
 }

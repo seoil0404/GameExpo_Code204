@@ -181,7 +181,7 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
+        
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -189,14 +189,15 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
 
     }
 
-   
+
     public void OnBeginDrag(PointerEventData eventData)
     {
        
+        this.GetComponent<RectTransform>().localScale = Vector3.one;
+
         RectTransform rectTransform = GetComponent<RectTransform>();
         Canvas canvas = _canvas;
 
-        
         Vector2 localMousePosition;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
@@ -207,6 +208,7 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
 
         offset = (Vector2)rectTransform.localPosition - localMousePosition;
     }
+
 
     public void OnDrag(PointerEventData eventData)
     {
