@@ -38,6 +38,7 @@ public class MapGenerater : MonoBehaviour
     [SerializeField] private Sprite combatSprite;
     [SerializeField] private Sprite bossSprite;
     [SerializeField] private Sprite clearSprite;
+    [SerializeField] private Sprite fightingSprite;
 
     private List<List<Stage>> mapInfo;
     private StageCountInfo stageCountInfo;
@@ -45,6 +46,7 @@ public class MapGenerater : MonoBehaviour
 
     public IReadOnlyList<IReadOnlyList<Stage>> MapInfo => mapInfo;
     public Sprite ClearSprite => clearSprite;
+    public Sprite FightingSprite => fightingSprite;
     
     private void Awake()
     {

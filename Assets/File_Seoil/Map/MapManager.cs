@@ -58,7 +58,6 @@ public class MapManager : MonoBehaviour
     }
     public void ClickedStage(GameObject stageObject)
     {
-        Debug.Log(isCurrentStageCleared);
         if (isCurrentStageCleared)
         {
             if(currentList == null) currentList = mapGenerater.MapInfo[0];
@@ -71,7 +70,9 @@ public class MapManager : MonoBehaviour
                     isCurrentStageCleared = false;
                     currentList = stage.connect;
 
-                    ClearCurrentStage();
+                    currentStage.objectSpriteRenderer.sprite = mapGenerater.FightingSprite;
+
+                    gameManager.OnStageStarted(stage.type);
                 }
             }
         }
