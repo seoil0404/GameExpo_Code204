@@ -258,7 +258,7 @@ MonoBehaviour:
   - {fileID: 1929088116}
   threeEnemiesChance: 0.2
   twoEnemiesChance: 0.4
-  oneEnemyChance: 0.4
+  oneEnemiesChance: 0.2
 --- !u!1 &391285829
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +693,7 @@ Transform:
   m_GameObject: {fileID: 641188033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 600, y: 40, z: 0}
+  m_LocalPosition: {x: 500, y: 40, z: 0}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1365,7 +1365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -118, y: 31.07}
+  m_AnchoredPosition: {x: -128, y: 31.07}
   m_SizeDelta: {x: 157.91, y: 62.14}
   m_Pivot: {x: 0.5000005, y: 0.49999988}
 --- !u!224 &1423395871 stripped
@@ -2007,7 +2007,7 @@ Transform:
   m_GameObject: {fileID: 1992245009}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 800, y: 40, z: 0}
+  m_LocalPosition: {x: 700, y: 40, z: 0}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
