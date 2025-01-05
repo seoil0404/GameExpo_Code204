@@ -61,7 +61,7 @@ public class ButtonHoverEffect : MonoBehaviour
 
             targetCanvasGroup.alpha = 0;
         }
-
+        OnMouseExit();
     }
 
     public void OnMouseEnter()
