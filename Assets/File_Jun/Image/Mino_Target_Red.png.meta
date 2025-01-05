@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6793c316dee7df24eaf2e1927ff44032
+guid: 8f385747708a6de44963f3561781044d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5695393790061984308
-    second: LightEffect_0
+      213: -7657553254799364077
+    second: Mino_Target_Red_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LightEffect_0
+      name: Mino_Target_Red_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 886
-        height: 886
+        x: 16
+        y: 18
+        width: 737
+        height: 737
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43a3c900a7a1a0f40800000000000000
-      internalID: 5695393790061984308
+      spriteID: 3103c0fd2e7eab590800000000000000
+      internalID: -7657553254799364077
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      LightEffect_0: 5695393790061984308
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
