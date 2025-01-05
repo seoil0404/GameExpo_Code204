@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mino_Target_Red_0: -7657553254799364077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

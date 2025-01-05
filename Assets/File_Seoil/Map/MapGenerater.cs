@@ -29,6 +29,7 @@ public class MapGenerater : MonoBehaviour
     [SerializeField] private float restProbability;
     [SerializeField] private float eventProbability;
     [SerializeField] private float combatProbability;
+    [SerializeField] private bool fillEmptyType;
 
     [Header("Stage Sprite")]
     [SerializeField] private Sprite specialCombatSprite;
@@ -116,9 +117,12 @@ public class MapGenerater : MonoBehaviour
 
         SetStageType(mapInfo[^1][^1], Stage.StageType.Boss);
 
-        while(stageCountInfo.GetZeroStageCount() != Stage.StageType.None)
+        if(fillEmptyType)
         {
-            AddMissingTypeStage(stageCountInfo.GetZeroStageCount());
+            while (stageCountInfo.GetZeroStageCount() != Stage.StageType.None)
+            {
+                AddMissingTypeStage(stageCountInfo.GetZeroStageCount());
+            }
         }
     }
     private void AddMissingTypeStage(Stage.StageType type)
