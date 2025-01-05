@@ -329,10 +329,10 @@ MonoBehaviour:
   stageVerticalOffset: -100
   stageHorizontalInterval: 100
   stageVerticalInterval: 125
-  specialCombatProbablity: 10
-  chestProbability: 10
-  restProbability: 10
-  eventProbability: 20
+  specialCombatProbablity: 0
+  chestProbability: 0
+  restProbability: 0
+  eventProbability: 0
   combatProbability: 50
   specialCombatSprite: {fileID: -6415976754368812979, guid: cde3379e3c47de645bec7218e93e93a0, type: 3}
   chestSprite: {fileID: -5281422124547630143, guid: 22931ef26ad6f6749b8bbb126c9fb4f7, type: 3}
