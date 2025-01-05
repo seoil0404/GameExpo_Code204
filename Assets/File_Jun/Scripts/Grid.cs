@@ -16,7 +16,7 @@ public class Grid : MonoBehaviour
     public Text loseText;
 
     public List<GameObject> enemies;
-    public int damagePerBlock = 2;
+    public int damagePerBlock = 8; // 한 줄당 적에게 줄 데미지
     public int allClearBonus = 100;
 
     private Vector2 _offset = new Vector2(0.0f, 0.0f);
@@ -151,7 +151,7 @@ public class Grid : MonoBehaviour
         var characterManager = FindObjectOfType<CharacterManager>();
         if (characterManager != null)
         {
-            characterManager.ApplyDamageToCharacter(10);
+            characterManager.ApplyDamageToCharacter(10); // 블럭 재생성 시 10 데미지
             Debug.Log($"블럭 재생성으로 인해 플레이어가 10의 데미지를 입었습니다. 현재 HP: {characterManager.GetCurrentHp()}");
         }
         else
@@ -236,18 +236,16 @@ public class Grid : MonoBehaviour
             return;
         }
 
-        int totalDamage = completedLines * damagePerBlock;
-
-        if (IsAllClear())
-        {
-            totalDamage += allClearBonus;
-            Debug.Log("모든 블록이 제거되었습니다! 보너스 데미지 추가.");
-        }
+        // 부서진 줄 수 * 8로 데미지 계산
+        int totalDamage = completedLines * 8;
 
         var enemyStats = selectedEnemy.GetComponent<EnemyStats>();
         if (enemyStats != null)
         {
+            // 적에게 데미지 적용
             enemyStats.TakeDamage(totalDamage);
+
+            // 디버그 로그 출력
             Debug.Log($"[{selectedEnemy.name}]에게 {totalDamage} 데미지를 입혔습니다.");
         }
         else
@@ -286,6 +284,7 @@ public class Grid : MonoBehaviour
 
         Debug.Log("그리드가 리셋되었습니다.");
 
+        ApplyDamageToCharacter(); // 리셋 시 플레이어 데미지 적용
         CheckIfGameEnded();
     }
 
