@@ -13,7 +13,6 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
     private GameObject[] blocks;
     private Vector3[] originalPositions;
     private Vector3[] directions;
-    private bool isSelected = false;
 
     private static List<EnemySelector> allEnemies = new List<EnemySelector>();
 
@@ -62,8 +61,6 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
 
     private void Select()
     {
-        isSelected = true;
-
         for (int i = 0; i < blocks.Length; i++)
         {
             if (blocks[i] != null)
@@ -76,8 +73,8 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
 
         AnimateBlocks();
 
-        
-        Grid grid = FindObjectOfType<Grid>();
+
+        Grid grid = FindAnyObjectByType<Grid>();//FindObjectOfType<Grid>();
         if (grid != null)
         {
             grid.SelectEnemy(gameObject);
@@ -86,8 +83,6 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
 
     private void Deselect()
     {
-        isSelected = false;
-
         for (int i = 0; i < blocks.Length; i++)
         {
             if (blocks[i] != null)

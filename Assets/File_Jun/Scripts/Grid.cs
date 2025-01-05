@@ -148,7 +148,7 @@ public class Grid : MonoBehaviour
 
     private void ApplyDamageToCharacter()
     {
-        var characterManager = FindObjectOfType<CharacterManager>();
+        var characterManager = FindAnyObjectByType<CharacterManager>();//FindObjectOfType<CharacterManager>();
         if (characterManager != null)
         {
             characterManager.ApplyDamageToCharacter(10); // 블럭 재생성 시 10 데미지

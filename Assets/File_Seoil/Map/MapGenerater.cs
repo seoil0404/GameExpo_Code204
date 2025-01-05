@@ -1,9 +1,5 @@
-using System;
 using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
 using Random = UnityEngine.Random;
 
 public class MapGenerater : MonoBehaviour
