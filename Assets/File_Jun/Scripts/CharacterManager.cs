@@ -12,6 +12,7 @@ public class CharacterManager : MonoBehaviour
 
     private GameObject currentCharacterInstance;
     private Character selectedCharacter;
+    private int currentHp;
 
     void Start()
     {
@@ -31,20 +32,47 @@ public class CharacterManager : MonoBehaviour
             Destroy(currentCharacterInstance);
         }
 
-
         currentCharacterInstance = Instantiate(character.characterData.characterPrefab, spawnPoint);
 
-    
         RectTransform rectTransform = currentCharacterInstance.GetComponent<RectTransform>();
         if (rectTransform != null)
         {
-            rectTransform.localPosition = Vector3.zero; 
+            rectTransform.localPosition = Vector3.zero;
         }
 
         playerNameText.text = character.characterData.characterName;
-        hpText.text = $"{character.characterData.maxHp}/{character.characterData.maxHp}";
+        currentHp = character.characterData.maxHp;
+        UpdateHpText();
         ultimateGaugeSlider.maxValue = character.characterData.ultimateGaugeMax;
         ultimateGaugeSlider.value = 0;
     }
 
+    public void ApplyDamageToCharacter(int totalDamage)
+    {
+        currentHp -= totalDamage;
+
+        if (currentHp <= 0)
+        {
+            currentHp = 0;
+            CharacterDied();
+        }
+
+        UpdateHpText();
+    }
+
+    private void UpdateHpText()
+    {
+        hpText.text = $"HP: {currentHp}";
+    }
+
+    public int GetCurrentHp()
+    {
+        return currentHp;
+    }
+
+    private void CharacterDied()
+    {
+        Debug.Log("캐릭터가 죽었습니다!");
+        
+    }
 }

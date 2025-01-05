@@ -79,6 +79,6 @@ public class LineIndicator: MonoBehaviour
                 }
             }
         }
-        return -1; // square가 존재하지 않을 경우 -1 반환
+        return -1;
     }
 }
