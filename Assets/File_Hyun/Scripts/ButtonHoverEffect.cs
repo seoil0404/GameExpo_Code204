@@ -1,10 +1,14 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ButtonHoverEffect : MonoBehaviour
 {
     public GameObject[] targetObjects;
     public GameObject targetObject;
+    
+    public AudioClip onMouseClip;
+    public AudioClip clickClip;
 
     private float animationDuration = 0.1f;
 
@@ -13,12 +17,13 @@ public class ButtonHoverEffect : MonoBehaviour
     private Vector2 clickScale = new Vector2(0.15f, 0.15f);
     private CanvasGroup[] canvasGroups;
     private CanvasGroup targetCanvasGroup;
+    private AudioSource audioSource;
 
     private void Start()
     {
         canvasGroups = new CanvasGroup[targetObjects.Length];
+        audioSource = GetComponent<AudioSource>();
 
-        // 각 오브젝트 초기화
         for (int i = 0; i < targetObjects.Length; i++)
         {
             if (targetObjects[i] != null)
@@ -54,7 +59,7 @@ public class ButtonHoverEffect : MonoBehaviour
                 targetCanvasGroup = targetObject.AddComponent<CanvasGroup>();
             }
 
-            targetCanvasGroup.alpha = 0; // 초기 상태에서 투명하게 설정
+            targetCanvasGroup.alpha = 0;
         }
 
     }
@@ -62,6 +67,7 @@ public class ButtonHoverEffect : MonoBehaviour
     public void OnMouseEnter()
     {
         StopAllCoroutines();
+        PlaySound(onMouseClip);
         for (int i = 0; i < targetObjects.Length; i++)
         {
             if (targetObjects[i] != null)
@@ -102,6 +108,7 @@ public class ButtonHoverEffect : MonoBehaviour
 
     public void OnPointerUp()
     {
+        PlaySound(clickClip);
         for (int i = 0; i < targetObjects.Length; i++)
         {
             if (targetObjects[i] != null)
@@ -112,18 +119,30 @@ public class ButtonHoverEffect : MonoBehaviour
 
         if (targetObject != null)
         {
-            // 타겟 오브젝트 애니메이션 실행
             targetObject.transform.localScale = new Vector2(0.05f, 0.01f);
-            targetCanvasGroup.alpha = 1; // 애니메이션 실행 시 보이도록 설정
+            targetCanvasGroup.alpha = 1;
 
             Sequence sequence = DOTween.Sequence();
             sequence.Append(targetObject.transform.DOScale(new Vector2(0.05f, 1f), animationDuration).SetEase(Ease.OutQuad));
             sequence.Append(targetObject.transform.DOScale(new Vector2(1f, 1f), animationDuration).SetEase(Ease.OutQuad));
 
-            // 애니메이션 종료 후 투명도 감소
-            sequence.AppendInterval(animationDuration) // 잠시 대기
-                   .Append(targetCanvasGroup.DOFade(0f, animationDuration)) // 투명도 감소
-                   .OnComplete(() => targetObject.transform.localScale = initialScale); // 스케일 초기화
+            sequence.AppendInterval(animationDuration)
+                   .Append(targetCanvasGroup.DOFade(0f, animationDuration))
+                   .OnComplete(() => targetObject.transform.localScale = initialScale);
+        }
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.Stop();
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("AudioSource or AudioClip is missing!");
         }
     }
 }
