@@ -44,4 +44,9 @@ public class EnemyStats : MonoBehaviour
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
         Destroy(gameObject);
     }
+    public int GetAttackDamage()
+    {
+        return atk;
+    }
+
 }

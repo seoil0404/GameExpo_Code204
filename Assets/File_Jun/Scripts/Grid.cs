@@ -129,6 +129,7 @@ public class Grid : MonoBehaviour
             if (shapeLeft == 0)
             {
                 GameEvents.RequestNewShapes();
+                ApplyDamageToCharacter(); // 블럭 재생성 시 데미지 적용
             }
             else
             {
@@ -143,6 +144,20 @@ public class Grid : MonoBehaviour
         }
 
         CheckIfGameEnded();
+    }
+
+    private void ApplyDamageToCharacter()
+    {
+        var characterManager = FindObjectOfType<CharacterManager>();
+        if (characterManager != null)
+        {
+            characterManager.ApplyDamageToCharacter(10);
+            Debug.Log($"블럭 재생성으로 인해 플레이어가 10의 데미지를 입었습니다. 현재 HP: {characterManager.GetCurrentHp()}");
+        }
+        else
+        {
+            Debug.LogWarning("CharacterManager를 찾을 수 없습니다. 데미지를 적용하지 못했습니다.");
+        }
     }
 
     void CheckIfAnyLineIsCompleted()
@@ -215,19 +230,29 @@ public class Grid : MonoBehaviour
 
     private void DealDamageToSelectedEnemy(int completedLines)
     {
-        if (selectedEnemy == null) return;
+        if (selectedEnemy == null)
+        {
+            Debug.Log("선택된 적이 없습니다. 데미지를 줄 수 없습니다.");
+            return;
+        }
 
         int totalDamage = completedLines * damagePerBlock;
 
         if (IsAllClear())
         {
             totalDamage += allClearBonus;
+            Debug.Log("모든 블록이 제거되었습니다! 보너스 데미지 추가.");
         }
 
         var enemyStats = selectedEnemy.GetComponent<EnemyStats>();
         if (enemyStats != null)
         {
             enemyStats.TakeDamage(totalDamage);
+            Debug.Log($"[{selectedEnemy.name}]에게 {totalDamage} 데미지를 입혔습니다.");
+        }
+        else
+        {
+            Debug.LogWarning("선택된 적에 EnemyStats 컴포넌트가 없습니다.");
         }
     }
 

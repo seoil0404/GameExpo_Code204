@@ -11,7 +11,7 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
     public GameObject bottomRightBlock;
 
     private GameObject[] blocks;
-    private Vector3[] originalPositions; 
+    private Vector3[] originalPositions;
     private Vector3[] directions;
     private bool isSelected = false;
 
@@ -70,11 +70,18 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
             {
                 blocks[i].SetActive(true);
                 blocks[i].transform.DOKill();
-                blocks[i].transform.localPosition = originalPositions[i]; 
+                blocks[i].transform.localPosition = originalPositions[i];
             }
         }
 
         AnimateBlocks();
+
+        
+        Grid grid = FindObjectOfType<Grid>();
+        if (grid != null)
+        {
+            grid.SelectEnemy(gameObject);
+        }
     }
 
     private void Deselect()
@@ -86,7 +93,7 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
             if (blocks[i] != null)
             {
                 blocks[i].SetActive(false);
-                blocks[i].transform.DOKill(); 
+                blocks[i].transform.DOKill();
                 blocks[i].transform.localPosition = originalPositions[i];
             }
         }
