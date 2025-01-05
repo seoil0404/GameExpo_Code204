@@ -15,9 +15,14 @@ public class Grid : MonoBehaviour
     public Text winText;
     public Text loseText;
 
+    public List<GameObject> enemies;
+    public int damagePerBlock = 2;
+    public int allClearBonus = 100;
+
     private Vector2 _offset = new Vector2(0.0f, 0.0f);
     private List<GameObject> _gridSquares = new List<GameObject>();
     private LineIndicator _lineIndicator;
+    private GameObject selectedEnemy;
 
     private void OnEnable()
     {
@@ -164,7 +169,7 @@ public class Grid : MonoBehaviour
 
         if (completedLines > 0)
         {
-            Debug.Log($"{completedLines} 줄 완성!");
+            DealDamageToSelectedEnemy(completedLines);
         }
 
         CheckIfGameEnded();
@@ -208,6 +213,43 @@ public class Grid : MonoBehaviour
         return linesCompleted;
     }
 
+    private void DealDamageToSelectedEnemy(int completedLines)
+    {
+        if (selectedEnemy == null) return;
+
+        int totalDamage = completedLines * damagePerBlock;
+
+        if (IsAllClear())
+        {
+            totalDamage += allClearBonus;
+        }
+
+        var enemyStats = selectedEnemy.GetComponent<EnemyStats>();
+        if (enemyStats != null)
+        {
+            enemyStats.TakeDamage(totalDamage);
+        }
+    }
+
+    private bool IsAllClear()
+    {
+        foreach (var square in _gridSquares)
+        {
+            var gridSquare = square.GetComponent<GridSquare>();
+            if (gridSquare.SquareOccupied)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void SelectEnemy(GameObject enemy)
+    {
+        selectedEnemy = enemy;
+    }
+
     public void ResetGrid()
     {
         foreach (var square in _gridSquares)
@@ -224,7 +266,6 @@ public class Grid : MonoBehaviour
 
     private void CheckIfGameEnded()
     {
-        // 게임 종료 조건을 여기에 추가
         Debug.Log("게임 상태를 확인합니다.");
     }
 }

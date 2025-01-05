@@ -1,8 +1,11 @@
 using UnityEngine;
+using TMPro;
 
 public class EnemyStats : MonoBehaviour
 {
-    public EnemyData enemyData;
+    public EnemyData enemyData; 
+    public TextMeshProUGUI healthText; 
+
     private int hp;
     private int atk;
     private float dodgeChance;
@@ -12,11 +15,33 @@ public class EnemyStats : MonoBehaviour
         hp = enemyData.baseHP + (5 * difficulty);
         atk = enemyData.baseATK + (5 / Mathf.Max(difficulty % 4, 1));
         dodgeChance = enemyData.dodgeChance;
+        UpdateHealthText();
     }
 
-    public bool TryDodge()
+    public void TakeDamage(int damage)
     {
-        float roll = Random.Range(0f, 100f);
-        return roll < dodgeChance;
+        hp -= damage;
+
+        if (hp <= 0)
+        {
+            hp = 0;
+            Die();
+        }
+
+        UpdateHealthText();
+    }
+
+    private void UpdateHealthText()
+    {
+        if (healthText != null)
+        {
+            healthText.text = $"HP: {hp}";
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
+        Destroy(gameObject);
     }
 }

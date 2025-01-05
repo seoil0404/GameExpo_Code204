@@ -8,9 +8,9 @@ public class EnemySpawner : MonoBehaviour
     public Transform canvasTransform;
     public List<Transform> spawnPoints; 
 
-    public float threeEnemiesChance = 0.4f;
+    public float threeEnemiesChance = 0.2f;
     public float twoEnemiesChance = 0.4f;
-    public float oneEnemiesChance = 0.2f;
+    public float oneEnemiesChance = 0.4f;
 
     private List<Transform> availableSpawnPoints;
 
