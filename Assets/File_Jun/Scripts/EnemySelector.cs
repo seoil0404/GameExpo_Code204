@@ -23,6 +23,7 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
 
     private void OnDestroy()
     {
+		foreach (var block in blocks) block.transform.DOKill();
         allEnemies.Remove(this);
     }
 
@@ -63,12 +64,10 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
     {
         for (int i = 0; i < blocks.Length; i++)
         {
-            if (blocks[i] != null)
-            {
-                blocks[i].SetActive(true);
-                blocks[i].transform.DOKill();
-                blocks[i].transform.localPosition = originalPositions[i];
-            }
+			if (blocks[i] == null) continue;
+            blocks[i].SetActive(true);
+            blocks[i].transform.DOKill();
+            blocks[i].transform.localPosition = originalPositions[i];
         }
 
         AnimateBlocks();
@@ -85,12 +84,10 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
     {
         for (int i = 0; i < blocks.Length; i++)
         {
-            if (blocks[i] != null)
-            {
-                blocks[i].SetActive(false);
-                blocks[i].transform.DOKill();
-                blocks[i].transform.localPosition = originalPositions[i];
-            }
+			if (blocks[i] == null) continue;
+            blocks[i].SetActive(false);
+            blocks[i].transform.DOKill();
+			blocks[i].transform.localPosition = originalPositions[i];
         }
     }
 
@@ -98,18 +95,16 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
     {
         float animationDuration = 0.7f;
         float targetDistance = 10f;
-        int loopCount = 1000000;
 
         for (int i = 0; i < blocks.Length; i++)
         {
-            if (blocks[i] != null)
-            {
-                Vector3 expandedPosition = originalPositions[i] + (directions[i].normalized * targetDistance);
+			if (blocks[i] == null) continue;
+            Vector3 expandedPosition = originalPositions[i] + (directions[i].normalized * targetDistance);
 
-                blocks[i].transform.DOLocalMove(expandedPosition, animationDuration)
-                    .SetLoops(loopCount * 2, LoopType.Yoyo)
-                    .SetEase(Ease.InOutSine);
-            }
+            blocks[i].transform.DOLocalMove(expandedPosition, animationDuration)
+                .SetLoops(int.MaxValue, LoopType.Yoyo)
+                .SetEase(Ease.InOutSine);
+
         }
     }
 }
