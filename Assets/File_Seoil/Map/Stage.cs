@@ -16,7 +16,7 @@ public class Stage
 
     public enum StageType
     {
-        None, SpecialCombat, Combat, Chest, Rest, Event, Boss
+        None, SpecialCombat, Combat, Chest, Rest, Event, Boss, MagicStore
     }
 
     public Stage()

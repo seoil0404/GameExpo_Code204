@@ -25,6 +25,7 @@ public class MapGenerater : MonoBehaviour
     [SerializeField] private float restProbability;
     [SerializeField] private float eventProbability;
     [SerializeField] private float combatProbability;
+    [SerializeField] private float magicStoreProbability;
     [SerializeField] private bool fillEmptyType;
 
     [Header("Stage Sprite")]
@@ -33,11 +34,12 @@ public class MapGenerater : MonoBehaviour
     [SerializeField] private Sprite restSprite;
     [SerializeField] private Sprite eventSprite;
     [SerializeField] private Sprite combatSprite;
+    [SerializeField] private Sprite magicStoreSprite;
     [SerializeField] private Sprite bossSprite;
     [SerializeField] private Sprite clearSprite;
     [SerializeField] private Sprite fightingSprite;
 
-    private List<List<Stage>> mapInfo;
+    private static List<List<Stage>> mapInfo;
     private StageCountInfo stageCountInfo;
     public readonly int floorNumber = 15;
 
@@ -202,7 +204,7 @@ public class MapGenerater : MonoBehaviour
     {
         float rand = Random.Range(
             0, 
-            specialCombatProbablity + chestProbability + restProbability + eventProbability + combatProbability
+            specialCombatProbablity + chestProbability + restProbability + eventProbability + combatProbability + magicStoreProbability
         );
 
         if(rand < specialCombatProbablity)
@@ -229,6 +231,13 @@ public class MapGenerater : MonoBehaviour
         if(rand < eventProbability)
         {
             return Stage.StageType.Event;
+        }
+
+        rand -= magicStoreProbability;
+
+        if(rand < eventProbability)
+        {
+            return Stage.StageType.MagicStore;
         }
 
         return Stage.StageType.Combat;
@@ -264,6 +273,9 @@ public class MapGenerater : MonoBehaviour
             case Stage.StageType.Boss:
                 stageCountInfo.bossCount--;
                 break;
+            case Stage.StageType.MagicStore:
+                stageCountInfo.magicStoreCount--;
+                break;
             default:
                 break;
         }
@@ -296,6 +308,10 @@ public class MapGenerater : MonoBehaviour
                 stage.objectSpriteRenderer.sprite = bossSprite;
                 stageCountInfo.bossCount++;
                 break;
+            case Stage.StageType.MagicStore:
+                stage.objectSpriteRenderer.sprite = magicStoreSprite;
+                stageCountInfo.magicStoreCount++;
+                break;
             default:
                 Debug.LogError("Invalid Stage Type Error");
                 stage.objectSpriteRenderer.sprite = null;
@@ -311,6 +327,7 @@ public class MapGenerater : MonoBehaviour
         public int eventCount;
         public int combatCount;
         public int bossCount;
+        public int magicStoreCount;
 
         public Stage.StageType GetZeroStageCount()
         {
@@ -320,6 +337,7 @@ public class MapGenerater : MonoBehaviour
             if (eventCount == 0) return Stage.StageType.Event;
             if (combatCount == 0) return Stage.StageType.Combat;
             if (bossCount == 0) return Stage.StageType.Boss;
+            if (magicStoreCount == 0) return Stage.StageType.MagicStore;
             return Stage.StageType.None;
         }
     }

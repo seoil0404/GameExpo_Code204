@@ -160,7 +160,7 @@ public class Grid : MonoBehaviour
         }
     }
 
-    void CheckIfAnyLineIsCompleted()
+    private void CheckIfAnyLineIsCompleted()
     {
         List<int[]> lines = new List<int[]>();
 

@@ -39,6 +39,7 @@ public class ButtonHoverEffect : MonoBehaviour
         }
 
         StopAllCoroutines();
+
         for (int i = 0; i < targetObjects.Length; i++)
         {
             if (targetObjects[i] != null)
@@ -61,20 +62,25 @@ public class ButtonHoverEffect : MonoBehaviour
 
             targetCanvasGroup.alpha = 0;
         }
+
         OnMouseExit();
     }
 
     public void OnMouseEnter()
     {
         StopAllCoroutines();
+
         PlaySound(onMouseClip);
+        
         for (int i = 0; i < targetObjects.Length; i++)
         {
             if (targetObjects[i] != null)
             {
                 targetObjects[i].transform.DOKill();
                 canvasGroups[i].DOKill();
+                
                 targetObjects[i].transform.DOScale(targetScale, animationDuration).SetEase(Ease.OutQuad);
+                
                 canvasGroups[i].DOFade(1f, animationDuration);
             }
         }
@@ -89,7 +95,9 @@ public class ButtonHoverEffect : MonoBehaviour
             {
                 targetObjects[i].transform.DOKill();
                 canvasGroups[i].DOKill();
+                
                 targetObjects[i].transform.DOScale(initialScale, animationDuration).SetEase(Ease.InQuad);
+                
                 canvasGroups[i].DOFade(0f, animationDuration);
             }
         }
