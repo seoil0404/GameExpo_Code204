@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterScene.unity
     guid: 61670d2dc86c9a94392ece144abf18d3
   - enabled: 1
-    path: Assets/Scenes/CoinShopScene.unity
+    path: Assets/Scenes/ShopScene.unity
     guid: b639458482162de42b7e1043e2891173
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
