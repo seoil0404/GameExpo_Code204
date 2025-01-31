@@ -293,8 +293,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -669.91, y: 397}
-  m_SizeDelta: {x: 438.72, y: 100}
+  m_AnchoredPosition: {x: -733.3, y: 493.6}
+  m_SizeDelta: {x: 472.18, y: 54.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366733020
 MonoBehaviour:
@@ -318,12 +318,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 56
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 68
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1067,7 +1067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -130.8, y: 953}
+  m_AnchoredPosition: {x: -1717.5, y: 134}
   m_SizeDelta: {x: 157.91, y: 62.14}
   m_Pivot: {x: 0.5000005, y: 0.49999988}
 --- !u!1 &1389031032
@@ -1549,7 +1549,6 @@ MonoBehaviour:
   winText: {fileID: 0}
   loseText: {fileID: 0}
   enemies: []
-  damagePerBlock: 2
   allClearBonus: 100
 --- !u!114 &1817219911
 MonoBehaviour:

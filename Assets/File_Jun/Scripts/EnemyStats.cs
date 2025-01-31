@@ -4,8 +4,8 @@ using DG.Tweening;
 
 public class EnemyStats : MonoBehaviour
 {
-    public EnemyData enemyData; 
-    public TextMeshProUGUI healthText; 
+    public EnemyData enemyData;
+    public TextMeshProUGUI healthText;
 
     private int hp;
     private int atk;
@@ -45,9 +45,15 @@ public class EnemyStats : MonoBehaviour
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
         Destroy(gameObject);
     }
+
     public int GetAttackDamage()
     {
         return atk;
     }
 
+    // 현재 HP를 반환하는 메서드 추가 (오류 해결)
+    public int GetCurrentHp()
+    {
+        return hp;
+    }
 }
