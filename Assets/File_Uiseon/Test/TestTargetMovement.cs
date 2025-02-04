@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TestTargetMovement : MonoBehaviour {
 
-	public float Speed = 0.25f;
+	public float Speed = 0.2f;
 
 	public void FixedUpdate() {
 		
