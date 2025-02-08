@@ -210,6 +210,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rest
       objectReference: {fileID: 0}
+    - target: {fileID: 4332549530349998543, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 919311874}
+    - target: {fileID: 4332549530349998543, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HealCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332549530349998543, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RestRoom, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8791602504971515972, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -302,16 +314,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4399213795865930314, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 919311874}
   m_SourcePrefab: {fileID: 100100000, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
 --- !u!224 &919311872 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8791602504971515972, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
   m_PrefabInstance: {fileID: 919311871}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &919311873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+  m_PrefabInstance: {fileID: 919311871}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &919311874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919311873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b2fac8fed897a43a731b950df0213c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1045638069
 GameObject:
   m_ObjectHideFlags: 0
