@@ -169,6 +169,7 @@ public class EventRoom : MonoBehaviour
 
     private void Option2Selected()
     {
+        eventText.text = "당신은 무시하고 다시 걷기 시작합니다.";
         Debug.Log("떠나기 선택 - 아무 일도 일어나지 않음");
         EscButton.onClick.AddListener(Disable);
         EventEnd();
