@@ -72,7 +72,7 @@ public class EventRoom : MonoBehaviour
                 break;
 
             case "딜레마":
-                SetEvent("오래된 무덤 앞에 서있습니다.\n무덤 비석에는 \"강한 자만이 이 힘을 얻을 수 있으리라\"라고 적혀있습니다.",
+                SetEvent("오래된 무덤 앞에 서있습니다.\n무덤 비석에는 '강한 자만이 이 힘을 얻을 수 있으리라'라고 적혀있습니다.",
                     "무덤을 연다", "떠나기");
                 break;
 
