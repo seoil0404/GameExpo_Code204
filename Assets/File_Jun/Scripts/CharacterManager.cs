@@ -73,6 +73,6 @@ public class CharacterManager : MonoBehaviour
     private void CharacterDied()
     {
         Debug.Log("캐릭터가 죽었습니다!");
-        
+
     }
 }
