@@ -19,6 +19,63 @@ public class EnemyStats : MonoBehaviour
         UpdateHealthText();
     }
 
+    public void PerformAction(Grid grid)
+    {
+        if (Random.Range(0, 2) == 0)
+        {
+            Attack(grid);
+        }
+        else
+        {
+            UseSkill(grid);
+        }
+    }
+
+    private void Attack(Grid grid)
+{
+    GameObject target = grid.GetSelectedEnemy();
+    if (target == null)
+    {
+        Debug.Log("공격할 적이 없습니다.");
+        return;
+    }
+
+    var enemyStats = target.GetComponent<EnemyStats>();
+    if (enemyStats == null)
+    {
+        Debug.LogError("적의 EnemyStats를 찾을 수 없습니다.");
+        return;
+    }
+
+    float dodgeChance = enemyStats.GetDodgeChance();
+    int dodgeRoll = Random.Range(0, 100);
+
+    Debug.Log($"회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({dodgeChance}%)");
+
+    if (dodgeRoll < dodgeChance)
+    {
+        Debug.Log($"{target.name}이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
+        return;
+    }
+
+    int damage = enemyData.baseATK;
+    enemyStats.TakeDamage(damage);
+    Debug.Log($"{target.name}에게 {damage}의 데미지를 입혔습니다.");
+}
+
+
+    private void UseSkill(Grid grid)
+    {
+        if (enemyData.enemySkill != null)
+        {
+            enemyData.enemySkill.ActivateSkill(grid, gameObject);
+        }
+        else
+        {
+            Debug.Log($"{gameObject.name}에게 할당된 스킬이 없습니다.");
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         hp -= damage;
@@ -51,9 +108,13 @@ public class EnemyStats : MonoBehaviour
         return atk;
     }
 
-    // 현재 HP를 반환하는 메서드 추가 (오류 해결)
     public int GetCurrentHp()
     {
         return hp;
+    }
+
+    public float GetDodgeChance()
+    {
+        return dodgeChance;
     }
 }

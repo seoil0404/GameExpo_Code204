@@ -8,4 +8,5 @@ public class EnemyData : ScriptableObject
     public int baseATK;
     public Sprite enemySprite;
     [Range(0, 100)] public float dodgeChance;
+    public EnemySkill enemySkill;
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,7 +24,7 @@ public class Grid : MonoBehaviour
     private List<GameObject> _gridSquares = new List<GameObject>();
     private LineIndicator _lineIndicator;
     private GameObject selectedEnemy;
-    private int comboCount = 0; // 콤보 수 저장
+    private int comboCount = 0;
 
     private void OnEnable()
     {
@@ -126,11 +127,10 @@ public class Grid : MonoBehaviour
             GameEvents.MoveShapeToStartPosition();
         }
 
-        // 블록이 모두 사용되었는지 정확히 확인
         var shapeLeft = 0;
         foreach (var shape in shapeStorage.shapeList)
         {
-            if (shape.IsAnyOfShapeSquareActive()) // StartPosition 체크 제거
+            if (shape.IsAnyOfShapeSquareActive())
             {
                 shapeLeft++;
             }
@@ -226,26 +226,53 @@ public class Grid : MonoBehaviour
             return;
         }
 
+        var enemyStats = selectedEnemy.GetComponent<EnemyStats>();
+        if (enemyStats == null)
+        {
+            Debug.LogError("적의 EnemyStats를 찾을 수 없습니다.");
+            return;
+        }
+
+        float dodgeChance = enemyStats.GetDodgeChance();
+        int dodgeRoll = Random.Range(0, 100);
+
+        Debug.Log($" 회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({dodgeChance}%)");
+
+        if (dodgeRoll < dodgeChance)
+        {
+            Debug.Log($" [{selectedEnemy.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
+            return;
+        }
+
         int totalBlocksUsed = completedLines * columns;
         string damageSkin = DetermineDamageSkin();
         bool isAllClear = IsAllClear();
         int baseDamage = totalBlocksUsed;
         int calculatedDamage = isAllClear ? (baseDamage * 2) * (comboCount * 2) : baseDamage + (comboCount * 2);
 
-        var enemyStats = selectedEnemy.GetComponent<EnemyStats>();
-        if (enemyStats != null)
-        {
-            enemyStats.TakeDamage(calculatedDamage);
-            Debug.Log($"[{selectedEnemy.name}]에게 {calculatedDamage} 데미지를 입혔습니다. (데미지 스킨: {damageSkin})");
+        enemyStats.TakeDamage(calculatedDamage);
+        Debug.Log($" [{selectedEnemy.name}]에게 {calculatedDamage} 데미지를 입혔습니다. (데미지 스킨: {damageSkin})");
 
-            if (isAllClear)
-            {
-                Debug.Log("판이 완전히 클리어됨! 액티브 스킬 게이지 100% 충전");
-            }
+        if (isAllClear)
+        {
+            Debug.Log("판이 완전히 클리어됨! 액티브 스킬 게이지 100% 충전");
         }
 
         comboCount++;
     }
+
+
+    public void DestroyRandomPlayerBlock()
+    {
+        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
+
+        if (playerBlocks.Count > 0)
+        {
+            GameObject blockToDestroy = playerBlocks[Random.Range(0, playerBlocks.Count)];
+            blockToDestroy.GetComponent<GridSquare>().ClearOccupied();
+        }
+    }
+
 
     private string DetermineDamageSkin()
     {
@@ -277,14 +304,34 @@ public class Grid : MonoBehaviour
         return maxColor;
     }
 
-    // 게임 종료 여부 확인 메서드 추가
+
+    public void SpawnRandomBlock()
+    {
+        int randomIndex = Random.Range(0, _gridSquares.Count);
+        _gridSquares[randomIndex].GetComponent<GridSquare>().SetOccupied();
+    }
+
+
+    public void SealRandomBlock(GameObject enemy)
+    {
+        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
+
+        if (playerBlocks.Count > 0)
+        {
+            GameObject blockToSeal = playerBlocks[Random.Range(0, playerBlocks.Count)];
+            blockToSeal.GetComponent<GridSquare>().SealBlock(enemy);
+        }
+    }
+
+
+
     private void CheckIfGameEnded()
     {
         var characterManager = FindAnyObjectByType<CharacterManager>();
         if (characterManager != null && characterManager.GetCurrentHp() <= 0)
         {
             Debug.Log("플레이어 체력이 0이 되어 게임이 종료되었습니다!");
-            // 게임 종료 로직 추가 가능
+
         }
 
         bool allEnemiesDefeated = true;
@@ -296,15 +343,8 @@ public class Grid : MonoBehaviour
                 break;
             }
         }
-
-        if (allEnemiesDefeated)
-        {
-            Debug.Log("모든 적이 처치되어 게임이 종료되었습니다!");
-            // 추가적인 게임 종료 처리 가능
-        }
     }
 
-    // 올 클리어 여부 확인 메서드 추가
     private bool IsAllClear()
     {
         foreach (var square in _gridSquares)
@@ -337,5 +377,10 @@ public class Grid : MonoBehaviour
         Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
     }
 
+
+    public GameObject GetSelectedEnemy()
+    {
+        return selectedEnemy;
+    }
 
 }

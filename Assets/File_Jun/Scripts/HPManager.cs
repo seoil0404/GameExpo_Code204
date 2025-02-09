@@ -31,18 +31,27 @@ public class HPManager : MonoBehaviour
         enemyHPSlider.value = enemyCurrentHP;
     }
 
-            
+
     public void TakeDamage(bool isPlayer, int damage)
     {
         if (isPlayer)
         {
-            playerCurrentHP = Mathf.Max(playerCurrentHP - damage, 1);
+            playerCurrentHP = Mathf.Max(playerCurrentHP - damage, 0);
+            if (playerCurrentHP <= 0)
+            {
+                Debug.Log("ÇÃ·¹ÀÌ¾î »ç¸Á!");
+            }
         }
         else
         {
-            enemyCurrentHP = Mathf.Max(enemyCurrentHP - damage, 2);
+            enemyCurrentHP = Mathf.Max(enemyCurrentHP - damage, 0);
+            if (enemyCurrentHP <= 0)
+            {
+                Debug.Log("Àû »ç¸Á!");
+            }
         }
 
         UpdateHPUI();
     }
+
 }

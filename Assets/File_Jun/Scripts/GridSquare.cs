@@ -14,6 +14,7 @@ public class GridSquare : MonoBehaviour
     public bool SquareOccupied { get; set; }
 
     private string blockColor = "Default";
+    private GameObject sealingEnemy;
 
     void Start()
     {
@@ -41,13 +42,22 @@ public class GridSquare : MonoBehaviour
 
     public void ClearOccupied()
     {
-        Selected = false;
-        SquareOccupied = false;
+        if (!IsSealed())
+        {
+            Selected = false;
+            SquareOccupied = false;
+        }
     }
 
     public void PlaceShapeOnBoard()
     {
         ActivateSquare();
+    }
+
+    public void SetOccupied()
+    {
+        SquareOccupied = true;
+        Selected = false;
     }
 
     public void SetImage(bool setFirstImage)
@@ -65,9 +75,24 @@ public class GridSquare : MonoBehaviour
         return blockColor;
     }
 
+    public void SealBlock(GameObject enemy)
+    {
+        sealingEnemy = enemy;
+    }
+
+    public bool IsSealed()
+    {
+        return sealingEnemy != null;
+    }
+
+    public void UnsealBlock()
+    {
+        sealingEnemy = null;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (SquareOccupied == false)
+        if (!SquareOccupied)
         {
             Selected = true;
             hooverImage.gameObject.SetActive(true);
@@ -77,7 +102,7 @@ public class GridSquare : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         Selected = true;
-        if (SquareOccupied == false)
+        if (!SquareOccupied)
         {
             hooverImage.gameObject.SetActive(true);
         }
@@ -85,11 +110,10 @@ public class GridSquare : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (SquareOccupied == false)
+        if (!SquareOccupied)
         {
             Selected = false;
             hooverImage.gameObject.SetActive(false);
         }
     }
 }
-
