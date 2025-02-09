@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea0d9f7ecafa8d419067ace9293ae4a, type: 3}
   m_Name: Bat
   m_EditorClassIdentifier: 
-  skillName: 
-  skillDescription: 
+  skillName: bat skill
+  skillDescription: Bat use skill
   skillType: 0

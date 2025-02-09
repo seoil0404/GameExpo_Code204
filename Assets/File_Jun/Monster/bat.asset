@@ -16,4 +16,5 @@ MonoBehaviour:
   baseHP: 40
   baseATK: 5
   enemySprite: {fileID: 2690748404400343338, guid: 5932b5bbd5e05d64aa7c8b7227fe3575, type: 3}
-  dodgeChance: 100
+  dodgeChance: 15
+  enemySkill: {fileID: 11400000, guid: 705e146bb6edc1c46ae2755706cb0dc3, type: 2}
