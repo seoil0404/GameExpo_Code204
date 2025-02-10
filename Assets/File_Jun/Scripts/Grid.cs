@@ -334,8 +334,11 @@ public class Grid : MonoBehaviour
 
         }
 
-        bool allEnemiesDefeated = true;
-        foreach (var enemy in enemies)
+		#pragma warning disable CS0219 // To 정준. 이거 경고 뜨는것 때문에 달아놨다. 안쓰는 변수는 지우고 올리세요. 쓸때 이거 지우고 써
+		bool allEnemiesDefeated = true;
+		#pragma warning restore CS0219
+
+		foreach (var enemy in enemies)
         {
             if (enemy.GetComponent<EnemyStats>().GetCurrentHp() > 0)
             {

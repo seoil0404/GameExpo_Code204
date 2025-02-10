@@ -34,11 +34,7 @@ public class AttackEffectSpawner : MonoBehaviour {
 	}
 
 	private void Shoot(AttackEffect instantiated) {
-		
-		Vector3 target = TargetPosition.position;
-
-		instantiated.Shoot(target);
-
+		instantiated.Shoot(TargetPosition.gameObject);
 	}
 
 	//======================================================================| Nested Types

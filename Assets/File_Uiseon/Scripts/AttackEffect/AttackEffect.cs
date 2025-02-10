@@ -31,11 +31,13 @@ public class AttackEffect : MonoBehaviour {
 
 	//======================================================================| Methods
 
-	public void Shoot(Vector2 target) {
+	public void Shoot(GameObject targetObject) {
+
+		Vector2 targetPosition = targetObject.transform.position;
 
 		if (AttackRange != 0f) {
-			target.x += Random.Range(-AttackRange, AttackRange) / 2f;
-			target.y += Random.Range(-AttackRange, AttackRange) / 2f;
+			targetPosition.x += Random.Range(-AttackRange, AttackRange) / 2f;
+			targetPosition.y += Random.Range(-AttackRange, AttackRange) / 2f;
 		}
 		
 		float progress = 0f;
@@ -46,10 +48,11 @@ public class AttackEffect : MonoBehaviour {
 		DOTween.To(() => progress, x => progress = x, 1f, FlightTime)
 			.SetEase(FlightEase)
 			.OnUpdate(() => {
-				MovementMethods.Move(this, start, target, progress);
+				MovementMethods.Move(this, start, targetPosition, progress);
 				Effectors.OnFlyingAll(this);
 			})
 			.OnComplete(() => {
+				HitEffectManager.Instance.OnHit(targetObject, targetPosition);
 				Effectors.OnCompleteAll(this);
 				StartCoroutine(DestroyOnReady());
 			});
