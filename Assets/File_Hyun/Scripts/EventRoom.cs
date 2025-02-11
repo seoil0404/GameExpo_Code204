@@ -185,6 +185,7 @@ public class EventRoom : MonoBehaviour
         ChoiceButtons.SetActive(false);
         EscObject.SetActive(true);
         EscButton.onClick.AddListener(Disable);
+        GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
         Debug.Log("이벤트방 종료");
     }
 }

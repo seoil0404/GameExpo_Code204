@@ -145,4 +145,10 @@ public class ShopManager : MonoBehaviour
         GenerateMinoShop();
         GenerateScrollShop();
     }
+
+    public void ShopEnd()
+    {
+        GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
+        Debug.Log("상점방 종료 종료");
+    }
 }
