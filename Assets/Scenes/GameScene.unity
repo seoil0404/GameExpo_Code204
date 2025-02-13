@@ -868,8 +868,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1108402590}
+  - component: {fileID: 1108402591}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MinoEffectHelper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -890,6 +891,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108402591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108402589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22413bbc1f91924e8259bb043bc0a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GridDeactivateDuration: 0.2
+  MinoCount: 8
+  ExplosionEffect: {fileID: 4715591370784012249, guid: 65c3fb6fa5cac484db81e2656c187026, type: 3}
 --- !u!1 &1132816789
 GameObject:
   m_ObjectHideFlags: 0
