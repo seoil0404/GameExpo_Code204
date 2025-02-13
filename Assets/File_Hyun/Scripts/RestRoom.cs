@@ -10,6 +10,7 @@ public class RestRoom : MonoBehaviour
         {
             Debug.Log("Èú!");
 
+            GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
             Debug.Log("ÈÞ½Ä¹æ Á¾·á");
         }
     }
