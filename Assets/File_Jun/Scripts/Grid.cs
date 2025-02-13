@@ -207,9 +207,13 @@ public class Grid : MonoBehaviour
 
         foreach (var line in completedLines)
         {
+			MinoEffectHelper.Instance.PlayMinoEffect(
+				_gridSquares,
+				line
+			);
+
             foreach (var squareIndex in line)
             {
-                _gridSquares[squareIndex].GetComponent<GridSquare>().Deactivate();
                 _gridSquares[squareIndex].GetComponent<GridSquare>().ClearOccupied();
             }
             linesCompleted++;
