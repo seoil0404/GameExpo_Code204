@@ -63,7 +63,7 @@ public class ButtonHoverEffect : MonoBehaviour
             targetCanvasGroup.alpha = 0;
         }
 
-        OnMouseExit();
+        RemoveEffect();
     }
 
     public void OnMouseEnter()
@@ -152,5 +152,27 @@ public class ButtonHoverEffect : MonoBehaviour
         {
             Debug.LogError("AudioSource or AudioClip is missing!");
         }
+    }
+
+    public void RemoveEffect()
+    {
+        for (int i = 0; i < targetObjects.Length; i++)
+        {
+            if (targetObjects[i] != null)
+            {
+                targetObjects[i].transform.DOKill();
+                canvasGroups[i].DOKill();
+
+                targetObjects[i].transform.localScale = initialScale;
+                canvasGroups[i].alpha = 0f;
+            }
+        }
+    }
+
+
+    void OnDisable()
+    {
+        RemoveEffect();
+        Debug.Log("버튼이 완전히 비활성화됨!");
     }
 }
