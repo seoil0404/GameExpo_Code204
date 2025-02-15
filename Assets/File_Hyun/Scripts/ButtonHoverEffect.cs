@@ -169,10 +169,8 @@ public class ButtonHoverEffect : MonoBehaviour
         }
     }
 
-
     void OnDisable()
     {
         RemoveEffect();
-        Debug.Log("버튼이 완전히 비활성화됨!");
     }
 }

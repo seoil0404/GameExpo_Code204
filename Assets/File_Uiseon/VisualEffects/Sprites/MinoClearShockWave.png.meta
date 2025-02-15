@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MinoClearShockWave_0: -1330676762313279327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
