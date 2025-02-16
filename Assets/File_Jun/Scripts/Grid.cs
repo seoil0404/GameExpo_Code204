@@ -14,8 +14,6 @@ public class Grid : MonoBehaviour
     public Vector2 startPosition = new Vector2(0.0f, 0.0f);
     public float squareScale = 0.5f;
     public Button resetButton;
-    public Text winText;
-    public Text loseText;
 
     public List<GameObject> enemies;
     public int allClearBonus = 100;
@@ -93,7 +91,6 @@ public class Grid : MonoBehaviour
         }
     }
 
-
     private void CheckIfShapeCanBePlaced()
     {
         var squareIndexes = new List<int>();
@@ -127,15 +124,7 @@ public class Grid : MonoBehaviour
             GameEvents.MoveShapeToStartPosition();
         }
 
-        var shapeLeft = 0;
-        foreach (var shape in shapeStorage.shapeList)
-        {
-            if (shape.IsAnyOfShapeSquareActive())
-            {
-                shapeLeft++;
-            }
-        }
-
+        var shapeLeft = shapeStorage.shapeList.Count(shape => shape.IsAnyOfShapeSquareActive());
         Debug.Log($"남은 블록 개수: {shapeLeft}");
 
         if (shapeLeft == 0)
@@ -149,21 +138,11 @@ public class Grid : MonoBehaviour
 
     private void CheckIfAnyLineIsCompleted()
     {
-        List<int[]> lines = new List<int[]>();
-
-        foreach (var column in _lineIndicator.columnIndexes)
-        {
-            lines.Add(_lineIndicator.GetVerticalLine(column));
-        }
+        List<int[]> lines = _lineIndicator.columnIndexes.Select(column => _lineIndicator.GetVerticalLine(column)).ToList();
 
         for (var row = 0; row < rows; row++)
         {
-            List<int> data = new List<int>(columns);
-            for (var index = 0; index < columns; index++)
-            {
-                data.Add(_lineIndicator.line_data[row, index]);
-            }
-            lines.Add(data.ToArray());
+            lines.Add(Enumerable.Range(0, columns).Select(index => _lineIndicator.line_data[row, index]).ToArray());
         }
 
         var completedLines = CheckIfSquaresAreCompleted(lines);
@@ -180,7 +159,6 @@ public class Grid : MonoBehaviour
 
         CheckIfGameEnded();
     }
-
 
     private int CheckIfSquaresAreCompleted(List<int[]> data)
     {
@@ -207,11 +185,7 @@ public class Grid : MonoBehaviour
 
         foreach (var line in completedLines)
         {
-			MinoEffectHelper.Instance.PlayMinoEffect(
-				_gridSquares,
-				line
-			);
-
+            MinoEffectHelper.Instance.PlayMinoEffect(_gridSquares, line);
             foreach (var squareIndex in line)
             {
                 _gridSquares[squareIndex].GetComponent<GridSquare>().ClearOccupied();
@@ -249,85 +223,14 @@ public class Grid : MonoBehaviour
         }
 
         int totalBlocksUsed = completedLines * columns;
-        string damageSkin = DetermineDamageSkin();
-        bool isAllClear = IsAllClear();
         int baseDamage = totalBlocksUsed;
-        int calculatedDamage = isAllClear ? (baseDamage * 2) * (comboCount * 2) : baseDamage + (comboCount * 2);
+        int calculatedDamage = baseDamage + (comboCount * 2);
 
         enemyStats.TakeDamage(calculatedDamage);
-        Debug.Log($" [{selectedEnemy.name}]에게 {calculatedDamage} 데미지를 입혔습니다. (데미지 스킨: {damageSkin})");
-
-        if (isAllClear)
-        {
-            Debug.Log("판이 완전히 클리어됨! 액티브 스킬 게이지 100% 충전");
-        }
+        Debug.Log($" [{selectedEnemy.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
 
         comboCount++;
     }
-
-
-    public void DestroyRandomPlayerBlock()
-    {
-        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
-
-        if (playerBlocks.Count > 0)
-        {
-            GameObject blockToDestroy = playerBlocks[Random.Range(0, playerBlocks.Count)];
-            blockToDestroy.GetComponent<GridSquare>().ClearOccupied();
-        }
-    }
-
-
-    private string DetermineDamageSkin()
-    {
-        Dictionary<string, int> colorCount = new Dictionary<string, int>();
-
-        foreach (var square in _gridSquares)
-        {
-            if (square.GetComponent<GridSquare>().SquareOccupied)
-            {
-                string color = square.GetComponent<GridSquare>().GetBlockColor();
-                if (colorCount.ContainsKey(color))
-                    colorCount[color]++;
-                else
-                    colorCount[color] = 1;
-            }
-        }
-
-        string maxColor = "기본";
-        int maxCount = 0;
-        foreach (var kvp in colorCount)
-        {
-            if (kvp.Value > maxCount)
-            {
-                maxCount = kvp.Value;
-                maxColor = kvp.Key;
-            }
-        }
-
-        return maxColor;
-    }
-
-
-    public void SpawnRandomBlock()
-    {
-        int randomIndex = Random.Range(0, _gridSquares.Count);
-        _gridSquares[randomIndex].GetComponent<GridSquare>().SetOccupied();
-    }
-
-
-    public void SealRandomBlock(GameObject enemy)
-    {
-        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
-
-        if (playerBlocks.Count > 0)
-        {
-            GameObject blockToSeal = playerBlocks[Random.Range(0, playerBlocks.Count)];
-            blockToSeal.GetComponent<GridSquare>().SealBlock(enemy);
-        }
-    }
-
-
 
     private void CheckIfGameEnded()
     {
@@ -335,34 +238,13 @@ public class Grid : MonoBehaviour
         if (characterManager != null && characterManager.GetCurrentHp() <= 0)
         {
             Debug.Log("플레이어 체력이 0이 되어 게임이 종료되었습니다!");
-
         }
 
-		#pragma warning disable CS0219 // To 정준. 이거 경고 뜨는것 때문에 달아놨다. 안쓰는 변수는 지우고 올리세요. 쓸때 이거 지우고 써
-		bool allEnemiesDefeated = true;
-		#pragma warning restore CS0219
-
-		foreach (var enemy in enemies)
+        bool allEnemiesDefeated = enemies.All(enemy => enemy.GetComponent<EnemyStats>().GetCurrentHp() <= 0);
+        if (allEnemiesDefeated)
         {
-            if (enemy.GetComponent<EnemyStats>().GetCurrentHp() > 0)
-            {
-                allEnemiesDefeated = false;
-                break;
-            }
+            FindAnyObjectByType<GameManager>().ClearCurrentStage();
         }
-    }
-
-    private bool IsAllClear()
-    {
-        foreach (var square in _gridSquares)
-        {
-            var gridSquare = square.GetComponent<GridSquare>();
-            if (gridSquare.SquareOccupied)
-            {
-                return false;
-            }
-        }
-        return true;
     }
 
     public void ResetGrid()
@@ -384,10 +266,40 @@ public class Grid : MonoBehaviour
         Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
     }
 
+    public void DestroyRandomPlayerBlock()
+    {
+        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
+
+        if (playerBlocks.Count > 0)
+        {
+            GameObject blockToDestroy = playerBlocks[Random.Range(0, playerBlocks.Count)];
+            blockToDestroy.GetComponent<GridSquare>().ClearOccupied();
+            Debug.Log("플레이어 블록 하나가 제거되었습니다.");
+        }
+    }
+
+    public void SpawnRandomBlock()
+    {
+        int randomIndex = Random.Range(0, _gridSquares.Count);
+        _gridSquares[randomIndex].GetComponent<GridSquare>().SetOccupied();
+        Debug.Log("랜덤한 위치에 블록이 생성되었습니다.");
+    }
+
+    public void SealRandomBlock(GameObject enemy)
+    {
+        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
+
+        if (playerBlocks.Count > 0)
+        {
+            GameObject blockToSeal = playerBlocks[Random.Range(0, playerBlocks.Count)];
+            blockToSeal.GetComponent<GridSquare>().SealBlock(enemy);
+            Debug.Log($"{enemy.name}이(가) 플레이어 블록을 봉인했습니다.");
+        }
+    }
+
 
     public GameObject GetSelectedEnemy()
     {
         return selectedEnemy;
     }
-
 }

@@ -95,7 +95,7 @@ public class EnemyStats : MonoBehaviour
         {
             healthText.text = $"HP: {hp}";
         }
-    }
+    }   
 
     private void Die()
     {
