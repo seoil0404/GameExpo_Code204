@@ -64,6 +64,6 @@ public class SceneController : MonoBehaviour
 
     public void OnClearScene()
     {
-
+        Scene.gameManager.ClearCurrentStage();
     }
 }

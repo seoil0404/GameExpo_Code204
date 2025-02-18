@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Call this function when the stage is cleared.
     public void ClearCurrentStage()
     {
         mapManager.ClearCurrentStage();
