@@ -9,11 +9,11 @@ public class CharacterData
     public GameObject characterPrefab;
 
     [SerializeField]
-    public int maxHp;
+    private int maxHp;
     [SerializeField]
-    public int currentHp;
+    private int currentHp;
     [SerializeField]
-    public int currentUltimateGauge;
+    private int currentUltimateGauge;
 
     public void Initialize()
     {
@@ -21,35 +21,21 @@ public class CharacterData
         currentUltimateGauge = 0;
     }
 
-    public int GetMaxHp() //채현
+    public int MaxHp
     {
-        return maxHp;
+        get { return maxHp; }
+        set { currentHp = Mathf.Max(value, 0); }
     }
 
-    public void SetMaxHp(int value) //채현
+    public int CurrentHp
     {
-        maxHp = value;
-        if (currentHp > maxHp)
-        {
-            currentHp = maxHp;
-        }
+        get { return currentHp; }
+        set { currentHp = Mathf.Clamp(value, 0, maxHp); }
     }
 
-    public int GetCurrentHp() //채현
+    public int CurrentUltimateGauge
     {
-        return currentHp;
-    }
-
-    public void SetCurrentHp(int value) //채현
-    {
-        currentHp = value;
-        if (currentHp > maxHp)
-        {
-            currentHp = maxHp;
-        }
-        else if (currentHp < 0)
-        {
-            currentHp = 0;
-        }
+        get { return currentUltimateGauge; }
+        set { currentUltimateGauge = Mathf.Max(value, 0); }
     }
 }

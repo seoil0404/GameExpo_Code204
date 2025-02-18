@@ -41,7 +41,7 @@ public class CharacterManager : MonoBehaviour
         }
 
         CharacterNameText.text = character.characterData.characterName;
-        currentHp = character.characterData.maxHp;
+        currentHp = character.characterData.MaxHp;
         UpdateHpText();
         UltimateGaugeSlider.maxValue = character.characterData.ultimateGaugeMax;
         UltimateGaugeSlider.value = 0;
