@@ -4,14 +4,15 @@ using UnityEngine;
 public class CharacterData
 {
     public string characterName;
-    public int maxHp;
     public int ultimateGaugeMax;
     public string ultimateSkillDescription;
     public GameObject characterPrefab;
 
-    [HideInInspector]
+    [SerializeField]
+    public int maxHp;
+    [SerializeField]
     public int currentHp;
-    [HideInInspector]
+    [SerializeField]
     public int currentUltimateGauge;
 
     public void Initialize()
