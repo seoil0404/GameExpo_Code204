@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc62dc558d9700e4e815d8163abd1a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStatic: 0
   gameManager: {fileID: 0}
   map: {fileID: 5595564828724413120}
   keyManager: {fileID: 11400000, guid: a3dc505679128054da943b8486d08042, type: 2}
@@ -320,9 +321,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12d707d8dbfe4e468cecdd1dc8c0fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabData: {fileID: 11400000, guid: 8a949424c76bdd543bb432023baaa991, type: 2}
   stagePrefab: {fileID: 79632508796584948, guid: 79e2c8784b1f75445875ddab575d5bd8, type: 3}
   edgePrefab: {fileID: 42194054095915014, guid: c4cdfac68382fdb4f9dca87d5f1fa15c, type: 3}
-  map: {fileID: 5595564828724413120}
+  highMap: {fileID: 0}
   mapScrollView: {fileID: 5529152479462073525}
   mapManager: {fileID: 2635813539601055982}
   mapTransform: {fileID: 8454228719394775074}

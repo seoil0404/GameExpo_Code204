@@ -13,6 +13,8 @@ public static class Scene
     public const string MapScene = "MapScene";
 
     private static SceneController controller;
+    public static GameManager gameManager;
+    public static MapManager mapManager;
 
     public static SceneController Controller
     { 

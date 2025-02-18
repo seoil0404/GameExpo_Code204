@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
-    [Header("Map Mode")]
     [SerializeField] private bool isStatic;
 
     [Header("MonoBehavior")]
+    [SerializeField] private GameObject highMap;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject map;
     [SerializeField] private KeyManager keyManager;
@@ -17,6 +17,27 @@ public class MapManager : MonoBehaviour
     private bool isCurrentStageCleared = true;
 
     private bool isMapEnable = false;
+    
+    private bool isAllowOpen = true;
+
+    public bool IsStatic
+    {
+        set 
+        { 
+            isStatic = value;
+            if (isStatic) EnableMap();
+        }
+    }
+
+    public bool IsAllowOpen
+    {
+        set
+        {
+            isAllowOpen = value;
+            if (!isAllowOpen) DisableMap();
+        }
+    }
+    
     public bool IsMapEnable
     {
         get
@@ -24,6 +45,7 @@ public class MapManager : MonoBehaviour
             return isMapEnable;
         }
     }
+
     public void ClearCurrentStage()
     {
         if (currentStage == null) Debug.LogError("Nothing To Clear");
@@ -31,12 +53,23 @@ public class MapManager : MonoBehaviour
         {
             isCurrentStageCleared = true;
             currentStage.objectSpriteRenderer.sprite = mapGenerater.ClearSprite;
+            if(currentStage.stageType == Stage.StageType.Boss) ClearCurrentLevel();
         }
+    }
+
+    public void ClearGame()
+    {
+
     }
 
     private void Awake()
     {
-        if(isStatic) EnableMap();
+        if(Scene.mapManager != null) Destroy(Scene.mapManager.highMap);
+
+        DontDestroyOnLoad(highMap);
+        Scene.mapManager = this;
+
+        if (isStatic) EnableMap();
     }
 
     private void Update()
@@ -44,9 +77,14 @@ public class MapManager : MonoBehaviour
         HandleMapState();
     }
 
+    private void ClearCurrentLevel()
+    {
+        mapGenerater.GenerateNextLevelMap();
+    }
+
     private void HandleMapState()
     {
-        if (Input.GetKeyDown(keyManager.MapKey) && !isStatic)
+        if (Input.GetKeyDown(keyManager.MapKey) && !isStatic && !isAllowOpen)
         {
             if (map.activeSelf)
             {

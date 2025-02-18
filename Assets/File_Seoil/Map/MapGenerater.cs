@@ -4,12 +4,15 @@ using Random = UnityEngine.Random;
 
 public class MapGenerater : MonoBehaviour
 {
+    [Header("Scriptable")]
+    [SerializeField] private PrefabData prefabData;
+
     [Header("Prefab")]
     [SerializeField] private GameObject stagePrefab;
     [SerializeField] private GameObject edgePrefab;
 
     [Header("MonoBahavior")]
-    [SerializeField] private GameObject map;
+    [SerializeField] private GameObject highMap;
     [SerializeField] private MapScrollView mapScrollView;
     [SerializeField] private MapManager mapManager;
     [SerializeField] private Transform mapTransform;
@@ -39,7 +42,7 @@ public class MapGenerater : MonoBehaviour
     [SerializeField] private Sprite clearSprite;
     [SerializeField] private Sprite fightingSprite;
 
-    private static List<List<Stage>> mapInfo;
+    private List<List<Stage>> mapInfo;
     private StageCountInfo stageCountInfo;
     public readonly int floorNumber = 15;
 
@@ -48,6 +51,25 @@ public class MapGenerater : MonoBehaviour
     public List<List<Stage>> MapInfo => mapInfo;
     public Sprite ClearSprite => clearSprite;
     public Sprite FightingSprite => fightingSprite;
+
+    public void GenerateNextLevelMap()
+    {
+        switch(levelType)
+        {
+            case Stage.LevelType.Forest:
+                levelType = Stage.LevelType.Castle;
+                break;
+            case Stage.LevelType.Castle:
+                levelType = Stage.LevelType.DevilCastle;
+                break;
+            case Stage.LevelType.DevilCastle:
+                mapManager.ClearGame();
+                return;
+        }
+
+        Instantiate(prefabData.MapPrefab);
+        Destroy(highMap);
+    }
     
     private void Awake()
     {
