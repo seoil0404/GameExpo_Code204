@@ -43,7 +43,9 @@ public class MapGenerater : MonoBehaviour
     private StageCountInfo stageCountInfo;
     public readonly int floorNumber = 15;
 
-    public IReadOnlyList<IReadOnlyList<Stage>> MapInfo => mapInfo;
+    private Stage.LevelType levelType;
+
+    public List<List<Stage>> MapInfo => mapInfo;
     public Sprite ClearSprite => clearSprite;
     public Sprite FightingSprite => fightingSprite;
     
@@ -106,7 +108,9 @@ public class MapGenerater : MonoBehaviour
                 stage.AllocatedStageObject = Instantiate(stagePrefab, mapScrollView.transform);
                 
                 stage.AllocatedStageObject.GetComponent<StageMonoBehavior>().mapManager = mapManager;
-                
+
+                stage.levelType = levelType;
+
                 SetStageType(stage, GetRandomStageType());
             }
         }
@@ -253,7 +257,7 @@ public class MapGenerater : MonoBehaviour
     }
     private void SetStageType(Stage stage, Stage.StageType type)
     {
-        switch (stage.type)
+        switch (stage.stageType)
         {
             case Stage.StageType.SpecialCombat:
                 stageCountInfo.specialCombatCount--;
@@ -280,7 +284,7 @@ public class MapGenerater : MonoBehaviour
                 break;
         }
 
-        stage.type = type;
+        stage.stageType = type;
         
         switch (type)
         {

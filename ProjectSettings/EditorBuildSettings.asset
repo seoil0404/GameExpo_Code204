@@ -9,9 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/ChestRoom.unity
+    guid: 2a6b5ec54f1079f438be4e0058d75300
+  - enabled: 1
+    path: Assets/Scenes/EventRoom.unity
+    guid: a378dce094556c84193c63f7463fad0c
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: ecfc518486ff79f4e89919e85b0fa1d2
+  - enabled: 1
+    path: Assets/Scenes/RestRoom.unity
+    guid: 535a8ef1da7aef946ab3b99ca2d4a46b
+  - enabled: 1
+    path: Assets/Scenes/ShopRoom.unity
+    guid: 234b2574e7e57494f9535889fed86180
+  - enabled: 1
     path: Assets/Scenes/CharacterScene.unity
     guid: 61670d2dc86c9a94392ece144abf18d3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ShopScene.unity
     guid: b639458482162de42b7e1043e2891173
   - enabled: 1

@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    [Header("Map Mode")]
+    [SerializeField] private bool isStatic;
+
     [Header("MonoBehavior")]
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject map;
     [SerializeField] private KeyManager keyManager;
     [SerializeField] private MapGenerater mapGenerater;
 
-    private IReadOnlyList<Stage> currentList;
+    private List<Stage> currentList;
     private Stage currentStage;
     private bool isCurrentStageCleared = true;
 
@@ -30,13 +33,20 @@ public class MapManager : MonoBehaviour
             currentStage.objectSpriteRenderer.sprite = mapGenerater.ClearSprite;
         }
     }
+
+    private void Awake()
+    {
+        if(isStatic) EnableMap();
+    }
+
     private void Update()
     {
         HandleMapState();
     }
+
     private void HandleMapState()
     {
-        if (Input.GetKeyDown(keyManager.MapKey))
+        if (Input.GetKeyDown(keyManager.MapKey) && !isStatic)
         {
             if (map.activeSelf)
             {
@@ -72,7 +82,7 @@ public class MapManager : MonoBehaviour
 
                     currentStage.objectSpriteRenderer.sprite = mapGenerater.FightingSprite;
 
-                    gameManager.OnStageStarted(stage.type);
+                    gameManager.OnStageStarted(stage.stageType, stage.levelType);
                 }
             }
         }

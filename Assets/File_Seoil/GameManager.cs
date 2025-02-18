@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         mapManager.ClearCurrentStage();
     }
 
-    public void OnStageStarted(Stage.StageType stageType)
+    public void OnStageStarted(Stage.StageType stageType, Stage.LevelType levelType)
     {
         // Write this.
     }

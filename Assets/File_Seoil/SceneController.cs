@@ -3,14 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public void LoadCharacterScene()
+    private void Awake()
     {
-        SceneManager.LoadScene("CharacterScene");
+        if (Scene.Controller != null) Destroy(gameObject);
+        else
+        {
+            Scene.Controller = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    public void LoadGameScene()
+    public void LoadScene(Scene.SceneType sceneType)
     {
-        SceneManager.LoadScene("GameScene");
+        LoadScene(Scene.GetSceneNameByType(sceneType));
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OnClearScene()

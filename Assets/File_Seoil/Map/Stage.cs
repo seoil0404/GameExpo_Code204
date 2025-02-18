@@ -11,9 +11,16 @@ public class Stage
     private GameObject allocatedStageObject;
     private RectTransform stageObjectRectTransform;
 
-    public StageType type;
+    public LevelType levelType;
+    public StageType stageType;
 
+    [Serializable]
+    public enum LevelType
+    {
+        Forest, Castle, DevilCastle
+    }
 
+    [Serializable]
     public enum StageType
     {
         None, SpecialCombat, Combat, Chest, Rest, Event, Boss, MagicStore
@@ -22,7 +29,7 @@ public class Stage
     public Stage()
     {
         connect = new List<Stage>();
-        type = StageType.None;
+        stageType = StageType.None;
     }
 
     public RectTransform rectTransform
