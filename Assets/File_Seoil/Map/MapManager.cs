@@ -53,7 +53,10 @@ public class MapManager : MonoBehaviour
         {
             isCurrentStageCleared = true;
             currentStage.objectSpriteRenderer.sprite = mapGenerater.ClearSprite;
+            
             if(currentStage.stageType == Stage.StageType.Boss) ClearCurrentLevel();
+
+            Scene.Controller.LoadScene(Scene.MapScene);
         }
     }
 
@@ -64,10 +67,12 @@ public class MapManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Scene.mapManager != null) Destroy(Scene.mapManager.highMap);
-
-        DontDestroyOnLoad(highMap);
-        Scene.mapManager = this;
+        if (Scene.mapManager == null)
+        {
+            DontDestroyOnLoad(highMap);
+            Scene.mapManager = this;
+        }
+        else Destroy(highMap);
 
         if (isStatic) EnableMap();
     }

@@ -67,6 +67,8 @@ public class MapGenerater : MonoBehaviour
                 return;
         }
 
+        Scene.mapManager = null;
+
         Instantiate(prefabData.MapPrefab);
         Destroy(highMap);
     }

@@ -15,7 +15,7 @@ public class RestRoom : MonoBehaviour
 
             characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp = 100;
 
-            GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
+            Scene.Controller.OnClearScene();
             Debug.Log("ÈÞ½Ä¹æ Á¾·á");
         }
     }

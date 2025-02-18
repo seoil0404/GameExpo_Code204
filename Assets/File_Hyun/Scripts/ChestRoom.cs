@@ -9,7 +9,7 @@ public class ChestRoom : MonoBehaviour
         {
             Debug.Log("겟 프-리 유물!");
 
-            GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
+            Scene.Controller.OnClearScene();
             Debug.Log("상자방 종료");
         }
     }

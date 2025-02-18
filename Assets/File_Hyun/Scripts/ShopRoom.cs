@@ -148,7 +148,7 @@ public class ShopManager : MonoBehaviour
 
     public void ShopEnd()
     {
-        GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
+        Scene.Controller.OnClearScene();
         Debug.Log("상점방 종료 종료");
     }
 }

@@ -102,6 +102,6 @@ public class SceneController : MonoBehaviour
 
     public void OnClearScene()
     {
-        Debug.Log("OnClearScene is active");
+        Scene.gameManager.ClearCurrentStage();
     }
 }
