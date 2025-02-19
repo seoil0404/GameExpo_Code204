@@ -494,6 +494,7 @@ MonoBehaviour:
   threeEnemiesChance: 0.2
   twoEnemiesChance: 0.4
   oneEnemiesChance: 0.2
+  enemies: []
 --- !u!1 &366733018
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +640,26 @@ PrefabInstance:
       propertyPath: CurrentShapeData
       value: 
       objectReference: {fileID: 11400000, guid: e21bb8d19dbed574e85b2d9356555dac, type: 2}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: squareShapeImages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: d0d599113da72564cb3494cf3ebae573, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: be2f03938495a2546a3611a634308e38, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: be630a3bd2efefe4882654ea0aea936e, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: e404471dba07e6443a16c1416b839f42, type: 3}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1669,6 +1690,26 @@ PrefabInstance:
       propertyPath: CurrentShapeData
       value: 
       objectReference: {fileID: 11400000, guid: e21bb8d19dbed574e85b2d9356555dac, type: 2}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: squareShapeImages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: d0d599113da72564cb3494cf3ebae573, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: be2f03938495a2546a3611a634308e38, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: be630a3bd2efefe4882654ea0aea936e, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: e404471dba07e6443a16c1416b839f42, type: 3}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2480,6 +2521,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: squareShapeImages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: availableColors.Array.data[0].b
       value: 1
       objectReference: {fileID: 0}
@@ -2547,6 +2592,22 @@ PrefabInstance:
       propertyPath: availableColors.Array.data[5].r
       value: 0.7109542
       objectReference: {fileID: 0}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: be2f03938495a2546a3611a634308e38, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: d0d599113da72564cb3494cf3ebae573, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: be630a3bd2efefe4882654ea0aea936e, type: 3}
+    - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
+      propertyPath: 'squareShapeImages.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8079974774478613241, guid: e404471dba07e6443a16c1416b839f42, type: 3}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

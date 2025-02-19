@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , IBeginDragHandler , IDragHandler , IEndDragHandler , IPointerDownHandler
 {
-    public GameObject squareShapeImage;
+    public List<GameObject> squareShapeImages;
     public Vector3 shapeSelectedScale;
     public Vector2 offset = new Vector2(0f, 700f);
 
@@ -123,26 +123,32 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
         CurrentShapeData = shapeData;
         TotalSquareNumber = GetNumberOfSquares(shapeData);
 
-        while (_currentShape.Count <= TotalSquareNumber)
+      
+        foreach (var block in _currentShape)
         {
-            _currentShape.Add(Instantiate(squareShapeImage, transform) as GameObject);
+            Destroy(block);
+        }
+        _currentShape.Clear();
+
+       
+        GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
+
+       
+        for (int i = 0; i < TotalSquareNumber; i++)
+        {
+            GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
+            _currentShape.Add(newBlock);
+            newBlock.SetActive(false);
         }
 
-        foreach (var square in _currentShape)
-        {
-            square.gameObject.transform.position = Vector3.zero;
-            square.gameObject.SetActive(false);
-        }
-
-        var squareRect = squareShapeImage.GetComponent<RectTransform>();
+    
+        var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
         var moveDistance = new Vector2(
             squareRect.rect.width * squareRect.localScale.x,
             squareRect.rect.height * squareRect.localScale.y
         );
 
         int currentIndexInList = 0;
-
-        
         for (var row = 0; row < shapeData.rows; row++)
         {
             for (var column = 0; column < shapeData.columns; column++)

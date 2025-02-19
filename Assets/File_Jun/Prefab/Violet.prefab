@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed1f876550378ed42bfea5c20f878137, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08840d2535c5a34479499f71f77dc636, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: -7269243033572030505}
   - component: {fileID: -9020797973415483029}
   m_Layer: 5
-  m_Name: SquareImage
+  m_Name: Violet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed1f876550378ed42bfea5c20f878137, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08840d2535c5a34479499f71f77dc636, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -238,5 +238,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 50, y: 45}
+  m_Size: {x: 15, y: 15}
   m_EdgeRadius: 0
