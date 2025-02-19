@@ -1,9 +1,13 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Scene;
 
 public class SceneController : MonoBehaviour
 {
+    [SerializeField] private GameObject loadingEffectPrefab;
+
+    private LoadingManager currentLoading;
+
     private void Awake()
     {
         if (Scene.Controller != null) Destroy(gameObject);
@@ -59,45 +63,54 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        currentLoading = Instantiate(loadingEffectPrefab).GetComponent<LoadingManager>();
 
-        switch (sceneName)
-        {
-            case Scene.MapScene:
-                Scene.mapManager.IsAllowOpen = true;
-                Scene.mapManager.IsStatic = true;
-                break;
-            case Scene.ChestRoom:
-                Scene.mapManager.DisableMap();
-                Scene.mapManager.IsAllowOpen = true;
-                Scene.mapManager.IsStatic = false;
-                break;
-            case Scene.GameScene:
-                Scene.mapManager.DisableMap();
-                Scene.mapManager.IsAllowOpen = true;
-                Scene.mapManager.IsStatic = false;
-                break;
-            case Scene.EventRoom:
-                Scene.mapManager.DisableMap();
-                Scene.mapManager.IsAllowOpen = true;
-                Scene.mapManager.IsStatic = false;
-                break;
-            case Scene.RestRoom:
-                Scene.mapManager.DisableMap();
-                Scene.mapManager.IsAllowOpen = true;
-                Scene.mapManager.IsStatic = false;
-                break;
-            case Scene.ShopRoom:
-                Scene.mapManager.DisableMap();
-                Scene.mapManager.IsAllowOpen = true;
-                Scene.mapManager.IsStatic = false;
-                break;
-            default:
-                Scene.mapManager.DisableMap();  
-                Scene.mapManager.IsAllowOpen = false;
-                Scene.mapManager.IsStatic = false;
-                break;
-        }
+        StartCoroutine(LoadSceneByCoroutine(sceneName));
+    }
+
+    private IEnumerator LoadSceneByCoroutine(string sceneName)
+    {
+        yield return new WaitForSeconds(currentLoading.GetComponent<LoadingManager>().FadeDuration);
+
+        if (Scene.mapManager != null) switch (sceneName)
+            {
+                case Scene.MapScene:
+                    Scene.mapManager.IsAllowOpen = true;
+                    Scene.mapManager.IsStatic = true;
+                    break;
+                case Scene.ChestRoom:
+                    Scene.mapManager.DisableMap();
+                    Scene.mapManager.IsAllowOpen = true;
+                    Scene.mapManager.IsStatic = false;
+                    break;
+                case Scene.GameScene:
+                    Scene.mapManager.DisableMap();
+                    Scene.mapManager.IsAllowOpen = true;
+                    Scene.mapManager.IsStatic = false;
+                    break;
+                case Scene.EventRoom:
+                    Scene.mapManager.DisableMap();
+                    Scene.mapManager.IsAllowOpen = true;
+                    Scene.mapManager.IsStatic = false;
+                    break;
+                case Scene.RestRoom:
+                    Scene.mapManager.DisableMap();
+                    Scene.mapManager.IsAllowOpen = true;
+                    Scene.mapManager.IsStatic = false;
+                    break;
+                case Scene.ShopRoom:
+                    Scene.mapManager.DisableMap();
+                    Scene.mapManager.IsAllowOpen = true;
+                    Scene.mapManager.IsStatic = false;
+                    break;
+                default:
+                    Scene.mapManager.DisableMap();
+                    Scene.mapManager.IsAllowOpen = false;
+                    Scene.mapManager.IsStatic = false;
+                    break;
+            }
+
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OnClearScene()

@@ -31,8 +31,7 @@ public class TreasureShowManager : MonoBehaviour
 
         currentTreasureImages = new List<Image>();
 
-        combatData.AddTreasureData(CombatData.TreasureType.UniversalGravitation);
-        combatData.AddTreasureData(CombatData.TreasureType.Condemnation);
+        UpdateTreasureImages();
     }
 
     public void UpdateTreasureImages()
