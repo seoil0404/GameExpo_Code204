@@ -230,6 +230,7 @@ public class Grid : MonoBehaviour
         Debug.Log($" [{selectedEnemy.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
 
         comboCount++;
+        CheckIfGameEnded();
     }
 
     public void CheckIfGameEnded()
@@ -239,13 +240,6 @@ public class Grid : MonoBehaviour
             Debug.LogWarning("enemies 리스트가 `null` 상태입니다. 게임 종료 체크를 하지 않습니다.");
             return;
         }
-
-        if (enemies.Count == 0)
-        {
-            Debug.LogWarning(" enemies 리스트가 비어 있습니다. 게임 종료 체크를 하지 않습니다.");
-            return;
-        }
-
         bool allEnemiesDefeated = enemies.All(enemy => enemy.GetComponent<EnemyStats>().GetCurrentHp() <= 0);
 
         if (allEnemiesDefeated)
