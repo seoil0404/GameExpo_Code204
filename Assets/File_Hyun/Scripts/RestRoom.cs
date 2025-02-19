@@ -6,17 +6,10 @@ public class RestRoom : MonoBehaviour
     public float HealAmount = 0.4f;
     public void HealCharacter()
     {
-        if (true)
-        {
-            Debug.Log("힐!");
-
-            int tamp = characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp;
-            Debug.Log($"{tamp}");
-
-            characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp = 100;
+            characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp += (int)(characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp * HealAmount);
+            Debug.Log($"최대체력의 {HealAmount}만큼 회복");
 
             GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
             Debug.Log("휴식방 종료");
-        }
     }
 }
