@@ -12,6 +12,10 @@ public static class Scene
     public const string ShopRoom = "ShopRoom";
     public const string MapScene = "MapScene";
 
+    public static GameManager gameManager;
+    public static MapManager mapManager;
+    public static TreasureShowManager treasureShowManager;
+
     private static SceneController controller;
 
     public static SceneController Controller

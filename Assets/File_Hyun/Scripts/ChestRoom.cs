@@ -11,7 +11,7 @@ public class ChestRoom : MonoBehaviour
 
     public void EndChestRoom()
     {
-            GameObject.Find("SceneController").GetComponent<SceneController>().OnClearScene();
-            Debug.Log("상자방 종료");
+        Scene.Controller.OnClearScene();
+        Debug.Log("상자방 종료");
     }
 }

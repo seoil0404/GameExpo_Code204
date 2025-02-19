@@ -1064,6 +1064,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304564858}
   m_CullTransparentMesh: 1
+--- !u!114 &327975834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7005431703856607660, guid: 414b2e85fb69dc54aaa18e2d063e1fdb, type: 3}
+  m_PrefabInstance: {fileID: 6043383399196988890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2190e0feb9f894fb5a5b8b36dacb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &386167828
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,7 +4219,7 @@ PrefabInstance:
     - target: {fileID: 4332549530349998543, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6043383399196988891}
+      objectReference: {fileID: 327975834}
     - target: {fileID: 4332549530349998543, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveScene
@@ -5521,17 +5532,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 414b2e85fb69dc54aaa18e2d063e1fdb, type: 3}
---- !u!114 &6043383399196988891 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3248365629009631998, guid: 414b2e85fb69dc54aaa18e2d063e1fdb, type: 3}
-  m_PrefabInstance: {fileID: 6043383399196988890}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2190e0feb9f894fb5a5b8b36dacb02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

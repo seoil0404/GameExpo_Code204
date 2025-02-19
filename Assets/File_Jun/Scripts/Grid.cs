@@ -238,14 +238,25 @@ public class Grid : MonoBehaviour
         if (characterManager != null && characterManager.GetCurrentHp() <= 0)
         {
             Debug.Log("플레이어 체력이 0이 되어 게임이 종료되었습니다!");
+            return;
         }
 
         bool allEnemiesDefeated = enemies.All(enemy => enemy.GetComponent<EnemyStats>().GetCurrentHp() <= 0);
         if (allEnemiesDefeated)
         {
-            FindAnyObjectByType<GameManager>().ClearCurrentStage();
+            var gameManager = FindAnyObjectByType<GameManager>();
+            if (gameManager != null)
+            {
+                MoveNextScene();
+            }
         }
     }
+
+    public void MoveNextScene()
+    {
+        Scene.Controller.OnClearScene();
+    }
+
 
     public void ResetGrid()
     {

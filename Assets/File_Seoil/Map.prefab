@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c079ff5dd078f4489a7d7c44c813e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   mapManager: {fileID: 1977474990436616104}
 --- !u!1001 &4604136171086776134
 PrefabInstance:
@@ -87,6 +88,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7241766113363429006}
     m_Modifications:
     - target: {fileID: 2635813539601055982, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: highMap
+      value: 
+      objectReference: {fileID: 3764439575910974007}
+    - target: {fileID: 2635813539601055982, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 6642073240175090943}
@@ -94,6 +99,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8182459156880451314, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: highMap
+      value: 
+      objectReference: {fileID: 3764439575910974007}
+    - target: {fileID: 8182459156880451314, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: mapPrefab
+      value: 
+      objectReference: {fileID: 3764439575910974007}
     - target: {fileID: 8454228719394775074, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
