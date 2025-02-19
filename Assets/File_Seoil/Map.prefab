@@ -196,9 +196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   canvas: {fileID: 4228825873320931686}
-  treasurePrefab: {fileID: 8075412121498970626, guid: fc2fe4606dac523488f6a4f92268c940, type: 3}
+  treasurePrefab: {fileID: 7445554111297285105, guid: fc2fe4606dac523488f6a4f92268c940, type: 3}
   defaultPosition: {x: 30, y: -40}
-  treasureInterval: 30
+  treasureInterval: 45
   universalGravition: {fileID: -4110795844797011256, guid: 97d474da9eefb074eaf5b7cd19e2a5be, type: 3}
   businessAcumen: {fileID: -3083720808202176516, guid: 495bf9073df1aef41a28e5df7dbb1325, type: 3}
   condemnation: {fileID: 2621704525415786886, guid: 971398150bc51ca4aacb06717195ec20, type: 3}

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
+    /*
     public static ShopManager Instance { get; private set; }
 
     public Text goldText; // 소지 골드 표시
@@ -151,4 +152,5 @@ public class ShopManager : MonoBehaviour
         Scene.Controller.OnClearScene();
         Debug.Log("상점방 종료 종료");
     }
+    */
 }
