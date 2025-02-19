@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      universalGravition_0: -4110795844797011256
+      universalGravition_1: -3136622639447449457
+      universalGravition_2: 1850367466767041961
+      universalGravition_3: 7562935675890437326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

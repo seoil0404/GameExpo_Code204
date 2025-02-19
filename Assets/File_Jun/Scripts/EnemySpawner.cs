@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
@@ -24,9 +25,12 @@ public class EnemySpawner : MonoBehaviour
         if (grid != null)
         {
             grid.enemies = enemies;
+            Debug.Log("[EnemySpawner] Grid에서 enemies 리스트를 참조하도록 설정 완료!");
         }
 
         Debug.Log($"[EnemySpawner] 시작 시 적 개수: {enemies.Count}");
+
+        StartCoroutine(DelayedSelectRandomEnemy());
     }
 
     public void SpawnEnemies()
@@ -73,10 +77,9 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log($"[EnemySpawner] 적 추가됨: {enemyInstance.name}, 현재 적 개수: {enemies.Count}");
         }
 
-      
         if (enemies.Count > 0)
         {
-            FindFirstObjectByType<Grid>().CheckIfGameEnded();
+            StartCoroutine(DelayedSelectRandomEnemy());
         }
     }
 
@@ -111,10 +114,27 @@ public class EnemySpawner : MonoBehaviour
         {
             enemies.Remove(enemy);
             Debug.Log($"[EnemySpawner] 적 제거됨: {enemy.name}, 남은 적 개수: {enemies.Count}");
+
+
+            if (enemies.Count > 0)
+            {
+                StartCoroutine(DelayedSelectRandomEnemy());
+            }
+            else
+            {
+                Debug.Log("[EnemySpawner] 모든 적이 제거됨! CheckIfGameEnded() 실행");
+                FindFirstObjectByType<Grid>().CheckIfGameEnded();
+            }
         }
         else
         {
             Debug.LogWarning($"[EnemySpawner] {enemy.name}이(가) 리스트에 없음.");
         }
+    }
+
+    private IEnumerator DelayedSelectRandomEnemy()
+    {
+        yield return new WaitForSeconds(0.1f);
+        EnemySelector.SelectRandomEnemy();
     }
 }
