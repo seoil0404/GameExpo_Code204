@@ -232,25 +232,31 @@ public class Grid : MonoBehaviour
         comboCount++;
     }
 
-    private void CheckIfGameEnded()
+    public void CheckIfGameEnded()
     {
-        var characterManager = FindAnyObjectByType<CharacterManager>();
-        if (characterManager != null && characterManager.GetCurrentHp() <= 0)
+        if (enemies == null)
         {
-            Debug.Log("플레이어 체력이 0이 되어 게임이 종료되었습니다!");
+            Debug.LogWarning("enemies 리스트가 `null` 상태입니다. 게임 종료 체크를 하지 않습니다.");
+            return;
+        }
+
+        if (enemies.Count == 0)
+        {
+            Debug.LogWarning(" enemies 리스트가 비어 있습니다. 게임 종료 체크를 하지 않습니다.");
             return;
         }
 
         bool allEnemiesDefeated = enemies.All(enemy => enemy.GetComponent<EnemyStats>().GetCurrentHp() <= 0);
+
         if (allEnemiesDefeated)
         {
-            var gameManager = FindAnyObjectByType<GameManager>();
-            if (gameManager != null)
-            {
-                MoveNextScene();
-            }
+            Debug.Log(" 모든 적이 처치되었습니다. 다음 스테이지로 이동합니다.");
+            MoveNextScene();
         }
     }
+
+
+
 
     public void MoveNextScene()
     {
