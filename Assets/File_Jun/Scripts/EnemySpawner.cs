@@ -4,23 +4,35 @@ using System.Collections.Generic;
 public class EnemySpawner : MonoBehaviour
 {
     public int currentDifficulty = 1;
-    public List<GameObject> enemyPrefabs; 
+    public List<GameObject> enemyPrefabs;
     public Transform canvasTransform;
-    public List<Transform> spawnPoints; 
+    public List<Transform> spawnPoints;
 
     public float threeEnemiesChance = 0.2f;
     public float twoEnemiesChance = 0.4f;
     public float oneEnemiesChance = 0.4f;
 
     private List<Transform> availableSpawnPoints;
+    public List<GameObject> enemies = new List<GameObject>();
 
     private void Start()
     {
         SpawnEnemies();
+
+
+        var grid = FindFirstObjectByType<Grid>();
+        if (grid != null)
+        {
+            grid.enemies = enemies;
+        }
+
+        Debug.Log($"[EnemySpawner] 시작 시 적 개수: {enemies.Count}");
     }
+
     public void SpawnEnemies()
     {
         ResetSpawnPoints();
+        enemies.Clear(); 
 
         int numberOfEnemies = DetermineEnemyCount();
         for (int i = 0; i < numberOfEnemies; i++)
@@ -55,6 +67,16 @@ public class EnemySpawner : MonoBehaviour
 
             EnemyStats stats = enemyInstance.GetComponent<EnemyStats>();
             stats.SetStats(currentDifficulty);
+            stats.SetSpawner(this);
+
+            enemies.Add(enemyInstance);
+            Debug.Log($"[EnemySpawner] 적 추가됨: {enemyInstance.name}, 현재 적 개수: {enemies.Count}");
+        }
+
+      
+        if (enemies.Count > 0)
+        {
+            FindFirstObjectByType<Grid>().CheckIfGameEnded();
         }
     }
 
@@ -81,5 +103,18 @@ public class EnemySpawner : MonoBehaviour
             return 2;
         else
             return 3;
+    }
+
+    public void RemoveEnemy(GameObject enemy)
+    {
+        if (enemies.Contains(enemy))
+        {
+            enemies.Remove(enemy);
+            Debug.Log($"[EnemySpawner] 적 제거됨: {enemy.name}, 남은 적 개수: {enemies.Count}");
+        }
+        else
+        {
+            Debug.LogWarning($"[EnemySpawner] {enemy.name}이(가) 리스트에 없음.");
+        }
     }
 }

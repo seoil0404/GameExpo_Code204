@@ -9,7 +9,12 @@ public class CombatData : ScriptableObject
     public EnemyData.HabitatType HabitatType;
     public EnemyData.EnemyType EnemyType;
 
-    private List<TreasureType> treasureData;
+    [SerializeField] private List<TreasureType> treasureData;
+
+    private void Awake()
+    {
+        if(treasureData == null) treasureData = new List<TreasureType>();
+    }
 
     public void AddTreasureData(TreasureType type)
     {

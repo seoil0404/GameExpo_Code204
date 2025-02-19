@@ -93,7 +93,7 @@ public class SceneController : MonoBehaviour
                 Scene.mapManager.IsStatic = false;
                 break;
             default:
-                Scene.mapManager.DisableMap();
+                Scene.mapManager.DisableMap();  
                 Scene.mapManager.IsAllowOpen = false;
                 Scene.mapManager.IsStatic = false;
                 break;

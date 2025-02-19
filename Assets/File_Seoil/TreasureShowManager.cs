@@ -25,13 +25,20 @@ public class TreasureShowManager : MonoBehaviour
 
     private List<Image> currentTreasureImages;
 
-    private void Awake()
+    public void Initialize()
     {
+        Scene.treasureShowManager = this;
+
         currentTreasureImages = new List<Image>();
+
+        combatData.AddTreasureData(CombatData.TreasureType.UniversalGravitation);
+        combatData.AddTreasureData(CombatData.TreasureType.Condemnation);
     }
 
     public void UpdateTreasureImages()
     {
+        Debug.Log("UpdateTreasureImages");
+
         foreach(Image item in currentTreasureImages)
         {
             Destroy(item.gameObject);
@@ -46,6 +53,8 @@ public class TreasureShowManager : MonoBehaviour
             Image currentImage = Instantiate(treasurePrefab, canvas.transform).GetComponent<Image>();
 
             currentImage.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(defaultPosition.x + index * treasureInterval, defaultPosition.y);
+
+            currentTreasureImages.Add(currentImage);
 
             switch (item)
             {
