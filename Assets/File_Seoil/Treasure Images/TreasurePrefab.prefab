@@ -213,4 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3851444b25aaf4da82cb0d4b3b6f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPosition: {x: 0, y: 0}
   descriptionPrefab: {fileID: 6042078744319287865, guid: 2f1fb3f4b51939d4eb3b888dbde20871, type: 3}
+  startScale: 0.75
+  scaleDuration: 0.2
