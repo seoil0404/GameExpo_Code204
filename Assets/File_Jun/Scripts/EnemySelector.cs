@@ -86,6 +86,10 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
             enemySelectedAtStart = true;
             StartCoroutine(DelayedSelectRandomEnemy());
         }
+
+
+
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -169,7 +173,7 @@ public class EnemySelector : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private static void SelectRandomEnemy()
+    public static void SelectRandomEnemy()
     {
         if (allEnemies == null || allEnemies.Count == 0)
         {
