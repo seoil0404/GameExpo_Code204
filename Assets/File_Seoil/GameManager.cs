@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
     [Header("MonoBehavior")]
     [SerializeField] private MapManager mapManager;
 
-    private void Awake()
+    public void Initialize()
     {
         Scene.gameManager = this;
 
-        if(mapManager == null)
+        if (mapManager == null)
         {
             Debug.LogError("mapManager is not assigned");
         }

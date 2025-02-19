@@ -8,6 +8,7 @@ public class MapManager : MonoBehaviour
     [Header("MonoBehavior")]
     [SerializeField] private GameObject highMap;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private TreasureShowManager treasureShowManager;
     [SerializeField] private GameObject map;
     [SerializeField] private KeyManager keyManager;
     [SerializeField] private MapGenerater mapGenerater;
@@ -48,13 +49,16 @@ public class MapManager : MonoBehaviour
 
     public void ClearCurrentStage()
     {
-        if (currentStage == null) Debug.LogError("Nothing To Clear");
+        if (currentStage == null)
+        {
+            Debug.LogError("Nothing To Clear");
+        }
         else
         {
             isCurrentStageCleared = true;
             currentStage.objectSpriteRenderer.sprite = mapGenerater.ClearSprite;
-            
-            if(currentStage.stageType == Stage.StageType.Boss) ClearCurrentLevel();
+
+            if (currentStage.stageType == Stage.StageType.Boss) ClearCurrentLevel();
 
             Scene.Controller.LoadScene(Scene.MapScene);
         }
@@ -70,7 +74,12 @@ public class MapManager : MonoBehaviour
         if (Scene.mapManager == null)
         {
             DontDestroyOnLoad(highMap);
+
             Scene.mapManager = this;
+            
+            gameManager.Initialize();
+            mapGenerater.Initialize();
+            treasureShowManager.Initialize();
         }
         else Destroy(highMap);
 
