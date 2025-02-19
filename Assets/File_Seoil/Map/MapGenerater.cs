@@ -73,7 +73,7 @@ public class MapGenerater : MonoBehaviour
         Destroy(highMap);
     }
     
-    private void Awake()
+    public void Initialize()
     {
         GenerateMap();
         AllocateStageGameObject();
