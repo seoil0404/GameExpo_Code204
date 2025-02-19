@@ -107,13 +107,13 @@ public class EventRoom : MonoBehaviour
                     eventText.text = "당신이 잘 알던 모험가가 당신에게 황금 사과를 건넵니다.";
                     characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp += 5;
                     Debug.Log("최대 체력 5 증가");
-                    EventEnd();
+                    RemedyEnd();
                 }
                 else
                 {
                     eventText.text = "뒤돌아 보았을때는 이미 소매치기가 저멀리 당신의 돈을 들고 도망가고 있었습니다.";
                     Debug.Log("돈 50 감소");
-                    EventEnd();
+                    RemedyEnd();
                 }
                 break;
 
@@ -121,6 +121,7 @@ public class EventRoom : MonoBehaviour
                 if (Random.value < 0.7f)
                 {
                     Debug.Log("체력 1 감소");
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 1;
                     SetEvent("아직 바닥이 보이지 않습니다.",
                     "계속 내려간다", "떠나기");
                 }
@@ -128,7 +129,7 @@ public class EventRoom : MonoBehaviour
                 {
                     eventText.text = "오랫동안 잊혀진, 묻혀진, 숨겨진 보물을 찾았습니다.";
                     Debug.Log("돈 100 획득");
-                    EventEnd();
+                    RemedyEnd();
                 }
                 break;
 
@@ -136,14 +137,17 @@ public class EventRoom : MonoBehaviour
                 if (Random.value < 0.5f)
                 {
                     eventText.text = "마녀는 붉은 포션을 주었습니다.\n포션은 쓰고 떫었습니다. 당신은 고양감을 느낍니다";
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 7;
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp += 7;
                     Debug.Log("체력 7 감소, 최대 체력 7 증가");
-                    EventEnd();
+                    RemedyEnd();
                 }
                 else
                 {
                     eventText.text = "마녀는 푸른 포션을 주었습니다.\n포션은 포션은 달고 상쾌했습니다.";
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp += 13;
                     Debug.Log("체력 13 증가");
-                    EventEnd();
+                    RemedyEnd();
                 }
                 break;
 
@@ -151,21 +155,24 @@ public class EventRoom : MonoBehaviour
                 if (Random.value < 0.8f)
                 {
                     eventText.text = "당신은 체력 포션을 찾았습니다.";
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp += 15;
                     Debug.Log("체력 15 증가");
-                    EventEnd();
+                    RemedyEnd();
                 }
                 else
                 {
                     eventText.text = "미믹이 당신을 가볍게 물고 빠르게 도망칩니다.";
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 5;
                     Debug.Log("체력 5 감소");
-                    EventEnd();
+                    RemedyEnd();
                 }
                 break;
 
             case "딜레마":
                 eventText.text = "당신은 강력한 힘이 깃든 유물을 얻었지만, 그 대가로 영원히 생명력의 일부를 잃었습니다.";
+                characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp -= 10;
                 Debug.Log("최대 체력 10 감소, 증폭하는 힘의 탈리스만 획득");
-                EventEnd();
+                RemedyEnd();
                 break;
         }
     }
@@ -175,7 +182,7 @@ public class EventRoom : MonoBehaviour
         eventText.text = "당신은 무시하고 다시 걷기 시작합니다.";
         Debug.Log("떠나기 선택 - 아무 일도 일어나지 않음");
         EscButton.onClick.AddListener(Disable);
-        EventEnd();
+        RemedyEnd();
     }
 
     private void Disable()
@@ -183,11 +190,15 @@ public class EventRoom : MonoBehaviour
         eventUI.SetActive(false);
     }
 
-    private void EventEnd()
+    private void RemedyEnd()
     {
         ChoiceButtons.SetActive(false);
         EscObject.SetActive(true);
-        EscButton.onClick.AddListener(Disable);
+        EscButton.onClick.AddListener(EndEventRoom);
+    }
+
+    private void EndEventRoom()
+    {
         Scene.Controller.OnClearScene();
         Debug.Log("이벤트방 종료");
     }
