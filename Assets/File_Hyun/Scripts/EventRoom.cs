@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EventRoom : MonoBehaviour
 {
+    [SerializeField] private Character[] characters = null;
+
     public GameObject eventUI;
     public GameObject ChoiceButtons;
     public GameObject EscObject;
@@ -103,6 +105,7 @@ public class EventRoom : MonoBehaviour
                 if (Random.value < 0.5f)
                 {
                     eventText.text = "당신이 잘 알던 모험가가 당신에게 황금 사과를 건넵니다.";
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp += 5;
                     Debug.Log("최대 체력 5 증가");
                     EventEnd();
                 }
