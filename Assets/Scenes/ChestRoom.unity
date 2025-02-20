@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a27814cab91bb8448be6b649c5e6e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
 --- !u!114 &919311874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,6 +1263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a27814cab91bb8448be6b649c5e6e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatData: {fileID: 0}
 --- !u!1 &1810546894
 GameObject:
   m_ObjectHideFlags: 0
