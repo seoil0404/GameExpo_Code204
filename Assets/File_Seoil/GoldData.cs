@@ -14,7 +14,7 @@ public class GoldData : ScriptableObject
         set
         {
             inGameGold = value;
-            ShowManager.UpdateGoldData();
+            if(ShowManager != null) ShowManager.UpdateGoldData();
         }
     }
 
