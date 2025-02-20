@@ -211,27 +211,9 @@ public class Grid : MonoBehaviour
             return;
         }
 
-        float dodgeChance = enemyStats.GetDodgeChance();
-        int dodgeRoll = Random.Range(0, 100);
-
-        Debug.Log($" 회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({dodgeChance}%)");
-
-        if (dodgeRoll < dodgeChance)
-        {
-            Debug.Log($" [{selectedEnemy.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
-            return;
-        }
-
-        int totalBlocksUsed = completedLines * columns;
-        int baseDamage = totalBlocksUsed;
-        int calculatedDamage = baseDamage + (comboCount * 2);
-
-        enemyStats.TakeDamage(calculatedDamage);
-        Debug.Log($" [{selectedEnemy.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
-
-        comboCount++;
-        CheckIfGameEnded();
+        enemyStats.ReceiveDamage(completedLines, columns);
     }
+
 
     public void CheckIfGameEnded()
     {
@@ -268,6 +250,7 @@ public class Grid : MonoBehaviour
         }
 
         Debug.Log("그리드가 리셋되었습니다.");
+        comboCount--;
         CheckIfGameEnded();
     }
 
