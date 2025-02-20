@@ -1162,6 +1162,18 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\uD328\uCE58\uB178\uD2B8\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Name
       value: PatchNotesButton
@@ -2095,6 +2107,18 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\uD1B5\uACC4\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Name
       value: StatisticsButton
@@ -2665,6 +2689,18 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\uC885\uB8CC\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Name
       value: ExitButton
@@ -2887,6 +2923,18 @@ PrefabInstance:
     - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Text
       value: "\uC124\uC815\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Name
@@ -3566,7 +3614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4253,6 +4301,18 @@ PrefabInstance:
     - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Text
       value: "\uC2DC\uC791\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Name
@@ -5385,6 +5445,18 @@ PrefabInstance:
     - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Text
       value: "\uBC31\uACFC\uC0AC\uC804\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637304489602485925, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Name
