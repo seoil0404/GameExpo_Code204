@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemies()
     {
         ResetSpawnPoints();
-        enemies.Clear(); 
+        enemies.Clear();
 
         int numberOfEnemies = DetermineEnemyCount();
         for (int i = 0; i < numberOfEnemies; i++)
@@ -73,6 +73,9 @@ public class EnemySpawner : MonoBehaviour
             stats.SetStats(currentDifficulty);
             stats.SetSpawner(this);
 
+ 
+            EnemyStats.AddEnemy(enemyInstance);
+
             enemies.Add(enemyInstance);
             Debug.Log($"[EnemySpawner] 적 추가됨: {enemyInstance.name}, 현재 적 개수: {enemies.Count}");
         }
@@ -82,6 +85,7 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(DelayedSelectRandomEnemy());
         }
     }
+
 
     private void ResetSpawnPoints()
     {
@@ -106,30 +110,6 @@ public class EnemySpawner : MonoBehaviour
             return 2;
         else
             return 3;
-    }
-
-    public void RemoveEnemy(GameObject enemy)
-    {
-        if (enemies.Contains(enemy))
-        {
-            enemies.Remove(enemy);
-            Debug.Log($"[EnemySpawner] 적 제거됨: {enemy.name}, 남은 적 개수: {enemies.Count}");
-
-
-            if (enemies.Count > 0)
-            {
-                StartCoroutine(DelayedSelectRandomEnemy());
-            }
-            else
-            {
-                Debug.Log("[EnemySpawner] 모든 적이 제거됨! CheckIfGameEnded() 실행");
-                FindFirstObjectByType<Grid>().CheckIfGameEnded();
-            }
-        }
-        else
-        {
-            Debug.LogWarning($"[EnemySpawner] {enemy.name}이(가) 리스트에 없음.");
-        }
     }
 
     private IEnumerator DelayedSelectRandomEnemy()

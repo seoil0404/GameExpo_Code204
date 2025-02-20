@@ -18,7 +18,7 @@ public class GridSquare : MonoBehaviour
 
     void Start()
     {
-        Selected = false;
+        Selected = false;   
         SquareOccupied = false;
     }
 
