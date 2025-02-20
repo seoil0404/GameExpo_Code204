@@ -3,19 +3,21 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Character[] characters = null;
+    //[SerializeField] private Character[] characters = null;
     public Text Health;
 
     public Image CurrentHpBar;
     public Image DamageInflicted;
+    public Image heeledHp;
 
     private int MaxHp = 100; //characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp
     private int CurrentHp = 60; //characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp
-    private int firstHp;
+    private int FirstHp;
 
     void Start()
     {
-        firstHp = CurrentHp;
+        heeledHp.fillAmount = 0;
+        FirstHp = CurrentHp;
         UpdateHpBar();
     }
 
@@ -46,6 +48,17 @@ public class HealthBar : MonoBehaviour
     void UpdateHpBar()
     {
         Health.text = CurrentHp + " / " + MaxHp;
-        CurrentHpBar.fillAmount = (MaxHp / CurrentHp) * 1.0f;
+        float current = CurrentHp, max = MaxHp, first = FirstHp;
+        DamageInflicted.fillAmount = first / max;
+        if (CurrentHp > FirstHp)
+        {
+            CurrentHpBar.fillAmount = first / max;
+            heeledHp.fillAmount = current / max;
+        }
+        else
+        {
+            heeledHp.fillAmount = 0;
+            CurrentHpBar.fillAmount = current / max;
+        }
     }
 }
