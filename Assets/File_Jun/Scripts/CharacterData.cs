@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class CharacterData
@@ -15,6 +16,8 @@ public class CharacterData
     [SerializeField]
     private int currentUltimateGauge;
 
+    public event Action OnHpChanged;
+
     public void Initialize()
     {
         currentHp = maxHp;
@@ -24,13 +27,21 @@ public class CharacterData
     public int MaxHp
     {
         get { return maxHp; }
-        set { currentHp = Mathf.Max(value, 1); }
+        set
+        {
+            currentHp = Mathf.Max(value, 1);
+            OnHpChanged?.Invoke();
+        }
     }
 
     public int CurrentHp
     {
         get { return currentHp; }
-        set { currentHp = Mathf.Clamp(value, 0, maxHp); }
+        set
+        {
+            currentHp = Mathf.Clamp(value, 0, maxHp);
+            OnHpChanged?.Invoke();
+        }
     }
 
     public int CurrentUltimateGauge

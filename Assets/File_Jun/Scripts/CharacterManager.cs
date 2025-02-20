@@ -42,7 +42,6 @@ public class CharacterManager : MonoBehaviour
 
         CharacterNameText.text = character.characterData.characterName;
         currentHp = character.characterData.MaxHp;
-        UpdateHpText();
         UltimateGaugeSlider.maxValue = character.characterData.ultimateGaugeMax;
         UltimateGaugeSlider.value = 0;
     }
@@ -56,13 +55,6 @@ public class CharacterManager : MonoBehaviour
             currentHp = 0;
             CharacterDied();
         }
-
-        UpdateHpText();
-    }
-
-    private void UpdateHpText()
-    {
-        PlayerHealthText.text = $"HP: {currentHp}";
     }
 
     public int GetCurrentHp()

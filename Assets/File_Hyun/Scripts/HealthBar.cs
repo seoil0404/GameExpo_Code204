@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -30,6 +31,7 @@ public class HealthBar : MonoBehaviour
     {
         heeledHp.fillAmount = 0;
         FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
+        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged += UpdateHpBar;
         UpdateHpBar();
     }
 
