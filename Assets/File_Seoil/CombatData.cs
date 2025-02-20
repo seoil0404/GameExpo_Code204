@@ -11,6 +11,14 @@ public class CombatData : ScriptableObject
 
     [SerializeField] private List<TreasureType> treasureData;
 
+    public void Initialize()
+    {
+        HabitatType = EnemyData.HabitatType.Forest;
+        EnemyType = EnemyData.EnemyType.Common;
+
+        treasureData.Clear();
+    }
+
     private void Awake()
     {
         if(treasureData == null) treasureData = new List<TreasureType>();

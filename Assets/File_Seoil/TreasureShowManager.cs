@@ -36,8 +36,6 @@ public class TreasureShowManager : MonoBehaviour
 
     public void UpdateTreasureImages()
     {
-        Debug.Log("UpdateTreasureImages");
-
         foreach(Image item in currentTreasureImages)
         {
             Destroy(item.gameObject);
