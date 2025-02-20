@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class PlayerHealthBar : MonoBehaviour
 {
-    public static HealthBar Instance { get; private set; }
+    public static PlayerHealthBar Instance { get; private set; }
 
     [SerializeField] private Character[] characters = null;
     public Text Health;
