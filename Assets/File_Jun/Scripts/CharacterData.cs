@@ -24,7 +24,7 @@ public class CharacterData
     public int MaxHp
     {
         get { return maxHp; }
-        set { currentHp = Mathf.Max(value, 0); }
+        set { currentHp = Mathf.Max(value, 1); }
     }
 
     public int CurrentHp

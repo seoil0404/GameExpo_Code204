@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopManager : MonoBehaviour
+public class ShopRoom1 : MonoBehaviour
 {
     /*
-    public static ShopManager Instance { get; private set; }
+    public static ShopRoom Instance { get; private set; }
 
     public Text goldText; // 소지 골드 표시
 

@@ -1,12 +1,20 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System;
+using static CombatData;
 
 public class ChestRoom : MonoBehaviour
 {
+    public CombatData combatData;
+
     public void GetRelics()
     {
-            Debug.Log("À¯¹° ¾òÀ½");
+        TreasureType[] availableTreasures = (TreasureType[])Enum.GetValues(typeof(TreasureType));
+        if (availableTreasures.Length == 0) return;
 
+        TreasureType randomTreasure = availableTreasures[UnityEngine.Random.Range(0, availableTreasures.Length)];
+
+        combatData.AddTreasureData(randomTreasure);
+        Debug.Log($"[LootBox] {randomTreasure} È¹µæ!");
     }
 
     public void EndChestRoom()
