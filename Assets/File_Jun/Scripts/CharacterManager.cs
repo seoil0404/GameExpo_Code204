@@ -4,13 +4,14 @@ using UnityEngine.UI;
 
 public class CharacterManager : MonoBehaviour
 {
+    [SerializeField] private Character[] characters = null;
+
     public Text CharacterNameText;
     public Slider UltimateGaugeSlider;
     public Transform SpawnPoint;
     public Character[] CharacterDataList;
     private GameObject currentCharacterInstance;
     private Character selectedCharacter;
-    private int currentHp;
 
     void Start()
     {
@@ -39,27 +40,20 @@ public class CharacterManager : MonoBehaviour
         }
 
         CharacterNameText.text = character.characterData.characterName;
-        currentHp = character.characterData.MaxHp;
         UltimateGaugeSlider.maxValue = character.characterData.ultimateGaugeMax;
         UltimateGaugeSlider.value = 0;
     }
 
     public void ApplyDamageToCharacter(int totalDamage)
     {
-        currentHp -= totalDamage;
-        currentHp = Mathf.Max(currentHp, 0);
+        characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= totalDamage;
 
-        Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {currentHp}");
+        Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp}");
 
-        if (currentHp <= 0)
+        if (characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp <= 0)
         {
             CharacterDied();
         }
-    }
-
-    public int GetCurrentHp()
-    {
-        return currentHp;
     }
 
     private void CharacterDied()

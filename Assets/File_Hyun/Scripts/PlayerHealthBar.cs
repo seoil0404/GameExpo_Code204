@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    public static PlayerHealthBar Instance { get; private set; }
-
     [SerializeField] private Character[] characters = null;
     public Text Health;
 
@@ -16,18 +14,6 @@ public class PlayerHealthBar : MonoBehaviour
     private int FirstHp;
 
     void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    void Start()
     {
         heeledHp.fillAmount = 0;
         FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;

@@ -486,11 +486,11 @@ MonoBehaviour:
   - {fileID: 2061106958389764186, guid: a698afb40db7df641b07f2847ba47806, type: 3}
   - {fileID: 4879158525831979931, guid: 60d4104402e3d694b819770531dc1acd, type: 3}
   - {fileID: 2796952719653305977, guid: c23d96e697b5b174b95a0f9bdd4f09ca, type: 3}
-  canvasTransform: {fileID: 1888725011}
   spawnPoints:
   - {fileID: 641188034}
   - {fileID: 1992245010}
   - {fileID: 1929088116}
+  canvasTransform: {fileID: 1888725011}
   threeEnemiesChance: 0.2
   twoEnemiesChance: 0.4
   oneEnemiesChance: 0.2
@@ -1725,6 +1725,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e499578bbadb0e4c87250ee01b6417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
+  - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
+  - {fileID: 11400000, guid: 91f1292720647a2418fc2ff84cc5b5a9, type: 2}
   CharacterNameText: {fileID: 366733020}
   UltimateGaugeSlider: {fileID: 1132816791}
   SpawnPoint: {fileID: 1753523601}
