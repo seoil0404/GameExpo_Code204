@@ -486,11 +486,11 @@ MonoBehaviour:
   - {fileID: 2061106958389764186, guid: a698afb40db7df641b07f2847ba47806, type: 3}
   - {fileID: 4879158525831979931, guid: 60d4104402e3d694b819770531dc1acd, type: 3}
   - {fileID: 2796952719653305977, guid: c23d96e697b5b174b95a0f9bdd4f09ca, type: 3}
-  canvasTransform: {fileID: 1888725011}
   spawnPoints:
   - {fileID: 641188034}
   - {fileID: 1992245010}
   - {fileID: 1929088116}
+  canvasTransform: {fileID: 1888725011}
   threeEnemiesChance: 0.2
   twoEnemiesChance: 0.4
   oneEnemiesChance: 0.2
@@ -1931,8 +1931,8 @@ MonoBehaviour:
   rows: 8
   squaresGap: -3
   gridSquare: {fileID: 1420046241848584601, guid: c5fd05fa8533f544a8113a26b4eeb842, type: 3}
-  startPosition: {x: -210, y: -7}
-  squareScale: 0.7
+  startPosition: {x: -210, y: -58}
+  squareScale: 0.62
   resetButton: {fileID: 1352963726}
   enemies: []
   allClearBonus: 100
@@ -2525,7 +2525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 0}
+  m_AnchoredPosition: {x: 0.000060558, y: -18.92}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113767448
@@ -2548,7 +2548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5569261578014389789, guid: 1cdb50a0722b2b94b8f3e17a86d392e8, type: 3}
+  m_Sprite: {fileID: -855298285791758126, guid: ed2d189e06693d746a8a662f01243b3c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
