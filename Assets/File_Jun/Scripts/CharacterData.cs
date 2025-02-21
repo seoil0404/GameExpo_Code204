@@ -20,7 +20,6 @@ public class CharacterData
 
     public void Initialize()
     {
-        currentHp = maxHp;
         currentUltimateGauge = 0;
     }
 

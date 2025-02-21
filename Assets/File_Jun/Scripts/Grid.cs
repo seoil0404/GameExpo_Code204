@@ -275,8 +275,6 @@ public class Grid : MonoBehaviour
     }
 
 
-
-
     public void MoveNextScene()
     {
         Scene.Controller.OnClearScene();
