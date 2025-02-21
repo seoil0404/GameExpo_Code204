@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public static EnemySpawner instance;
-
     public int currentDifficulty = 1;
     public List<GameObject> enemyPrefabs;
     public List<Transform> spawnPoints;
@@ -22,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
     {
         LoadDifficulty();
         SpawnEnemies();
+
 
         var grid = FindFirstObjectByType<Grid>();
         if (grid != null)
@@ -68,23 +67,11 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log("[EnemySpawner] 난이도 초기화됨: 1");
     }
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void SpawnEnemies()
     {
         ResetSpawnPoints();
         enemies.Clear();
+        Debug.Log("적 생성");
 
         int numberOfEnemies = DetermineEnemyCount();
         for (int i = 0; i < numberOfEnemies; i++)

@@ -8,7 +8,6 @@ public class CharacterManager : MonoBehaviour
     public Slider UltimateGaugeSlider;
     public Transform SpawnPoint;
     public Character[] CharacterDataList;
-
     private GameObject currentCharacterInstance;
     private Character selectedCharacter;
     private int currentHp;
