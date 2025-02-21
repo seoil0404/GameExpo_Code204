@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -10,29 +9,38 @@ public class EnemyStats : MonoBehaviour
     public TextMeshProUGUI healthText;
 
     private EnemySpawner spawner;
+    private CharacterManager characterManager;
     private int hp;
     private int atk;
     private float dodgeChance;
     private int comboCount = 0;
-
     private static List<GameObject> enemies = new List<GameObject>();
 
     private void Start()
     {
-        spawner = FindFirstObjectByType<EnemySpawner>();
+        characterManager = FindFirstObjectByType<CharacterManager>();
 
-        if (spawner == null)
+        if (characterManager == null)
         {
-            Debug.LogError("EnemySpawner를 찾을 수 없습니다!");
+            Debug.LogError("CharacterManager를 찾을 수 없습니다!");
         }
+
+        SetStats();
     }
 
-    public void SetStats(int difficulty)
+    public int GetHabitatLevel()
     {
-        hp = enemyData.baseHP + (5 * difficulty);
-        atk = enemyData.baseATK + (5 / Mathf.Max(difficulty % 4, 1));
-        dodgeChance = enemyData.dodgeChance;
-        UpdateHealthText();
+        switch (enemyData.habitat)
+        {
+            case EnemyData.HabitatType.Forest:
+                return 1;
+            case EnemyData.HabitatType.Castle:
+                return 2;
+            case EnemyData.HabitatType.DevilCastle:
+                return 3;
+            default:
+                return 0;
+        }
     }
 
     public void SetSpawner(EnemySpawner enemySpawner)
@@ -40,13 +48,25 @@ public class EnemyStats : MonoBehaviour
         spawner = enemySpawner;
     }
 
-    public void PerformAction(Grid grid)
+
+    public void SetStats()
     {
-        if (Random.Range(0, 2) == 0)
+        int currentDifficulty = PlayerPrefs.GetInt("Difficulty", 1);
+        int habitatLevel = GetHabitatLevel();
+
+        hp = enemyData.baseHP + (habitatLevel * currentDifficulty);
+        atk = enemyData.baseATK + (currentDifficulty / Mathf.Max(habitatLevel % 4, 1));
+        dodgeChance = enemyData.dodgeChance;
+
+        UpdateHealthText();
+    }
+
+    public void PerformTurnAction(Grid grid)
+    {
+        float actionRoll = Random.Range(0f, 1f);
+        if (actionRoll < 0.5f)
         {
-            int completedLines = 1;
-            int gridColumns = 8;
-            ReceiveDamage(completedLines, gridColumns);
+            AttackPlayer();
         }
         else
         {
@@ -54,10 +74,24 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
+    public void AttackPlayer()
+    {
+        if (characterManager == null)
+        {
+            Debug.LogError("CharacterManager를 찾을 수 없습니다!");
+            return;
+        }
+
+        int damage = atk;
+        Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+        characterManager.ApplyDamageToCharacter(damage);
+    }
+
     private void UseSkill(Grid grid)
     {
         if (enemyData.enemySkill != null)
         {
+            Debug.Log($"[{gameObject.name}]이(가) 스킬을 사용합니다!");
             enemyData.enemySkill.ActivateSkill(grid, gameObject);
         }
         else
@@ -107,7 +141,12 @@ public class EnemyStats : MonoBehaviour
     {
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
 
-        RemoveEnemy(gameObject);
+        if (Grid.instance != null)
+        {
+            Grid.instance.RemoveEnemy(gameObject);
+        }
+
+        Destroy(gameObject);
     }
 
     public static void AddEnemy(GameObject enemy)

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner instance;
+
     public int currentDifficulty = 1;
     public List<GameObject> enemyPrefabs;
-    public Transform canvasTransform;
     public List<Transform> spawnPoints;
+    public Transform canvasTransform;
 
     public float threeEnemiesChance = 0.2f;
     public float twoEnemiesChance = 0.4f;
@@ -18,8 +20,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        LoadDifficulty();
         SpawnEnemies();
-
 
         var grid = FindFirstObjectByType<Grid>();
         if (grid != null)
@@ -30,7 +32,53 @@ public class EnemySpawner : MonoBehaviour
 
         Debug.Log($"[EnemySpawner] 시작 시 적 개수: {enemies.Count}");
 
-        StartCoroutine(DelayedSelectRandomEnemy());
+        if (enemies.Count > 0)
+        {
+            StartCoroutine(DelayedSelectRandomEnemy());
+        }
+    }
+
+    public void SaveDifficulty()
+    {
+        PlayerPrefs.SetInt("Difficulty", currentDifficulty);
+        PlayerPrefs.Save();
+        Debug.Log($"[EnemySpawner] 난이도 저장됨: {currentDifficulty}");
+    }
+
+ 
+    public void LoadDifficulty()
+    {
+        currentDifficulty = PlayerPrefs.GetInt("Difficulty", 1);
+        Debug.Log($"[EnemySpawner] 저장된 난이도 불러옴: {currentDifficulty}");
+    }
+
+
+    public void IncreaseDifficulty()
+    {
+        currentDifficulty++;
+        SaveDifficulty();
+        Debug.Log($"[EnemySpawner] 난이도 증가: {currentDifficulty}");
+    }
+
+    public void ResetDifficulty()
+    {
+        PlayerPrefs.SetInt("Difficulty", 1);
+        PlayerPrefs.Save();
+        currentDifficulty = 1;
+        Debug.Log("[EnemySpawner] 난이도 초기화됨: 1");
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SpawnEnemies()
@@ -70,12 +118,17 @@ public class EnemySpawner : MonoBehaviour
             }
 
             EnemyStats stats = enemyInstance.GetComponent<EnemyStats>();
-            stats.SetStats(currentDifficulty);
-            stats.SetSpawner(this);
+            if (stats != null)
+            {
+                stats.SetStats();
+                stats.SetSpawner(this);
+            }
+            else
+            {
+                Debug.LogError($"[EnemySpawner] {enemyInstance.name}에 EnemyStats 컴포넌트가 없습니다!");
+            }
 
- 
             EnemyStats.AddEnemy(enemyInstance);
-
             enemies.Add(enemyInstance);
             Debug.Log($"[EnemySpawner] 적 추가됨: {enemyInstance.name}, 현재 적 개수: {enemies.Count}");
         }
@@ -85,7 +138,6 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(DelayedSelectRandomEnemy());
         }
     }
-
 
     private void ResetSpawnPoints()
     {

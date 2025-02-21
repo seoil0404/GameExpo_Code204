@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class CharacterManager : MonoBehaviour
 {
     public Text CharacterNameText;
-    public Text PlayerHealthText;
     public Slider UltimateGaugeSlider;
     public Transform SpawnPoint;
     public Character[] CharacterDataList;
@@ -49,10 +48,12 @@ public class CharacterManager : MonoBehaviour
     public void ApplyDamageToCharacter(int totalDamage)
     {
         currentHp -= totalDamage;
+        currentHp = Mathf.Max(currentHp, 0);
+
+        Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {currentHp}");
 
         if (currentHp <= 0)
         {
-            currentHp = 0;
             CharacterDied();
         }
     }
@@ -65,6 +66,6 @@ public class CharacterManager : MonoBehaviour
     private void CharacterDied()
     {
         Debug.Log("캐릭터가 죽었습니다!");
-
+      
     }
 }
