@@ -116,6 +116,7 @@ public class MapManager : MonoBehaviour
     }
     public void DisableMap()
     {
+        Debug.Log("Map Disabled");
         map.SetActive(false);
     }
     public void ClickedStage(GameObject stageObject)
