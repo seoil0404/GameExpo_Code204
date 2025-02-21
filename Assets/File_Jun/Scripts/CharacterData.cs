@@ -25,7 +25,7 @@ public class CharacterData
 
     public int MaxHp
     {
-        get { Debug.Log("최대체력 get"); return maxHp;}
+        get { return maxHp;}
         set
         {
             currentHp = Mathf.Max(value, 1);
@@ -36,7 +36,7 @@ public class CharacterData
 
     public int CurrentHp
     {
-        get { Debug.Log("현재체력 get"); return currentHp; }
+        get { return currentHp; }
         set
         {
             currentHp = Mathf.Clamp(value, 0, maxHp);

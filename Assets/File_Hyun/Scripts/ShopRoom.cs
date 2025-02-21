@@ -67,7 +67,7 @@ public class ShopRoom : MonoBehaviour
         {
             int healAmount = UnityEngine.Random.Range(5, 16); // 5~15 랜덤 회복
             characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp += healAmount;
-            Debug.Log($"{healAmount}안큼 회복");
+            Debug.Log($"{healAmount}만큼 회복");
         }
         else
         {

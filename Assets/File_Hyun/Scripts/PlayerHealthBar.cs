@@ -13,7 +13,7 @@ public class PlayerHealthBar : MonoBehaviour
 
     private int FirstHp;
 
-    void Awake()
+    void Start()
     {
         heeledHp.fillAmount = 0;
         FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
