@@ -24,6 +24,20 @@ public class Grid : MonoBehaviour
     private GameObject selectedEnemy;
     private int comboCount = 0;
 
+    public static Grid instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnEnable()
     {
         GameEvents.CheckIfShapeCanBePlaced += CheckIfShapeCanBePlaced;
@@ -131,10 +145,38 @@ public class Grid : MonoBehaviour
         {
             Debug.Log("모든 블록이 배치 완료! 새로운 블록을 생성합니다.");
             GameEvents.RequestNewShapes();
+
+
+            enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
+
+            if (enemies.Count > 0)
+            {
+                Debug.Log($"[CheckIfShapeCanBePlaced] 블록이 모두 배치 완료됨. 현재 적의 개수: {enemies.Count}");
+
+                foreach (var enemy in enemies)
+                {
+                    var enemyStats = enemy.GetComponent<EnemyStats>();
+                    if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+                    {
+                        enemyStats.AttackPlayer();
+                        Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
+                    }
+                    else
+                    {
+                        Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogWarning("[CheckIfShapeCanBePlaced] 공격할 적이 없습니다.");
+            }
         }
 
         CheckIfGameEnded();
     }
+
+
 
     private void CheckIfAnyLineIsCompleted()
     {
@@ -227,11 +269,10 @@ public class Grid : MonoBehaviour
         if (allEnemiesDefeated)
         {
             Debug.Log(" 모든 적이 처치되었습니다. 다음 스테이지로 이동합니다.");
+            FindFirstObjectByType<EnemySpawner>().IncreaseDifficulty();
             MoveNextScene();
         }
     }
-
-
 
 
     public void MoveNextScene()
@@ -290,6 +331,20 @@ public class Grid : MonoBehaviour
             Debug.Log($"{enemy.name}이(가) 플레이어 블록을 봉인했습니다.");
         }
     }
+
+    public void RemoveEnemy(GameObject enemy)
+    {
+        if (enemies.Contains(enemy))
+        {
+            enemies.Remove(enemy);
+            Debug.Log($"[{enemy.name}]이(가) 리스트에서 제거되었습니다.");
+        }
+        else
+        {
+            Debug.LogWarning($"[{enemy.name}]을(를) 리스트에서 찾을 수 없습니다.");
+        }
+    }
+
 
 
     public GameObject GetSelectedEnemy()

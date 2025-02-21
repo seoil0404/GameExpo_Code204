@@ -16,21 +16,21 @@ public class CharacterData
     [SerializeField]
     private int currentUltimateGauge;
 
-    public event Action OnHpChanged;
+    public Action OnHpChanged;
 
     public void Initialize()
     {
-        currentHp = maxHp;
         currentUltimateGauge = 0;
     }
 
     public int MaxHp
     {
-        get { return maxHp; }
+        get { return maxHp;}
         set
         {
             currentHp = Mathf.Max(value, 1);
             OnHpChanged?.Invoke();
+            Debug.Log($"최대체력 set: {maxHp}");
         }
     }
 
@@ -41,6 +41,7 @@ public class CharacterData
         {
             currentHp = Mathf.Clamp(value, 0, maxHp);
             OnHpChanged?.Invoke();
+            Debug.Log($"현재체력 set: {currentHp}");
         }
     }
 
