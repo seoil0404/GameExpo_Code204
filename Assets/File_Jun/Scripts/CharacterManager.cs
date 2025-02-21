@@ -9,32 +9,35 @@ public class CharacterManager : MonoBehaviour
     public Text CharacterNameText;
     public Slider UltimateGaugeSlider;
     public Transform SpawnPoint;
-    public Character[] CharacterDataList;
-    private GameObject currentCharacterInstance;
-    private Character selectedCharacter;
+    private static GameObject currentCharacterInstance;
+    private static Character selectedCharacter;
 
-    void Start()
+    private static int savedHp = -1;
+
+    void Awake()
     {
-        if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > CharacterDataList.Length)
+        if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
         {
             GameData.SelectedCharacterIndex = 1;
         }
 
-        selectedCharacter = CharacterDataList[GameData.SelectedCharacterIndex - 1];
+        selectedCharacter = characters[GameData.SelectedCharacterIndex - 1];
 
-        int savedHp = PlayerPrefs.GetInt("PlayerCurrentHp", selectedCharacter.characterData.MaxHp);
-        selectedCharacter.characterData.CurrentHp = savedHp;
+        
+        if (savedHp == -1)
+        {
+            savedHp = selectedCharacter.characterData.CurrentHp;
+        }
+        else
+        {
+            selectedCharacter.characterData.CurrentHp = savedHp; 
+        }
 
         if (currentCharacterInstance == null)
         {
             InitializeCharacter(selectedCharacter);
         }
-        else
-        {
-            UpdateCharacterUI(selectedCharacter);
-        }
     }
-
 
     public void InitializeCharacter(Character character)
     {
@@ -44,6 +47,7 @@ public class CharacterManager : MonoBehaviour
             return;
         }
 
+  
         currentCharacterInstance = Instantiate(character.characterData.characterPrefab, SpawnPoint);
 
         RectTransform rectTransform = currentCharacterInstance.GetComponent<RectTransform>();
@@ -52,28 +56,13 @@ public class CharacterManager : MonoBehaviour
             rectTransform.localPosition = Vector3.zero;
         }
 
-        character.characterData.Initialize();
-        UpdateCharacterUI(character);
-
-        Debug.Log($"[CharacterManager] 새로운 캐릭터 생성: {character.characterData.characterName}, HP: {character.characterData.CurrentHp}");
-    }
-
-    private void UpdateCharacterUI(Character character)
-    {
-        CharacterNameText.text = character.characterData.characterName;
-        UltimateGaugeSlider.maxValue = character.characterData.ultimateGaugeMax;
-        UltimateGaugeSlider.value = 0;
-
-        Debug.Log($"[CharacterManager] 캐릭터 UI 업데이트: {character.characterData.characterName}");
+        Debug.Log($"[CharacterManager] 캐릭터 프리팹 생성: {character.characterData.characterName}");
     }
 
     public void ApplyDamageToCharacter(int totalDamage)
     {
         selectedCharacter.characterData.CurrentHp -= totalDamage;
-
-
-        PlayerPrefs.SetInt("PlayerCurrentHp", selectedCharacter.characterData.CurrentHp);
-        PlayerPrefs.Save();
+        savedHp = selectedCharacter.characterData.CurrentHp;
 
         Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
 
@@ -82,7 +71,6 @@ public class CharacterManager : MonoBehaviour
             CharacterDied();
         }
     }
-
 
     private void CharacterDied()
     {

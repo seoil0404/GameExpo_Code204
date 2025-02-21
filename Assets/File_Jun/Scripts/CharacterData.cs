@@ -16,7 +16,7 @@ public class CharacterData
     [SerializeField]
     private int currentUltimateGauge;
 
-    public event Action OnHpChanged;
+    public Action OnHpChanged;
 
     public void Initialize()
     {
