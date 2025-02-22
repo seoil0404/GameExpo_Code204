@@ -14,6 +14,8 @@ public class Stage
     public LevelType levelType;
     public StageType stageType;
 
+    public Sprite AllocatedSprite;
+
     [Serializable]
     public enum LevelType
     {

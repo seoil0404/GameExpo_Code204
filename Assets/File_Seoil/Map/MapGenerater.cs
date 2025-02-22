@@ -314,30 +314,37 @@ public class MapGenerater : MonoBehaviour
         {
             case Stage.StageType.SpecialCombat:
                 stage.objectSpriteRenderer.sprite = specialCombatSprite;
+                stage.AllocatedSprite = specialCombatSprite;
                 stageCountInfo.specialCombatCount++;
                 break;
             case Stage.StageType.Chest:
                 stage.objectSpriteRenderer.sprite = chestSprite;
+                stage.AllocatedSprite = chestSprite;
                 stageCountInfo.chestCount++;
                 break;
             case Stage.StageType.Event:
                 stage.objectSpriteRenderer.sprite = eventSprite;
+                stage.AllocatedSprite = eventSprite;
                 stageCountInfo.eventCount++;
                 break;
             case Stage.StageType.Rest:
                 stage.objectSpriteRenderer.sprite = restSprite;
+                stage.AllocatedSprite = restSprite;
                 stageCountInfo.restCount++;
                 break;
             case Stage.StageType.Combat:
                 stage.objectSpriteRenderer.sprite = combatSprite;
+                stage.AllocatedSprite = combatSprite;
                 stageCountInfo.combatCount++;
                 break;
             case Stage.StageType.Boss:
                 stage.objectSpriteRenderer.sprite = bossSprite;
+                stage.AllocatedSprite = bossSprite;
                 stageCountInfo.bossCount++;
                 break;
             case Stage.StageType.MagicStore:
                 stage.objectSpriteRenderer.sprite = magicStoreSprite;
+                stage.AllocatedSprite = magicStoreSprite;
                 stageCountInfo.magicStoreCount++;
                 break;
             default:
