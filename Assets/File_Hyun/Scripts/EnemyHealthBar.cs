@@ -13,7 +13,7 @@ public class EnemyHealthBar : MonoBehaviour
             Debug.LogWarning("HealthText.text에 숫자가 아닌 값이 들어 있습니다!");
     }
 
-    void UpdateHpBar()
+    public void UpdateHpBar()
     {
         if (!float.TryParse(HealthText.text, out float currentHp))
             Debug.LogWarning("HealthText.text에 숫자가 아닌 값이 들어 있습니다!");
