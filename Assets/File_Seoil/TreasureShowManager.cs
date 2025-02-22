@@ -37,6 +37,16 @@ public class TreasureShowManager : MonoBehaviour
         UpdateTreasureImages();
     }
 
+    public void Hide()
+    {
+        foreach (Image image in currentTreasureImages) image.gameObject.SetActive(false);
+    }
+
+    public void Show()
+    {
+        foreach (Image image in currentTreasureImages) image.gameObject.SetActive(true);
+    }
+
     public void UpdateTreasureImages()
     {
         foreach(Image item in currentTreasureImages)

@@ -49,43 +49,36 @@ public class SceneController : MonoBehaviour
         if (Scene.mapManager != null) switch (sceneName)
             {
                 case Scene.MapScene:
-                    GoldShowManager.Instance.HideGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = true;
                     break;
                 case Scene.ChestRoom:
                     Scene.mapManager.DisableMap();
-                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.GameScene:
                     Scene.mapManager.DisableMap();
-                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.EventRoom:
                     Scene.mapManager.DisableMap();
-                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.RestRoom:
                     Scene.mapManager.DisableMap();
-                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.ShopRoom:
                     Scene.mapManager.DisableMap();
-                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 default:
                     Scene.mapManager.DisableMap();
-                    GoldShowManager.Instance.HideGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
@@ -95,7 +88,6 @@ public class SceneController : MonoBehaviour
 
         if(sceneName == Scene.GameScene && IsGameSceneFirstLoading)
         {
-            IsGameSceneFirstLoading = false;
             DontDestroyOnLoad(Instantiate(tutorialViewPrefab));
         }
     }

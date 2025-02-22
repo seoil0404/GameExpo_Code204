@@ -128,11 +128,16 @@ public class MapManager : MonoBehaviour
     }
     public void EnableMap()
     {
+        goldShowManager.HideGoldData();
+        treasureShowManager.Hide();
+        
         map.SetActive(true);
     }
     public void DisableMap()
     {
-        Debug.Log("Map Disabled");
+        goldShowManager.ShowGoldData();
+        treasureShowManager.Show();
+
         map.SetActive(false);
     }
     public void ClickedStage(GameObject stageObject)
