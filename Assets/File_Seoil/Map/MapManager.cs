@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour
 
     private bool isMapEnable = false;
     
-    private bool isAllowOpen = true;
+    [SerializeField] private bool isAllowOpen = true;
 
     public bool IsStatic
     {
@@ -98,7 +98,7 @@ public class MapManager : MonoBehaviour
 
     private void HandleMapState()
     {
-        if (Input.GetKeyDown(keyManager.MapKey) && !isStatic && !isAllowOpen)
+        if (Input.GetKeyDown(keyManager.MapKey) && !isStatic && isAllowOpen)
         {
             if (map.activeSelf)
             {

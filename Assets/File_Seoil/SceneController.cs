@@ -8,6 +8,8 @@ public class SceneController : MonoBehaviour
 
     private LoadingManager currentLoading;
 
+    private bool IsSceneMoving = false;
+
     private void Awake()
     {
         if (Scene.Controller != null) Destroy(gameObject);
@@ -25,14 +27,23 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        currentLoading = Instantiate(loadingEffectPrefab).GetComponent<LoadingManager>();
+        if (!IsSceneMoving)
+        {
+            currentLoading = Instantiate(loadingEffectPrefab).GetComponent<LoadingManager>();
 
-        StartCoroutine(LoadSceneByCoroutine(sceneName));
+            StartCoroutine(LoadSceneByCoroutine(sceneName));
+        }
     }
 
     private IEnumerator LoadSceneByCoroutine(string sceneName)
     {
+        IsSceneMoving = true;
+
         yield return new WaitForSeconds(currentLoading.GetComponent<LoadingManager>().FadeDuration);
+
+        Debug.Log("Scene Moved");
+
+        IsSceneMoving = false;
 
         if (Scene.mapManager != null) switch (sceneName)
             {
@@ -67,7 +78,7 @@ public class SceneController : MonoBehaviour
                     break;
                 default:
                     Scene.mapManager.DisableMap();
-                    Scene.mapManager.IsAllowOpen = false;
+                    Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
             }
