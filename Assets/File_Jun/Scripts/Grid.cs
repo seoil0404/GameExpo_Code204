@@ -161,7 +161,7 @@ public class Grid : MonoBehaviour
                     var enemyStats = enemy.GetComponent<EnemyStats>();
                     if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
                     {
-                        enemyStats.AttackPlayer();
+                        enemyStats.PerformTurnAction(this);
                         Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
                     }
                     else
@@ -293,41 +293,53 @@ public class Grid : MonoBehaviour
         CheckIfGameEnded();
     }
 
-    public void SelectEnemy(GameObject enemy)
-    {
-        selectedEnemy = enemy;
-        Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
-    }
-
     public void DestroyRandomPlayerBlock()
     {
-        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
+        List<GameObject> playerBlocks = _gridSquares
+            .Where(sq => sq.GetComponent<GridSquare>().SquareOccupied)
+            .ToList();
 
         if (playerBlocks.Count > 0)
         {
             GameObject blockToDestroy = playerBlocks[Random.Range(0, playerBlocks.Count)];
-            blockToDestroy.GetComponent<GridSquare>().ClearOccupied();
+            GridSquare gs = blockToDestroy.GetComponent<GridSquare>();
+            gs.ClearOccupied();
+            gs.Deactivate();
             Debug.Log("플레이어 블록 하나가 제거되었습니다.");
         }
     }
 
+
     public void SpawnRandomBlock()
     {
         int randomIndex = Random.Range(0, _gridSquares.Count);
-        _gridSquares[randomIndex].GetComponent<GridSquare>().SetOccupied();
+        GridSquare gs = _gridSquares[randomIndex].GetComponent<GridSquare>();
+        gs.SetOccupied();
+        gs.ActivateSquare();
         Debug.Log("랜덤한 위치에 블록이 생성되었습니다.");
     }
 
+
     public void SealRandomBlock(GameObject enemy)
     {
-        List<GameObject> playerBlocks = _gridSquares.Where(sq => sq.GetComponent<GridSquare>().SquareOccupied).ToList();
+        List<GameObject> playerBlocks = _gridSquares
+            .Where(sq => sq.GetComponent<GridSquare>().SquareOccupied)
+            .ToList();
 
         if (playerBlocks.Count > 0)
         {
             GameObject blockToSeal = playerBlocks[Random.Range(0, playerBlocks.Count)];
-            blockToSeal.GetComponent<GridSquare>().SealBlock(enemy);
+            GridSquare gs = blockToSeal.GetComponent<GridSquare>();
+            gs.SealBlock(enemy);
+            gs.activeImage.color = Color.gray;
             Debug.Log($"{enemy.name}이(가) 플레이어 블록을 봉인했습니다.");
         }
+    }
+
+    public void SelectEnemy(GameObject enemy)
+    {
+        selectedEnemy = enemy;
+        Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
     }
 
     public void RemoveEnemy(GameObject enemy)

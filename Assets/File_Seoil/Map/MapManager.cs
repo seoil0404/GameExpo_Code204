@@ -56,7 +56,10 @@ public class MapManager : MonoBehaviour
         else
         {
             isCurrentStageCleared = true;
-            currentStage.objectSpriteRenderer.sprite = mapGenerater.ClearSprite;
+
+            currentStage.objectSpriteRenderer.sprite = currentStage.AllocatedSprite;
+
+            currentStage.AllocatedStageObject.GetComponent<StageMonoBehavior>().OnCleared();
 
             if (currentStage.stageType == Stage.StageType.Boss) ClearCurrentLevel();
 
@@ -80,10 +83,21 @@ public class MapManager : MonoBehaviour
             gameManager.Initialize();
             mapGenerater.Initialize();
             treasureShowManager.Initialize();
+            Initialize();
         }
         else Destroy(highMap);
 
         if (isStatic) EnableMap();
+    }
+
+    private void Initialize()
+    {
+        currentList = mapGenerater.MapInfo[0];
+
+        foreach(Stage item in currentList)
+        {
+            item.AllocatedStageObject.GetComponent<StageButtonAnimation>().IsAllowClick = true;
+        }
     }
 
     private void Update()
@@ -123,15 +137,24 @@ public class MapManager : MonoBehaviour
     {
         if (isCurrentStageCleared)
         {
-            if(currentList == null) currentList = mapGenerater.MapInfo[0];
-
             foreach (Stage stage in currentList)
             {
                 if (stage.AllocatedStageObject == stageObject)
                 {
                     currentStage = stage;
                     isCurrentStageCleared = false;
+
+                    foreach(Stage item in currentList)
+                    {
+                        item.AllocatedStageObject.GetComponent<StageButtonAnimation>().IsAllowClick = false;
+                    }
+
                     currentList = stage.connect;
+
+                    foreach (Stage item in currentList)
+                    {
+                        item.AllocatedStageObject.GetComponent<StageButtonAnimation>().IsAllowClick = true;
+                    }
 
                     currentStage.objectSpriteRenderer.sprite = mapGenerater.FightingSprite;
 
