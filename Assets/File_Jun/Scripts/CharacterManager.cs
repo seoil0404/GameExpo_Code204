@@ -49,7 +49,7 @@ public class CharacterManager : MonoBehaviour
             rectTransform.localPosition = Vector3.zero;
         }
 
-        Debug.Log($"[CharacterManager] 캐릭터 프리팹 생성: {character.characterData.characterName}");
+        Debug.Log($"[CharacterManager] 캐릭터 프리팹 생성: {character.characterData.CharacterName}");
     }
 
     public void ApplyDamageToCharacter(int totalDamage)

@@ -18,7 +18,7 @@ public class EventRoom : MonoBehaviour
     public Button option2Button;
     public Button EscButton;
 
-    private string currentEvent; // 현재 이벤트 이름
+    private string currentEvent;
     private List<string> eventPool = new List<string> { "길가", "굴", "마녀", "보물상자", "딜레마" };
     private static bool hasDilemmaOccurred = false;
 

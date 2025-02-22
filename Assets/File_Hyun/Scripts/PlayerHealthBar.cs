@@ -10,10 +10,13 @@ public class PlayerHealthBar : MonoBehaviour
     public Image DamageInflicted;
     public Image heeledHp;
 
+    public GameObject Executable;
+
     private int FirstHp;
 
     void Start()
     {
+        Executable.SetActive(false);
         heeledHp.fillAmount = 0;
         FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
         UpdateHpBar();
@@ -36,6 +39,11 @@ public class PlayerHealthBar : MonoBehaviour
         {
             heeledHp.fillAmount = 0;
             CurrentHpBar.fillAmount = current / max;
+        }
+
+        if(characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp <= (characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp * characters[GameData.SelectedCharacterIndex - 1].characterData.ExecutionRate) / 100)
+        {
+            Executable.SetActive(true);
         }
     }
 }

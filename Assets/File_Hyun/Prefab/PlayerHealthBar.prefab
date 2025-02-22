@@ -137,6 +137,7 @@ MonoBehaviour:
   CurrentHpBar: {fileID: 8429140483348114673}
   DamageInflicted: {fileID: 3253692738752876167}
   heeledHp: {fileID: 5862895019512784425}
+  Executable: {fileID: 4161735543493297387}
 --- !u!1 &3755742472212919574
 GameObject:
   m_ObjectHideFlags: 0
