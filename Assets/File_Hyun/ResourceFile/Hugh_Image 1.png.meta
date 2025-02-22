@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 15175dbfa7c15f742a63228cad1416f4
+guid: 5512962b78b051247aee6d0005118150
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7570308330170369730
-    second: Isa_Button_0
+      213: 1970087282359435623
+    second: Hugh_Image 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Isa_Button_0
+      name: Hugh_Image 1_0
       rect:
         serializedVersion: 2
         x: 51
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c64cfb21532f0960800000000000000
-      internalID: 7570308330170369730
+      spriteID: 7618c8102f7275b10800000000000000
+      internalID: 1970087282359435623
       vertices: []
       indices: 
       edges: []
