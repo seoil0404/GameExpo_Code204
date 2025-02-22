@@ -137,8 +137,8 @@ MonoBehaviour:
   normalImages:
   - {fileID: 21300000, guid: 76c8c50a52d0dc64e86d9c0c2f9a22eb, type: 3}
   - {fileID: 21300000, guid: 76c8c50a52d0dc64e86d9c0c2f9a22eb, type: 3}
-  blueSprite: {fileID: 21300000, guid: ed1f876550378ed42bfea5c20f878137, type: 3}
-  redSprite: {fileID: 21300000, guid: 3dc2e345201326c49a0bf5c1deef8a57, type: 3}
+  blueSprite: {fileID: 21300000, guid: 3dc2e345201326c49a0bf5c1deef8a57, type: 3}
+  redSprite: {fileID: 21300000, guid: ed1f876550378ed42bfea5c20f878137, type: 3}
   yellowSprite: {fileID: 21300000, guid: 4c14db5eaf50646479219a30016d9296, type: 3}
   violetSprite: {fileID: 21300000, guid: 08840d2535c5a34479499f71f77dc636, type: 3}
   defaultSprite: {fileID: 21300000, guid: 76c8c50a52d0dc64e86d9c0c2f9a22eb, type: 3}
