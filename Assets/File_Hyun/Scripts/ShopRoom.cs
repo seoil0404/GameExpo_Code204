@@ -16,10 +16,12 @@ public class ShopRoom : MonoBehaviour
 
     private TreasureType[] shopRelics;
     private int[] relicPrices;
-    private int difficultyLevel = 1; // 난이도 값
+    private int difficultyLevel;
 
     void Start()
     {
+        difficultyLevel = FindFirstObjectByType<EnemySpawner>().currentDifficulty;
+        Debug.Log($"{difficultyLevel}");
         UpdateGoldText();
         GenerateShopItems();
     }
