@@ -1001,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2272297938379899745, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Reset
       objectReference: {fileID: 0}
     - target: {fileID: 8791602504971515972, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Pivot.x
@@ -1104,6 +1104,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+--- !u!114 &625514790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4332549530349998543, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+  m_PrefabInstance: {fileID: 625514789}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &641188033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1909,7 @@ MonoBehaviour:
   gridSquare: {fileID: 1420046241848584601, guid: c5fd05fa8533f544a8113a26b4eeb842, type: 3}
   startPosition: {x: -210, y: -58}
   squareScale: 0.62
-  resetButton: {fileID: 0}
+  resetButton: {fileID: 625514790}
   enemies: []
   allClearBonus: 100
 --- !u!114 &1817219911
