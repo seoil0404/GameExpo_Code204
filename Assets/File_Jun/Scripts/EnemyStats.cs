@@ -16,6 +16,12 @@ public class EnemyStats : MonoBehaviour
     private int comboCount = 0;
     private static List<GameObject> enemies = new List<GameObject>();
 
+    // ─────────────────────────────────────────────
+    // [EatBlock] 스킬 관련 필드
+    // ─────────────────────────────────────────────
+    private bool hasUsedEatBlock = false;  // EatBlock 스킬을 단 한 번만 사용 가능
+    private GameObject eatenBlock = null;  // 먹은 블록(필요 시 적이 죽을 때 삭제 등)
+
     private void Start()
     {
         characterManager = FindFirstObjectByType<CharacterManager>();
@@ -151,6 +157,16 @@ public class EnemyStats : MonoBehaviour
     {
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
 
+        // 적이 죽을 때 eatenBlock을 어떻게 처리할지 결정
+        // 예) 이미 필드에서 제거했으므로 별도 처리가 필요없을 수도 있고,
+        //     아니면 다른 로직(복원 등)을 구현할 수도 있음
+        if (eatenBlock != null)
+        {
+            // 여기서는 먹은 블록 오브젝트가 존재한다면 Destroy
+            Destroy(eatenBlock);
+            eatenBlock = null;
+        }
+
         if (Grid.instance != null)
         {
             Grid.instance.RemoveEnemy(gameObject);
@@ -217,5 +233,23 @@ public class EnemyStats : MonoBehaviour
     public float GetDodgeChance()
     {
         return dodgeChance;
+    }
+
+    // ─────────────────────────────────────────────
+    // [EatBlock] 관련 메서드
+    // ─────────────────────────────────────────────
+
+    // 한 번만 사용 가능
+    public bool HasUsedEatBlock()
+    {
+        return hasUsedEatBlock;
+    }
+
+    // 먹은 블록 참조를 저장하고, 스킬 사용 여부를 true로
+    public void SetEatenBlock(GameObject block)
+    {
+        eatenBlock = block;
+        hasUsedEatBlock = true;
+        Debug.Log($"{gameObject.name}이(가) EatBlock 스킬을 사용하여 블록을 먹었습니다.");
     }
 }
