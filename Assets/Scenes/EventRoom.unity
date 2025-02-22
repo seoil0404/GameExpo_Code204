@@ -1306,7 +1306,7 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
   - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
-  - {fileID: 11400000, guid: 91f1292720647a2418fc2ff84cc5b5a9, type: 2}
+  - {fileID: 11400000, guid: e377c252009c31d42b735da085234713, type: 2}
   eventUI: {fileID: 1584843870}
   ChoiceButtons: {fileID: 1991404064}
   EscObject: {fileID: 1232287217}
