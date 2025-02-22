@@ -123,21 +123,21 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         CurrentShapeData = shapeData;
         TotalSquareNumber = GetNumberOfSquares(shapeData);
 
-        
+
         foreach (var block in _currentShape)
         {
             Destroy(block);
         }
         _currentShape.Clear();
 
-        
+
         GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
 
-        
-        
+
+
         currentShapeColorName = selectedBlockPrefab.name.ToLower();
 
-        
+
         for (int i = 0; i < TotalSquareNumber; i++)
         {
             GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
@@ -145,7 +145,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
             newBlock.SetActive(false);
         }
 
-   
+
         var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
         var moveDistance = new Vector2(
             squareRect.rect.width * squareRect.localScale.x,

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class CharacterData
@@ -18,6 +19,7 @@ public class CharacterData
     private int currentUltimateGauge;
 
     public Action OnHpChanged;
+    public Action OnUltimateGaugeChanged;
 
     public void Initialize()
     {
@@ -54,6 +56,11 @@ public class CharacterData
     public int CurrentUltimateGauge
     {
         get => currentUltimateGauge;
-        set => currentUltimateGauge = Mathf.Clamp(value, 0, maxUltimateGauge);
+        set
+        {
+            currentUltimateGauge = Mathf.Clamp(value, 0, maxUltimateGauge);
+            OnUltimateGaugeChanged?.Invoke();
+            Debug.Log($"±√±ÿ±‚∞‘¿Ã¡ˆ set: {maxUltimateGauge}");
+        }
     }
 }

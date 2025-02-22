@@ -56,7 +56,28 @@ public class MinoEffectHelper : MonoBehaviour {
 
 	}
 
-	private IEnumerator RemoveEffectWhenDone(VisualEffect visualEffect) {
+    public void PlayMinoEffectSingle(GameObject gridObject)
+    {
+        StartCoroutine(GridEffectSingleCoroutine(gridObject));
+    }
+
+    private IEnumerator GridEffectSingleCoroutine(GameObject gridObject)
+    {
+        Vector2 position = gridObject.transform.position;
+
+        gridObject.GetComponent<GridSquare>().Deactivate();
+        VisualEffect effect = Instantiate(ExplosionEffect);
+
+        effect.transform.position = position;
+        effect.Play();
+
+        StartCoroutine(RemoveEffectWhenDone(effect));
+
+        yield return new WaitForSeconds(GridDeactivateDuration);
+    }
+
+
+    private IEnumerator RemoveEffectWhenDone(VisualEffect visualEffect) {
 		
 		yield return new WaitUntil(() => visualEffect.aliveParticleCount == 0);
 		Destroy(visualEffect);

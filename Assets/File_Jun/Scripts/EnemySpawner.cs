@@ -61,9 +61,9 @@ public class EnemySpawner : MonoBehaviour
 
     public void ResetDifficulty()
     {
-        PlayerPrefs.SetInt("Difficulty", 1);
+        PlayerPrefs.SetInt("Difficulty", 0);
         PlayerPrefs.Save();
-        currentDifficulty = 1;
+        currentDifficulty = 0;
         Debug.Log("[EnemySpawner] 난이도 초기화됨: 1");
     }
 

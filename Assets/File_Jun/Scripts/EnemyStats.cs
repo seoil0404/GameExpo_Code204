@@ -8,6 +8,8 @@ public class EnemyStats : MonoBehaviour
     public EnemyData enemyData;
     public Text healthText;
 
+    public EnemyHealthBar enemyHealthBar;
+
     private EnemySpawner spawner;
     private CharacterManager characterManager;
     private int hp;
@@ -151,6 +153,7 @@ public class EnemyStats : MonoBehaviour
         {
             healthText.text = $"{hp}";
         }
+        enemyHealthBar.UpdateHpBar();
     }
 
     private void Die()
