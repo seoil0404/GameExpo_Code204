@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: def286e83e8481a4399c264624e8579e
+guid: 7f597ed325c0f4a43889af71abc6d6c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6603665014198747608
-    second: UltimateGauge_0
+      213: -2273958870705210090
+    second: Event_0
+  - first:
+      213: 7082264493781469181
+    second: Event_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UltimateGauge_0
+      name: Event_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2586
-        height: 2587
+        x: 182
+        y: 191
+        width: 147
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d1cdfab75ee4ab50800000000000000
-      internalID: 6603665014198747608
+      spriteID: 61d74cd74764170e0800000000000000
+      internalID: -2273958870705210090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 124
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7c43d9802494260800000000000000
+      internalID: 7082264493781469181
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UltimateGauge_0: 6603665014198747608
+      Event_0: -2273958870705210090
+      Event_1: 7082264493781469181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
