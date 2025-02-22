@@ -462,12 +462,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1954025706253386136, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 108.0629
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954025706253386136, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 27.0158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954025706253386136, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 129.5
+      value: 176.3
       objectReference: {fileID: 0}
     - target: {fileID: 1954025706253386136, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40.7
+      value: -12.1
       objectReference: {fileID: 0}
     - target: {fileID: 1977474990436616104, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: isStatic
@@ -479,19 +487,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018444060273674319, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 46.6155
+      value: 25.187
       objectReference: {fileID: 0}
     - target: {fileID: 4018444060273674319, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 46.615
+      value: 25.1868
       objectReference: {fileID: 0}
     - target: {fileID: 4018444060273674319, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 24.299988
+      value: 120.976074
       objectReference: {fileID: 0}
     - target: {fileID: 4018444060273674319, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -35.300003
+      value: -9.18
       objectReference: {fileID: 0}
     - target: {fileID: 6456441829844089352, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_Camera
@@ -500,22 +508,6 @@ PrefabInstance:
     - target: {fileID: 6456441829844089352, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_RenderMode
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6834940684707224498, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 14ab13e33ae128749bea1f7dd9fcb1cc, type: 3}
-    - target: {fileID: 6834940684707224498, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6834940684707224498, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6834940684707224498, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7241766113363429006, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -557,6 +549,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7884587992878613704, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40.4167
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884587992878613704, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 16.6964
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884587992878613704, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -249.59665
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884587992878613704, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 215.33041
+      objectReference: {fileID: 0}
     - target: {fileID: 7986823743044855332, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -566,12 +574,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8884623341146108139, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
-      propertyPath: m_fontSize
-      value: 31.39
+      propertyPath: m_fontSizeBase
+      value: 17.49
       objectReference: {fileID: 0}
     - target: {fileID: 8884623341146108139, guid: 307f5a975b2edfd44bb28e059e1f5a30, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 31.39
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -1,7 +1,7 @@
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
-#endif
+
 
 [CustomEditor(typeof(ShapeData), false)]
 [CanEditMultipleObjects]
@@ -86,3 +86,5 @@ public class ShapeDataDrawer : Editor
         }
     }
 }
+
+#endif

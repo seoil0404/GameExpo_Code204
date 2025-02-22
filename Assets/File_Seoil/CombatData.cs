@@ -16,7 +16,8 @@ public class CombatData : ScriptableObject
         HabitatType = EnemyData.HabitatType.Forest;
         EnemyType = EnemyData.EnemyType.Common;
 
-        treasureData.Clear();
+        Debug.Log("Clear");
+        treasureData = new List<TreasureType>();
     }
 
     private void Awake()
@@ -48,8 +49,11 @@ public class CombatData : ScriptableObject
     /// UniversalGravitation : 만유인력
     /// BusinessAcumen : 사업수완
     /// Condemnation : 단죄
+    /// MoneyBack : 돈 주머니
+    /// EmergencyFood : 비상 식량
+    /// GiantResistanceHammer : 대거인용 철퇴
     /// </summary>
     [Serializable]
     public enum TreasureType
-    { UniversalGravitation, BusinessAcumen, Condemnation }
+    { UniversalGravitation, BusinessAcumen, Condemnation, MoneyBack, EmergencyFood, GiantResistanceHammer }
 }

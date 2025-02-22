@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject loadingEffectPrefab;
+    [SerializeField] private GameObject tutorialViewPrefab;
 
     private LoadingManager currentLoading;
 
     private bool IsSceneMoving = false;
+
+    public bool IsGameSceneFirstLoading = true;
 
     private void Awake()
     {
@@ -41,49 +44,60 @@ public class SceneController : MonoBehaviour
 
         yield return new WaitForSeconds(currentLoading.GetComponent<LoadingManager>().FadeDuration);
 
-        Debug.Log("Scene Moved");
-
         IsSceneMoving = false;
 
         if (Scene.mapManager != null) switch (sceneName)
             {
                 case Scene.MapScene:
+                    GoldShowManager.Instance.HideGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = true;
                     break;
                 case Scene.ChestRoom:
                     Scene.mapManager.DisableMap();
+                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.GameScene:
                     Scene.mapManager.DisableMap();
+                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.EventRoom:
                     Scene.mapManager.DisableMap();
+                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.RestRoom:
                     Scene.mapManager.DisableMap();
+                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 case Scene.ShopRoom:
                     Scene.mapManager.DisableMap();
+                    GoldShowManager.Instance.ShowGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
                 default:
                     Scene.mapManager.DisableMap();
+                    GoldShowManager.Instance.HideGoldData();
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
             }
 
         SceneManager.LoadScene(sceneName);
+
+        if(sceneName == Scene.GameScene && IsGameSceneFirstLoading)
+        {
+            IsGameSceneFirstLoading = false;
+            DontDestroyOnLoad(Instantiate(tutorialViewPrefab));
+        }
     }
 
     public void OnClearScene()
