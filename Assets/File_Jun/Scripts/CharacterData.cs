@@ -5,7 +5,6 @@ using System;
 public class CharacterData
 {
     public string characterName;
-    public int ultimateGaugeMax;
     public string ultimateSkillDescription;
     public GameObject characterPrefab;
 
@@ -13,6 +12,8 @@ public class CharacterData
     private int maxHp;
     [SerializeField]
     private int currentHp;
+    [SerializeField]
+    private int maxUltimateGauge;
     [SerializeField]
     private int currentUltimateGauge;
 
@@ -25,7 +26,7 @@ public class CharacterData
 
     public int MaxHp
     {
-        get { return maxHp;}
+        get => maxHp;
         set
         {
             currentHp = Mathf.Max(value, 1);
@@ -36,7 +37,7 @@ public class CharacterData
 
     public int CurrentHp
     {
-        get { return currentHp; }
+        get => currentHp;
         set
         {
             currentHp = Mathf.Clamp(value, 0, maxHp);
@@ -45,9 +46,14 @@ public class CharacterData
         }
     }
 
+    public int MaxUltimateGauge
+    {
+        get => maxUltimateGauge;
+    }
+
     public int CurrentUltimateGauge
     {
-        get { return currentUltimateGauge; }
-        set { currentUltimateGauge = Mathf.Max(value, 0); }
+        get => currentUltimateGauge;
+        set => currentUltimateGauge = Mathf.Clamp(value, 0, maxUltimateGauge);
     }
 }
