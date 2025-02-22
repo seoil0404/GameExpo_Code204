@@ -1359,15 +1359,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4326392766839635376, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4326392766839635376, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4326392766839635376, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4326392766839635376, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1419,12 +1419,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4326392766839635376, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8309283210566635265, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: Health
       value: 
-      objectReference: {fileID: 1184738869}
+      objectReference: {fileID: 0}
     - target: {fileID: 8309283210566635265, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1447,17 +1447,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4326392766839635376, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
   m_PrefabInstance: {fileID: 1184738867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1184738869 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 208298630965257237, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
-  m_PrefabInstance: {fileID: 1184738867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1389031032
 GameObject:
   m_ObjectHideFlags: 0
