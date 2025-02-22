@@ -13,6 +13,7 @@ public class CharacterManager : MonoBehaviour
     private static Character selectedCharacter;
 
     private static int savedHp = -1;
+    private const string HpKey = "SavedHp"; // PlayerPrefs 키
 
     void Start()
     {
@@ -23,15 +24,8 @@ public class CharacterManager : MonoBehaviour
 
         selectedCharacter = characters[GameData.SelectedCharacterIndex - 1];
 
-        
-        if (savedHp == -1)
-        {
-            savedHp = selectedCharacter.characterData.CurrentHp;
-        }
-        else
-        {
-            selectedCharacter.characterData.CurrentHp = savedHp;
-        }
+        // 저장된 HP 불러오기
+        LoadHp();
 
         if (currentCharacterInstance == null)
         {
@@ -47,7 +41,6 @@ public class CharacterManager : MonoBehaviour
             return;
         }
 
-  
         currentCharacterInstance = Instantiate(character.characterData.characterPrefab, SpawnPoint);
 
         RectTransform rectTransform = currentCharacterInstance.GetComponent<RectTransform>();
@@ -63,6 +56,7 @@ public class CharacterManager : MonoBehaviour
     {
         selectedCharacter.characterData.CurrentHp -= totalDamage;
         savedHp = selectedCharacter.characterData.CurrentHp;
+        SaveHp(); // 데미지를 받을 때 HP 저장
 
         Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
 
@@ -75,5 +69,43 @@ public class CharacterManager : MonoBehaviour
     private void CharacterDied()
     {
         Debug.Log("캐릭터가 죽었습니다!");
+    }
+
+    /// <summary>
+    /// 현재 HP를 저장하는 함수
+    /// </summary>
+    public void SaveHp()
+    {
+        PlayerPrefs.SetInt(HpKey, selectedCharacter.characterData.CurrentHp);
+        PlayerPrefs.Save();
+        Debug.Log($"[CharacterManager] HP 저장됨: {selectedCharacter.characterData.CurrentHp}");
+    }
+
+    /// <summary>
+    /// 저장된 HP를 불러오는 함수
+    /// </summary>
+    public void LoadHp()
+    {
+        if (PlayerPrefs.HasKey(HpKey))
+        {
+            savedHp = PlayerPrefs.GetInt(HpKey);
+            selectedCharacter.characterData.CurrentHp = savedHp;
+            Debug.Log($"[CharacterManager] 저장된 HP 불러옴: {savedHp}");
+        }
+        else
+        {
+            savedHp = selectedCharacter.characterData.CurrentHp;
+        }
+    }
+
+    /// <summary>
+    /// HP를 초기화하는 함수 (캐릭터의 기본 HP로 복원)
+    /// </summary>
+    public void ResetHp()
+    {
+        selectedCharacter.characterData.CurrentHp = selectedCharacter.characterData.MaxHp;
+        savedHp = selectedCharacter.characterData.MaxHp;
+        SaveHp();
+        Debug.Log($"[CharacterManager] HP 초기화됨: {selectedCharacter.characterData.CurrentHp}");
     }
 }
