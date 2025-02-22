@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &434380239951209171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7884587992878613704}
+  - component: {fileID: 7799063842530937680}
+  - component: {fileID: 7675810118719458430}
+  m_Layer: 0
+  m_Name: GoldTextBackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7884587992878613704
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434380239951209171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4607284267828063754}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -321.23682, y: 189.86812}
+  m_SizeDelta: {x: 74.8022, y: 30.9013}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7799063842530937680
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434380239951209171}
+  m_CullTransparentMesh: 1
+--- !u!114 &7675810118719458430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434380239951209171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3764439575910974007
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,8 +184,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -127,7 +202,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 17.49
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -275,14 +350,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.75311047, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 14ab13e33ae128749bea1f7dd9fcb1cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -409,11 +484,14 @@ MonoBehaviour:
   combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   canvas: {fileID: 4228825873320931686}
   treasurePrefab: {fileID: 7445554111297285105, guid: fc2fe4606dac523488f6a4f92268c940, type: 3}
-  defaultPosition: {x: 125, y: -37}
+  defaultPosition: {x: 30, y: -45}
   treasureInterval: 45
   universalGravition: {fileID: -4110795844797011256, guid: 97d474da9eefb074eaf5b7cd19e2a5be, type: 3}
   businessAcumen: {fileID: -3083720808202176516, guid: 495bf9073df1aef41a28e5df7dbb1325, type: 3}
   condemnation: {fileID: 2621704525415786886, guid: 971398150bc51ca4aacb06717195ec20, type: 3}
+  moneyBack: {fileID: 21300000, guid: dddfecac0b43fa14e84aa387915eb5e3, type: 3}
+  emergencyFood: {fileID: 21300000, guid: 5ba7be57f84817d4d9cd3c24022a33c4, type: 3}
+  giantResistanceHammer: {fileID: 21300000, guid: fe0969814b2ce4a4a8c2a53af6c2182b, type: 3}
 --- !u!1 &8549096711893090029
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +524,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7884587992878613704}
   - {fileID: 4018444060273674319}
   - {fileID: 1954025706253386136}
   m_Father: {fileID: 7241766113363429006}
@@ -532,6 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
   inGameGoldText: {fileID: 8884623341146108139}
+  goldtextBackGround: {fileID: 6834940684707224498}
 --- !u!1001 &4604136171086776134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -548,6 +628,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 6642073240175090943}
+    - target: {fileID: 2635813539601055982, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: goldShowManager
+      value: 
+      objectReference: {fileID: 1658658620409167367}
     - target: {fileID: 2635813539601055982, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: treasureShowManager
       value: 

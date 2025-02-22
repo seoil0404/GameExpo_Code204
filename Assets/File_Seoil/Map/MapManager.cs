@@ -12,6 +12,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject map;
     [SerializeField] private KeyManager keyManager;
     [SerializeField] private MapGenerater mapGenerater;
+    [SerializeField] private GoldShowManager goldShowManager;
 
     private List<Stage> currentList;
     private Stage currentStage;
@@ -83,6 +84,7 @@ public class MapManager : MonoBehaviour
             gameManager.Initialize();
             mapGenerater.Initialize();
             treasureShowManager.Initialize();
+            goldShowManager.Initialize();
             Initialize();
         }
         else Destroy(highMap);
