@@ -141,7 +141,7 @@ MonoBehaviour:
   redSprite: {fileID: 21300000, guid: ed1f876550378ed42bfea5c20f878137, type: 3}
   yellowSprite: {fileID: 21300000, guid: 4c14db5eaf50646479219a30016d9296, type: 3}
   violetSprite: {fileID: 21300000, guid: 08840d2535c5a34479499f71f77dc636, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 76c8c50a52d0dc64e86d9c0c2f9a22eb, type: 3}
+  defaultSprite: {fileID: 1381200061131884695, guid: ad1dc8c2a7e3aa2439be631e6ed4d85d, type: 3}
 --- !u!61 &909854248898178180
 BoxCollider2D:
   m_ObjectHideFlags: 0

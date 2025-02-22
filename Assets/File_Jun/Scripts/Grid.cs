@@ -312,15 +312,39 @@ public class Grid : MonoBehaviour
 
     public void SpawnRandomBlock()
     {
-        int randomIndex = Random.Range(0, _gridSquares.Count);
-        GridSquare gs = _gridSquares[randomIndex].GetComponent<GridSquare>();
+        if (_gridSquares.Count == 0)
+        {
+            Debug.LogWarning("그리드에 블록을 생성할 공간이 없습니다.");
+            return;
+        }
+
+        List<GridSquare> emptySquares = _gridSquares
+            .Select(sq => sq.GetComponent<GridSquare>())
+            .Where(sq => !sq.SquareOccupied)
+            .ToList();
+
+        if (emptySquares.Count == 0)
+        {
+            Debug.LogWarning("모든 칸이 차 있어서 블록을 생성할 공간이 없습니다.");
+            return;
+        }
+
+        int randomIndex = Random.Range(0, emptySquares.Count);
+        GridSquare gs = emptySquares[randomIndex];
+
         gs.SetOccupied();
         gs.ActivateSquare();
-        Debug.Log("랜덤한 위치에 블록이 생성되었습니다.");
+        gs.SetBlockSpriteToDefault();
+
+        Debug.Log($"블록이 랜덤한 위치({gs.SquareIndex})에 DefaultSprite로 생성되었습니다.");
+
+        CheckIfAnyLineIsCompleted();
+
     }
 
 
-    public void SealRandomBlock(GameObject enemy)
+
+    public GameObject EatRandomBlock(GameObject enemy)
     {
         List<GameObject> playerBlocks = _gridSquares
             .Where(sq => sq.GetComponent<GridSquare>().SquareOccupied)
@@ -328,11 +352,19 @@ public class Grid : MonoBehaviour
 
         if (playerBlocks.Count > 0)
         {
-            GameObject blockToSeal = playerBlocks[Random.Range(0, playerBlocks.Count)];
-            GridSquare gs = blockToSeal.GetComponent<GridSquare>();
-            gs.SealBlock(enemy);
-            gs.activeImage.color = Color.gray;
-            Debug.Log($"{enemy.name}이(가) 플레이어 블록을 봉인했습니다.");
+            GameObject blockToEat = playerBlocks[Random.Range(0, playerBlocks.Count)];
+            GridSquare gs = blockToEat.GetComponent<GridSquare>();
+            gs.ClearOccupied();
+            gs.Deactivate();
+
+            _gridSquares.Remove(blockToEat);
+            Debug.Log($"{enemy.name}이(가) 블록을 먹어 제거했습니다.");
+            return blockToEat;
+        }
+        else
+        {
+            Debug.Log("먹을 수 있는 블록이 없습니다.");
+            return null;
         }
     }
 

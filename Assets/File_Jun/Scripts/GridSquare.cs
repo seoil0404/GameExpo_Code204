@@ -136,6 +136,12 @@ public class GridSquare : MonoBehaviour
         }
     }
 
+    public void SetBlockSpriteToDefault()
+    {
+        activeImage.sprite = defaultSprite;
+    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         Selected = true;
