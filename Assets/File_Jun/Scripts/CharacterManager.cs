@@ -16,11 +16,13 @@ public class CharacterManager : MonoBehaviour
     private const string HpKey = "SavedHp";
 
     
-    public void Start()
+    public void Awake()
     {
+        
         if (Scene.Controller.IsGameSceneFirstLoading)
         {
             ResetHp();
+            SaveHp();
         }
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
         {

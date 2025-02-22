@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EgoSword_0: 9095397563011915634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
