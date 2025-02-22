@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
     [SerializeField] private Character[] characters = null;
     public Text Health;
-
     
     public Image CurrentHpBar;
     public Image DamageInflicted;
@@ -24,7 +22,9 @@ public class PlayerHealthBar : MonoBehaviour
 
     void UpdateHpBar()
     {
-        float current = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp, max = characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp, first = FirstHp;
+        float current = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
+        float max = characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp;
+        float first = FirstHp;
         DamageInflicted.fillAmount = first / max;
         Health.text = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp + " / " + characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp;
         if (characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp > FirstHp)

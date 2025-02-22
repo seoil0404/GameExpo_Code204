@@ -1,12 +1,12 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class EnemyStats : MonoBehaviour
 {
     public EnemyData enemyData;
-    public TextMeshProUGUI healthText;
+    public Text healthText;
 
     private EnemySpawner spawner;
     private CharacterManager characterManager;
@@ -133,7 +133,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (healthText != null)
         {
-            healthText.text = $"HP: {hp}";
+            healthText.text = $"{hp}";
         }
     }
 
