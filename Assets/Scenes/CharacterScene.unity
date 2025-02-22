@@ -1088,9 +1088,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterImage: {fileID: 1890776988}
-  aisa: {fileID: 1062501120, guid: 4ec6afacd28532e4fb0560acf55dea69, type: 3}
-  blarin: {fileID: 8790842832757756497, guid: e15fcdcb5531fb64a87db0f51e3a7898, type: 3}
-  hue: {fileID: -7316857407782473989, guid: 1128b7e393a42b44ebdc47e4131ef7a8, type: 3}
+  aisa: {fileID: -1302199081082338050, guid: d31740f5d70c3c345bd80d7a23470b0c, type: 3}
+  blarin: {fileID: 21300000, guid: 11fbb97922ae6f44d8908d78b8549f04, type: 3}
+  hue: {fileID: 21300000, guid: 2f016ed2bd4e64741af6b5b116c49718, type: 3}
 --- !u!4 &1397605407
 Transform:
   m_ObjectHideFlags: 0
@@ -1542,7 +1542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 137, y: 32.631}
+  m_AnchoredPosition: {x: 159.67, y: 78.9}
   m_SizeDelta: {x: 171.0261, y: 275.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1890776988

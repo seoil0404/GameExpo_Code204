@@ -123,21 +123,21 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         CurrentShapeData = shapeData;
         TotalSquareNumber = GetNumberOfSquares(shapeData);
 
-        // 기존 블록 삭제
+        
         foreach (var block in _currentShape)
         {
             Destroy(block);
         }
         _currentShape.Clear();
 
-        // 1) 리스트에서 랜덤으로 프리팹 선택
+        
         GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
 
-        // 2) 프리팹의 이름을 소문자로 읽어 currentShapeColorName에 저장
-        //    (예: 프리팹 이름이 "Blue"라면 "blue"로 저장)
+        
+        
         currentShapeColorName = selectedBlockPrefab.name.ToLower();
 
-        // 3) 총 블록 개수만큼 생성
+        
         for (int i = 0; i < TotalSquareNumber; i++)
         {
             GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
@@ -145,7 +145,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
             newBlock.SetActive(false);
         }
 
-        // 4) 배치 계산
+   
         var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
         var moveDistance = new Vector2(
             squareRect.rect.width * squareRect.localScale.x,

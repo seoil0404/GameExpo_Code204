@@ -48,7 +48,6 @@ public class EnemyStats : MonoBehaviour
         spawner = enemySpawner;
     }
 
-
     public void SetStats()
     {
         int currentDifficulty = PlayerPrefs.GetInt("Difficulty", 1);
@@ -61,19 +60,40 @@ public class EnemyStats : MonoBehaviour
         UpdateHealthText();
     }
 
+    // ─────────────────────────────────────────────
+    // 적의 턴 액션: 공격 or 스킬 중 하나 선택
+    // ─────────────────────────────────────────────
     public void PerformTurnAction(Grid grid)
     {
-        float actionRoll = Random.Range(0f, 1f);
-        if (actionRoll < 0.5f)
+        // enemyData.enemySkills가 비어 있으면 -> 무조건 공격
+        if (enemyData.enemySkills == null || enemyData.enemySkills.Count == 0)
         {
+            AttackPlayer();
+            return;
+        }
+
+        // (스킬 개수 + 1) = N+1 중 하나를 골라서
+        // 마지막 인덱스이면 공격, 그 외면 스킬
+        int totalOptions = enemyData.enemySkills.Count + 1; // +1 for Attack
+        int randomIndex = Random.Range(0, totalOptions);
+
+        if (randomIndex == enemyData.enemySkills.Count)
+        {
+            // 맨 마지막 인덱스 -> 공격
             AttackPlayer();
         }
         else
         {
-            UseSkill(grid);
+            // 0 ~ (N-1) -> 스킬
+            EnemySkill chosenSkill = enemyData.enemySkills[randomIndex];
+            Debug.Log($"[{gameObject.name}]이(가) 스킬 [{chosenSkill.skillName}]을(를) 사용합니다!");
+            chosenSkill.ActivateSkill(grid, gameObject);
         }
     }
 
+    // ─────────────────────────────────────────────
+    // 플레이어 공격
+    // ─────────────────────────────────────────────
     public void AttackPlayer()
     {
         if (characterManager == null)
@@ -87,27 +107,17 @@ public class EnemyStats : MonoBehaviour
         characterManager.ApplyDamageToCharacter(damage);
     }
 
-    private void UseSkill(Grid grid)
-    {
-        if (enemyData.enemySkill != null)
-        {
-            Debug.Log($"[{gameObject.name}]이(가) 스킬을 사용합니다!");
-            enemyData.enemySkill.ActivateSkill(grid, gameObject);
-        }
-        else
-        {
-            Debug.Log($"{gameObject.name}에게 할당된 스킬이 없습니다.");
-        }
-    }
-
+    // ─────────────────────────────────────────────
+    // 라인 클리어 시 적이 받는 데미지 처리
+    // ─────────────────────────────────────────────
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
         float dodgeRoll = Random.Range(0, 100);
-        Debug.Log($" 회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({dodgeChance}%)");
+        Debug.Log($"회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({dodgeChance}%)");
 
         if (dodgeRoll < dodgeChance)
         {
-            Debug.Log($" [{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
+            Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }
 
@@ -117,7 +127,7 @@ public class EnemyStats : MonoBehaviour
 
         hp -= calculatedDamage;
 
-        Debug.Log($" [{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
+        Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
 
         if (hp <= 0)
         {
