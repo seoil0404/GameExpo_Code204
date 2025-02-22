@@ -303,11 +303,15 @@ public class Grid : MonoBehaviour
         {
             GameObject blockToDestroy = playerBlocks[Random.Range(0, playerBlocks.Count)];
             GridSquare gs = blockToDestroy.GetComponent<GridSquare>();
+
+            MinoEffectHelper.Instance.PlayMinoEffectSingle(blockToDestroy);
+
             gs.ClearOccupied();
             gs.Deactivate();
             Debug.Log("플레이어 블록 하나가 제거되었습니다.");
         }
     }
+
 
 
     public void SpawnRandomBlock()
@@ -340,32 +344,6 @@ public class Grid : MonoBehaviour
 
         CheckIfAnyLineIsCompleted();
 
-    }
-
-
-
-    public GameObject EatRandomBlock(GameObject enemy)
-    {
-        List<GameObject> playerBlocks = _gridSquares
-            .Where(sq => sq.GetComponent<GridSquare>().SquareOccupied)
-            .ToList();
-
-        if (playerBlocks.Count > 0)
-        {
-            GameObject blockToEat = playerBlocks[Random.Range(0, playerBlocks.Count)];
-            GridSquare gs = blockToEat.GetComponent<GridSquare>();
-            gs.ClearOccupied();
-            gs.Deactivate();
-
-            _gridSquares.Remove(blockToEat);
-            Debug.Log($"{enemy.name}이(가) 블록을 먹어 제거했습니다.");
-            return blockToEat;
-        }
-        else
-        {
-            Debug.Log("먹을 수 있는 블록이 없습니다.");
-            return null;
-        }
     }
 
     public void SelectEnemy(GameObject enemy)
