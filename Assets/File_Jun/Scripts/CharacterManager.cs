@@ -15,7 +15,7 @@ public class CharacterManager : MonoBehaviour
     private static int savedHp = -1;
     private const string HpKey = "SavedHp"; // PlayerPrefs 키
 
-    void Start()
+    void Awake()
     {
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
         {
@@ -24,7 +24,14 @@ public class CharacterManager : MonoBehaviour
 
         selectedCharacter = characters[GameData.SelectedCharacterIndex - 1];
 
-        // 저장된 HP 불러오기
+        if (Scene.Controller.IsGameSceneFirstLoading)
+        {
+            ResetHp();
+            SaveHp();
+            Scene.Controller.IsGameSceneFirstLoading = false;
+        }
+
+
         LoadHp();
 
         if (currentCharacterInstance == null)

@@ -17,6 +17,7 @@ public class EnemyStats : MonoBehaviour
     private float dodgeChance;
     private int comboCount = 0;
     private static List<GameObject> enemies = new List<GameObject>();
+    private int damageReceivedLastTurn = 0;
 
     // ─────────────────────────────────────────────
     // [EatBlock] 스킬 관련 필드
@@ -115,6 +116,17 @@ public class EnemyStats : MonoBehaviour
         characterManager.ApplyDamageToCharacter(damage);
     }
 
+    public void IncreaseATK()
+    {
+        int increaseAmount = damageReceivedLastTurn / 2;
+        atk += increaseAmount;
+        Debug.Log($"[{gameObject.name}]이(가) 지난 턴 피해({damageReceivedLastTurn})의 절반만큼 ATK 증가! 현재 ATK: {atk}");
+
+        // 받은 피해 초기화 (다음 턴을 위해)
+        damageReceivedLastTurn = 0;
+    }
+
+
     // ─────────────────────────────────────────────
     // 라인 클리어 시 적이 받는 데미지 처리
     // ─────────────────────────────────────────────
@@ -133,8 +145,10 @@ public class EnemyStats : MonoBehaviour
         int baseDamage = totalBlocksUsed;
         int calculatedDamage = baseDamage + (comboCount * 2);
 
-        hp -= calculatedDamage;
+        // 받은 피해 저장
+        damageReceivedLastTurn = calculatedDamage;
 
+        hp -= calculatedDamage;
         Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
 
         if (hp <= 0)
@@ -146,6 +160,7 @@ public class EnemyStats : MonoBehaviour
         comboCount++;
         UpdateHealthText();
     }
+
 
     private void UpdateHealthText()
     {

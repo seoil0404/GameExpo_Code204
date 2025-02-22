@@ -34,6 +34,14 @@ public class GridSquare : MonoBehaviour
         return hooverImage.gameObject.activeSelf;
     }
 
+    public void DeactivateBlock()
+    {
+        activeImage.gameObject.SetActive(false);
+        SquareOccupied = false;
+        Selected = false;
+    }
+
+
     public void ActivateSquare()
     {
         hooverImage.gameObject.SetActive(false);
