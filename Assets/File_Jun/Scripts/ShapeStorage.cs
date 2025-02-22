@@ -7,6 +7,7 @@ public class ShapeStorage : MonoBehaviour
 {
     public List<ShapeData> shapeData;
     public List<Shape> shapeList;
+    public Transform spawnPoint;
 
     void Start()
     {

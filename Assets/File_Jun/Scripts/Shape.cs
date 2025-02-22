@@ -210,6 +210,21 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         offset = (Vector2)rectTransform.localPosition - localMousePosition;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log($"Collision detected with: {collision.gameObject.name}");
+
+        if (collision.gameObject.name == "ShapeStorage")
+        {
+            Debug.Log("ShapeStorage와 충돌 확인!");
+
+            GameEvents.StoreShape?.Invoke(this);
+            gameObject.SetActive(false); 
+        }
+    }
+
+
+
     public void OnDrag(PointerEventData eventData)
     {
         Vector2 localMousePosition;
@@ -226,8 +241,29 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     public void OnEndDrag(PointerEventData eventData)
     {
         GetComponent<RectTransform>().localScale = _shapeStartScale;
+
+        if (IsPlacedOnStorage())
+        {
+            return;
+        }
+
         GameEvents.CheckIfShapeCanBePlaced();
     }
+
+
+    private bool IsPlacedOnStorage()
+    {
+        Collider2D[] colliders = Physics2D.OverlapPointAll(transform.position);
+        foreach (var col in colliders)
+        {
+            if (col.gameObject.name == "ShapeStorage")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public void OnPointerDown(PointerEventData eventData)
     {
