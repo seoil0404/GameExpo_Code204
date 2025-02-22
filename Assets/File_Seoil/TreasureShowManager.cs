@@ -22,6 +22,9 @@ public class TreasureShowManager : MonoBehaviour
     [SerializeField] private Sprite universalGravition;
     [SerializeField] private Sprite businessAcumen;
     [SerializeField] private Sprite condemnation;
+    [SerializeField] private Sprite moneyBack;
+    [SerializeField] private Sprite emergencyFood;
+    [SerializeField] private Sprite giantResistanceHammer;
 
     private List<Image> currentTreasureImages;
 
@@ -68,6 +71,18 @@ public class TreasureShowManager : MonoBehaviour
                 case CombatData.TreasureType.Condemnation:
                     currentImage.sprite = condemnation;
                     currentDescription.DescriptionText = "설명\r\n주인 또한 집어삼키는 검인 에고 소드는 끊임없이 먹이를 갈망한다.\r\n\r\n능력\r\n+ 처형율 5%\r\n처형율에 따라 모든 것을 처형합니다. (본인도 처형합니다.)\r\nHP 게이지에 처형 가능 HP가 표시됩니다.";
+                    break;
+                case CombatData.TreasureType.MoneyBack:
+                    currentImage.sprite = moneyBack;
+                    currentDescription.DescriptionText = "설명\r\n누군가 떨어트린 돈 주머니입니다.\r\n\r\n능력\r\n이 유물 획득시 즉시 돈 100추가";
+                    break;
+                case CombatData.TreasureType.EmergencyFood:
+                    currentImage.sprite = emergencyFood;
+                    currentDescription.DescriptionText = "설명\r\n사람들에게 하여금 부담을 덜어주고 약간의 허기를 잊게하는 존재입니다.\r\n\r\n능력\r\n스테이지 클리어시 체력 6 회복";
+                    break;
+                case CombatData.TreasureType.GiantResistanceHammer:
+                    currentImage.sprite = giantResistanceHammer;
+                    currentDescription.DescriptionText = "설명\r\n한때 전장에서 많은 활약을 했습니다.\r\n\r\n능력\r\n특수 전투방 난이도 절반";
                     break;
                 default:
                     Debug.LogError("Unknown TrasureType");

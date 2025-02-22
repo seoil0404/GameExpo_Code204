@@ -17,6 +17,8 @@ public class CharacterData
     private int maxUltimateGauge;
     [SerializeField]
     private int currentUltimateGauge;
+    [SerializeField]
+    private int executionRate;
 
     public Action OnHpChanged;
     public Action OnUltimateGaugeChanged;
@@ -61,6 +63,17 @@ public class CharacterData
             currentUltimateGauge = Mathf.Clamp(value, 0, maxUltimateGauge);
             OnUltimateGaugeChanged?.Invoke();
             Debug.Log($"±Ã±Ø±â°ÔÀÌÁö set: {maxUltimateGauge}");
+        }
+    }
+
+    public int ExecutionRate
+    {
+        get => executionRate;
+        set
+        {
+            executionRate = Mathf.Clamp(value, 0, 100);
+            OnHpChanged?.Invoke();
+            Debug.Log($"Ã³ÇüÀ² set: {executionRate}");
         }
     }
 }

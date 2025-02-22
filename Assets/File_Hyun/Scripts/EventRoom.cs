@@ -7,6 +7,7 @@ public class EventRoom : MonoBehaviour
 {
     [SerializeField] private Character[] characters = null;
 
+    public GoldData goldData;
     public GameObject eventUI;
     public GameObject ChoiceButtons;
     public GameObject EscObject;
@@ -23,6 +24,7 @@ public class EventRoom : MonoBehaviour
 
     private void Start()
     {
+        eventPool.Remove("딜레마"); //
         ChoiceButtons.SetActive(true);
         EscObject.SetActive(false);
         TriggerRandomEvent();
@@ -127,8 +129,9 @@ public class EventRoom : MonoBehaviour
                 }
                 else
                 {
-                    eventText.text = "오랫동안 잊혀진, 묻혀진, 숨겨진 보물을 찾았습니다.";
+                    goldData.InGameGold += 100;
                     Debug.Log("돈 100 획득");
+                    eventText.text = "오랫동안 잊혀진, 묻혀진, 숨겨진 보물을 찾았습니다.";
                     RemedyEnd();
                 }
                 break;
@@ -171,6 +174,7 @@ public class EventRoom : MonoBehaviour
             case "딜레마":
                 eventText.text = "당신은 강력한 힘이 깃든 유물을 얻었지만, 그 대가로 영원히 생명력의 일부를 잃었습니다.";
                 characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp -= 10;
+
                 Debug.Log("최대 체력 10 감소, 증폭하는 힘의 탈리스만 획득");
                 RemedyEnd();
                 break;
