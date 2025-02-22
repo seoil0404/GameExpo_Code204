@@ -20,7 +20,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     private Vector3 _startPosition;
     private bool _shapeActive = true;
 
-
     private string currentShapeColorName = "default";
     public string CurrentShapeColorName => currentShapeColorName;
 
@@ -40,7 +39,10 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     private void OnEnable()
     {
+        GameEvents.MoveShapeToStartPosition -= MoveShapeToStartPosition;
         GameEvents.MoveShapeToStartPosition += MoveShapeToStartPosition;
+
+        GameEvents.SetShapeInactive -= SetShapeInactive;
         GameEvents.SetShapeInactive += SetShapeInactive;
     }
 
@@ -94,10 +96,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         }
     }
 
-    void Start()
-    {
-    }
-
     public void RequestNewShape(ShapeData shapeData)
     {
         _transform.localPosition = _startPosition;
@@ -123,21 +121,15 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         CurrentShapeData = shapeData;
         TotalSquareNumber = GetNumberOfSquares(shapeData);
 
-        
         foreach (var block in _currentShape)
         {
             Destroy(block);
         }
         _currentShape.Clear();
 
-        
         GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
+        currentShapeColorName = selectedBlockPrefab.name.Replace("(Clone)", "").ToLower();
 
-        
-        
-        currentShapeColorName = selectedBlockPrefab.name.ToLower();
-
-        
         for (int i = 0; i < TotalSquareNumber; i++)
         {
             GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
@@ -145,7 +137,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
             newBlock.SetActive(false);
         }
 
-   
         var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
         var moveDistance = new Vector2(
             squareRect.rect.width * squareRect.localScale.x,
@@ -184,13 +175,9 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         return shiftY;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-    }
+    public void OnPointerClick(PointerEventData eventData) { }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-    }
+    public void OnPointerUp(PointerEventData eventData) { }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -203,7 +190,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
             eventData.position,
-            Camera.main,
+            canvas.worldCamera,
             out localMousePosition
         );
 
@@ -226,15 +213,49 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     public void OnEndDrag(PointerEventData eventData)
     {
         GetComponent<RectTransform>().localScale = _shapeStartScale;
-        GameEvents.CheckIfShapeCanBePlaced();
+
+        // 특정 영역 안에 들어가 있는지 확인
+        if (CheckIfInsideBoard(out Vector3 targetPosition))
+        {
+            SnapToCenter(targetPosition); // 블록을 중앙으로 정렬
+        }
+        else
+        {
+            GameEvents.CheckIfShapeCanBePlaced();
+        }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-    }
+    public void OnPointerDown(PointerEventData eventData) { }
 
     private void MoveShapeToStartPosition()
     {
         _transform.localPosition = _startPosition;
+    }
+
+    /// <summary>
+    /// 블록이 특정 영역(보드) 안에 있는지 확인하는 메서드
+    /// </summary>
+    private bool CheckIfInsideBoard(out Vector3 targetPosition)
+    {
+        targetPosition = Vector3.zero;
+
+        // Raycast를 사용하여 보드의 특정 영역 탐색
+        RaycastHit2D hit = Physics2D.Raycast(_transform.position, Vector2.zero);
+
+        if (hit.collider != null && hit.collider.CompareTag("BoardCell")) // "BoardCell" 태그를 사용
+        {
+            targetPosition = hit.collider.transform.position; // 보드 칸의 위치 반환
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// 블록을 특정 영역의 중앙으로 이동시키는 메서드
+    /// </summary>
+    private void SnapToCenter(Vector3 centerPosition)
+    {
+        _transform.position = centerPosition;
     }
 }

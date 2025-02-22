@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Blayrin_Image_0: -6903102276436710746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

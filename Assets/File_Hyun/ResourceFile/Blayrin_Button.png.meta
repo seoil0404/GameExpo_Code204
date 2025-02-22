@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Blayrin_Button_0: -1821724474993122867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
