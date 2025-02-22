@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+[CustomEditor(typeof(ShapeData), false)]
+[CanEditMultipleObjects]
 [System.Serializable]
 public class ShapeDataDrawer : Editor
 {

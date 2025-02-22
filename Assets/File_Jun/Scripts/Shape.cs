@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
-    public List<GameObject> squareShapeImages;  // 이름이 "blue", "red", "yellow", "violet" 등으로 설정되어 있음
+    public List<GameObject> squareShapeImages;
     public Vector3 shapeSelectedScale;
     public Vector2 offset = new Vector2(0f, 700f);
 
@@ -20,7 +20,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     private Vector3 _startPosition;
     private bool _shapeActive = true;
 
-    // 선택된 블록의 색상을 나타내는 문자열 (예: "blue", "red", ...)
+
     private string currentShapeColorName = "default";
     public string CurrentShapeColorName => currentShapeColorName;
 
