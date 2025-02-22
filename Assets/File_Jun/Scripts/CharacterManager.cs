@@ -23,7 +23,9 @@ public class CharacterManager : MonoBehaviour
         {
             ResetHp();
             SaveHp();
+            Scene.Controller.IsGameSceneFirstLoading = false;
         }
+
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
         {
             GameData.SelectedCharacterIndex = 1;
@@ -63,7 +65,7 @@ public class CharacterManager : MonoBehaviour
     {
         selectedCharacter.characterData.CurrentHp -= totalDamage;
         savedHp = selectedCharacter.characterData.CurrentHp;
-        SaveHp(); // 데미지를 받을 때 HP 저장
+        SaveHp();
 
         Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
 
