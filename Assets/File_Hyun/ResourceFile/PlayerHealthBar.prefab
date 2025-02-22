@@ -131,8 +131,8 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
   - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
-  - {fileID: 11400000, guid: 91f1292720647a2418fc2ff84cc5b5a9, type: 2}
-  Health: {fileID: 0}
+  - {fileID: 0}
+  Health: {fileID: 3271570115201956960}
   CurrentHpBar: {fileID: 8429140483348114673}
   DamageInflicted: {fileID: 3253692738752876167}
   heeledHp: {fileID: 5862895019512784425}
