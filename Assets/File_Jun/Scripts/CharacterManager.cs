@@ -14,7 +14,7 @@ public class CharacterManager : MonoBehaviour
 
     private static int savedHp = -1;
 
-    void Awake()
+    void Start()
     {
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
         {
@@ -30,7 +30,7 @@ public class CharacterManager : MonoBehaviour
         }
         else
         {
-            selectedCharacter.characterData.CurrentHp = savedHp; 
+            selectedCharacter.characterData.CurrentHp = savedHp;
         }
 
         if (currentCharacterInstance == null)

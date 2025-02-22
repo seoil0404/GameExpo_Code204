@@ -16,8 +16,8 @@ public class PlayerHealthBar : MonoBehaviour
     {
         heeledHp.fillAmount = 0;
         FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
-        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = UpdateHpBar;
         UpdateHpBar();
+        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = UpdateHpBar;
     }
 
     void UpdateHpBar()
