@@ -13,19 +13,10 @@ public class CharacterManager : MonoBehaviour
     private static Character selectedCharacter;
 
     private static int savedHp = -1;
-    private const string HpKey = "SavedHp";
+    private const string HpKey = "SavedHp"; // PlayerPrefs 키
 
-    
-    public void Awake()
+    void Start()
     {
-        
-        if (Scene.Controller.IsGameSceneFirstLoading)
-        {
-            ResetHp();
-            SaveHp();
-            Scene.Controller.IsGameSceneFirstLoading = false;
-        }
-
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
         {
             GameData.SelectedCharacterIndex = 1;
@@ -33,7 +24,7 @@ public class CharacterManager : MonoBehaviour
 
         selectedCharacter = characters[GameData.SelectedCharacterIndex - 1];
 
-
+        // 저장된 HP 불러오기
         LoadHp();
 
         if (currentCharacterInstance == null)
@@ -58,7 +49,7 @@ public class CharacterManager : MonoBehaviour
             rectTransform.localPosition = Vector3.zero;
         }
 
-        Debug.Log($"[CharacterManager] 캐릭터 프리팹 생성: {character.characterData.CharacterName}");
+        Debug.Log($"[CharacterManager] 캐릭터 프리팹 생성: {character.characterData.characterName}");
     }
 
     public void ApplyDamageToCharacter(int totalDamage)
@@ -108,8 +99,8 @@ public class CharacterManager : MonoBehaviour
     }
 
     /// <summary>
-    // HP를 초기화하는 함수 (캐릭터의 기본 HP로 복원)
-    // </summary>
+    /// HP를 초기화하는 함수 (캐릭터의 기본 HP로 복원)
+    /// </summary>
     public void ResetHp()
     {
         selectedCharacter.characterData.CurrentHp = selectedCharacter.characterData.MaxHp;

@@ -5,8 +5,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class CharacterData
 {
-    [SerializeField]
-    private string characterName;
+    public string characterName;
     public string ultimateSkillDescription;
     public GameObject characterPrefab;
 
@@ -27,11 +26,6 @@ public class CharacterData
     public void Initialize()
     {
         currentUltimateGauge = 0;
-    }
-
-    public string CharacterName
-    {
-        get => characterName;
     }
 
     public int MaxHp

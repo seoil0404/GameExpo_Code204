@@ -12,7 +12,7 @@ public class ShopRoom : MonoBehaviour
     public CombatData combatData;
     public Text[] relicTexts;
     public Button[] relicButtons;
-    public Text characterName;
+    public Text goldText;
 
     private TreasureType[] shopRelics;
     private int[] relicPrices;
@@ -20,9 +20,9 @@ public class ShopRoom : MonoBehaviour
 
     void Start()
     {
-        characterName.text = characters[GameData.SelectedCharacterIndex - 1].characterData.CharacterName;
         difficultyLevel = FindFirstObjectByType<EnemySpawner>().currentDifficulty;
         Debug.Log($"{difficultyLevel}");
+        UpdateGoldText();
         GenerateShopItems();
     }
 
@@ -60,6 +60,7 @@ public class ShopRoom : MonoBehaviour
         {
             Debug.Log("골드가 부족합니다!");
         }
+        UpdateGoldText();
     }
 
     public void HealCharacter()
@@ -73,6 +74,15 @@ public class ShopRoom : MonoBehaviour
         else
         {
             Debug.Log("골드가 부족합니다!");
+        }
+        UpdateGoldText();
+    }
+
+    void UpdateGoldText()
+    {
+        if (goldText != null)
+        {
+            goldText.text = $"{goldData.InGameGold}G";
         }
     }
 

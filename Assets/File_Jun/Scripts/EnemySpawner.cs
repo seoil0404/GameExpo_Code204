@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     private List<Transform> availableSpawnPoints;
     public List<GameObject> enemies = new List<GameObject>();
 
-    public void Awake()
+    private void Awake()
     {
         LoadDifficulty();
         SpawnEnemies();
