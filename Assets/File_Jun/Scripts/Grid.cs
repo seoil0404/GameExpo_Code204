@@ -112,7 +112,6 @@ public class Grid : MonoBehaviour
         foreach (var square in _gridSquares)
         {
             var gridSquare = square.GetComponent<GridSquare>();
-
             if (gridSquare.Selected && !gridSquare.SquareOccupied)
             {
                 squareIndexes.Add(gridSquare.SquareIndex);
@@ -123,11 +122,16 @@ public class Grid : MonoBehaviour
         var currentSelectedShape = shapeStorage.GetCurrentSelectedShape();
         if (currentSelectedShape == null) return;
 
+
         if (currentSelectedShape.TotalSquareNumber == squareIndexes.Count)
         {
+
+            string shapeColorName = currentSelectedShape.CurrentShapeColorName;
+
+
             foreach (var squareIndex in squareIndexes)
             {
-                _gridSquares[squareIndex].GetComponent<GridSquare>().PlaceShapeOnBoard();
+                _gridSquares[squareIndex].GetComponent<GridSquare>().PlaceShapeOnBoard(shapeColorName);
             }
 
             GameEvents.SetShapeInactive();
@@ -145,7 +149,6 @@ public class Grid : MonoBehaviour
         {
             Debug.Log("모든 블록이 배치 완료! 새로운 블록을 생성합니다.");
             GameEvents.RequestNewShapes();
-
 
             enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
 
@@ -175,8 +178,6 @@ public class Grid : MonoBehaviour
 
         CheckIfGameEnded();
     }
-
-
 
     private void CheckIfAnyLineIsCompleted()
     {
@@ -256,7 +257,6 @@ public class Grid : MonoBehaviour
         enemyStats.ReceiveDamage(completedLines, columns);
     }
 
-
     public void CheckIfGameEnded()
     {
         if (enemies == null)
@@ -274,12 +274,10 @@ public class Grid : MonoBehaviour
         }
     }
 
-
     public void MoveNextScene()
     {
         Scene.Controller.OnClearScene();
     }
-
 
     public void ResetGrid()
     {
@@ -344,8 +342,6 @@ public class Grid : MonoBehaviour
             Debug.LogWarning($"[{enemy.name}]을(를) 리스트에서 찾을 수 없습니다.");
         }
     }
-
-
 
     public GameObject GetSelectedEnemy()
     {

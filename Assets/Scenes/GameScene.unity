@@ -1424,7 +1424,7 @@ PrefabInstance:
     - target: {fileID: 8309283210566635265, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: Health
       value: 
-      objectReference: {fileID: 1184738869}
+      objectReference: {fileID: 1397265886}
     - target: {fileID: 8309283210566635265, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1447,17 +1447,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4326392766839635376, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
   m_PrefabInstance: {fileID: 1184738867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1184738869 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 208298630965257237, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
-  m_PrefabInstance: {fileID: 1184738867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1389031032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,6 +1522,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389031032}
   m_CullTransparentMesh: 1
+--- !u!114 &1397265886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3271570115201956960, guid: 303b7af87b2d4904d995daa34a4c395a, type: 3}
+  m_PrefabInstance: {fileID: 1184738867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1423395871 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
   - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
-  - {fileID: 11400000, guid: 91f1292720647a2418fc2ff84cc5b5a9, type: 2}
+  - {fileID: 11400000, guid: e377c252009c31d42b735da085234713, type: 2}
   CharacterNameText: {fileID: 366733020}
   UltimateGaugeSlider: {fileID: 1132816791}
   SpawnPoint: {fileID: 1753523601}

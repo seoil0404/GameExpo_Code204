@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
-public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , IBeginDragHandler , IDragHandler , IEndDragHandler , IPointerDownHandler
+public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
-    public List<GameObject> squareShapeImages;
+    public List<GameObject> squareShapeImages;  // 이름이 "blue", "red", "yellow", "violet" 등으로 설정되어 있음
     public Vector3 shapeSelectedScale;
     public Vector2 offset = new Vector2(0f, 700f);
 
@@ -20,12 +20,14 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
     private Vector3 _startPosition;
     private bool _shapeActive = true;
 
+    // 선택된 블록의 색상을 나타내는 문자열 (예: "blue", "red", ...)
+    private string currentShapeColorName = "default";
+    public string CurrentShapeColorName => currentShapeColorName;
 
-     
     public void Awake()
     {
-        _shapeStartScale = this.GetComponent<RectTransform>().localScale;
-        _transform = this.GetComponent<RectTransform>();
+        _shapeStartScale = GetComponent<RectTransform>().localScale;
+        _transform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         _startPosition = _transform.localPosition;
     }
@@ -33,15 +35,14 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
     private void OnDisable()
     {
         GameEvents.MoveShapeToStartPosition -= MoveShapeToStartPosition;
-        GameEvents.SetShapeInactive -= SetShapeInactive; 
+        GameEvents.SetShapeInactive -= SetShapeInactive;
     }
 
     private void OnEnable()
     {
         GameEvents.MoveShapeToStartPosition += MoveShapeToStartPosition;
-        GameEvents.SetShapeInactive += SetShapeInactive;    
+        GameEvents.SetShapeInactive += SetShapeInactive;
     }
-
 
     public bool IsOnStartPosition()
     {
@@ -60,21 +61,22 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
 
     private void SetShapeInactive()
     {
-        if(IsOnStartPosition() == false && IsAnyOfShapeSquareActive())
+        if (!IsOnStartPosition() && IsAnyOfShapeSquareActive())
         {
-            foreach(var square in _currentShape)
+            foreach (var square in _currentShape)
             {
                 square.gameObject.SetActive(false);
             }
-        } 
+        }
     }
+
     public void DeactivateShape()
     {
         if (_shapeActive)
         {
             foreach (var square in _currentShape)
             {
-                square?.GetComponent<ShapeSquare>().DeactivateShape();
+                square?.GetComponent<ShapeSquare>()?.DeactivateShape();
             }
             _shapeActive = false;
         }
@@ -86,16 +88,14 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
         {
             foreach (var square in _currentShape)
             {
-                square?.GetComponent<ShapeSquare>().ActivateShape();
+                square?.GetComponent<ShapeSquare>()?.ActivateShape();
             }
             _shapeActive = true;
         }
     }
 
-
     void Start()
     {
-        
     }
 
     public void RequestNewShape(ShapeData shapeData)
@@ -123,17 +123,21 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
         CurrentShapeData = shapeData;
         TotalSquareNumber = GetNumberOfSquares(shapeData);
 
-      
+        // 기존 블록 삭제
         foreach (var block in _currentShape)
         {
             Destroy(block);
         }
         _currentShape.Clear();
 
-       
+        // 1) 리스트에서 랜덤으로 프리팹 선택
         GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
 
-       
+        // 2) 프리팹의 이름을 소문자로 읽어 currentShapeColorName에 저장
+        //    (예: 프리팹 이름이 "Blue"라면 "blue"로 저장)
+        currentShapeColorName = selectedBlockPrefab.name.ToLower();
+
+        // 3) 총 블록 개수만큼 생성
         for (int i = 0; i < TotalSquareNumber; i++)
         {
             GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
@@ -141,7 +145,7 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
             newBlock.SetActive(false);
         }
 
-    
+        // 4) 배치 계산
         var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
         var moveDistance = new Vector2(
             squareRect.rect.width * squareRect.localScale.x,
@@ -168,16 +172,13 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
 
     public float GetXPositionForShapeSquare(ShapeData shapeData, int column, Vector2 moveDistance)
     {
-       
         int middleIndex = (shapeData.columns - 1) / 2;
         float shiftX = (column - middleIndex) * moveDistance.x;
         return shiftX;
     }
 
-
     private float GetYPositionForShapeSquare(ShapeData shapeData, int row, Vector2 moveDistance)
     {
-        
         int middleIndex = (shapeData.rows - 1) / 2;
         float shiftY = -(row - middleIndex) * moveDistance.y;
         return shiftY;
@@ -185,19 +186,15 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-
     }
-
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-       
-        this.GetComponent<RectTransform>().localScale = Vector3.one;
+        GetComponent<RectTransform>().localScale = Vector3.one;
 
         RectTransform rectTransform = GetComponent<RectTransform>();
         Canvas canvas = _canvas;
@@ -213,7 +210,6 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
         offset = (Vector2)rectTransform.localPosition - localMousePosition;
     }
 
-
     public void OnDrag(PointerEventData eventData)
     {
         Vector2 localMousePosition;
@@ -223,27 +219,22 @@ public class Shape : MonoBehaviour , IPointerClickHandler , IPointerUpHandler , 
                 Camera.main,
                 out localMousePosition))
         {
-            
             _transform.localPosition = localMousePosition + offset;
         }
     }
 
-
     public void OnEndDrag(PointerEventData eventData)
     {
-        this.GetComponent<RectTransform>().localScale = _shapeStartScale;
+        GetComponent<RectTransform>().localScale = _shapeStartScale;
         GameEvents.CheckIfShapeCanBePlaced();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
     }
 
     private void MoveShapeToStartPosition()
     {
-        _transform.transform.localPosition = _startPosition;
+        _transform.localPosition = _startPosition;
     }
-   
-
 }

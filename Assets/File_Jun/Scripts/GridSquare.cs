@@ -9,6 +9,13 @@ public class GridSquare : MonoBehaviour
     public Image normalImage;
     public List<Sprite> normalImages;
 
+
+    public Sprite blueSprite;
+    public Sprite redSprite;
+    public Sprite yellowSprite;
+    public Sprite violetSprite;
+    public Sprite defaultSprite;
+
     public bool Selected { get; set; }
     public int SquareIndex { get; set; }
     public bool SquareOccupied { get; set; }
@@ -18,7 +25,7 @@ public class GridSquare : MonoBehaviour
 
     void Start()
     {
-        Selected = false;   
+        Selected = false;
         SquareOccupied = false;
     }
 
@@ -31,6 +38,35 @@ public class GridSquare : MonoBehaviour
     {
         hooverImage.gameObject.SetActive(false);
         activeImage.gameObject.SetActive(true);
+        Selected = true;
+        SquareOccupied = true;
+    }
+
+
+    public void PlaceShapeOnBoard(string colorName)
+    {
+        hooverImage.gameObject.SetActive(false);
+        activeImage.gameObject.SetActive(true);
+
+        switch (colorName)
+        {
+            case "blue":
+                activeImage.sprite = blueSprite;
+                break;
+            case "red":
+                activeImage.sprite = redSprite;
+                break;
+            case "yellow":
+                activeImage.sprite = yellowSprite;
+                break;
+            case "violet":
+                activeImage.sprite = violetSprite;
+                break;
+            default:
+                activeImage.sprite = defaultSprite;
+                break;
+        }
+
         Selected = true;
         SquareOccupied = true;
     }
@@ -48,6 +84,7 @@ public class GridSquare : MonoBehaviour
             SquareOccupied = false;
         }
     }
+
 
     public void PlaceShapeOnBoard()
     {

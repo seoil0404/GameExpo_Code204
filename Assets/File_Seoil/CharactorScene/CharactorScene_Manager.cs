@@ -9,6 +9,7 @@ public class CharactorScene_Manager : MonoBehaviour
     [Header("Sprite")]
     [SerializeField] private Sprite aisa;
     [SerializeField] private Sprite blarin;
+    [SerializeField] private Sprite hue;
 
     private void Awake()
     {
@@ -32,6 +33,9 @@ public class CharactorScene_Manager : MonoBehaviour
             case 2:
                 characterImage.sprite = blarin;
                 //characterImage.transform.localScale = Vector3.one * -1;
+                break;
+            case 3:
+                characterImage.sprite = hue;
                 break;
         }
     }

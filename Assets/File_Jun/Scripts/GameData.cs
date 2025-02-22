@@ -1,5 +1,5 @@
 public static class GameData
 {
-    public static int SelectedCharacterIndex = 1;
+    public static int SelectedCharacterIndex = 3;
 }
 
