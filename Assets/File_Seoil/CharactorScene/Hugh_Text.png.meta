@@ -1,0 +1,2834 @@
+fileFormatVersion: 2
+guid: 4ea1d4a8fad95fa47924476d30b0d817
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2655040429048733345
+    second: Hugh_Text_0
+  - first:
+      213: -3709444330124861947
+    second: Hugh_Text_1
+  - first:
+      213: 7167072733001335822
+    second: Hugh_Text_2
+  - first:
+      213: -8117871831996052946
+    second: Hugh_Text_3
+  - first:
+      213: -6993193517125130436
+    second: Hugh_Text_4
+  - first:
+      213: -1572943956406748370
+    second: Hugh_Text_5
+  - first:
+      213: 1869837536436744039
+    second: Hugh_Text_6
+  - first:
+      213: -1669917993751061544
+    second: Hugh_Text_7
+  - first:
+      213: 6054993821271048322
+    second: Hugh_Text_8
+  - first:
+      213: 5795309233851039097
+    second: Hugh_Text_9
+  - first:
+      213: 1389964493150837731
+    second: Hugh_Text_10
+  - first:
+      213: -703013221510567213
+    second: Hugh_Text_11
+  - first:
+      213: 7600776449407462393
+    second: Hugh_Text_12
+  - first:
+      213: -6766956212940762381
+    second: Hugh_Text_13
+  - first:
+      213: 7037026943058230698
+    second: Hugh_Text_14
+  - first:
+      213: -7576114970516586010
+    second: Hugh_Text_15
+  - first:
+      213: -3071402393096620226
+    second: Hugh_Text_16
+  - first:
+      213: 2759803392815936874
+    second: Hugh_Text_17
+  - first:
+      213: 2132908888970223029
+    second: Hugh_Text_18
+  - first:
+      213: 8454734815002869096
+    second: Hugh_Text_19
+  - first:
+      213: -5429610446001117813
+    second: Hugh_Text_20
+  - first:
+      213: -2320469640999796046
+    second: Hugh_Text_21
+  - first:
+      213: -814471507667078437
+    second: Hugh_Text_22
+  - first:
+      213: 6914757580369312095
+    second: Hugh_Text_23
+  - first:
+      213: -6179195238125871002
+    second: Hugh_Text_24
+  - first:
+      213: -5167214977242058080
+    second: Hugh_Text_25
+  - first:
+      213: -1924505905513927995
+    second: Hugh_Text_26
+  - first:
+      213: -9076928635433827458
+    second: Hugh_Text_27
+  - first:
+      213: -1068238595620342206
+    second: Hugh_Text_28
+  - first:
+      213: -9017279623359585543
+    second: Hugh_Text_29
+  - first:
+      213: 7587229954480579459
+    second: Hugh_Text_30
+  - first:
+      213: 1686883059090883483
+    second: Hugh_Text_31
+  - first:
+      213: -5905181947744631374
+    second: Hugh_Text_32
+  - first:
+      213: -1940076002562307856
+    second: Hugh_Text_33
+  - first:
+      213: 4993067858519808109
+    second: Hugh_Text_34
+  - first:
+      213: 274965769992350342
+    second: Hugh_Text_35
+  - first:
+      213: 5262347862077769951
+    second: Hugh_Text_36
+  - first:
+      213: 8578695230374128302
+    second: Hugh_Text_37
+  - first:
+      213: 7944636800004661500
+    second: Hugh_Text_38
+  - first:
+      213: -4652790846755793995
+    second: Hugh_Text_39
+  - first:
+      213: -652389430756565541
+    second: Hugh_Text_40
+  - first:
+      213: 764788077918679905
+    second: Hugh_Text_41
+  - first:
+      213: -6044645923394619490
+    second: Hugh_Text_42
+  - first:
+      213: -6529805477570429639
+    second: Hugh_Text_43
+  - first:
+      213: -1070967448734376062
+    second: Hugh_Text_44
+  - first:
+      213: -986355779595926904
+    second: Hugh_Text_45
+  - first:
+      213: -6116012177802661801
+    second: Hugh_Text_46
+  - first:
+      213: 5770080113175620723
+    second: Hugh_Text_47
+  - first:
+      213: -1205934254875290493
+    second: Hugh_Text_48
+  - first:
+      213: -6202864528385665267
+    second: Hugh_Text_49
+  - first:
+      213: 8554891543834833233
+    second: Hugh_Text_50
+  - first:
+      213: -1159971102956797145
+    second: Hugh_Text_51
+  - first:
+      213: -8300291314643048651
+    second: Hugh_Text_52
+  - first:
+      213: -169759610210519040
+    second: Hugh_Text_53
+  - first:
+      213: 177179024670536447
+    second: Hugh_Text_54
+  - first:
+      213: 4420759736390745134
+    second: Hugh_Text_55
+  - first:
+      213: -6998663489484452195
+    second: Hugh_Text_56
+  - first:
+      213: -7801922569019377397
+    second: Hugh_Text_57
+  - first:
+      213: 6238674713231754933
+    second: Hugh_Text_58
+  - first:
+      213: 8363280680918967760
+    second: Hugh_Text_59
+  - first:
+      213: 6314744687254404532
+    second: Hugh_Text_60
+  - first:
+      213: -1068778328081769986
+    second: Hugh_Text_61
+  - first:
+      213: 5530925944120078524
+    second: Hugh_Text_62
+  - first:
+      213: 7063892941549224817
+    second: Hugh_Text_63
+  - first:
+      213: -9141145727166224539
+    second: Hugh_Text_64
+  - first:
+      213: -7843645112526561587
+    second: Hugh_Text_65
+  - first:
+      213: 9017474707179676700
+    second: Hugh_Text_66
+  - first:
+      213: -4108705790398081891
+    second: Hugh_Text_67
+  - first:
+      213: 8407135542280350751
+    second: Hugh_Text_68
+  - first:
+      213: 600644198366401072
+    second: Hugh_Text_69
+  - first:
+      213: 5008510323288205621
+    second: Hugh_Text_70
+  - first:
+      213: -425846227320358375
+    second: Hugh_Text_71
+  - first:
+      213: 1819445904154383383
+    second: Hugh_Text_72
+  - first:
+      213: 6564311321026349051
+    second: Hugh_Text_73
+  - first:
+      213: -7993380491430320590
+    second: Hugh_Text_74
+  - first:
+      213: -20231840721187082
+    second: Hugh_Text_75
+  - first:
+      213: 2739640106757519979
+    second: Hugh_Text_76
+  - first:
+      213: 1340200846098560084
+    second: Hugh_Text_77
+  - first:
+      213: 5863866145611640349
+    second: Hugh_Text_78
+  - first:
+      213: 6559426719208908136
+    second: Hugh_Text_79
+  - first:
+      213: -5234139321033219978
+    second: Hugh_Text_80
+  - first:
+      213: -6446808335547445048
+    second: Hugh_Text_81
+  - first:
+      213: -2920354994497049650
+    second: Hugh_Text_82
+  - first:
+      213: -485843427271773597
+    second: Hugh_Text_83
+  - first:
+      213: 6161747168113623145
+    second: Hugh_Text_84
+  - first:
+      213: 2200286496063536810
+    second: Hugh_Text_85
+  - first:
+      213: -469268513055116843
+    second: Hugh_Text_86
+  - first:
+      213: 7909333930738937745
+    second: Hugh_Text_87
+  - first:
+      213: 451718734012574216
+    second: Hugh_Text_88
+  - first:
+      213: 5963650068094176777
+    second: Hugh_Text_89
+  - first:
+      213: -7208058020772874281
+    second: Hugh_Text_90
+  - first:
+      213: 5672002320369806197
+    second: Hugh_Text_91
+  - first:
+      213: 821241556014947929
+    second: Hugh_Text_92
+  - first:
+      213: -57949558535856277
+    second: Hugh_Text_93
+  - first:
+      213: 2219011587756968736
+    second: Hugh_Text_94
+  - first:
+      213: -5181429691613535085
+    second: Hugh_Text_95
+  - first:
+      213: -4964561532582510380
+    second: Hugh_Text_96
+  - first:
+      213: 8984036095611875292
+    second: Hugh_Text_97
+  - first:
+      213: 4458713272812903178
+    second: Hugh_Text_98
+  - first:
+      213: 6877553904631512559
+    second: Hugh_Text_99
+  - first:
+      213: -2530711847540008151
+    second: Hugh_Text_100
+  - first:
+      213: 3453950795199104695
+    second: Hugh_Text_101
+  - first:
+      213: 2856421560822639894
+    second: Hugh_Text_102
+  - first:
+      213: 7190021978839317380
+    second: Hugh_Text_103
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hugh_Text_0
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 646
+        width: 60
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f51ef3afbc6672bd0800000000000000
+      internalID: -2655040429048733345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 656
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e12d40908658cc0800000000000000
+      internalID: -3709444330124861947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_2
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 585
+        width: 76
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e04cee98dae867360800000000000000
+      internalID: 7167072733001335822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_3
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 618
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ac9b14496875f80800000000000000
+      internalID: -8117871831996052946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_4
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 520
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3721363c8f23fe90800000000000000
+      internalID: -6993193517125130436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_5
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 517
+        width: 9
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b37c23ec7cb2ae0800000000000000
+      internalID: -1572943956406748370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 517
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fe003255ff2f910800000000000000
+      internalID: 1869837536436744039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_7
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 539
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db5f6aae6243d8e0800000000000000
+      internalID: -1669917993751061544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_8
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 523
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280cb0abcc8a70450800000000000000
+      internalID: 6054993821271048322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_9
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 523
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97d7b371b031d6050800000000000000
+      internalID: 5795309233851039097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_10
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 519
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb59a897552a4310800000000000000
+      internalID: 1389964493150837731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_11
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 523
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3daa57323356e36f0800000000000000
+      internalID: -703013221510567213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_12
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 523
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb261cf8e16b7960800000000000000
+      internalID: 7600776449407462393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_13
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 522
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f21b0d5d21f612a0800000000000000
+      internalID: -6766956212940762381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_14
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 464
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aadb6df88ba88a160800000000000000
+      internalID: 7037026943058230698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_15
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 472
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e107d4039b3cd690800000000000000
+      internalID: -7576114970516586010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_16
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 450
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37f035ebcf2065d0800000000000000
+      internalID: -3071402393096620226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_17
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 459
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6536be409acc4620800000000000000
+      internalID: 2759803392815936874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_18
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 478
+        width: 26
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdd759755d999d10800000000000000
+      internalID: 2132908888970223029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_19
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 449
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86dbf56e480455570800000000000000
+      internalID: 8454734815002869096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_20
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 449
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b856a51111626a4b0800000000000000
+      internalID: -5429610446001117813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_21
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 466
+        width: 39
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b20128e7290ccfd0800000000000000
+      internalID: -2320469640999796046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_22
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 449
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2b3d1aa7a62b4f0800000000000000
+      internalID: -814471507667078437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_23
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 451
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f593ad5226726ff50800000000000000
+      internalID: 6914757580369312095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_24
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 413
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 660e8b17ba61f3aa0800000000000000
+      internalID: -6179195238125871002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_25
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 403
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2b863fa5d5a48b0800000000000000
+      internalID: -5167214977242058080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_26
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 420
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ca63bd4318ca45e0800000000000000
+      internalID: -1924505905513927995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_27
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 413
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7345696f75480280800000000000000
+      internalID: -9076928635433827458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_28
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 410
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246ffa438aadc21f0800000000000000
+      internalID: -1068238595620342206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_29
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 403
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2a84945ff2cd280800000000000000
+      internalID: -9017279623359585543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_30
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 411
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383a40ad1714b4960800000000000000
+      internalID: 7587229954480579459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_31
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 402
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b938cba6433096710800000000000000
+      internalID: 1686883059090883483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_32
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 402
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5c1a63e449c0ea0800000000000000
+      internalID: -5905181947744631374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_33
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 402
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f8830697277315e0800000000000000
+      internalID: -1940076002562307856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_34
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 402
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d685e7e43c0fa4540800000000000000
+      internalID: 4993067858519808109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_35
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 403
+        width: 59
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a29c539efd0d300800000000000000
+      internalID: 274965769992350342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_36
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 420
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd88eabdf7d970940800000000000000
+      internalID: 5262347862077769951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_37
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 420
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaaa9c23cd5ad0770800000000000000
+      internalID: 8578695230374128302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_38
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 415
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf026cdb315014e60800000000000000
+      internalID: 7944636800004661500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_39
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 402
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b39eec5067fd6fb0800000000000000
+      internalID: -4652790846755793995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_40
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 407
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd198ce44f32f6f0800000000000000
+      internalID: -652389430756565541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_41
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 413
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163fbc074b21d9a00800000000000000
+      internalID: 764788077918679905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_42
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 402
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97fc0ffe8a1d1ca0800000000000000
+      internalID: -6044645923394619490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_43
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 402
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93db309b3887165a0800000000000000
+      internalID: -6529805477570429639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_44
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 403
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f5e2497c82321f0800000000000000
+      internalID: -1070967448734376062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_45
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 420
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8820807f4a2cf42f0800000000000000
+      internalID: -986355779595926904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_46
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 402
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750fb1c045f8f1ba0800000000000000
+      internalID: -6116012177802661801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_47
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 411
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ce06faa41731050800000000000000
+      internalID: 5770080113175620723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_48
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 402
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384deab3f29a34fe0800000000000000
+      internalID: -1205934254875290493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_49
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 402
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0793bb539ffae9a0800000000000000
+      internalID: -6202864528385665267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_50
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 402
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151b44a888419b670800000000000000
+      internalID: 8554891543834833233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_51
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 402
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723ca8a7d64f6efe0800000000000000
+      internalID: -1159971102956797145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_52
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 403
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 537e072b6017fcc80800000000000000
+      internalID: -8300291314643048651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_53
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 403
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0087130b884e4adf0800000000000000
+      internalID: -169759610210519040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_54
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 403
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2332b5267757200800000000000000
+      internalID: 177179024670536447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_55
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 354
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c7becde81b95d30800000000000000
+      internalID: 4420759736390745134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_56
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 358
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e88c603a0cfde90800000000000000
+      internalID: -6998663489484452195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_57
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 349
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b093f7482c00ab390800000000000000
+      internalID: -7801922569019377397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_58
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 362
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b604670999349650800000000000000
+      internalID: 6238674713231754933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_59
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 349
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5ef0ff777501470800000000000000
+      internalID: 8363280680918967760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_60
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 365
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd751b06da72a750800000000000000
+      internalID: 6314744687254404532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_61
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 362
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9dc03f5cfea21f0800000000000000
+      internalID: -1068778328081769986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_62
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 367
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0f44297dbc1cc40800000000000000
+      internalID: 5530925944120078524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_63
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 358
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1734e68443df70260800000000000000
+      internalID: 7063892941549224817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_64
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 349
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5676d2c9460242180800000000000000
+      internalID: -9141145727166224539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_65
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 357
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce10abd356c52390800000000000000
+      internalID: -7843645112526561587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_66
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 360
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14a3843871842d70800000000000000
+      internalID: 9017474707179676700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_67
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 349
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d945bbc3ad1faf6c0800000000000000
+      internalID: -4108705790398081891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_68
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 354
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c6e289b352ca470800000000000000
+      internalID: 8407135542280350751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_69
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 349
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032570057bae55800800000000000000
+      internalID: 600644198366401072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_70
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 350
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53968715a9dc18540800000000000000
+      internalID: 5008510323288205621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_71
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 350
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91a31abcc17171af0800000000000000
+      internalID: -425846227320358375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_72
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 353
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7145925f868ff3910800000000000000
+      internalID: 1819445904154383383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_73
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 292
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7c9d40e5e191b50800000000000000
+      internalID: 6564311321026349051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_74
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 283
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23622c53bcec11190800000000000000
+      internalID: -7993380491430320590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_75
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 281
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe49a08f3f18bff0800000000000000
+      internalID: -20231840721187082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_76
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 250
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6af1bf6928250620800000000000000
+      internalID: 2739640106757519979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_77
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 249
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 454f16f9199599210800000000000000
+      internalID: 1340200846098560084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_78
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 235
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1eee9bf033a06150800000000000000
+      internalID: 5863866145611640349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_79
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 235
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86527a809d3c70b50800000000000000
+      internalID: 6559426719208908136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_80
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 246
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67029e8e40a9c57b0800000000000000
+      internalID: -5234139321033219978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_81
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 246
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0daa8b9f55886a0800000000000000
+      internalID: -6446808335547445048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_82
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 235
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb27feea90d877d0800000000000000
+      internalID: -2920354994497049650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_83
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 235
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362f10d1affe149f0800000000000000
+      internalID: -485843427271773597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_84
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 243
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9608e2f276ce28550800000000000000
+      internalID: 6161747168113623145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_85
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 235
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaeb4f919ecf88e10800000000000000
+      internalID: 2200286496063536810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_86
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 240
+        width: 59
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d1f21f06c2dc79f0800000000000000
+      internalID: -469268513055116843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_87
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 252
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f63a7fd4993cd60800000000000000
+      internalID: 7909333930738937745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_88
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 244
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a65379bc3d44600800000000000000
+      internalID: 451718734012574216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_89
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 236
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ecc71e32423c250800000000000000
+      internalID: 5963650068094176777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_90
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 253
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d77d678b65d7fb90800000000000000
+      internalID: -7208058020772874281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_91
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 235
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b65de0f0007be40800000000000000
+      internalID: 5672002320369806197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_92
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 235
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e5f0518d2a56b00800000000000000
+      internalID: 821241556014947929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_93
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 244
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f549cfe2f123ff0800000000000000
+      internalID: -57949558535856277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_94
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 235
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bcab048438bce10800000000000000
+      internalID: 2219011587756968736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_95
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 245
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394a6bad52dd718b0800000000000000
+      internalID: -5181429691613535085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_96
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 243
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0c9d8e6955a1bb0800000000000000
+      internalID: -4964561532582510380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_97
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 235
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdfab30ca35bdac70800000000000000
+      internalID: 8984036095611875292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_98
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 236
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b155d291880ed30800000000000000
+      internalID: 4458713272812903178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_99
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 235
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed792166daf17f50800000000000000
+      internalID: 6877553904631512559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_100
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 236
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b5182abfa11ecd0800000000000000
+      internalID: -2530711847540008151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_101
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 235
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6458bc2f5eeef20800000000000000
+      internalID: 3453950795199104695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_102
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 236
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61da99d864c04a720800000000000000
+      internalID: 2856421560822639894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugh_Text_103
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 239
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bf7f735e618c360800000000000000
+      internalID: 7190021978839317380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hugh_Text_0: -2655040429048733345
+      Hugh_Text_1: -3709444330124861947
+      Hugh_Text_10: 1389964493150837731
+      Hugh_Text_100: -2530711847540008151
+      Hugh_Text_101: 3453950795199104695
+      Hugh_Text_102: 2856421560822639894
+      Hugh_Text_103: 7190021978839317380
+      Hugh_Text_11: -703013221510567213
+      Hugh_Text_12: 7600776449407462393
+      Hugh_Text_13: -6766956212940762381
+      Hugh_Text_14: 7037026943058230698
+      Hugh_Text_15: -7576114970516586010
+      Hugh_Text_16: -3071402393096620226
+      Hugh_Text_17: 2759803392815936874
+      Hugh_Text_18: 2132908888970223029
+      Hugh_Text_19: 8454734815002869096
+      Hugh_Text_2: 7167072733001335822
+      Hugh_Text_20: -5429610446001117813
+      Hugh_Text_21: -2320469640999796046
+      Hugh_Text_22: -814471507667078437
+      Hugh_Text_23: 6914757580369312095
+      Hugh_Text_24: -6179195238125871002
+      Hugh_Text_25: -5167214977242058080
+      Hugh_Text_26: -1924505905513927995
+      Hugh_Text_27: -9076928635433827458
+      Hugh_Text_28: -1068238595620342206
+      Hugh_Text_29: -9017279623359585543
+      Hugh_Text_3: -8117871831996052946
+      Hugh_Text_30: 7587229954480579459
+      Hugh_Text_31: 1686883059090883483
+      Hugh_Text_32: -5905181947744631374
+      Hugh_Text_33: -1940076002562307856
+      Hugh_Text_34: 4993067858519808109
+      Hugh_Text_35: 274965769992350342
+      Hugh_Text_36: 5262347862077769951
+      Hugh_Text_37: 8578695230374128302
+      Hugh_Text_38: 7944636800004661500
+      Hugh_Text_39: -4652790846755793995
+      Hugh_Text_4: -6993193517125130436
+      Hugh_Text_40: -652389430756565541
+      Hugh_Text_41: 764788077918679905
+      Hugh_Text_42: -6044645923394619490
+      Hugh_Text_43: -6529805477570429639
+      Hugh_Text_44: -1070967448734376062
+      Hugh_Text_45: -986355779595926904
+      Hugh_Text_46: -6116012177802661801
+      Hugh_Text_47: 5770080113175620723
+      Hugh_Text_48: -1205934254875290493
+      Hugh_Text_49: -6202864528385665267
+      Hugh_Text_5: -1572943956406748370
+      Hugh_Text_50: 8554891543834833233
+      Hugh_Text_51: -1159971102956797145
+      Hugh_Text_52: -8300291314643048651
+      Hugh_Text_53: -169759610210519040
+      Hugh_Text_54: 177179024670536447
+      Hugh_Text_55: 4420759736390745134
+      Hugh_Text_56: -6998663489484452195
+      Hugh_Text_57: -7801922569019377397
+      Hugh_Text_58: 6238674713231754933
+      Hugh_Text_59: 8363280680918967760
+      Hugh_Text_6: 1869837536436744039
+      Hugh_Text_60: 6314744687254404532
+      Hugh_Text_61: -1068778328081769986
+      Hugh_Text_62: 5530925944120078524
+      Hugh_Text_63: 7063892941549224817
+      Hugh_Text_64: -9141145727166224539
+      Hugh_Text_65: -7843645112526561587
+      Hugh_Text_66: 9017474707179676700
+      Hugh_Text_67: -4108705790398081891
+      Hugh_Text_68: 8407135542280350751
+      Hugh_Text_69: 600644198366401072
+      Hugh_Text_7: -1669917993751061544
+      Hugh_Text_70: 5008510323288205621
+      Hugh_Text_71: -425846227320358375
+      Hugh_Text_72: 1819445904154383383
+      Hugh_Text_73: 6564311321026349051
+      Hugh_Text_74: -7993380491430320590
+      Hugh_Text_75: -20231840721187082
+      Hugh_Text_76: 2739640106757519979
+      Hugh_Text_77: 1340200846098560084
+      Hugh_Text_78: 5863866145611640349
+      Hugh_Text_79: 6559426719208908136
+      Hugh_Text_8: 6054993821271048322
+      Hugh_Text_80: -5234139321033219978
+      Hugh_Text_81: -6446808335547445048
+      Hugh_Text_82: -2920354994497049650
+      Hugh_Text_83: -485843427271773597
+      Hugh_Text_84: 6161747168113623145
+      Hugh_Text_85: 2200286496063536810
+      Hugh_Text_86: -469268513055116843
+      Hugh_Text_87: 7909333930738937745
+      Hugh_Text_88: 451718734012574216
+      Hugh_Text_89: 5963650068094176777
+      Hugh_Text_9: 5795309233851039097
+      Hugh_Text_90: -7208058020772874281
+      Hugh_Text_91: 5672002320369806197
+      Hugh_Text_92: 821241556014947929
+      Hugh_Text_93: -57949558535856277
+      Hugh_Text_94: 2219011587756968736
+      Hugh_Text_95: -5181429691613535085
+      Hugh_Text_96: -4964561532582510380
+      Hugh_Text_97: 8984036095611875292
+      Hugh_Text_98: 4458713272812903178
+      Hugh_Text_99: 6877553904631512559
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
