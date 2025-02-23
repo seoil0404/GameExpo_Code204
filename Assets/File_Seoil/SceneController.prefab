@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingEffectPrefab: {fileID: 2348537542862496641, guid: b7a20eba5fbe464428295184ea2c34b1, type: 3}
   tutorialViewPrefab: {fileID: 3959868476929849684, guid: 21ae251f1fd89de4a92a7922d42c2b9e, type: 3}
+  IsGameSceneFirstLoading: 1

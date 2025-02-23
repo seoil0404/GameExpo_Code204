@@ -500,6 +500,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4393304615152109976}
     m_Modifications:
+    - target: {fileID: 5315197667336575061, guid: fd3050ce73f34574a9cae0e3321c22fc, type: 3}
+      propertyPath: characters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315197667336575061, guid: fd3050ce73f34574a9cae0e3321c22fc, type: 3}
+      propertyPath: 'characters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
+    - target: {fileID: 5315197667336575061, guid: fd3050ce73f34574a9cae0e3321c22fc, type: 3}
+      propertyPath: 'characters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
+    - target: {fileID: 5315197667336575061, guid: fd3050ce73f34574a9cae0e3321c22fc, type: 3}
+      propertyPath: 'characters.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e377c252009c31d42b735da085234713, type: 2}
     - target: {fileID: 6468078240780519380, guid: fd3050ce73f34574a9cae0e3321c22fc, type: 3}
       propertyPath: m_Name
       value: EnemyHealthBar

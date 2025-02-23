@@ -288,8 +288,23 @@ public class Grid : MonoBehaviour
             gridSquare.Deactivate();
         }
 
+        foreach (var enemy in enemies)
+        {
+            var enemyStats = enemy.GetComponent<EnemyStats>();
+            if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+            {
+                enemyStats.PerformTurnAction(this);
+                Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
+            }
+            else
+            {
+                Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
+            }
+        }
+
         Debug.Log("그리드가 리셋되었습니다.");
         comboCount--;
+
         CheckIfGameEnded();
     }
 
@@ -351,6 +366,34 @@ public class Grid : MonoBehaviour
         selectedEnemy = enemy;
         Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
     }
+
+    public void DeactivateRandom4x4()
+    {
+        if (_gridSquares.Count == 0)
+        {
+            Debug.LogWarning("그리드가 비어 있어 블록을 제거할 수 없습니다.");
+            return;
+        }
+
+        int gridSize = 8; // 8x8 보드 기준
+        int x = Random.Range(0, gridSize - 3);
+        int y = Random.Range(0, gridSize - 3);
+
+        Debug.Log($"[{x}, {y}] 위치에서 4x4 블록을 비활성화합니다.");
+
+        for (int i = x; i < x + 4; i++)
+        {
+            for (int j = y; j < y + 4; j++)
+            {
+                int index = j * gridSize + i;
+                if (index < _gridSquares.Count)
+                {
+                    _gridSquares[index].GetComponent<GridSquare>().DeactivateBlock();
+                }
+            }
+        }
+    }
+
 
     public void RemoveEnemy(GameObject enemy)
     {

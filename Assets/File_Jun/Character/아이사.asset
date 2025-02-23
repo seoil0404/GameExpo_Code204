@@ -20,3 +20,4 @@ MonoBehaviour:
     currentHp: 75
     maxUltimateGauge: 35
     currentUltimateGauge: 0
+    executionRate: 0
