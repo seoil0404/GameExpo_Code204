@@ -28,7 +28,6 @@ public class CharacterManager : MonoBehaviour
         {
             ResetHp();
             SaveHp();
-            Scene.Controller.IsGameSceneFirstLoading = false;
         }
 
 
