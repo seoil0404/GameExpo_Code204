@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -74,6 +75,8 @@ public class CharacterManager : MonoBehaviour
     private void CharacterDied()
     {
         Debug.Log("캐릭터가 죽었습니다!");
+        GameStartTracker.IsHavetobeReset = false;
+        SceneManager.LoadScene("MainScene");
     }
 
     public void SaveHp()
