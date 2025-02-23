@@ -56,6 +56,8 @@ public class MapManager : MonoBehaviour
         }
         else
         {
+            if(currentStage.stageType == Stage.StageType.Combat && Scene.Controller.IsGameSceneFirstLoading) Scene.Controller.IsGameSceneFirstLoading = false;
+
             isCurrentStageCleared = true;
 
             currentStage.objectSpriteRenderer.sprite = currentStage.AllocatedSprite;
