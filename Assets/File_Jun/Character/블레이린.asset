@@ -22,3 +22,5 @@ MonoBehaviour:
     maxUltimateGauge: 40
     currentUltimateGauge: 0
     executionRate: 0
+    ultimateSkill: {fileID: 11400000, guid: 05b2eaf9bc51db54f8eaabd9b2417c6b, type: 2}
+    NegateNextDamage: 0

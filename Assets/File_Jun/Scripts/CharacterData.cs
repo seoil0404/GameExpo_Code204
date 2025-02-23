@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using UnityEngine.UI;
 
 [System.Serializable]
 public class CharacterData
@@ -21,6 +20,10 @@ public class CharacterData
     [SerializeField]
     private int executionRate;
 
+    // ★ 각 캐릭터의 궁극기 스킬과 다음 피해 무효화 여부
+    public UltimateSkill ultimateSkill;
+    public bool NegateNextDamage = false;
+
     public Action OnHpChanged;
     public Action OnUltimateGaugeChanged;
 
@@ -29,17 +32,14 @@ public class CharacterData
         currentUltimateGauge = 0;
     }
 
-    public string CharacterName
-    {
-        get => characterName;
-    }
+    public string CharacterName => characterName;
 
     public int MaxHp
     {
         get => maxHp;
         set
         {
-            maxHp = Mathf.Max(value, 1);
+            currentHp = Mathf.Max(value, 1);
             OnHpChanged?.Invoke();  
             Debug.Log($"최대체력 set: {maxHp}");
         }
@@ -56,10 +56,7 @@ public class CharacterData
         }
     }
 
-    public int MaxUltimateGauge
-    {
-        get => maxUltimateGauge;
-    }
+    public int MaxUltimateGauge => maxUltimateGauge;
 
     public int CurrentUltimateGauge
     {
@@ -68,7 +65,7 @@ public class CharacterData
         {
             currentUltimateGauge = Mathf.Clamp(value, 0, maxUltimateGauge);
             OnUltimateGaugeChanged?.Invoke();
-            Debug.Log($"궁극기게이지 set: {maxUltimateGauge}");
+            Debug.Log($"궁극기게이지 set: {currentUltimateGauge}");
         }
     }
 
@@ -81,5 +78,20 @@ public class CharacterData
             OnHpChanged?.Invoke();
             Debug.Log($"처형율 set: {executionRate}");
         }
+    }
+
+    // 상태 이상 효과를 모두 치료하는 메서드
+    public void CureStatusEffects()
+    {
+        Debug.Log($"{CharacterName}의 상태 이상 효과가 모두 치료되었습니다.");
+        // 실제 게임에서는 상태이상 목록을 초기화하는 로직을 넣으세요.
+    }
+
+    // 흡혈 효과: 상대가 입힌 피해의 절반만큼 회복합니다.
+    public void ActivateLifeSteal(int damageDealt)
+    {
+        int healAmount = damageDealt / 2;
+        CurrentHp += healAmount;
+        Debug.Log($"{CharacterName}의 흡혈 효과 발동: {healAmount} 만큼 체력이 회복되었습니다. (피해의 절반)");
     }
 }
