@@ -21,14 +21,37 @@ public class EnemySpawner : MonoBehaviour
     {
         LoadDifficulty();
 
-        if (combatData == null) return;
+        if (combatData == null)
+        {
+            Debug.LogError("[EnemySpawner] CombatData가 설정되지 않았습니다! Inspector에서 CombatData를 할당하세요.");
+            return;
+        }
 
-        SpawnEnemies(combatData.HabitatType, combatData.EnemyType);
+        if (combatData.EnemyType == EnemyData.EnemyType.SpecialCombat)
+        {
+            Debug.LogWarning("[EnemySpawner] SpecialCombat 감지됨! Common으로 변경 후 난이도 10배 증가 및 한 마리만 생성");
+            combatData.EnemyType = EnemyData.EnemyType.Common;
+            currentDifficulty *= 10;
+
+            SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
+        }
+        else
+        {
+            SpawnEnemies(combatData.HabitatType, combatData.EnemyType);
+        }
 
         var grid = FindFirstObjectByType<Grid>();
         if (grid != null) grid.enemies = enemies;
 
-        if (enemies.Count > 0) StartCoroutine(DelayedSelectRandomEnemy());
+        if (enemies.Count > 0)
+        {
+            Debug.Log("[EnemySpawner] 적 선택 코루틴 시작");
+            StartCoroutine(DelayedSelectRandomEnemy());
+        }
+        else
+        {
+            Debug.LogWarning("[EnemySpawner] 스폰된 적이 없습니다. 필터링 과정 확인 필요");
+        }
     }
 
     public void SaveDifficulty()
@@ -55,69 +78,68 @@ public class EnemySpawner : MonoBehaviour
         currentDifficulty = 0;
     }
 
-    public void SpawnEnemies(EnemyData.HabitatType selectedHabitat, EnemyData.EnemyType selectedEnemyType)
-{
-    ResetSpawnPoints();
-    enemies.Clear();
-
-    Debug.Log($"[EnemySpawner] 적 생성 시작 - Habitat: {selectedHabitat}, EnemyType: {selectedEnemyType}");
-
-    int numberOfEnemies = DetermineEnemyCount();
-    
-    List<GameObject> filteredEnemies = enemyPrefabs.FindAll(enemy =>
+    public void SpawnEnemies(EnemyData.HabitatType selectedHabitat, EnemyData.EnemyType selectedEnemyType, bool forceOneEnemy = false)
     {
-        EnemyStats stats = enemy.GetComponent<EnemyStats>();
+        ResetSpawnPoints();
+        enemies.Clear();
 
-        if (stats == null || stats.enemyData == null)
+        Debug.Log($"[EnemySpawner] 적 생성 시작 - Habitat: {selectedHabitat}, EnemyType: {selectedEnemyType}, 한 마리 생성 여부: {forceOneEnemy}");
+
+        int numberOfEnemies = forceOneEnemy ? 1 : DetermineEnemyCount();
+
+        List<GameObject> filteredEnemies = enemyPrefabs.FindAll(enemy =>
         {
-            Debug.LogWarning($"[EnemySpawner] {enemy.name}에 EnemyStats 또는 EnemyData가 없습니다!");
-            return false;
+            EnemyStats stats = enemy.GetComponent<EnemyStats>();
+
+            if (stats == null || stats.enemyData == null)
+            {
+                Debug.LogWarning($"[EnemySpawner] {enemy.name}에 EnemyStats 또는 EnemyData가 없습니다!");
+                return false;
+            }
+
+            bool matches = stats.enemyData.habitat == selectedHabitat &&
+                           stats.enemyData.enemyType == selectedEnemyType;
+
+            Debug.Log($"[EnemySpawner] 검사 중 - {enemy.name}: Habitat = {stats.enemyData.habitat}, EnemyType = {stats.enemyData.enemyType}, 매칭 여부: {matches}");
+
+            return matches;
+        });
+
+        Debug.Log($"[EnemySpawner] 필터링된 적 개수: {filteredEnemies.Count}");
+
+        if (filteredEnemies.Count == 0)
+        {
+            Debug.LogWarning("[EnemySpawner] 조건에 맞는 적이 없습니다! 적 생성 중단");
+            return;
         }
 
-        bool matches = stats.enemyData.habitat == selectedHabitat &&
-                       stats.enemyData.enemyType == selectedEnemyType;
+        for (int i = 0; i < numberOfEnemies; i++)
+        {
+            if (availableSpawnPoints.Count == 0)
+            {
+                Debug.LogWarning("[EnemySpawner] 모든 스폰 포인트가 사용 중입니다. 적 생성 중단");
+                break;
+            }
 
-        Debug.Log($"[EnemySpawner] 검사 중 - {enemy.name}: Habitat = {stats.enemyData.habitat}, EnemyType = {stats.enemyData.enemyType}, 매칭 여부: {matches}");
+            GameObject selectedEnemy = filteredEnemies[Random.Range(0, filteredEnemies.Count)];
+            Transform spawnPoint = GetRandomSpawnPoint();
+            GameObject enemyInstance = Instantiate(selectedEnemy, spawnPoint.position, Quaternion.identity, canvasTransform);
 
-        return matches;
-    });
+            Debug.Log($"[EnemySpawner] 적 생성됨: {enemyInstance.name} 위치: {spawnPoint.position}");
 
-    Debug.Log($"[EnemySpawner] 필터링된 적 개수: {filteredEnemies.Count}");
+            EnemyStats stats = enemyInstance.GetComponent<EnemyStats>();
+            if (stats != null)
+            {
+                stats.SetStats(currentDifficulty, combatData.HabitatType);
+                stats.SetSpawner(this);
+            }
 
-    if (filteredEnemies.Count == 0)
-    {
-        Debug.LogWarning("[EnemySpawner] 조건에 맞는 적이 없습니다! 적 생성 중단");
-        return;
+            EnemyStats.AddEnemy(enemyInstance);
+            enemies.Add(enemyInstance);
+        }
+
+        if (enemies.Count > 0) StartCoroutine(DelayedSelectRandomEnemy());
     }
-
-    for (int i = 0; i < numberOfEnemies; i++)
-    {
-        if (availableSpawnPoints.Count == 0)
-        {
-            Debug.LogWarning("[EnemySpawner] 모든 스폰 포인트가 사용 중입니다. 적 생성 중단");
-            break;
-        }
-
-        GameObject selectedEnemy = filteredEnemies[Random.Range(0, filteredEnemies.Count)];
-        Transform spawnPoint = GetRandomSpawnPoint();
-        GameObject enemyInstance = Instantiate(selectedEnemy, spawnPoint.position, Quaternion.identity, canvasTransform);
-
-        Debug.Log($"[EnemySpawner] 적 생성됨: {enemyInstance.name} 위치: {spawnPoint.position}");
-
-        EnemyStats stats = enemyInstance.GetComponent<EnemyStats>();
-        if (stats != null)
-        {
-            stats.SetStats();
-            stats.SetSpawner(this);
-        }
-
-        EnemyStats.AddEnemy(enemyInstance);
-        enemies.Add(enemyInstance);
-    }
-
-    if (enemies.Count > 0) StartCoroutine(DelayedSelectRandomEnemy());
-}
-
 
     private void ResetSpawnPoints()
     {

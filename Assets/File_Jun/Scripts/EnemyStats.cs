@@ -1,13 +1,12 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyStats : MonoBehaviour
 {
     public EnemyData enemyData;
     public Text healthText;
-
     public EnemyHealthBar enemyHealthBar;
 
     [Header("Scriptable")]
@@ -16,19 +15,12 @@ public class EnemyStats : MonoBehaviour
     private EnemySpawner spawner;
     private CharacterManager characterManager;
     private int hp;
+    private int maxHp;
     private int atk;
     private float dodgeChance;
     private int comboCount = 0;
     private static List<GameObject> enemies = new List<GameObject>();
     private int damageReceivedLastTurn = 0;
-
-    private int maxHp;
-
-    // ─────────────────────────────────────────────
-    // [EatBlock] 스킬 관련 필드
-    // ─────────────────────────────────────────────
-    private bool hasUsedEatBlock = false;  // EatBlock 스킬을 단 한 번만 사용 가능
-    private GameObject eatenBlock = null;  // 먹은 블록(필요 시 적이 죽을 때 삭제 등)
 
     private void Start()
     {
@@ -38,13 +30,11 @@ public class EnemyStats : MonoBehaviour
         {
             Debug.LogError("CharacterManager를 찾을 수 없습니다!");
         }
-
-        SetStats();
     }
 
-    public int GetHabitatLevel()
+    public int GetHabitatLevel(EnemyData.HabitatType habitat)
     {
-        switch (enemyData.habitat)
+        switch (habitat)
         {
             case EnemyData.HabitatType.Forest:
                 return 1;
@@ -53,7 +43,7 @@ public class EnemyStats : MonoBehaviour
             case EnemyData.HabitatType.DevilCastle:
                 return 3;
             default:
-                return 0;
+                return 1; // 기본값
         }
     }
 
@@ -62,53 +52,53 @@ public class EnemyStats : MonoBehaviour
         spawner = enemySpawner;
     }
 
-    public void SetStats()
+    public void SetStats(int difficulty, EnemyData.HabitatType habitat)
     {
-        int currentDifficulty = PlayerPrefs.GetInt("Difficulty", 1);
-        int habitatLevel = GetHabitatLevel();
+        int habitatLevel = GetHabitatLevel(habitat);
 
-        hp = enemyData.baseHP + (habitatLevel * currentDifficulty);
-        maxHp = hp;
-        atk = enemyData.baseATK + (currentDifficulty / Mathf.Max(habitatLevel % 4, 1));
+        // HP 계산: (기본 HP) + (난이도 * 레벨)
+        maxHp = enemyData.baseHP + (difficulty * habitatLevel);
+        hp = maxHp;
+
+        // ATK 계산: 기본 ATK + (난이도 / (레벨 % 4))
+        atk = enemyData.baseATK + (difficulty / Mathf.Max(habitatLevel % 4, 1));
+
         dodgeChance = enemyData.dodgeChance;
+
+        Debug.Log($"[EnemyStats] {gameObject.name} 스탯 설정 완료 - HP: {hp}, ATK: {atk}, " +
+                  $"난이도: {difficulty}, 레벨: {habitatLevel}");
 
         UpdateHealthText();
     }
 
-    // ─────────────────────────────────────────────
-    // 적의 턴 액션: 공격 or 스킬 중 하나 선택
-    // ─────────────────────────────────────────────
+    public int GetCurrentHp()
+    {
+        return hp;
+    }
+
     public void PerformTurnAction(Grid grid)
     {
-        // enemyData.enemySkills가 비어 있으면 -> 무조건 공격
         if (enemyData.enemySkills == null || enemyData.enemySkills.Count == 0)
         {
             AttackPlayer();
             return;
         }
 
-        // (스킬 개수 + 1) = N+1 중 하나를 골라서
-        // 마지막 인덱스이면 공격, 그 외면 스킬
-        int totalOptions = enemyData.enemySkills.Count + 1; // +1 for Attack
+        int totalOptions = enemyData.enemySkills.Count + 1;
         int randomIndex = Random.Range(0, totalOptions);
 
         if (randomIndex == enemyData.enemySkills.Count)
         {
-            // 맨 마지막 인덱스 -> 공격
             AttackPlayer();
         }
         else
         {
-            // 0 ~ (N-1) -> 스킬
             EnemySkill chosenSkill = enemyData.enemySkills[randomIndex];
             Debug.Log($"[{gameObject.name}]이(가) 스킬 [{chosenSkill.skillName}]을(를) 사용합니다!");
             chosenSkill.ActivateSkill(grid, gameObject);
         }
     }
 
-    // ─────────────────────────────────────────────
-    // 플레이어 공격
-    // ─────────────────────────────────────────────
     public void AttackPlayer()
     {
         if (characterManager == null)
@@ -122,20 +112,6 @@ public class EnemyStats : MonoBehaviour
         characterManager.ApplyDamageToCharacter(damage);
     }
 
-    public void IncreaseATK()
-    {
-        int increaseAmount = damageReceivedLastTurn / 2;
-        atk += increaseAmount;
-        Debug.Log($"[{gameObject.name}]이(가) 지난 턴 피해({damageReceivedLastTurn})의 절반만큼 ATK 증가! 현재 ATK: {atk}");
-
-        // 받은 피해 초기화 (다음 턴을 위해)
-        damageReceivedLastTurn = 0;
-    }
-
-
-    // ─────────────────────────────────────────────
-    // 라인 클리어 시 적이 받는 데미지 처리
-    // ─────────────────────────────────────────────
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
         float dodgeRoll = Random.Range(0, 100);
@@ -151,10 +127,9 @@ public class EnemyStats : MonoBehaviour
         int baseDamage = totalBlocksUsed;
         int calculatedDamage = baseDamage + (comboCount * 2);
 
-        // 받은 피해 저장
         damageReceivedLastTurn = calculatedDamage;
-
         hp -= calculatedDamage;
+
         Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
 
         if (hp <= 0)
@@ -166,7 +141,6 @@ public class EnemyStats : MonoBehaviour
         comboCount++;
         UpdateHealthText();
     }
-
 
     private void UpdateHealthText()
     {
@@ -182,16 +156,6 @@ public class EnemyStats : MonoBehaviour
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
 
         goldData.InGameGold += maxHp;
-
-        // 적이 죽을 때 eatenBlock을 어떻게 처리할지 결정
-        // 예) 이미 필드에서 제거했으므로 별도 처리가 필요없을 수도 있고,
-        //     아니면 다른 로직(복원 등)을 구현할 수도 있음
-        if (eatenBlock != null)
-        {
-            // 여기서는 먹은 블록 오브젝트가 존재한다면 Destroy
-            Destroy(eatenBlock);
-            eatenBlock = null;
-        }
 
         if (Grid.instance != null)
         {
@@ -235,47 +199,18 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
+    public void IncreaseATK()
+    {
+        int increaseAmount = damageReceivedLastTurn / 2;
+        atk += increaseAmount;
+        Debug.Log($"[{gameObject.name}]이(가) 지난 턴 피해({damageReceivedLastTurn})의 절반만큼 ATK 증가! 현재 ATK: {atk}");
+
+        damageReceivedLastTurn = 0;
+    }
+
     private static IEnumerator DelayedSelectRandomEnemy()
     {
         yield return new WaitForSeconds(0.1f);
         EnemySelector.SelectRandomEnemy();
-    }
-
-    public static List<GameObject> GetAllEnemies()
-    {
-        return new List<GameObject>(enemies);
-    }
-
-    public int GetAttackDamage()
-    {
-        return atk;
-    }
-
-    public int GetCurrentHp()
-    {
-        return hp;
-    }
-
-    public float GetDodgeChance()
-    {
-        return dodgeChance;
-    }
-
-    // ─────────────────────────────────────────────
-    // [EatBlock] 관련 메서드
-    // ─────────────────────────────────────────────
-
-    // 한 번만 사용 가능
-    public bool HasUsedEatBlock()
-    {
-        return hasUsedEatBlock;
-    }
-
-    // 먹은 블록 참조를 저장하고, 스킬 사용 여부를 true로
-    public void SetEatenBlock(GameObject block)
-    {
-        eatenBlock = block;
-        hasUsedEatBlock = true;
-        Debug.Log($"{gameObject.name}이(가) EatBlock 스킬을 사용하여 블록을 먹었습니다.");
     }
 }

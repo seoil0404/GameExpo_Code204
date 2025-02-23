@@ -492,6 +492,7 @@ MonoBehaviour:
   - {fileID: 1992245010}
   - {fileID: 1929088116}
   canvasTransform: {fileID: 1888725011}
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   threeEnemiesChance: 0.2
   twoEnemiesChance: 0.4
   oneEnemiesChance: 0.2
