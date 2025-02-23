@@ -43,7 +43,8 @@ public class PlayerHealthBar : MonoBehaviour
 
         if(characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp <= (characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp * characters[GameData.SelectedCharacterIndex - 1].characterData.ExecutionRate) / 100)
         {
-            Executable.SetActive(true);
+            if (GameData.SelectedCharacterIndex == 3)
+                Executable.SetActive(true);
         }
     }
 }
