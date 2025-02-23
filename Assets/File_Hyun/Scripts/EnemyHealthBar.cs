@@ -29,7 +29,8 @@ public class EnemyHealthBar : MonoBehaviour
         CurrentHpBar.fillAmount = currentHp / MaxHp;
         if (currentHp <= (MaxHp * characters[GameData.SelectedCharacterIndex - 1].characterData.ExecutionRate) / 100)
         {
-            Executable.SetActive(true);
+            if(GameData.SelectedCharacterIndex == 3)
+                Executable.SetActive(true);
         }
     }
 }

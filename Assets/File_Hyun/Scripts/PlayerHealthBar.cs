@@ -43,7 +43,18 @@ public class PlayerHealthBar : MonoBehaviour
 
         if(characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp <= (characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp * characters[GameData.SelectedCharacterIndex - 1].characterData.ExecutionRate) / 100)
         {
-            Executable.SetActive(true);
+            if (GameData.SelectedCharacterIndex == 3)
+                Executable.SetActive(true);
         }
+    }
+
+    private void UpdateMaxHp()
+    {
+        float current = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
+        float max = characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp;
+        DamageInflicted.fillAmount = 0;
+        heeledHp.fillAmount = 0;
+        CurrentHpBar.fillAmount = current / max;
+        Health.text = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp + " / " + characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp;
     }
 }

@@ -44,7 +44,7 @@ public class EventRoom : MonoBehaviour
             hasDilemmaOccurred = true;
             eventPool.Remove("딜레마");
         }
-
+        randomEvent = "마녀";
         Debug.Log($"[이벤트 발생] {randomEvent} 이벤트 시작!");
         StartEvent(randomEvent);
     }
@@ -137,12 +137,12 @@ public class EventRoom : MonoBehaviour
                 break;
 
             case "마녀":
-                if (Random.value < 0.5f)
+                if (Random.value < 0.5f || true)
                 {
                     eventText.text = "마녀는 붉은 포션을 주었습니다.\n포션은 쓰고 떫었습니다. 당신은 고양감을 느낍니다";
-                    characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 7;
                     characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp += 7;
-                    Debug.Log("체력 7 감소, 최대 체력 7 증가");
+                    characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 7;
+                    Debug.Log("최대 체력 7 증가");
                     RemedyEnd();
                 }
                 else

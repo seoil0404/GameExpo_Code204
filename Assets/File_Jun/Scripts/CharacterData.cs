@@ -39,8 +39,8 @@ public class CharacterData
         get => maxHp;
         set
         {
-            currentHp = Mathf.Max(value, 1);
-            OnHpChanged?.Invoke();  
+            maxHp = Mathf.Max(value, 1);
+            OnHpChanged?.Invoke();
             Debug.Log($"최대체력 set: {maxHp}");
         }
     }

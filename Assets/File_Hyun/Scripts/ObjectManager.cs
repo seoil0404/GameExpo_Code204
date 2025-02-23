@@ -1,8 +1,19 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Events;
 
 public class ObjectManager : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onESCPressed;
     public GameObject targetObject;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            onESCPressed?.Invoke();
+        }
+    }
 
     public void DeactivateObject()
     {
