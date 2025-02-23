@@ -278,7 +278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6cae355820e9d4ca982c8794854c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters: []
+  characters:
+  - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
+  - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
+  - {fileID: 11400000, guid: e377c252009c31d42b735da085234713, type: 2}
   HealthText: {fileID: 7208287657502913831}
   CurrentHpBar: {fileID: 8558846428732461804}
   Executable: {fileID: 97635792365227146}
