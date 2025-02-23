@@ -76,7 +76,7 @@ public class CharacterManager : MonoBehaviour
     {
         Debug.Log("캐릭터가 죽었습니다!");
         GameStartTracker.IsHavetobeReset = false;
-        SceneManager.LoadScene("MainScene");
+        Scene.Controller.LoadScene(Scene.MainScene);
     }
 
     public void SaveHp()
