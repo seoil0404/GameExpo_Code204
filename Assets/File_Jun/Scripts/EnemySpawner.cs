@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
     private List<Transform> availableSpawnPoints;
     public List<GameObject> enemies = new List<GameObject>();
 
+    public bool isBossStage = false; // 보스 스테이지 여부
+
     private void Awake()
     {
         LoadDifficulty();
@@ -27,18 +29,26 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
+        bool forceOneEnemy = false;
+
+        // SpecialCombat이면 일반 적으로 바꾸고 난이도를 10배 증가
         if (combatData.EnemyType == EnemyData.EnemyType.SpecialCombat)
         {
             Debug.LogWarning("[EnemySpawner] SpecialCombat 감지됨! Common으로 변경 후 난이도 10배 증가 및 한 마리만 생성");
             combatData.EnemyType = EnemyData.EnemyType.Common;
             currentDifficulty *= 10;
+            forceOneEnemy = true;
+        }
 
-            SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
-        }
-        else
+        // EnemyType이 Boss이거나, isBossStage가 true이면 무조건 한 마리만 생성
+        if (isBossStage || combatData.EnemyType == EnemyData.EnemyType.Boss)
         {
-            SpawnEnemies(combatData.HabitatType, combatData.EnemyType);
+            Debug.Log("[EnemySpawner] 보스 스테이지 또는 Boss 타입 적 감지됨! 한 마리만 생성");
+            forceOneEnemy = true;
         }
+
+        // 적 소환 실행
+        SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy);
 
         var grid = FindFirstObjectByType<Grid>();
         if (grid != null) grid.enemies = enemies;
