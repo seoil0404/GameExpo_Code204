@@ -10,6 +10,9 @@ public class EnemyStats : MonoBehaviour
 
     public EnemyHealthBar enemyHealthBar;
 
+    [Header("Scriptable")]
+    [SerializeField] private GoldData goldData;
+
     private EnemySpawner spawner;
     private CharacterManager characterManager;
     private int hp;
@@ -18,6 +21,8 @@ public class EnemyStats : MonoBehaviour
     private int comboCount = 0;
     private static List<GameObject> enemies = new List<GameObject>();
     private int damageReceivedLastTurn = 0;
+
+    private int maxHp;
 
     // ─────────────────────────────────────────────
     // [EatBlock] 스킬 관련 필드
@@ -63,6 +68,7 @@ public class EnemyStats : MonoBehaviour
         int habitatLevel = GetHabitatLevel();
 
         hp = enemyData.baseHP + (habitatLevel * currentDifficulty);
+        maxHp = hp;
         atk = enemyData.baseATK + (currentDifficulty / Mathf.Max(habitatLevel % 4, 1));
         dodgeChance = enemyData.dodgeChance;
 
@@ -174,6 +180,8 @@ public class EnemyStats : MonoBehaviour
     private void Die()
     {
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
+
+        goldData.InGameGold += maxHp;
 
         // 적이 죽을 때 eatenBlock을 어떻게 처리할지 결정
         // 예) 이미 필드에서 제거했으므로 별도 처리가 필요없을 수도 있고,

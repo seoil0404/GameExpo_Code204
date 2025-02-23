@@ -9,6 +9,7 @@ public class TreasureView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [SerializeField] private GameObject descriptionPrefab;
 
     [SerializeField] private float startScale;
+    [SerializeField] private float endScale;
     [SerializeField] private float scaleDuration;
 
     private DescriptionView currentDescription;
@@ -29,7 +30,7 @@ public class TreasureView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         currentDescription = Instantiate(descriptionPrefab, transform).GetComponent<DescriptionView>();
 
         currentDescription.transform.localScale = Vector3.one * startScale;
-        currentDescription.transform.DOScale(Vector3.one, scaleDuration);
+        currentDescription.transform.DOScale(Vector3.one * endScale, scaleDuration);
 
         currentDescription.Description.text = descriptionText;
 

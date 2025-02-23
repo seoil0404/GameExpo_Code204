@@ -320,6 +320,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 46137ab19648c3e4693f791e5f8e8570, type: 2}
   healthText: {fileID: 3835512761275567332}
   enemyHealthBar: {fileID: 1797466181759738262}
+  goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
 --- !u!114 &1199959639655230800
 MonoBehaviour:
   m_ObjectHideFlags: 0

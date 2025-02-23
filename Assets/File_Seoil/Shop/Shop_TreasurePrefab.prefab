@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 495492675595630390}
   - component: {fileID: 7562456430963612358}
   m_Layer: 5
-  m_Name: TreasurePrefab
+  m_Name: Shop_TreasurePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultPosition: {x: 0, y: 0}
-  descriptionPrefab: {fileID: 6042078744319287865, guid: 2f1fb3f4b51939d4eb3b888dbde20871, type: 3}
-  startScale: 0.75
-  endScale: 1
+  descriptionPrefab: {fileID: 6042078744319287865, guid: bad3ddb87e64d7f4692ad8f8aa984a2c, type: 3}
+  startScale: 0.1
+  endScale: 0.35
   scaleDuration: 0.2

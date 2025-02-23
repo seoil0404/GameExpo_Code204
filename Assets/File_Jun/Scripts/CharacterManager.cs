@@ -10,7 +10,7 @@ public class CharacterManager : MonoBehaviour
     public Slider UltimateGaugeSlider;
     public Transform SpawnPoint;
     private static GameObject currentCharacterInstance;
-    private static Character selectedCharacter;
+    public static Character selectedCharacter;
 
     private static int savedHp = -1;
     private const string HpKey = "SavedHp"; // PlayerPrefs Ű
