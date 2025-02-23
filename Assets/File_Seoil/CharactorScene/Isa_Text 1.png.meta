@@ -1,0 +1,3926 @@
+fileFormatVersion: 2
+guid: b60485a2f3828334a9f0353cd524da41
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5609134399094980448
+    second: Isa_Text 1_0
+  - first:
+      213: -5622436462006800728
+    second: Isa_Text 1_1
+  - first:
+      213: -526249169268159742
+    second: Isa_Text 1_2
+  - first:
+      213: 5632019638509634680
+    second: Isa_Text 1_3
+  - first:
+      213: 4047568050390465710
+    second: Isa_Text 1_4
+  - first:
+      213: 8880291374162523176
+    second: Isa_Text 1_5
+  - first:
+      213: -353767256036727655
+    second: Isa_Text 1_6
+  - first:
+      213: -6317885414646711882
+    second: Isa_Text 1_7
+  - first:
+      213: -7253122918877708497
+    second: Isa_Text 1_8
+  - first:
+      213: 4674586892806322437
+    second: Isa_Text 1_9
+  - first:
+      213: -8186337585229961513
+    second: Isa_Text 1_10
+  - first:
+      213: 4647987747508257572
+    second: Isa_Text 1_11
+  - first:
+      213: -5166702927134365114
+    second: Isa_Text 1_12
+  - first:
+      213: 896855862491361387
+    second: Isa_Text 1_13
+  - first:
+      213: 8781100207133807751
+    second: Isa_Text 1_14
+  - first:
+      213: 2020425740014110234
+    second: Isa_Text 1_15
+  - first:
+      213: -3525055519859107034
+    second: Isa_Text 1_16
+  - first:
+      213: 1027702299795789123
+    second: Isa_Text 1_17
+  - first:
+      213: 1454381389109938960
+    second: Isa_Text 1_18
+  - first:
+      213: 1315895984094639705
+    second: Isa_Text 1_19
+  - first:
+      213: -5490267796085892826
+    second: Isa_Text 1_20
+  - first:
+      213: -7994657367114621677
+    second: Isa_Text 1_21
+  - first:
+      213: 8541947563104191565
+    second: Isa_Text 1_22
+  - first:
+      213: 482564216294551676
+    second: Isa_Text 1_23
+  - first:
+      213: 9048068761510084972
+    second: Isa_Text 1_24
+  - first:
+      213: -3928922835145388669
+    second: Isa_Text 1_25
+  - first:
+      213: 5031524966328584989
+    second: Isa_Text 1_26
+  - first:
+      213: -4384319719182157668
+    second: Isa_Text 1_27
+  - first:
+      213: 7820423466936479370
+    second: Isa_Text 1_28
+  - first:
+      213: 4603727713211250387
+    second: Isa_Text 1_29
+  - first:
+      213: 1612332646768824316
+    second: Isa_Text 1_30
+  - first:
+      213: -8015248255513366259
+    second: Isa_Text 1_31
+  - first:
+      213: -4580831439706553306
+    second: Isa_Text 1_32
+  - first:
+      213: 6669511849722052266
+    second: Isa_Text 1_33
+  - first:
+      213: -5961536380668532796
+    second: Isa_Text 1_34
+  - first:
+      213: -720058144239244805
+    second: Isa_Text 1_35
+  - first:
+      213: -1230586464899146960
+    second: Isa_Text 1_36
+  - first:
+      213: -1416618010923895839
+    second: Isa_Text 1_37
+  - first:
+      213: 1934374430544615511
+    second: Isa_Text 1_38
+  - first:
+      213: -1745723703631187452
+    second: Isa_Text 1_39
+  - first:
+      213: -7421172209010997221
+    second: Isa_Text 1_40
+  - first:
+      213: 680497832845469639
+    second: Isa_Text 1_41
+  - first:
+      213: -3657524547651463431
+    second: Isa_Text 1_42
+  - first:
+      213: 4151690459737990905
+    second: Isa_Text 1_43
+  - first:
+      213: -157217311866352676
+    second: Isa_Text 1_44
+  - first:
+      213: -8537259741870199085
+    second: Isa_Text 1_45
+  - first:
+      213: -854489143869960178
+    second: Isa_Text 1_46
+  - first:
+      213: -3539453403362288471
+    second: Isa_Text 1_47
+  - first:
+      213: 3348846582088697557
+    second: Isa_Text 1_48
+  - first:
+      213: 4005187653122626486
+    second: Isa_Text 1_49
+  - first:
+      213: -7473827694092355772
+    second: Isa_Text 1_50
+  - first:
+      213: 4778811159070797739
+    second: Isa_Text 1_51
+  - first:
+      213: -60449226702844260
+    second: Isa_Text 1_52
+  - first:
+      213: -5211036282867967276
+    second: Isa_Text 1_53
+  - first:
+      213: 6169799405372250508
+    second: Isa_Text 1_54
+  - first:
+      213: 365592722939302800
+    second: Isa_Text 1_55
+  - first:
+      213: 4167345139277336097
+    second: Isa_Text 1_56
+  - first:
+      213: -5176811610871521531
+    second: Isa_Text 1_57
+  - first:
+      213: -7094470054791471549
+    second: Isa_Text 1_58
+  - first:
+      213: -3966089150883190422
+    second: Isa_Text 1_59
+  - first:
+      213: -8144544582850988156
+    second: Isa_Text 1_60
+  - first:
+      213: 2017271144700939486
+    second: Isa_Text 1_61
+  - first:
+      213: -6336934317309535243
+    second: Isa_Text 1_62
+  - first:
+      213: -6920357071221572906
+    second: Isa_Text 1_63
+  - first:
+      213: 5517243067626120356
+    second: Isa_Text 1_64
+  - first:
+      213: 1340914767816558183
+    second: Isa_Text 1_65
+  - first:
+      213: 6641470308630076456
+    second: Isa_Text 1_66
+  - first:
+      213: -8868467106339594528
+    second: Isa_Text 1_67
+  - first:
+      213: 4729690655375518040
+    second: Isa_Text 1_68
+  - first:
+      213: -7497984604023908405
+    second: Isa_Text 1_69
+  - first:
+      213: 3304050952895374222
+    second: Isa_Text 1_70
+  - first:
+      213: 8233444043161089645
+    second: Isa_Text 1_71
+  - first:
+      213: -1107807163711240222
+    second: Isa_Text 1_72
+  - first:
+      213: 4566549141754490773
+    second: Isa_Text 1_73
+  - first:
+      213: -5070767893056807587
+    second: Isa_Text 1_74
+  - first:
+      213: -4843634070109454530
+    second: Isa_Text 1_75
+  - first:
+      213: 2815103913816280110
+    second: Isa_Text 1_76
+  - first:
+      213: 2047366808163924649
+    second: Isa_Text 1_77
+  - first:
+      213: 6380940989764352447
+    second: Isa_Text 1_78
+  - first:
+      213: -1449951041934981146
+    second: Isa_Text 1_79
+  - first:
+      213: -4482388639532267454
+    second: Isa_Text 1_80
+  - first:
+      213: -6779103115883055652
+    second: Isa_Text 1_81
+  - first:
+      213: 5215314882883715714
+    second: Isa_Text 1_82
+  - first:
+      213: 1628238393152152181
+    second: Isa_Text 1_83
+  - first:
+      213: 3442947743017602075
+    second: Isa_Text 1_84
+  - first:
+      213: 6890624305827556428
+    second: Isa_Text 1_85
+  - first:
+      213: -3753397050495932583
+    second: Isa_Text 1_86
+  - first:
+      213: 5625636566386088883
+    second: Isa_Text 1_87
+  - first:
+      213: -940805535866153939
+    second: Isa_Text 1_88
+  - first:
+      213: -3998009679052414674
+    second: Isa_Text 1_89
+  - first:
+      213: 4675439658301632689
+    second: Isa_Text 1_90
+  - first:
+      213: -2456769685537937617
+    second: Isa_Text 1_91
+  - first:
+      213: -7647322954060277745
+    second: Isa_Text 1_92
+  - first:
+      213: 6394491006789504625
+    second: Isa_Text 1_93
+  - first:
+      213: 7911775073281917366
+    second: Isa_Text 1_94
+  - first:
+      213: 5162092975488433040
+    second: Isa_Text 1_95
+  - first:
+      213: -358659280857886985
+    second: Isa_Text 1_96
+  - first:
+      213: 4490004535261519598
+    second: Isa_Text 1_97
+  - first:
+      213: 2422665124744282143
+    second: Isa_Text 1_98
+  - first:
+      213: 398566421920009891
+    second: Isa_Text 1_99
+  - first:
+      213: -3221166510690184063
+    second: Isa_Text 1_100
+  - first:
+      213: 5673601698564984801
+    second: Isa_Text 1_101
+  - first:
+      213: -7344153649357225963
+    second: Isa_Text 1_102
+  - first:
+      213: -2252291270711270494
+    second: Isa_Text 1_103
+  - first:
+      213: 7163472225212965521
+    second: Isa_Text 1_104
+  - first:
+      213: -3012285921495831596
+    second: Isa_Text 1_105
+  - first:
+      213: -3152846793569606055
+    second: Isa_Text 1_106
+  - first:
+      213: -4693029269374937183
+    second: Isa_Text 1_107
+  - first:
+      213: -342350480049316618
+    second: Isa_Text 1_108
+  - first:
+      213: -5516951215795659288
+    second: Isa_Text 1_109
+  - first:
+      213: -6718787668344719087
+    second: Isa_Text 1_110
+  - first:
+      213: -7381671618204817680
+    second: Isa_Text 1_111
+  - first:
+      213: 4666337762396775229
+    second: Isa_Text 1_112
+  - first:
+      213: -3778384362768587404
+    second: Isa_Text 1_113
+  - first:
+      213: -7246397715785556339
+    second: Isa_Text 1_114
+  - first:
+      213: 6677988196465127136
+    second: Isa_Text 1_115
+  - first:
+      213: 5490206292944885343
+    second: Isa_Text 1_116
+  - first:
+      213: 3189340318601625158
+    second: Isa_Text 1_117
+  - first:
+      213: -5058817215565136471
+    second: Isa_Text 1_118
+  - first:
+      213: -828660808055300824
+    second: Isa_Text 1_119
+  - first:
+      213: -608929904776560208
+    second: Isa_Text 1_120
+  - first:
+      213: 8760143350385705029
+    second: Isa_Text 1_121
+  - first:
+      213: 4163779413023295847
+    second: Isa_Text 1_122
+  - first:
+      213: 8951628565584924875
+    second: Isa_Text 1_123
+  - first:
+      213: -7144168964911568428
+    second: Isa_Text 1_124
+  - first:
+      213: -7271632964768011071
+    second: Isa_Text 1_125
+  - first:
+      213: 9016685581659798970
+    second: Isa_Text 1_126
+  - first:
+      213: 3589299201378782956
+    second: Isa_Text 1_127
+  - first:
+      213: -6175358411188378217
+    second: Isa_Text 1_128
+  - first:
+      213: 9120648835266976537
+    second: Isa_Text 1_129
+  - first:
+      213: -7944288855003102179
+    second: Isa_Text 1_130
+  - first:
+      213: 7295180815349677354
+    second: Isa_Text 1_131
+  - first:
+      213: 9126758915459358604
+    second: Isa_Text 1_132
+  - first:
+      213: -894335186505495487
+    second: Isa_Text 1_133
+  - first:
+      213: 2220980555888790420
+    second: Isa_Text 1_134
+  - first:
+      213: -8602749497569437526
+    second: Isa_Text 1_135
+  - first:
+      213: 5088358663741868037
+    second: Isa_Text 1_136
+  - first:
+      213: 7927639901074512746
+    second: Isa_Text 1_137
+  - first:
+      213: -3829093641409528918
+    second: Isa_Text 1_138
+  - first:
+      213: -8207888877303707614
+    second: Isa_Text 1_139
+  - first:
+      213: 7619472706736566616
+    second: Isa_Text 1_140
+  - first:
+      213: 1480286075173024329
+    second: Isa_Text 1_141
+  - first:
+      213: 824324690476001482
+    second: Isa_Text 1_142
+  - first:
+      213: 354040534841194340
+    second: Isa_Text 1_143
+  - first:
+      213: 9010522779518935865
+    second: Isa_Text 1_144
+  - first:
+      213: 7313336805178881153
+    second: Isa_Text 1_145
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Isa_Text 1_0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 694
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a005848bf95822b0800000000000000
+      internalID: -5609134399094980448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 665
+        width: 31
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae61e5a3d719f1b0800000000000000
+      internalID: -5622436462006800728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_2
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 693
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b4d623b2362b8f0800000000000000
+      internalID: -526249169268159742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_3
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 665
+        width: 16
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87404618504f82e40800000000000000
+      internalID: 5632019638509634680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 687
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac7eb762b9db2830800000000000000
+      internalID: 4047568050390465710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_5
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 665
+        width: 31
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8243cea74f12d3b70800000000000000
+      internalID: 8880291374162523176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 600
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99424c21e8a271bf0800000000000000
+      internalID: -353767256036727655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_7
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 597
+        width: 9
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b97c5060bc5258a0800000000000000
+      internalID: -6317885414646711882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_8
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 597
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fbc0c422bb75b90800000000000000
+      internalID: -7253122918877708497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 619
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509fa6113087fd040800000000000000
+      internalID: 4674586892806322437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 604
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d660fcd659446e80800000000000000
+      internalID: -8186337585229961513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_11
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 603
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4230992fa38f08040800000000000000
+      internalID: 4647987747508257572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_12
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 599
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a6f28ef0f2c48b0800000000000000
+      internalID: -5166702927134365114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_13
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 604
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60368ab7a5427c00800000000000000
+      internalID: 896855862491361387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_14
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 603
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784d1573d1cbcd970800000000000000
+      internalID: 8781100207133807751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_15
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 602
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16c890818ef90c10800000000000000
+      internalID: 2020425740014110234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_16
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 528
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b94456eac741fc0800000000000000
+      internalID: -3525055519859107034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_17
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 528
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3451e22fbc1234e00800000000000000
+      internalID: 1027702299795789123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_18
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 545
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b46d1fa200f2410800000000000000
+      internalID: 1454381389109938960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_19
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 529
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956f255fc60034210800000000000000
+      internalID: 1315895984094639705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_20
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 528
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62998843786aec3b0800000000000000
+      internalID: -5490267796085892826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_21
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 495
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d5c2c6b754d0190800000000000000
+      internalID: -7994657367114621677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_22
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 483
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44c6dc2d081b8670800000000000000
+      internalID: 8541947563104191565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 491
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c703d85199962b600800000000000000
+      internalID: 482564216294551676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_24
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 482
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c610e119992319d70800000000000000
+      internalID: 9048068761510084972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_25
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 494
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d0d3d6f79a979c0800000000000000
+      internalID: -3928922835145388669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_26
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 491
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b46887c4193d540800000000000000
+      internalID: 5031524966328584989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_27
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 482
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98386cc174c723c0800000000000000
+      internalID: -4384319719182157668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_28
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 486
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ea0e375b9b78c60800000000000000
+      internalID: 7820423466936479370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_29
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 487
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d6f39ca6f9b3ef30800000000000000
+      internalID: 4603727713211250387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_30
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 486
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cffcb6eeff7206610800000000000000
+      internalID: 1612332646768824316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_31
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 487
+        width: 59
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d017e8f9d2e14c090800000000000000
+      internalID: -8015248255513366259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_32
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 495
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 624895c631e9d60c0800000000000000
+      internalID: -4580831439706553306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_33
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 482
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaef0f3d0bdde8c50800000000000000
+      internalID: 6669511849722052266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_34
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c72fa25f3e544da0800000000000000
+      internalID: -5961536380668532796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_35
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 496
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf92efecee6d106f0800000000000000
+      internalID: -720058144239244805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_36
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 493
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b584e41241ceee0800000000000000
+      internalID: -1230586464899146960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_37
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 482
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3f574bc69275ce0800000000000000
+      internalID: -1416618010923895839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_38
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 493
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758d53bbb4748da10800000000000000
+      internalID: 1934374430544615511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_39
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 490
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40275117a81f5c7e0800000000000000
+      internalID: -1745723703631187452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_40
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 496
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1806e8e133b20990800000000000000
+      internalID: -7421172209010997221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_41
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 482
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c76d2d6c2d917900800000000000000
+      internalID: 680497832845469639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_42
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 483
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f696f36dccdd3dc0800000000000000
+      internalID: -3657524547651463431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_43
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 500
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6af0ef974cd9930800000000000000
+      internalID: 4151690459737990905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_44
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 494
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb0aa510b371ddf0800000000000000
+      internalID: -157217311866352676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_45
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 490
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de65924f7f858980800000000000000
+      internalID: -8537259741870199085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_46
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 499
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e001433a6ae3424f0800000000000000
+      internalID: -854489143869960178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_47
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac1b89e1e551eec0800000000000000
+      internalID: -3539453403362288471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_48
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 493
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d68da4393e797e20800000000000000
+      internalID: 3348846582088697557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_49
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 482
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3972b33f8459730800000000000000
+      internalID: 4005187653122626486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_50
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 493
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447f52d6f41a74890800000000000000
+      internalID: -7473827694092355772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_51
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 482
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf66111e6fb15240800000000000000
+      internalID: 4778811159070797739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_52
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 483
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e0e63afbd392ff0800000000000000
+      internalID: -60449226702844260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_53
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 486
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da9bf72c1eaea7b0800000000000000
+      internalID: -5211036282867967276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_54
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 482
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8911a4ced78f9550800000000000000
+      internalID: 6169799405372250508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_55
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 495
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093d34ff4a8d21500800000000000000
+      internalID: 365592722939302800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_56
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 487
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e831b135265d930800000000000000
+      internalID: 4167345139277336097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_57
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 493
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f92e094454828b0800000000000000
+      internalID: -5176811610871521531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_58
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 487
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e1282c2116b8d90800000000000000
+      internalID: -7094470054791471549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_59
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 482
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a69a3163eee95f8c0800000000000000
+      internalID: -3966089150883190422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_60
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 482
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 487b5d18ad3c8fe80800000000000000
+      internalID: -8144544582850988156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_61
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 483
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc8b8b0b69cefb10800000000000000
+      internalID: 2017271144700939486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_62
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 483
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb58cb10dfae08a0800000000000000
+      internalID: -6336934317309535243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_63
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 483
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dab9fac8e3f5ff90800000000000000
+      internalID: -6920357071221572906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_64
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 482
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a46751a65f219c40800000000000000
+      internalID: 5517243067626120356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_65
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 481
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76608c970e2eb9210800000000000000
+      internalID: 1340914767816558183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_66
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 443
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c1334ce0e3b2c50800000000000000
+      internalID: 6641470308630076456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_67
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 429
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee54686720ece480800000000000000
+      internalID: -8868467106339594528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_68
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 429
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8596423979c33a140800000000000000
+      internalID: 4729690655375518040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_69
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 430
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc79ec98abec1f790800000000000000
+      internalID: -7497984604023908405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_70
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 438
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83ae1706d85add20800000000000000
+      internalID: 3304050952895374222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_71
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 429
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d663cae0cb1134270800000000000000
+      internalID: 8233444043161089645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_72
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 429
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7cb57014740a0f0800000000000000
+      internalID: -1107807163711240222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_73
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 441
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f24a3ff34af5f30800000000000000
+      internalID: 4566549141754490773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_74
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 438
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d94e3a77301a9b0800000000000000
+      internalID: -5070767893056807587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_75
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 431
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f7525d974f7ccb0800000000000000
+      internalID: -4843634070109454530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_76
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 429
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2cc4d43812411720800000000000000
+      internalID: 2815103913816280110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_77
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 439
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa398db345b96c10800000000000000
+      internalID: 2047366808163924649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_78
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 429
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb932a3c508ad8850800000000000000
+      internalID: 6380940989764352447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_79
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 437
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e702c3a53db0ebe0800000000000000
+      internalID: -1449951041934981146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_80
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 429
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248ce63f74b5bc1c0800000000000000
+      internalID: -4482388639532267454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_81
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 429
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5fb0222a9cbe1a0800000000000000
+      internalID: -6779103115883055652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_82
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 438
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282871a0145806840800000000000000
+      internalID: 5215314882883715714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_83
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 429
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572ac79113aa89610800000000000000
+      internalID: 1628238393152152181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_84
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 434
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c0cc21bbec7cf20800000000000000
+      internalID: 3442947743017602075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_85
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 442
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c268d4c4a60af50800000000000000
+      internalID: 6890624305827556428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_86
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 447
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 957e038d44149ebc0800000000000000
+      internalID: -3753397050495932583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_87
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 443
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb14e6b6a6421e40800000000000000
+      internalID: 5625636566386088883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_88
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 447
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d241af7895691f2f0800000000000000
+      internalID: -940805535866153939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_89
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 437
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21e18711673488c0800000000000000
+      internalID: -3998009679052414674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_90
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 440
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b0b7d1099f72e040800000000000000
+      internalID: 4675439658301632689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_91
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 429
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27209eccfcc7edd0800000000000000
+      internalID: -2456769685537937617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_92
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 430
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08db806a404fd590800000000000000
+      internalID: -7647322954060277745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_93
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 429
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e4e13f0bbcdb850800000000000000
+      internalID: 6394491006789504625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_94
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 430
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b142c1c2854ccd60800000000000000
+      internalID: 7911775073281917366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_95
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 430
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09bf685163073a740800000000000000
+      internalID: 5162092975488433040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_96
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 430
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe8119c849c50bf0800000000000000
+      internalID: -358659280857886985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_97
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 433
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeed724f553bf4e30800000000000000
+      internalID: 4490004535261519598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_98
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 378
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f104c1a58190f9120800000000000000
+      internalID: 2422665124744282143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_99
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aec0fd8c0ef78500800000000000000
+      internalID: 398566421920009891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_100
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 382
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1845defff1e1c43d0800000000000000
+      internalID: -3221166510690184063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_101
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 378
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1efc4005faeacbe40800000000000000
+      internalID: 5673601698564984801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_102
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 371
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5108c2aba23541a90800000000000000
+      internalID: -7344153649357225963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_103
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 361
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3aa8eb5014eb0e0800000000000000
+      internalID: -2252291270711270494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_104
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 363
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192223ef804c96360800000000000000
+      internalID: 7163472225212965521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_105
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 362
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dba4570ae53236d0800000000000000
+      internalID: -3012285921495831596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_106
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 362
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956ed06bb86de34d0800000000000000
+      internalID: -3152846793569606055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_107
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 315
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a755668eb20fdeb0800000000000000
+      internalID: -4693029269374937183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_108
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 320
+        width: 59
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fcd9ff5d0abf3bf0800000000000000
+      internalID: -342350480049316618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_109
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 331
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed175b691adf63b0800000000000000
+      internalID: -5516951215795659288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_110
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 328
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 119b90b963212c2a0800000000000000
+      internalID: -6718787668344719087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_111
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 327
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6a154e5c80f8990800000000000000
+      internalID: -7381671618204817680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_112
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 328
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33a6a9b87922c040800000000000000
+      internalID: 4666337762396775229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_113
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 323
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475a948d07b709bc0800000000000000
+      internalID: -3778384362768587404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_114
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 315
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e5669abaf9f6b90800000000000000
+      internalID: -7246397715785556339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_115
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 324
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee2e8812eafcac50800000000000000
+      internalID: 6677988196465127136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_116
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 315
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56189af881213c40800000000000000
+      internalID: 5490206292944885343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_117
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 328
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64eb4163f10d24c20800000000000000
+      internalID: 3189340318601625158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_118
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 333
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adfb929b887bc9b0800000000000000
+      internalID: -5058817215565136471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_119
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 315
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82d5390b2610084f0800000000000000
+      internalID: -828660808055300824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_120
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 332
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b14ea45a75ac87f0800000000000000
+      internalID: -608929904776560208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_121
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 327
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5408d35c6f7429970800000000000000
+      internalID: 8760143350385705029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_122
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 326
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7698654c057b8c930800000000000000
+      internalID: 4163779413023295847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_123
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 315
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc0ddeca0c29a3c70800000000000000
+      internalID: 8951628565584924875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_124
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 320
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d963178d20dadc90800000000000000
+      internalID: -7144168964911568428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_125
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 331
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cc6bf56858f51b90800000000000000
+      internalID: -7271632964768011071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_126
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 323
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abdf73a93c3b12d70800000000000000
+      internalID: 9016685581659798970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_127
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 315
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee86c25b90cfc130800000000000000
+      internalID: 3589299201378782956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_128
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 327
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79565645e38bc4aa0800000000000000
+      internalID: -6175358411188378217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_129
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 315
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b1b2bdacd039e70800000000000000
+      internalID: 9120648835266976537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_130
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 328
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d140274806730c190800000000000000
+      internalID: -7944288855003102179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_131
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 319
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d792fcc40bd3560800000000000000
+      internalID: 7295180815349677354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_132
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 316
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f9592c0e2c8ae70800000000000000
+      internalID: 9126758915459358604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_133
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 315
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c0532e2eea693f0800000000000000
+      internalID: -894335186505495487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_134
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 328
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b0dce5c0282de10800000000000000
+      internalID: 2220980555888790420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_135
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 315
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa814b949e4ec9880800000000000000
+      internalID: -8602749497569437526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_136
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 315
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5088d12de3b7d9640800000000000000
+      internalID: 5088358663741868037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_137
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 316
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b52c2dc72a40e60800000000000000
+      internalID: 7927639901074512746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_138
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 315
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabf31cde935cdac0800000000000000
+      internalID: -3829093641409528918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_139
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 316
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228ce68ad88b71e80800000000000000
+      internalID: -8207888877303707614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_140
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 315
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85131dc9e0ecdb960800000000000000
+      internalID: 7619472706736566616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_141
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 315
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94235aca7580b8410800000000000000
+      internalID: 1480286075173024329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_142
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 315
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8e76340f6907b00800000000000000
+      internalID: 824324690476001482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_143
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 320
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4677c4b9dfdc9e400800000000000000
+      internalID: 354040534841194340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_144
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 315
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933aac96abecb0d70800000000000000
+      internalID: 9010522779518935865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isa_Text 1_145
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 319
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1843a7b93113e7560800000000000000
+      internalID: 7313336805178881153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Isa_Text 1_0: -5609134399094980448
+      Isa_Text 1_1: -5622436462006800728
+      Isa_Text 1_10: -8186337585229961513
+      Isa_Text 1_100: -3221166510690184063
+      Isa_Text 1_101: 5673601698564984801
+      Isa_Text 1_102: -7344153649357225963
+      Isa_Text 1_103: -2252291270711270494
+      Isa_Text 1_104: 7163472225212965521
+      Isa_Text 1_105: -3012285921495831596
+      Isa_Text 1_106: -3152846793569606055
+      Isa_Text 1_107: -4693029269374937183
+      Isa_Text 1_108: -342350480049316618
+      Isa_Text 1_109: -5516951215795659288
+      Isa_Text 1_11: 4647987747508257572
+      Isa_Text 1_110: -6718787668344719087
+      Isa_Text 1_111: -7381671618204817680
+      Isa_Text 1_112: 4666337762396775229
+      Isa_Text 1_113: -3778384362768587404
+      Isa_Text 1_114: -7246397715785556339
+      Isa_Text 1_115: 6677988196465127136
+      Isa_Text 1_116: 5490206292944885343
+      Isa_Text 1_117: 3189340318601625158
+      Isa_Text 1_118: -5058817215565136471
+      Isa_Text 1_119: -828660808055300824
+      Isa_Text 1_12: -5166702927134365114
+      Isa_Text 1_120: -608929904776560208
+      Isa_Text 1_121: 8760143350385705029
+      Isa_Text 1_122: 4163779413023295847
+      Isa_Text 1_123: 8951628565584924875
+      Isa_Text 1_124: -7144168964911568428
+      Isa_Text 1_125: -7271632964768011071
+      Isa_Text 1_126: 9016685581659798970
+      Isa_Text 1_127: 3589299201378782956
+      Isa_Text 1_128: -6175358411188378217
+      Isa_Text 1_129: 9120648835266976537
+      Isa_Text 1_13: 896855862491361387
+      Isa_Text 1_130: -7944288855003102179
+      Isa_Text 1_131: 7295180815349677354
+      Isa_Text 1_132: 9126758915459358604
+      Isa_Text 1_133: -894335186505495487
+      Isa_Text 1_134: 2220980555888790420
+      Isa_Text 1_135: -8602749497569437526
+      Isa_Text 1_136: 5088358663741868037
+      Isa_Text 1_137: 7927639901074512746
+      Isa_Text 1_138: -3829093641409528918
+      Isa_Text 1_139: -8207888877303707614
+      Isa_Text 1_14: 8781100207133807751
+      Isa_Text 1_140: 7619472706736566616
+      Isa_Text 1_141: 1480286075173024329
+      Isa_Text 1_142: 824324690476001482
+      Isa_Text 1_143: 354040534841194340
+      Isa_Text 1_144: 9010522779518935865
+      Isa_Text 1_145: 7313336805178881153
+      Isa_Text 1_15: 2020425740014110234
+      Isa_Text 1_16: -3525055519859107034
+      Isa_Text 1_17: 1027702299795789123
+      Isa_Text 1_18: 1454381389109938960
+      Isa_Text 1_19: 1315895984094639705
+      Isa_Text 1_2: -526249169268159742
+      Isa_Text 1_20: -5490267796085892826
+      Isa_Text 1_21: -7994657367114621677
+      Isa_Text 1_22: 8541947563104191565
+      Isa_Text 1_23: 482564216294551676
+      Isa_Text 1_24: 9048068761510084972
+      Isa_Text 1_25: -3928922835145388669
+      Isa_Text 1_26: 5031524966328584989
+      Isa_Text 1_27: -4384319719182157668
+      Isa_Text 1_28: 7820423466936479370
+      Isa_Text 1_29: 4603727713211250387
+      Isa_Text 1_3: 5632019638509634680
+      Isa_Text 1_30: 1612332646768824316
+      Isa_Text 1_31: -8015248255513366259
+      Isa_Text 1_32: -4580831439706553306
+      Isa_Text 1_33: 6669511849722052266
+      Isa_Text 1_34: -5961536380668532796
+      Isa_Text 1_35: -720058144239244805
+      Isa_Text 1_36: -1230586464899146960
+      Isa_Text 1_37: -1416618010923895839
+      Isa_Text 1_38: 1934374430544615511
+      Isa_Text 1_39: -1745723703631187452
+      Isa_Text 1_4: 4047568050390465710
+      Isa_Text 1_40: -7421172209010997221
+      Isa_Text 1_41: 680497832845469639
+      Isa_Text 1_42: -3657524547651463431
+      Isa_Text 1_43: 4151690459737990905
+      Isa_Text 1_44: -157217311866352676
+      Isa_Text 1_45: -8537259741870199085
+      Isa_Text 1_46: -854489143869960178
+      Isa_Text 1_47: -3539453403362288471
+      Isa_Text 1_48: 3348846582088697557
+      Isa_Text 1_49: 4005187653122626486
+      Isa_Text 1_5: 8880291374162523176
+      Isa_Text 1_50: -7473827694092355772
+      Isa_Text 1_51: 4778811159070797739
+      Isa_Text 1_52: -60449226702844260
+      Isa_Text 1_53: -5211036282867967276
+      Isa_Text 1_54: 6169799405372250508
+      Isa_Text 1_55: 365592722939302800
+      Isa_Text 1_56: 4167345139277336097
+      Isa_Text 1_57: -5176811610871521531
+      Isa_Text 1_58: -7094470054791471549
+      Isa_Text 1_59: -3966089150883190422
+      Isa_Text 1_6: -353767256036727655
+      Isa_Text 1_60: -8144544582850988156
+      Isa_Text 1_61: 2017271144700939486
+      Isa_Text 1_62: -6336934317309535243
+      Isa_Text 1_63: -6920357071221572906
+      Isa_Text 1_64: 5517243067626120356
+      Isa_Text 1_65: 1340914767816558183
+      Isa_Text 1_66: 6641470308630076456
+      Isa_Text 1_67: -8868467106339594528
+      Isa_Text 1_68: 4729690655375518040
+      Isa_Text 1_69: -7497984604023908405
+      Isa_Text 1_7: -6317885414646711882
+      Isa_Text 1_70: 3304050952895374222
+      Isa_Text 1_71: 8233444043161089645
+      Isa_Text 1_72: -1107807163711240222
+      Isa_Text 1_73: 4566549141754490773
+      Isa_Text 1_74: -5070767893056807587
+      Isa_Text 1_75: -4843634070109454530
+      Isa_Text 1_76: 2815103913816280110
+      Isa_Text 1_77: 2047366808163924649
+      Isa_Text 1_78: 6380940989764352447
+      Isa_Text 1_79: -1449951041934981146
+      Isa_Text 1_8: -7253122918877708497
+      Isa_Text 1_80: -4482388639532267454
+      Isa_Text 1_81: -6779103115883055652
+      Isa_Text 1_82: 5215314882883715714
+      Isa_Text 1_83: 1628238393152152181
+      Isa_Text 1_84: 3442947743017602075
+      Isa_Text 1_85: 6890624305827556428
+      Isa_Text 1_86: -3753397050495932583
+      Isa_Text 1_87: 5625636566386088883
+      Isa_Text 1_88: -940805535866153939
+      Isa_Text 1_89: -3998009679052414674
+      Isa_Text 1_9: 4674586892806322437
+      Isa_Text 1_90: 4675439658301632689
+      Isa_Text 1_91: -2456769685537937617
+      Isa_Text 1_92: -7647322954060277745
+      Isa_Text 1_93: 6394491006789504625
+      Isa_Text 1_94: 7911775073281917366
+      Isa_Text 1_95: 5162092975488433040
+      Isa_Text 1_96: -358659280857886985
+      Isa_Text 1_97: 4490004535261519598
+      Isa_Text 1_98: 2422665124744282143
+      Isa_Text 1_99: 398566421920009891
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

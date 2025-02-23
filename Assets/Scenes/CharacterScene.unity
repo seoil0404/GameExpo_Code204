@@ -1118,9 +1118,9 @@ MonoBehaviour:
   Isa: {fileID: 2868239837529760753, guid: 91d14f6c57f7a8f45be6f9536161f031, type: 3}
   Blayrin: {fileID: -6903102276436710746, guid: 87752e73097db3240bdcaa023dd8aaa8, type: 3}
   Hugh: {fileID: -7428156314208493125, guid: c3a9a70589e8dff4b8b17359942cc2b0, type: 3}
-  IsaTextImage: {fileID: 21300000, guid: b95d77df5a39f694389aecdc30bd60fe, type: 3}
-  BlayrinTextImage: {fileID: 21300000, guid: 2f323fa4321c5f14b87831ff8fa15fa7, type: 3}
-  HughTextImage: {fileID: 21300000, guid: 4ea1d4a8fad95fa47924476d30b0d817, type: 3}
+  IsaTextImage: {fileID: 21300000, guid: b60485a2f3828334a9f0353cd524da41, type: 3}
+  BlayrinTextImage: {fileID: 21300000, guid: 2ddfea75946eed147ab32134268bb069, type: 3}
+  HughTextImage: {fileID: 21300000, guid: 2d6eeae2de74c884aaf1db0edde3e791, type: 3}
   audioSource: {fileID: 1397605408}
   IsaSound: {fileID: 8300000, guid: b04d55b62839b8a48a4e7733e4cbe456, type: 3}
   BlayrinSound: {fileID: 8300000, guid: 00307039297a0d649ae9563f0362a8d2, type: 3}

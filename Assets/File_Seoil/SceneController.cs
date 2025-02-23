@@ -79,6 +79,7 @@ public class SceneController : MonoBehaviour
                     break;
                 default:
                     Scene.mapManager.DisableMap();
+                    IsGameSceneFirstLoading = true;
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
