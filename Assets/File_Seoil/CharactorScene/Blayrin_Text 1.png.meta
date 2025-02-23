@@ -1,0 +1,2678 @@
+fileFormatVersion: 2
+guid: 2ddfea75946eed147ab32134268bb069
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8892749337637708663
+    second: Blayrin_Text 1_0
+  - first:
+      213: 4941567392916584078
+    second: Blayrin_Text 1_1
+  - first:
+      213: 4595615708799709720
+    second: Blayrin_Text 1_2
+  - first:
+      213: -1926688547488150778
+    second: Blayrin_Text 1_3
+  - first:
+      213: 2116631459564413498
+    second: Blayrin_Text 1_4
+  - first:
+      213: -2810206963508748047
+    second: Blayrin_Text 1_5
+  - first:
+      213: 5738008399460502733
+    second: Blayrin_Text 1_6
+  - first:
+      213: 3881532553255273880
+    second: Blayrin_Text 1_7
+  - first:
+      213: 4361191676611870516
+    second: Blayrin_Text 1_8
+  - first:
+      213: -5269140034250437202
+    second: Blayrin_Text 1_9
+  - first:
+      213: 3381802981270583187
+    second: Blayrin_Text 1_10
+  - first:
+      213: 2958611877510726505
+    second: Blayrin_Text 1_11
+  - first:
+      213: 7573262245187519079
+    second: Blayrin_Text 1_12
+  - first:
+      213: -2882511473714040405
+    second: Blayrin_Text 1_13
+  - first:
+      213: 5492478037376847685
+    second: Blayrin_Text 1_14
+  - first:
+      213: 3687659244683867872
+    second: Blayrin_Text 1_15
+  - first:
+      213: -1646929359309611867
+    second: Blayrin_Text 1_16
+  - first:
+      213: -7904051950441280068
+    second: Blayrin_Text 1_17
+  - first:
+      213: -3587500236789499586
+    second: Blayrin_Text 1_18
+  - first:
+      213: -4045704634804670899
+    second: Blayrin_Text 1_19
+  - first:
+      213: 1536500819262717039
+    second: Blayrin_Text 1_20
+  - first:
+      213: 6221575708404774933
+    second: Blayrin_Text 1_21
+  - first:
+      213: 3169900906129629342
+    second: Blayrin_Text 1_22
+  - first:
+      213: 8511317183852271314
+    second: Blayrin_Text 1_23
+  - first:
+      213: 3879143039236036475
+    second: Blayrin_Text 1_24
+  - first:
+      213: 8093808033292073504
+    second: Blayrin_Text 1_25
+  - first:
+      213: -6347104412107775505
+    second: Blayrin_Text 1_26
+  - first:
+      213: 7851812599759392964
+    second: Blayrin_Text 1_27
+  - first:
+      213: 6437959940079800502
+    second: Blayrin_Text 1_28
+  - first:
+      213: 5329978461860239621
+    second: Blayrin_Text 1_29
+  - first:
+      213: 3099421390085213056
+    second: Blayrin_Text 1_30
+  - first:
+      213: -7195736944269501564
+    second: Blayrin_Text 1_31
+  - first:
+      213: -7266710961876199887
+    second: Blayrin_Text 1_32
+  - first:
+      213: 8578110106381954434
+    second: Blayrin_Text 1_33
+  - first:
+      213: -8363314151864138752
+    second: Blayrin_Text 1_34
+  - first:
+      213: -6469520927086270411
+    second: Blayrin_Text 1_35
+  - first:
+      213: 1936405596368063514
+    second: Blayrin_Text 1_36
+  - first:
+      213: 212475171810397643
+    second: Blayrin_Text 1_37
+  - first:
+      213: 6620346224296724756
+    second: Blayrin_Text 1_38
+  - first:
+      213: -5029904734773512282
+    second: Blayrin_Text 1_39
+  - first:
+      213: 8855274521614263635
+    second: Blayrin_Text 1_40
+  - first:
+      213: 8331082407490770181
+    second: Blayrin_Text 1_41
+  - first:
+      213: 2440429076489363406
+    second: Blayrin_Text 1_42
+  - first:
+      213: -9214500143906638990
+    second: Blayrin_Text 1_43
+  - first:
+      213: -6163821695375936030
+    second: Blayrin_Text 1_44
+  - first:
+      213: 8077207378082390582
+    second: Blayrin_Text 1_45
+  - first:
+      213: -2971428120880401020
+    second: Blayrin_Text 1_46
+  - first:
+      213: -8668645043214410606
+    second: Blayrin_Text 1_47
+  - first:
+      213: 7323642242463681481
+    second: Blayrin_Text 1_48
+  - first:
+      213: 3369044563040450296
+    second: Blayrin_Text 1_49
+  - first:
+      213: -1827650931901482785
+    second: Blayrin_Text 1_50
+  - first:
+      213: -2224022148814078957
+    second: Blayrin_Text 1_51
+  - first:
+      213: 7505593612373233513
+    second: Blayrin_Text 1_52
+  - first:
+      213: -4253427414931128701
+    second: Blayrin_Text 1_53
+  - first:
+      213: -1503352750359917347
+    second: Blayrin_Text 1_54
+  - first:
+      213: -7826925888070624292
+    second: Blayrin_Text 1_55
+  - first:
+      213: 4085467765725774224
+    second: Blayrin_Text 1_56
+  - first:
+      213: -4391020863010441504
+    second: Blayrin_Text 1_57
+  - first:
+      213: -7601322858077987336
+    second: Blayrin_Text 1_58
+  - first:
+      213: -3797972364713138431
+    second: Blayrin_Text 1_59
+  - first:
+      213: 1128344508287734626
+    second: Blayrin_Text 1_60
+  - first:
+      213: 7571546953502784184
+    second: Blayrin_Text 1_61
+  - first:
+      213: -8049254318700583115
+    second: Blayrin_Text 1_62
+  - first:
+      213: 5938084816184893761
+    second: Blayrin_Text 1_63
+  - first:
+      213: -8389412168227702818
+    second: Blayrin_Text 1_64
+  - first:
+      213: -4300004446299186597
+    second: Blayrin_Text 1_65
+  - first:
+      213: -3690684293804179000
+    second: Blayrin_Text 1_66
+  - first:
+      213: -2866126629415558511
+    second: Blayrin_Text 1_67
+  - first:
+      213: 782872493489027099
+    second: Blayrin_Text 1_68
+  - first:
+      213: 6547657704593263893
+    second: Blayrin_Text 1_69
+  - first:
+      213: -4777172894130796494
+    second: Blayrin_Text 1_70
+  - first:
+      213: -7316983835624116616
+    second: Blayrin_Text 1_71
+  - first:
+      213: 1754973348092723614
+    second: Blayrin_Text 1_72
+  - first:
+      213: 3919071036598873384
+    second: Blayrin_Text 1_73
+  - first:
+      213: -6169413923502171289
+    second: Blayrin_Text 1_74
+  - first:
+      213: 8580723457120767886
+    second: Blayrin_Text 1_75
+  - first:
+      213: 7776826348665625776
+    second: Blayrin_Text 1_76
+  - first:
+      213: 851129717716280970
+    second: Blayrin_Text 1_77
+  - first:
+      213: -3270498389375321668
+    second: Blayrin_Text 1_78
+  - first:
+      213: 3156663670896153366
+    second: Blayrin_Text 1_79
+  - first:
+      213: 947572672187101562
+    second: Blayrin_Text 1_80
+  - first:
+      213: -2999660006676908543
+    second: Blayrin_Text 1_81
+  - first:
+      213: -371312556971412539
+    second: Blayrin_Text 1_82
+  - first:
+      213: 2476421750096173824
+    second: Blayrin_Text 1_83
+  - first:
+      213: -4215829498652242827
+    second: Blayrin_Text 1_84
+  - first:
+      213: 3886327079901244329
+    second: Blayrin_Text 1_85
+  - first:
+      213: 6897733133061097993
+    second: Blayrin_Text 1_86
+  - first:
+      213: 344972262237831833
+    second: Blayrin_Text 1_87
+  - first:
+      213: -5763806337841091644
+    second: Blayrin_Text 1_88
+  - first:
+      213: 1819659940227651974
+    second: Blayrin_Text 1_89
+  - first:
+      213: 384133024793387706
+    second: Blayrin_Text 1_90
+  - first:
+      213: 5458126386373051728
+    second: Blayrin_Text 1_91
+  - first:
+      213: -7674672152990933394
+    second: Blayrin_Text 1_92
+  - first:
+      213: -4297311307259617439
+    second: Blayrin_Text 1_93
+  - first:
+      213: -513225223509554785
+    second: Blayrin_Text 1_94
+  - first:
+      213: 8154539435086845034
+    second: Blayrin_Text 1_95
+  - first:
+      213: -3418403942978328354
+    second: Blayrin_Text 1_96
+  - first:
+      213: 3750605729319187282
+    second: Blayrin_Text 1_97
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blayrin_Text 1_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 701
+        width: 75
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98c938dd79b969480800000000000000
+      internalID: -8892749337637708663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 711
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e863270cc59f39440800000000000000
+      internalID: 4941567392916584078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 671
+        width: 49
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81236377328e6cf30800000000000000
+      internalID: 4595615708799709720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 665
+        width: 15
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bc72e59f60345e0800000000000000
+      internalID: -1926688547488150778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_4
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 693
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32e0cb1919cf5d10800000000000000
+      internalID: 2116631459564413498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_5
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 665
+        width: 16
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f06bb2e7a32009d0800000000000000
+      internalID: -2810206963508748047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 685
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc0d00fc3081af40800000000000000
+      internalID: 5738008399460502733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_7
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 666
+        width: 54
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89545ecba49fdd530800000000000000
+      internalID: 3881532553255273880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 667
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f37d929b0168c30800000000000000
+      internalID: 4361191676611870516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_9
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 599
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead86b25e0140e6b0800000000000000
+      internalID: -5269140034250437202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 596
+        width: 9
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3977df6d4e39eee20800000000000000
+      internalID: 3381802981270583187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 596
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9634743c3d91f0920800000000000000
+      internalID: 2958611877510726505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 618
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 762874b13e1a91960800000000000000
+      internalID: 7573262245187519079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_13
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 602
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1794c36134ff7d0800000000000000
+      internalID: -2882511473714040405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 602
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f4b72bca3393c40800000000000000
+      internalID: 5492478037376847685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_15
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 598
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e631148b823d2330800000000000000
+      internalID: 3687659244683867872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_16
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 602
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac5038397ee429e0800000000000000
+      internalID: -1646929359309611867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_17
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 602
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbdc6b7e0aa2f4290800000000000000
+      internalID: -7904051950441280068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 601
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e393882ca83a63ec0800000000000000
+      internalID: -3587500236789499586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_19
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 545
+        width: 39
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ee058d115cad7c0800000000000000
+      internalID: -4045704634804670899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_20
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 551
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c3049ba5fb25510800000000000000
+      internalID: 1536500819262717039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_21
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 535
+        width: 39
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5187aaab42a775650800000000000000
+      internalID: 6221575708404774933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_22
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 543
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90ab0b4410cdfb20800000000000000
+      internalID: 3169900906129629342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_23
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 528
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6513242e54e1670800000000000000
+      internalID: 8511317183852271314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_24
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 482
+        width: 58
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77d796aa0c75d530800000000000000
+      internalID: 3879143039236036475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_25
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 499
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ab390068bf25070800000000000000
+      internalID: 8093808033292073504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_26
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 489
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe160046a2e8ae7a0800000000000000
+      internalID: -6347104412107775505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_27
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 495
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c0589375fd37fc60800000000000000
+      internalID: 7851812599759392964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_28
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 484
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0d6aaa47a385950800000000000000
+      internalID: 6437959940079800502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_29
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 500
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50999afeb23e7f940800000000000000
+      internalID: 5329978461860239621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_30
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 482
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08bc645355b530b20800000000000000
+      internalID: 3099421390085213056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_31
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 482
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b59a3bf5b932c90800000000000000
+      internalID: -7195736944269501564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_32
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 500
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1369eef71e4772b90800000000000000
+      internalID: -7266710961876199887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_33
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 497
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28da51761b19b0770800000000000000
+      internalID: 8578110106381954434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_34
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 486
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0040421f61a8feb80800000000000000
+      internalID: -8363314151864138752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_35
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 483
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538211a6ef4a736a0800000000000000
+      internalID: -6469520927086270411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_36
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 494
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1cc89061ae7fda10800000000000000
+      internalID: 1936405596368063514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_37
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 482
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd49530b0dd2f200800000000000000
+      internalID: 212475171810397643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_38
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 483
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4190e4d90d130eb50800000000000000
+      internalID: 6620346224296724756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_39
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 493
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7f4c51b40323ab0800000000000000
+      internalID: -5029904734773512282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_40
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 482
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355a269924144ea70800000000000000
+      internalID: 8855274521614263635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_41
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 494
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5055ef44f43fd9370800000000000000
+      internalID: 8331082407490770181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_42
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 482
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecfdeaba0552ed120800000000000000
+      internalID: 2440429076489363406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_43
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273b8ab80f48f1080800000000000000
+      internalID: -9214500143906638990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_44
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 483
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5754c43d4b57aa0800000000000000
+      internalID: -6163821695375936030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_45
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 497
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632e3c3c051081070800000000000000
+      internalID: 8077207378082390582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_46
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 505
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 485315b0edd53c6d0800000000000000
+      internalID: -2971428120880401020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_47
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 483
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c114bf249c2b780800000000000000
+      internalID: -8668645043214410606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_48
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 490
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cbc71431ddc2a560800000000000000
+      internalID: 7323642242463681481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_49
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 493
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6bc7c1e2041ce20800000000000000
+      internalID: 3369044563040450296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_50
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 482
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8b9962921e2a6e0800000000000000
+      internalID: -1827650931901482785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_51
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 482
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cf55793afa221e0800000000000000
+      internalID: -2224022148814078957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_52
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 494
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f82f5cf99392860800000000000000
+      internalID: 7505593612373233513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_53
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 483
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e3f1f3d4ac8f4c0800000000000000
+      internalID: -4253427414931128701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_54
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 495
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddcc0be73a4032be0800000000000000
+      internalID: -1503352750359917347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_55
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 483
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdbdd36af5c216390800000000000000
+      internalID: -7826925888070624292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_56
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 482
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091c465894f72b830800000000000000
+      internalID: 4085467765725774224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_57
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 482
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6feea2ac5ff03c0800000000000000
+      internalID: -4391020863010441504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_58
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 483
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd5435522da28690800000000000000
+      internalID: -7601322858077987336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_59
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 481
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107e58eb144ea4bc0800000000000000
+      internalID: -3797972364713138431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_60
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 481
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263d0c02a5fa8af00800000000000000
+      internalID: 1128344508287734626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_61
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 483
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba79b3a6d9831960800000000000000
+      internalID: 7571546953502784184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_62
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 486
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 537a21b08dd4b4090800000000000000
+      internalID: -8049254318700583115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_63
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 373
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14167d2dda0586250800000000000000
+      internalID: 5938084816184893761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_64
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 362
+        width: 17
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7b27ef412d29b80800000000000000
+      internalID: -8389412168227702818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_65
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 362
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a9cbd0db05354c0800000000000000
+      internalID: -4300004446299186597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_66
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 383
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c140b9503e08ccc0800000000000000
+      internalID: -3690684293804179000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_67
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 370
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192e56414097938d0800000000000000
+      internalID: -2866126629415558511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_68
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 362
+        width: 39
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1876de82625dda00800000000000000
+      internalID: 782872493489027099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_69
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 363
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d8129cdf3fdda50800000000000000
+      internalID: 6547657704593263893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_70
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 326
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23885b6309214bdb0800000000000000
+      internalID: -4777172894130796494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_71
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 319
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e6952f7f9d47a90800000000000000
+      internalID: -7316983835624116616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_72
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 319
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91485b36faea5810800000000000000
+      internalID: 1754973348092723614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_73
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 316
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82d6ff9f756536630800000000000000
+      internalID: 3919071036598873384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_74
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 332
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76bdd4939b6d16aa0800000000000000
+      internalID: -6169413923502171289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_75
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 321
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f8b89858ad41770800000000000000
+      internalID: 8580723457120767886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_76
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 316
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bcdc185c56dceb60800000000000000
+      internalID: 7776826348665625776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_77
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 333
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86e14208f1dfcb00800000000000000
+      internalID: 851129717716280970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_78
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 315
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9fbceea0bdc92d0800000000000000
+      internalID: -3270498389375321668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_79
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 328
+        width: 60
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613552b42e8becb20800000000000000
+      internalID: 3156663670896153366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_80
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 333
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71749c2354762d00800000000000000
+      internalID: 947572672187101562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_81
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 316
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106b317ed111f56d0800000000000000
+      internalID: -2999660006676908543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_82
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 316
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3b31d5235d8daf0800000000000000
+      internalID: -371312556971412539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_83
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 325
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b988806740e5220800000000000000
+      internalID: 2476421750096173824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_84
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 315
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c483b486d5e75c0800000000000000
+      internalID: -4215829498652242827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_85
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 315
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abae7673e10fe530800000000000000
+      internalID: 3886327079901244329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_86
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 315
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a8c8f1dbba9bf50800000000000000
+      internalID: 6897733133061097993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_87
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 320
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9928c0cd17699c400800000000000000
+      internalID: 344972262237831833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_88
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 315
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb26d67ca8d200b0800000000000000
+      internalID: -5763806337841091644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_89
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 327
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689174d131bb04910800000000000000
+      internalID: 1819659940227651974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_90
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 323
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab26e4963f6b45500800000000000000
+      internalID: 384133024793387706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_91
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 326
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055c3fea7092fbb40800000000000000
+      internalID: 5458126386373051728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_92
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 315
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e9469c6561e7590800000000000000
+      internalID: -7674672152990933394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_93
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 316
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f55895222ec54c0800000000000000
+      internalID: -4297311307259617439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_94
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 315
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9941fed068a0e8f0800000000000000
+      internalID: -513225223509554785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_95
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 315
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64144f596eba2170800000000000000
+      internalID: 8154539435086845034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_96
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 316
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed86bffa9b36f80d0800000000000000
+      internalID: -3418403942978328354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blayrin_Text 1_97
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 319
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2537d9c0a04dc0430800000000000000
+      internalID: 3750605729319187282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Blayrin_Text 1_0: -8892749337637708663
+      Blayrin_Text 1_1: 4941567392916584078
+      Blayrin_Text 1_10: 3381802981270583187
+      Blayrin_Text 1_11: 2958611877510726505
+      Blayrin_Text 1_12: 7573262245187519079
+      Blayrin_Text 1_13: -2882511473714040405
+      Blayrin_Text 1_14: 5492478037376847685
+      Blayrin_Text 1_15: 3687659244683867872
+      Blayrin_Text 1_16: -1646929359309611867
+      Blayrin_Text 1_17: -7904051950441280068
+      Blayrin_Text 1_18: -3587500236789499586
+      Blayrin_Text 1_19: -4045704634804670899
+      Blayrin_Text 1_2: 4595615708799709720
+      Blayrin_Text 1_20: 1536500819262717039
+      Blayrin_Text 1_21: 6221575708404774933
+      Blayrin_Text 1_22: 3169900906129629342
+      Blayrin_Text 1_23: 8511317183852271314
+      Blayrin_Text 1_24: 3879143039236036475
+      Blayrin_Text 1_25: 8093808033292073504
+      Blayrin_Text 1_26: -6347104412107775505
+      Blayrin_Text 1_27: 7851812599759392964
+      Blayrin_Text 1_28: 6437959940079800502
+      Blayrin_Text 1_29: 5329978461860239621
+      Blayrin_Text 1_3: -1926688547488150778
+      Blayrin_Text 1_30: 3099421390085213056
+      Blayrin_Text 1_31: -7195736944269501564
+      Blayrin_Text 1_32: -7266710961876199887
+      Blayrin_Text 1_33: 8578110106381954434
+      Blayrin_Text 1_34: -8363314151864138752
+      Blayrin_Text 1_35: -6469520927086270411
+      Blayrin_Text 1_36: 1936405596368063514
+      Blayrin_Text 1_37: 212475171810397643
+      Blayrin_Text 1_38: 6620346224296724756
+      Blayrin_Text 1_39: -5029904734773512282
+      Blayrin_Text 1_4: 2116631459564413498
+      Blayrin_Text 1_40: 8855274521614263635
+      Blayrin_Text 1_41: 8331082407490770181
+      Blayrin_Text 1_42: 2440429076489363406
+      Blayrin_Text 1_43: -9214500143906638990
+      Blayrin_Text 1_44: -6163821695375936030
+      Blayrin_Text 1_45: 8077207378082390582
+      Blayrin_Text 1_46: -2971428120880401020
+      Blayrin_Text 1_47: -8668645043214410606
+      Blayrin_Text 1_48: 7323642242463681481
+      Blayrin_Text 1_49: 3369044563040450296
+      Blayrin_Text 1_5: -2810206963508748047
+      Blayrin_Text 1_50: -1827650931901482785
+      Blayrin_Text 1_51: -2224022148814078957
+      Blayrin_Text 1_52: 7505593612373233513
+      Blayrin_Text 1_53: -4253427414931128701
+      Blayrin_Text 1_54: -1503352750359917347
+      Blayrin_Text 1_55: -7826925888070624292
+      Blayrin_Text 1_56: 4085467765725774224
+      Blayrin_Text 1_57: -4391020863010441504
+      Blayrin_Text 1_58: -7601322858077987336
+      Blayrin_Text 1_59: -3797972364713138431
+      Blayrin_Text 1_6: 5738008399460502733
+      Blayrin_Text 1_60: 1128344508287734626
+      Blayrin_Text 1_61: 7571546953502784184
+      Blayrin_Text 1_62: -8049254318700583115
+      Blayrin_Text 1_63: 5938084816184893761
+      Blayrin_Text 1_64: -8389412168227702818
+      Blayrin_Text 1_65: -4300004446299186597
+      Blayrin_Text 1_66: -3690684293804179000
+      Blayrin_Text 1_67: -2866126629415558511
+      Blayrin_Text 1_68: 782872493489027099
+      Blayrin_Text 1_69: 6547657704593263893
+      Blayrin_Text 1_7: 3881532553255273880
+      Blayrin_Text 1_70: -4777172894130796494
+      Blayrin_Text 1_71: -7316983835624116616
+      Blayrin_Text 1_72: 1754973348092723614
+      Blayrin_Text 1_73: 3919071036598873384
+      Blayrin_Text 1_74: -6169413923502171289
+      Blayrin_Text 1_75: 8580723457120767886
+      Blayrin_Text 1_76: 7776826348665625776
+      Blayrin_Text 1_77: 851129717716280970
+      Blayrin_Text 1_78: -3270498389375321668
+      Blayrin_Text 1_79: 3156663670896153366
+      Blayrin_Text 1_8: 4361191676611870516
+      Blayrin_Text 1_80: 947572672187101562
+      Blayrin_Text 1_81: -2999660006676908543
+      Blayrin_Text 1_82: -371312556971412539
+      Blayrin_Text 1_83: 2476421750096173824
+      Blayrin_Text 1_84: -4215829498652242827
+      Blayrin_Text 1_85: 3886327079901244329
+      Blayrin_Text 1_86: 6897733133061097993
+      Blayrin_Text 1_87: 344972262237831833
+      Blayrin_Text 1_88: -5763806337841091644
+      Blayrin_Text 1_89: 1819659940227651974
+      Blayrin_Text 1_9: -5269140034250437202
+      Blayrin_Text 1_90: 384133024793387706
+      Blayrin_Text 1_91: 5458126386373051728
+      Blayrin_Text 1_92: -7674672152990933394
+      Blayrin_Text 1_93: -4297311307259617439
+      Blayrin_Text 1_94: -513225223509554785
+      Blayrin_Text 1_95: 8154539435086845034
+      Blayrin_Text 1_96: -3418403942978328354
+      Blayrin_Text 1_97: 3750605729319187282
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
