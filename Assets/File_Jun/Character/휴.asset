@@ -19,5 +19,7 @@ MonoBehaviour:
     maxHp: 80
     currentHp: 80
     maxUltimateGauge: 35
-    currentUltimateGauge: 0
+    currentUltimateGauge: 35
     executionRate: 5
+    ultimateSkill: {fileID: 11400000, guid: c43ec66cae3f96545a5b5ce5a4562026, type: 2}
+    NegateNextDamage: 0
