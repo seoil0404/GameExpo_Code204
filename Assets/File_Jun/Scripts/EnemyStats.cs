@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -108,19 +107,11 @@ public class EnemyStats : MonoBehaviour
             return;
         }
 
-        float moveDistance = 4.0f;    // 왼쪽으로 이동할 거리
-        float tweenDuration = 0.2f;   // 이동 시간
-
-        // DOTween을 이용하여 왼쪽으로 이동 후 제자리로 돌아오도록 함
-        transform.DOMoveX(transform.position.x - moveDistance, tweenDuration)
-            .SetLoops(2, LoopType.Yoyo)
-            .OnComplete(() =>
-            {
-                int damage = atk;
-                Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-                characterManager.ApplyDamageToCharacter(damage);
-            });
+        int damage = atk;
+        Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+        characterManager.ApplyDamageToCharacter(damage);
     }
+
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
         float dodgeRoll = Random.Range(0, 100);
