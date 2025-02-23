@@ -123,9 +123,9 @@ public class EnemyStats : MonoBehaviour
             return;
         }
 
-        int totalBlocksUsed = completedLines * gridColumns;
+        int totalBlocksUsed = completedLines;
         int baseDamage = totalBlocksUsed;
-        int calculatedDamage = baseDamage + (comboCount * 2);
+        int calculatedDamage = baseDamage;
 
         damageReceivedLastTurn = calculatedDamage;
         hp -= calculatedDamage;
