@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public List<GameObject> enemyPrefabs;
     public List<Transform> spawnPoints;
     public Transform canvasTransform;
+    public CombatData combatData;
 
     public float threeEnemiesChance = 0.2f;
     public float twoEnemiesChance = 0.4f;
@@ -19,44 +20,32 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         LoadDifficulty();
-        SpawnEnemies();
 
+        if (combatData == null) return;
+
+        SpawnEnemies(combatData.HabitatType, combatData.EnemyType);
 
         var grid = FindFirstObjectByType<Grid>();
-        if (grid != null)
-        {
-            grid.enemies = enemies;
-            Debug.Log("[EnemySpawner] Grid에서 enemies 리스트를 참조하도록 설정 완료!");
-        }
+        if (grid != null) grid.enemies = enemies;
 
-        Debug.Log($"[EnemySpawner] 시작 시 적 개수: {enemies.Count}");
-
-        if (enemies.Count > 0)
-        {
-            StartCoroutine(DelayedSelectRandomEnemy());
-        }
+        if (enemies.Count > 0) StartCoroutine(DelayedSelectRandomEnemy());
     }
 
     public void SaveDifficulty()
     {
         PlayerPrefs.SetInt("Difficulty", currentDifficulty);
         PlayerPrefs.Save();
-        Debug.Log($"[EnemySpawner] 난이도 저장됨: {currentDifficulty}");
     }
 
- 
     public void LoadDifficulty()
     {
         currentDifficulty = PlayerPrefs.GetInt("Difficulty", 1);
-        Debug.Log($"[EnemySpawner] 저장된 난이도 불러옴: {currentDifficulty}");
     }
-
 
     public void IncreaseDifficulty()
     {
         currentDifficulty++;
         SaveDifficulty();
-        Debug.Log($"[EnemySpawner] 난이도 증가: {currentDifficulty}");
     }
 
     public void ResetDifficulty()
@@ -64,67 +53,71 @@ public class EnemySpawner : MonoBehaviour
         PlayerPrefs.SetInt("Difficulty", 0);
         PlayerPrefs.Save();
         currentDifficulty = 0;
-        Debug.Log("[EnemySpawner] 난이도 초기화됨: 1");
     }
 
-    public void SpawnEnemies()
+    public void SpawnEnemies(EnemyData.HabitatType selectedHabitat, EnemyData.EnemyType selectedEnemyType)
+{
+    ResetSpawnPoints();
+    enemies.Clear();
+
+    Debug.Log($"[EnemySpawner] 적 생성 시작 - Habitat: {selectedHabitat}, EnemyType: {selectedEnemyType}");
+
+    int numberOfEnemies = DetermineEnemyCount();
+    
+    List<GameObject> filteredEnemies = enemyPrefabs.FindAll(enemy =>
     {
-        ResetSpawnPoints();
-        enemies.Clear();
-        Debug.Log("적 생성");
+        EnemyStats stats = enemy.GetComponent<EnemyStats>();
 
-        int numberOfEnemies = DetermineEnemyCount();
-        for (int i = 0; i < numberOfEnemies; i++)
+        if (stats == null || stats.enemyData == null)
         {
-            if (availableSpawnPoints.Count == 0)
-            {
-                Debug.LogWarning("모든 스폰 포인트가 사용 중입니다. 더 이상 몬스터를 생성할 수 없습니다.");
-                break;
-            }
-
-            GameObject selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-            Transform spawnPoint = GetRandomSpawnPoint();
-
-            GameObject enemyInstance = Instantiate(selectedEnemy, canvasTransform);
-            RectTransform rectTransform = enemyInstance.GetComponent<RectTransform>();
-
-            if (rectTransform != null)
-            {
-                Vector3 screenPosition = Camera.main.WorldToScreenPoint(spawnPoint.position);
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    canvasTransform as RectTransform,
-                    screenPosition,
-                    Camera.main,
-                    out Vector2 localPoint
-                );
-                rectTransform.anchoredPosition = localPoint;
-            }
-            else
-            {
-                enemyInstance.transform.position = spawnPoint.position;
-            }
-
-            EnemyStats stats = enemyInstance.GetComponent<EnemyStats>();
-            if (stats != null)
-            {
-                stats.SetStats();
-                stats.SetSpawner(this);
-            }
-            else
-            {
-                Debug.LogError($"[EnemySpawner] {enemyInstance.name}에 EnemyStats 컴포넌트가 없습니다!");
-            }
-
-            EnemyStats.AddEnemy(enemyInstance);
-            enemies.Add(enemyInstance);
-            Debug.Log($"[EnemySpawner] 적 추가됨: {enemyInstance.name}, 현재 적 개수: {enemies.Count}");
+            Debug.LogWarning($"[EnemySpawner] {enemy.name}에 EnemyStats 또는 EnemyData가 없습니다!");
+            return false;
         }
 
-        if (enemies.Count > 0)
-        {
-            StartCoroutine(DelayedSelectRandomEnemy());
-        }
+        bool matches = stats.enemyData.habitat == selectedHabitat &&
+                       stats.enemyData.enemyType == selectedEnemyType;
+
+        Debug.Log($"[EnemySpawner] 검사 중 - {enemy.name}: Habitat = {stats.enemyData.habitat}, EnemyType = {stats.enemyData.enemyType}, 매칭 여부: {matches}");
+
+        return matches;
+    });
+
+    Debug.Log($"[EnemySpawner] 필터링된 적 개수: {filteredEnemies.Count}");
+
+    if (filteredEnemies.Count == 0)
+    {
+        Debug.LogWarning("[EnemySpawner] 조건에 맞는 적이 없습니다! 적 생성 중단");
+        return;
     }
+
+    for (int i = 0; i < numberOfEnemies; i++)
+    {
+        if (availableSpawnPoints.Count == 0)
+        {
+            Debug.LogWarning("[EnemySpawner] 모든 스폰 포인트가 사용 중입니다. 적 생성 중단");
+            break;
+        }
+
+        GameObject selectedEnemy = filteredEnemies[Random.Range(0, filteredEnemies.Count)];
+        Transform spawnPoint = GetRandomSpawnPoint();
+        GameObject enemyInstance = Instantiate(selectedEnemy, spawnPoint.position, Quaternion.identity, canvasTransform);
+
+        Debug.Log($"[EnemySpawner] 적 생성됨: {enemyInstance.name} 위치: {spawnPoint.position}");
+
+        EnemyStats stats = enemyInstance.GetComponent<EnemyStats>();
+        if (stats != null)
+        {
+            stats.SetStats();
+            stats.SetSpawner(this);
+        }
+
+        EnemyStats.AddEnemy(enemyInstance);
+        enemies.Add(enemyInstance);
+    }
+
+    if (enemies.Count > 0) StartCoroutine(DelayedSelectRandomEnemy());
+}
+
 
     private void ResetSpawnPoints()
     {
@@ -142,13 +135,9 @@ public class EnemySpawner : MonoBehaviour
     private int DetermineEnemyCount()
     {
         float chance = Random.value;
-
-        if (chance <= oneEnemiesChance)
-            return 1;
-        else if (chance <= oneEnemiesChance + twoEnemiesChance)
-            return 2;
-        else
-            return 3;
+        if (chance <= oneEnemiesChance) return 1;
+        else if (chance <= oneEnemiesChance + twoEnemiesChance) return 2;
+        else return 3;
     }
 
     private IEnumerator DelayedSelectRandomEnemy()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public enum HabitatType { Forest, Castle, DevilCastle }
-    public enum EnemyType { Common, SpcialCombat, Boss }
+    public enum EnemyType { Common, SpecialCombat, Boss }
 
     public string enemyName;
     public int baseHP;
@@ -17,3 +17,4 @@ public class EnemyData : ScriptableObject
     public HabitatType habitat;
     public EnemyType enemyType; 
 }
+ 

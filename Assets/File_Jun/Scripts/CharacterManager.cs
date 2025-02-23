@@ -15,7 +15,7 @@ public class CharacterManager : MonoBehaviour
     private static int savedHp = -1;
     private const string HpKey = "SavedHp"; // PlayerPrefs Å°
 
-    void Awake()
+    void Start()
     {
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
         {
@@ -24,10 +24,12 @@ public class CharacterManager : MonoBehaviour
 
         selectedCharacter = characters[GameData.SelectedCharacterIndex - 1];
 
-        if (Scene.Controller.IsGameSceneFirstLoading)
+        if (GameStartTracker.IsHavetobeReset)
         {
+            Debug.Log($"½ÇÇà");
             ResetHp();
             SaveHp();
+            GameStartTracker.IsHavetobeReset = false;
         }
 
 

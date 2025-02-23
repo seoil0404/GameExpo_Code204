@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
                 Scene.Controller.LoadScene(Scene.SceneType.GameScene);
                 break;
             case Stage.StageType.SpecialCombat:
-                combatData.EnemyType = EnemyData.EnemyType.SpcialCombat;
+                combatData.EnemyType = EnemyData.EnemyType.SpecialCombat;
                 Scene.Controller.LoadScene(Scene.SceneType.GameScene);
                 break;
             case Stage.StageType.Boss:
