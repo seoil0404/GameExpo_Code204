@@ -1,7 +1,9 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AttackEffect : MonoBehaviour {
 
@@ -19,6 +21,7 @@ public class AttackEffect : MonoBehaviour {
 	[field: SerializeField]
 	public float AttackRange { get; set; } = 0f;
 
+	public Action OnHit { get; set; }
 	public AttackEffectMovement MovementMethods { get; set; }
 	public AttackEffectEffector[] Effectors { get; set; }
 
@@ -31,9 +34,9 @@ public class AttackEffect : MonoBehaviour {
 
 	//======================================================================| Methods
 
-	public void Shoot(GameObject targetObject) {
+	public void Shoot(GameObject receiverObject, GameObject casterObject) {
 
-		Vector2 targetPosition = targetObject.transform.position;
+		Vector2 targetPosition = receiverObject.transform.position;
 
 		if (AttackRange != 0f) {
 			targetPosition.x += Random.Range(-AttackRange, AttackRange) / 2f;
@@ -45,6 +48,8 @@ public class AttackEffect : MonoBehaviour {
 
 		Effectors.OnShootAll(this);
 
+		RotateCaster(receiverObject, casterObject);
+
 		DOTween.To(() => progress, x => progress = x, 1f, FlightTime)
 			.SetEase(FlightEase)
 			.OnUpdate(() => {
@@ -52,10 +57,36 @@ public class AttackEffect : MonoBehaviour {
 				Effectors.OnFlyingAll(this);
 			})
 			.OnComplete(() => {
-				HitEffectManager.Instance.OnHit(targetObject, targetPosition);
+				HitEffectManager.Instance.OnHit(receiverObject, targetPosition, casterObject);
 				Effectors.OnCompleteAll(this);
 				StartCoroutine(DestroyOnReady());
+				OnHit();
 			});
+
+	}
+
+	private void RotateCaster(GameObject reseiverObject, GameObject casterObject) {
+				
+		float attackRotationAngle = HitEffectManager.Instance.AttackRotationAngle;
+		float attackRotationDuration = HitEffectManager.Instance.AttackRotationDuration;
+
+		bool isFlipped = 
+			reseiverObject.transform.position.x <
+			casterObject.transform.position.x;
+
+		casterObject.transform.DOKill();
+		casterObject.transform.rotation = Quaternion.identity;
+
+		float angle = attackRotationAngle * (isFlipped ? -1f : 1f);
+		Vector3 endRotation = Vector3.forward * angle;
+
+		casterObject.transform
+			.DORotate(endRotation, attackRotationDuration / 3f)
+			.SetEase(Ease.OutSine)
+			.OnComplete(() => casterObject.transform
+				.DORotate(Vector3.zero, attackRotationDuration / 1.5f)
+				.SetEase(Ease.InOutSine)
+			);
 
 	}
 
