@@ -76,3 +76,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  <HitRotationAngle>k__BackingField: 8
+  <HitRotationDuration>k__BackingField: 0.08
+  <AttackRotationAngle>k__BackingField: 15
+  <AttackRotationDuration>k__BackingField: 0.2

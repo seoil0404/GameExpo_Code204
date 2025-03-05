@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Linq;
 using Unity.VisualScripting;
@@ -23,6 +24,20 @@ public class HitEffectManager : MonoBehaviour {
 	[SerializeField]
 	private Gradient HitColor;
 
+	[field: Header("Hit Rotation")]
+	[field: SerializeField]
+	public float HitRotationAngle { get; private set; }
+
+	[field: SerializeField]
+	public float HitRotationDuration { get; private set; }
+
+	[field: Header("Attack Rotation")]
+	[field: SerializeField]
+	public float AttackRotationAngle { get; private set; }
+
+	[field: SerializeField]
+	public float AttackRotationDuration { get; private set; }
+
 	//======================================================================| Unity Behaviours
 
 	private void Awake() {
@@ -37,19 +52,20 @@ public class HitEffectManager : MonoBehaviour {
 
 	//======================================================================| Methods
 
-	public void OnHit(GameObject gameObject, Vector2 position) {
+	public void OnHit(GameObject receiverObject, Vector2 position, GameObject casterObject) {
 		
 		VisualEffect instantiated = Instantiate(HitEffect);
 		instantiated.transform.position = position;
 
-		StartCoroutine(SetSpriteColor(gameObject));
+		StartCoroutine(SetSpriteColor(receiverObject));
 		StartCoroutine(DestroyParticleOnDone(instantiated));
+		RotateHittedObject(receiverObject, casterObject);
 
 	}
 
-	private IEnumerator SetSpriteColor(GameObject gameObject) {
+	private IEnumerator SetSpriteColor(GameObject receiverObject) {
 
-		var spriteDatas = gameObject
+		var spriteDatas = receiverObject
 			.GetComponentsInChildren<SpriteRenderer>()
 			.Select(spriteRenderer => (spriteRenderer, spriteRenderer.color));
 
@@ -80,6 +96,29 @@ public class HitEffectManager : MonoBehaviour {
 	private IEnumerator DestroyParticleOnDone(VisualEffect effect) {
 		yield return new WaitUntil(() => effect.aliveParticleCount == 0);
 		Destroy(effect.gameObject);
+	}
+
+	private void RotateHittedObject(GameObject receiverObject, GameObject casterObject) {
+		
+		bool isFlipped = 
+			receiverObject.transform.position.x <
+			casterObject.transform.position.x;
+
+		float angle = HitRotationAngle * (isFlipped ? 1f : -1f);
+
+		receiverObject.transform.DOKill();
+		receiverObject.transform.rotation = Quaternion.identity;
+
+		Vector3 endRotation = Vector3.forward * angle;
+
+		receiverObject.transform
+			.DORotate(endRotation, HitRotationDuration / 2f)
+			.SetEase(Ease.OutSine)
+			.OnComplete(() => receiverObject.transform
+				.DORotate(Vector3.zero, HitRotationDuration / 2f)
+				.SetEase(Ease.InOutSine)
+			);
+
 	}
 
 }
