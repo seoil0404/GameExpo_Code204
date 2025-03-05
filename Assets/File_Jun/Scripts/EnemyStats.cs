@@ -21,8 +21,14 @@ public class EnemyStats : MonoBehaviour
     private int comboCount = 0;
     private static List<GameObject> enemies = new List<GameObject>();
     private int damageReceivedLastTurn = 0;
+	private AttackEffectSpawner attackEffectSpawner;
 
-    private void Start()
+	private void Awake() 
+	{
+		attackEffectSpawner = GetComponentInChildren<AttackEffectSpawner>();
+	}
+
+	private void Start()
     {
         characterManager = FindFirstObjectByType<CharacterManager>();
 
@@ -108,8 +114,22 @@ public class EnemyStats : MonoBehaviour
         }
 
         int damage = atk;
-        Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-        characterManager.ApplyDamageToCharacter(damage);
+
+		if (attackEffectSpawner != null)
+		{
+			GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
+			attackEffectSpawner.TargetTransform = target.transform;
+			attackEffectSpawner.Spawn(() =>
+			{
+				Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+				characterManager.ApplyDamageToCharacter(damage);
+			});
+		}
+		else
+		{
+  			Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+			characterManager.ApplyDamageToCharacter(damage);
+		}
     }
 
     public void ReceiveDamage(int completedLines, int gridColumns)

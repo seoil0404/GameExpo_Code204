@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -9,33 +10,33 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 	[field: Header("Approach")]
 	[field: SerializeField]
-	public Ease ApproachEase { get; set; }
+	public Ease ApproachEase { get; set; } = Ease.OutCubic;
 
 	[field: SerializeField]
-	public float ApproachDuraion { get; set; }
+	public float ApproachDuraion { get; set; } = 0.2f;
 
 	[field: SerializeField]
-	public float GapBetweenTarget { get; set; }
+	public float GapBetweenTarget { get; set; } = 0.2f;
 
 	[field: Header("Retreat")]
 	[field: SerializeField]
-	public float RetreatWaitingDuration { get; set; }
+	public float RetreatWaitingDuration { get; set; } = 0f;
 
 	[field: SerializeField]
-	public Ease RetreatEase { get; set; }
+	public Ease RetreatEase { get; set; } = Ease.OutCubic;
 
 	[field: SerializeField]
-	public float RetreatDuraion { get; set; }
+	public float RetreatDuraion { get; set; } = 0.2f;
 
 	[field: Header("Attack")]
 	[field: SerializeField]
-	public float AttackWaitingDuration { get; set; }
+	public float AttackWaitingDuration { get; set; } = 0.1f;
 
 	[field: SerializeField]
-	public float AttackingDuration { get; set; }
+	public float AttackingDuration { get; set; } = 0.2f;
 
 	[field: SerializeField]
-	public float AttackingAngle { get; set; }
+	public float AttackingAngle { get; set; } = 15f;
 
 	[field: SerializeField]
 	public VisualEffect AttackEffect { get; set; }
@@ -47,27 +48,27 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 	//======================================================================| Methods
 
-	public override void Spawn() {
+	public override void Spawn(Action onAttack = null) {
 	
 		casterTransform = transform.parent;
 		endPosition = Vector2.Lerp(
 			casterTransform.position, 
-			TargetTransform.position,
+			new(TargetTransform.position.x, casterTransform.position.y),
 			1 - GapBetweenTarget
 		);
 
-		Approach();
+		Approach(onAttack);
 
 	}
 
-	private void Approach() {
+	private void Approach(Action onAttack) {
 		casterTransform
 			.DOMove(endPosition, ApproachDuraion)
 			.SetEase(ApproachEase)
-			.OnComplete(() => StartCoroutine(AttackStart()));
+			.OnComplete(() => StartCoroutine(AttackStart(onAttack)));
 	}
 
-	private IEnumerator AttackStart() {
+	private IEnumerator AttackStart(Action onAttack) {
 		
 		yield return new WaitForSeconds(AttackWaitingDuration);
 
@@ -79,6 +80,7 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 		Vector3 endRotation = Vector3.forward * angle;
 
 		PlayAnimation();
+		onAttack();
 
 		casterTransform
 			.DORotate(endRotation, AttackingDuration / 3f)
@@ -89,10 +91,13 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 	private void PlayAnimation() {
 
-		VisualEffect attackEffect = Instantiate(AttackEffect);
-		attackEffect.transform.position = transform.position;
+		if (AttackEffect != null) {
 
-		StartCoroutine(WaitAndDestroyEffect(attackEffect));
+			VisualEffect attackEffect = Instantiate(AttackEffect);
+			attackEffect.transform.position = transform.position;
+
+			StartCoroutine(WaitAndDestroyEffect(attackEffect));
+		}
 
 		HitEffectManager.Instance.OnHit(
 			TargetTransform.gameObject,

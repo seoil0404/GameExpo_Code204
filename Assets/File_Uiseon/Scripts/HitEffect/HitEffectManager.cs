@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.VFX;
 
 public class HitEffectManager : MonoBehaviour {
@@ -69,6 +70,10 @@ public class HitEffectManager : MonoBehaviour {
 			.GetComponentsInChildren<SpriteRenderer>()
 			.Select(spriteRenderer => (spriteRenderer, spriteRenderer.color));
 
+		var imageDatas = receiverObject
+			.GetComponentsInChildren<Image>()
+			.Select(imageRenderer => (imageRenderer, imageRenderer.color));
+
 		float spent = 0f;
 		while (spent < HitColorDuration) {
 
@@ -79,6 +84,16 @@ public class HitEffectManager : MonoBehaviour {
 				Color blendedColor = Color.Lerp(color, currentColor, 0.5f);
 				
 				spriteRenderer.color = blendedColor;
+
+			}
+
+			foreach (var (imageRenderer, color) in imageDatas) {
+			
+				float progress = spent / HitColorDuration;
+				Color currentColor = HitColor.Evaluate(progress);
+				Color blendedColor = Color.Lerp(color,currentColor, 0.5f);
+
+				imageRenderer.color = blendedColor;
 
 			}
 

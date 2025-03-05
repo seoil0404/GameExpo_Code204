@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 66885588803235090}
   - component: {fileID: -8400885580612463363}
   m_Layer: 0
-  m_Name: Minokeleton
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

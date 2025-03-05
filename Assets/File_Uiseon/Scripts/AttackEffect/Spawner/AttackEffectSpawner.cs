@@ -17,30 +17,21 @@ public class AttackEffectSpawner : MonoBehaviour {
 
 	//======================================================================| Fields
 
-	protected Canvas curentCanvas;
 	protected Vector2 startPosition;
-
-	//======================================================================| Unity Behaviours
-
-	private void Awake() {
-		curentCanvas = transform.GetComponentInParent<Canvas>();
-		startPosition = transform.parent.position;
-	}
 
 	//======================================================================| Methods
 
-	public virtual void Spawn() {
+	public virtual void Spawn(Action onAttack = null) {
 		
-		AttackEffect instantiated = Instantiate(EffectPrefab, curentCanvas.transform);
+		AttackEffect instantiated = Instantiate(EffectPrefab);
 		instantiated.transform.position = transform.position;
-		instantiated.OnHit = OnHit;
 		
-		Shoot(instantiated);
+		Shoot(instantiated, onAttack);
 
 	}
 
-	private void Shoot(AttackEffect instantiated) {
-		instantiated.Shoot(TargetTransform.gameObject, transform.parent.gameObject);
+	private void Shoot(AttackEffect instantiated, Action onAttack) {
+		instantiated.Shoot(TargetTransform.gameObject, transform.parent.gameObject, onAttack);
 	}
 
 	//======================================================================| Nested Types

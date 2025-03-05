@@ -21,7 +21,6 @@ public class AttackEffect : MonoBehaviour {
 	[field: SerializeField]
 	public float AttackRange { get; set; } = 0f;
 
-	public Action OnHit { get; set; }
 	public AttackEffectMovement MovementMethods { get; set; }
 	public AttackEffectEffector[] Effectors { get; set; }
 
@@ -34,7 +33,7 @@ public class AttackEffect : MonoBehaviour {
 
 	//======================================================================| Methods
 
-	public void Shoot(GameObject receiverObject, GameObject casterObject) {
+	public void Shoot(GameObject receiverObject, GameObject casterObject, Action onAttack) {
 
 		Vector2 targetPosition = receiverObject.transform.position;
 
@@ -60,7 +59,7 @@ public class AttackEffect : MonoBehaviour {
 				HitEffectManager.Instance.OnHit(receiverObject, targetPosition, casterObject);
 				Effectors.OnCompleteAll(this);
 				StartCoroutine(DestroyOnReady());
-				OnHit();
+				onAttack?.Invoke();
 			});
 
 	}
