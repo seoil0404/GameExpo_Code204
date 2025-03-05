@@ -77,6 +77,12 @@ public class SceneController : MonoBehaviour
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
+                case Scene.MainScene:
+                    IsGameSceneFirstLoading = true;
+                    Scene.mapManager.IsAllowOpen = true;
+                    Scene.mapManager.IsStatic = false;
+                    if (Scene.mapManager != null) Destroy(Scene.mapManager.highMap);
+                    break;
                 default:
                     Scene.mapManager.DisableMap();
                     IsGameSceneFirstLoading = true;
