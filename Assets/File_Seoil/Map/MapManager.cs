@@ -6,7 +6,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private bool isStatic;
 
     [Header("MonoBehavior")]
-    [SerializeField] private GameObject highMap;
+    public GameObject highMap;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private TreasureShowManager treasureShowManager;
     [SerializeField] private GameObject map;
