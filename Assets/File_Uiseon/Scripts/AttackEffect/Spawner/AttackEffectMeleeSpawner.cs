@@ -80,7 +80,7 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 		Vector3 endRotation = Vector3.forward * angle;
 
 		PlayAnimation();
-		onAttack();
+		onAttack?.Invoke();
 
 		casterTransform
 			.DORotate(endRotation, AttackingDuration / 3f)
