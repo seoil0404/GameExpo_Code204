@@ -21,6 +21,7 @@ public class AttackEffectVFXWaitingEffect : AttackEffectEffector {
 	
 		VisualEffect[] visualEffects = GetComponentsInChildren<VisualEffect>();
 		yield return new WaitUntil(() => visualEffects.Any(visualEffect => visualEffect.aliveParticleCount == 0));
+		IsAbleToDestroy = true;
 
 	}
 

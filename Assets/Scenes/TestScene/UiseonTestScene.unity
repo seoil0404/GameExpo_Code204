@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 1966275877}
   - component: {fileID: 1966275876}
   m_Layer: 0
-  m_Name: "\uD654\uBA74 \uCEA1\uCC98 2025-02-05 080735_0"
+  m_Name: TutorialImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

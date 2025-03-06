@@ -22,7 +22,7 @@ public class AttackEffectSpawner : MonoBehaviour {
 	//======================================================================| Unity Behaviours
 
 	private void Start() {
-		startPosition = transform.parent.position;
+		startPosition = transform.parent.localPosition;
 	}
 
 	//======================================================================| Methods
