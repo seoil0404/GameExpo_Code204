@@ -19,6 +19,12 @@ public class AttackEffectSpawner : MonoBehaviour {
 
 	protected Vector2 startPosition;
 
+	//======================================================================| Unity Behaviours
+
+	private void Start() {
+		startPosition = transform.parent.localPosition;
+	}
+
 	//======================================================================| Methods
 
 	public virtual void Spawn(Action onAttack = null) {
@@ -27,7 +33,6 @@ public class AttackEffectSpawner : MonoBehaviour {
 		instantiated.transform.position = transform.position;
 		
 		Shoot(instantiated, onAttack);
-
 	}
 
 	private void Shoot(AttackEffect instantiated, Action onAttack) {

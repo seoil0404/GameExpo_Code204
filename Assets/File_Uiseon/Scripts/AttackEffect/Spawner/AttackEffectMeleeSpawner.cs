@@ -74,13 +74,13 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 		bool isFlipped =
 			startPosition.x <
-			TargetTransform.position.x;
+			TargetTransform.localPosition.x;
 
 		float angle = AttackingAngle * (isFlipped ? -1 : 1);
 		Vector3 endRotation = Vector3.forward * angle;
 
 		PlayAnimation();
-		onAttack();
+		onAttack?.Invoke();
 
 		casterTransform
 			.DORotate(endRotation, AttackingDuration / 3f)
@@ -96,7 +96,6 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 			VisualEffect attackEffect = Instantiate(AttackEffect);
 			attackEffect.transform.position = transform.position;
 
-			StartCoroutine(WaitAndDestroyEffect(attackEffect));
 		}
 
 		HitEffectManager.Instance.OnHit(
@@ -107,10 +106,6 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 	}
 
-	private IEnumerator WaitAndDestroyEffect(VisualEffect instantiated) {
-		yield return new WaitUntil(() => instantiated.aliveParticleCount == 0);
-		Destroy(instantiated);
-	}
 
 	private void AttackEnd() {
 		
@@ -125,7 +120,7 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 		yield return new WaitForSeconds(RetreatWaitingDuration);
 
 		casterTransform
-			.DOMove(startPosition, RetreatDuraion)
+			.DOLocalMove(startPosition, RetreatDuraion)
 			.SetEase(RetreatEase);
 	}
 
