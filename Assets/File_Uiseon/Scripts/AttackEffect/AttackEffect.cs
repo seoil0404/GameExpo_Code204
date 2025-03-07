@@ -23,6 +23,7 @@ public class AttackEffect : MonoBehaviour {
 	public float AttackRange { get; set; } = 0f;
 
 	public AttackEffectMovement MovementMethods { get; set; }
+	
 	public AttackEffectEffector[] Effectors { get; set; }
 
 	//======================================================================| Unity Behaviours
