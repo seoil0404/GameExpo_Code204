@@ -374,6 +374,8 @@ public class Grid : MonoBehaviour
         return selectedEnemy;
     }
 
+    
+
     // Grid.cs 내에 추가할 메서드
     public void DropAllBlocks()
     {
