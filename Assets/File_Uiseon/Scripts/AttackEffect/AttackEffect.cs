@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class AttackEffect : MonoBehaviour {
@@ -36,6 +37,17 @@ public class AttackEffect : MonoBehaviour {
 	public void Shoot(GameObject receiverObject, GameObject casterObject, Action onAttack) {
 
 		Vector2 targetPosition = receiverObject.transform.position;
+
+		Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, receiverObject.transform.position);
+
+		if (receiverObject.TryGetComponent<Image>(out var image)) {
+			screenPos.y += image.rectTransform.sizeDelta.y / 2;
+		}
+
+		// 월드 좌표로 변환
+		RectTransform canvasRect = receiverObject.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+		RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, screenPos, Camera.main, out Vector3 worldPos);
+		targetPosition = worldPos;
 
 		if (AttackRange != 0f) {
 			targetPosition.x += Random.Range(-AttackRange, AttackRange) / 2f;

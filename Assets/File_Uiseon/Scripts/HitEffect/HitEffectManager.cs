@@ -67,12 +67,14 @@ public class HitEffectManager : MonoBehaviour {
 	private IEnumerator SetSpriteColor(GameObject receiverObject) {
 
 		var spriteDatas = receiverObject
-			.GetComponentsInChildren<SpriteRenderer>()
-			.Select(spriteRenderer => (spriteRenderer, spriteRenderer.color));
+			.GetComponents<SpriteRenderer>()
+			.Select(spriteRenderer => (spriteRenderer, spriteRenderer.color))
+			.ToList();
 
 		var imageDatas = receiverObject
-			.GetComponentsInChildren<Image>()
-			.Select(imageRenderer => (imageRenderer, imageRenderer.color));
+			.GetComponents<Image>()
+			.Select(imageRenderer => (imageRenderer, imageRenderer.color))
+			.ToList();
 
 		float spent = 0f;
 		while (spent < HitColorDuration) {
@@ -91,7 +93,7 @@ public class HitEffectManager : MonoBehaviour {
 			
 				float progress = spent / HitColorDuration;
 				Color currentColor = HitColor.Evaluate(progress);
-				Color blendedColor = Color.Lerp(color,currentColor, 0.5f);
+				Color blendedColor = Color.Lerp(color, currentColor, 0.5f);
 
 				imageRenderer.color = blendedColor;
 

@@ -4,5 +4,4 @@ using UnityEngine;
 public class Character : ScriptableObject
 {
     public CharacterData characterData;
-
 }

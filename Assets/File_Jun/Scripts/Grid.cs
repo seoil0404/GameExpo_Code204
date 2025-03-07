@@ -329,6 +329,7 @@ public class Grid : MonoBehaviour
 
     public void SelectEnemy(GameObject enemy)
     {
+		CharacterManager.selectedCharacter.characterData.AttackEffectSpawner.TargetTransform = enemy.transform;
         selectedEnemy = enemy;
         Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
     }
