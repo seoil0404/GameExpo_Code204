@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 9207433913532162328}
   - component: {fileID: 5491295859131709763}
   m_Layer: 0
-  m_Name: Orb
+  m_Name: OrbPurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

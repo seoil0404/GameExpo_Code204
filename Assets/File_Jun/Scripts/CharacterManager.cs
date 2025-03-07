@@ -36,9 +36,16 @@ public class CharacterManager : MonoBehaviour
 
         if (currentCharacterInstance == null)
             InitializeCharacter(selectedCharacter);
+
     }
 
-    public void InitializeCharacter(Character character)
+	private void Update() {
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			selectedCharacter.characterData.AttackEffectSpawner.Spawn();
+		}
+	}
+
+	public void InitializeCharacter(Character character)
     {
         if (currentCharacterInstance != null)
         {
@@ -50,6 +57,8 @@ public class CharacterManager : MonoBehaviour
         if (rectTransform != null)
             rectTransform.localPosition = Vector3.zero;
         Debug.Log($"[CharacterManager] 캐릭터 프리팹 생성: {character.characterData.CharacterName}");
+		
+		selectedCharacter.characterData.AttackEffectSpawner = SpawnPoint.GetComponentInChildren<AttackEffectSpawner>();
     }
 
     public void ApplyDamageToCharacter(int totalDamage)

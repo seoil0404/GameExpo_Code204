@@ -26,6 +26,8 @@ public class CharacterData
 
     public Action OnHpChanged;
     public Action OnUltimateGaugeChanged;
+	
+	public AttackEffectSpawner AttackEffectSpawner;
 
     public void Initialize()
     {
