@@ -20,7 +20,7 @@ public class CharacterData
     [SerializeField]
     private int executionRate;
 
-    // ★ 각 캐릭터의 궁극기 스킬과 다음 피해 무효화 여부
+    
     public UltimateSkill ultimateSkill;
     public bool NegateNextDamage = false;
 
@@ -83,14 +83,14 @@ public class CharacterData
         }
     }
 
-    // 상태 이상 효과를 모두 치료하는 메서드
+    
     public void CureStatusEffects()
     {
         Debug.Log($"{CharacterName}의 상태 이상 효과가 모두 치료되었습니다.");
-        // 실제 게임에서는 상태이상 목록을 초기화하는 로직을 넣으세요.
+        
     }
 
-    // 흡혈 효과: 상대가 입힌 피해의 절반만큼 회복합니다.
+   
     public void ActivateLifeSteal(int damageDealt)
     {
         int healAmount = damageDealt / 2;
