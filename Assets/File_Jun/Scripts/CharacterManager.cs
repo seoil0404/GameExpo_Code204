@@ -15,7 +15,7 @@ public class CharacterManager : MonoBehaviour
     private const string HpKey = "SavedHp";
     private const string UltimateKey = "SavedUltimateGauge";
 
-    void Start()
+    void Awake()
     {
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
             GameData.SelectedCharacterIndex = 1;
@@ -84,7 +84,7 @@ public class CharacterManager : MonoBehaviour
     private void CharacterDied()
     {
         Debug.Log("캐릭터가 죽었습니다!");
-        GameStartTracker.IsHavetobeReset = false;
+        GameStartTracker.IsHavetobeReset = true;
         Scene.Controller.LoadScene(Scene.MainScene);
     }
 
