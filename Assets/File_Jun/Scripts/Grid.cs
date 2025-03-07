@@ -232,10 +232,25 @@ public class Grid : MonoBehaviour
         ultimateDamageMultiplier = 1f;
         additionalExecutionDamage = 0;
 
-        // enemyStats.ReceiveDamage는 두 개의 인자를 받도록 정의되어 있으므로,
-        // baseDamage와 columns를 함께 전달합니다.
-        enemyStats.ReceiveDamage(baseDamage, columns);
-        Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+		AttackEffectSpawner attackEffectSpawner = 
+			CharacterManager.selectedCharacter.characterData.AttackEffectSpawner;
+
+		if (attackEffectSpawner != null)
+		{
+			attackEffectSpawner.Spawn(
+				() => {
+					enemyStats.ReceiveDamage(baseDamage, columns);
+					Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+				}
+			);
+		}
+		else 
+		{
+			// enemyStats.ReceiveDamage는 두 개의 인자를 받도록 정의되어 있으므로,
+			// baseDamage와 columns를 함께 전달합니다.
+			enemyStats.ReceiveDamage(baseDamage, columns);
+			Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+		}
     }
 
 
@@ -329,7 +344,13 @@ public class Grid : MonoBehaviour
 
     public void SelectEnemy(GameObject enemy)
     {
-		CharacterManager.selectedCharacter.characterData.AttackEffectSpawner.TargetTransform = enemy.transform;
+
+		AttackEffectSpawner attackEffectSpawner =
+			CharacterManager.selectedCharacter.characterData.AttackEffectSpawner;
+
+		if (attackEffectSpawner != null) {
+			attackEffectSpawner.TargetTransform = enemy.transform;
+		}
         selectedEnemy = enemy;
         Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
     }
