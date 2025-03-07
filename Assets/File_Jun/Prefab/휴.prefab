@@ -135,4 +135,4 @@ MonoBehaviour:
   <AttackWaitingDuration>k__BackingField: 0.1
   <AttackingDuration>k__BackingField: 0.2
   <AttackingAngle>k__BackingField: 15
-  <AttackEffect>k__BackingField: {fileID: 7902741046813970667, guid: acdccde8cd484c041ba22c555f215dc3, type: 3}
+  <AttackEffect>k__BackingField: {fileID: 7902741046813970667, guid: e39fef32281d3ec40b1df84a4675d1ed, type: 3}

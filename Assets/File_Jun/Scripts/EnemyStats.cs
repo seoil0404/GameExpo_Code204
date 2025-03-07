@@ -113,9 +113,15 @@ public class EnemyStats : MonoBehaviour
             return;
         }
 
+		AttackPlayerInner();
+
+    }
+
+	private void AttackPlayerInner() {
+
         int damage = atk;
 
-		if (attackEffectSpawner != null)
+ 		if (attackEffectSpawner != null)
 		{
 			GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
 			attackEffectSpawner.TargetTransform = target.transform;
@@ -130,7 +136,7 @@ public class EnemyStats : MonoBehaviour
   			Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
 			characterManager.ApplyDamageToCharacter(damage);
 		}
-    }
+	}
 
     public void ReceiveDamage(int completedLines, int gridColumns)
     {

@@ -241,6 +241,7 @@ public class Grid : MonoBehaviour
 				() => {
 					enemyStats.ReceiveDamage(baseDamage, columns);
 					Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+					CheckIfGameEnded();
 				}
 			);
 		}

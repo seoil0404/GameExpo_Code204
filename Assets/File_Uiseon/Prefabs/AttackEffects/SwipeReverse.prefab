@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7861098866372133288
+--- !u!1 &5049991529841987778
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2027410084507411746}
-  - component: {fileID: 4715591370784012249}
-  - component: {fileID: 1956598886691240161}
-  - component: {fileID: 7523711547051996361}
+  - component: {fileID: 206164159739601084}
+  - component: {fileID: 7902741046813970667}
+  - component: {fileID: 7929244632564514630}
+  - component: {fileID: -4958772057891618831}
   m_Layer: 0
-  m_Name: MinoClearEffect
+  m_Name: SwipeReverse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2027410084507411746
+--- !u!4 &206164159739601084
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861098866372133288}
+  m_GameObject: {fileID: 5049991529841987778}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.46, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4836602, y: -3.5095012, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!2083052967 &4715591370784012249
+--- !u!2083052967 &7902741046813970667
 VisualEffect:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861098866372133288}
+  m_GameObject: {fileID: 5049991529841987778}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: b408bdad877053b4282d1f0c03564410, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 799d9b216fd864345aa7aee03668bb3a, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -72,14 +72,14 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
---- !u!73398921 &1956598886691240161
+--- !u!73398921 &7929244632564514630
 VFXRenderer:
   serializedVersion: 1
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861098866372133288}
+  m_GameObject: {fileID: 5049991529841987778}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -115,13 +115,13 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7523711547051996361
+--- !u!114 &-4958772057891618831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861098866372133288}
+  m_GameObject: {fileID: 5049991529841987778}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09c4f25709819e24c933acbaea609574, type: 3}
