@@ -7,6 +7,7 @@ public class ShapeStorage : MonoBehaviour
 {
     public List<ShapeData> shapeData;
     public List<Shape> shapeList;
+    public GameObject hold;
 
     void Start()
     {
@@ -47,4 +48,16 @@ public class ShapeStorage : MonoBehaviour
             shape.RequestNewShape(shapeData[shapeIndex]);
         }
     }
+
+    public void SetHoldShape(ShapeData shapeData, string colorName)
+    {
+        if (hold == null) return;
+
+        HoldShape holdShape = hold.GetComponent<HoldShape>();
+        if (holdShape != null)
+        {
+            holdShape.CreateShape(shapeData, colorName);
+        }
+    }
+
 }
