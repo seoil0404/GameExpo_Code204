@@ -15,6 +15,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private RectTransform _transform;
     private Canvas _canvas;
     private bool _shapeActive = true;
+    private Vector2 offset;
 
     public string HeldShapeColorName => _heldShapeColorName;
 
@@ -22,7 +23,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         _transform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
-        _startPosition = _transform.localPosition;
+        _startPosition = _transform.localPosition; // 초기 위치 저장
     }
 
     public void CreateShape(ShapeData shapeData, string colorName)
@@ -78,29 +79,26 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 }
             }
         }
+
+        // 블록이 생성된 위치를 초기 위치로 설정
+        _startPosition = _transform.localPosition;
     }
 
-    // 드래그 이벤트 처리
-    public void OnPointerDown(PointerEventData eventData)
-    {
-    }
+    public void OnPointerDown(PointerEventData eventData) { }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         GetComponent<RectTransform>().localScale = Vector3.one;
 
-        RectTransform rectTransform = GetComponent<RectTransform>();
-        Canvas canvas = _canvas;
-
         Vector2 localMousePosition;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.transform as RectTransform,
-            eventData.position,
-            Camera.main,
-            out localMousePosition
-        );
-
-        _startPosition = rectTransform.localPosition - (Vector3)localMousePosition;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _canvas.transform as RectTransform,
+                eventData.position,
+                Camera.main,
+                out localMousePosition))
+        {
+            offset = (Vector2)_transform.localPosition - localMousePosition;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -112,7 +110,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 Camera.main,
                 out localMousePosition))
         {
-            _transform.localPosition = localMousePosition + (Vector2)_startPosition;
+            _transform.localPosition = localMousePosition + offset;
         }
     }
 
@@ -121,6 +119,25 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         GetComponent<RectTransform>().localScale = Vector3.one;
         CheckIfCanBePlaced();
     }
+
+    private IEnumerator MoveBackToStartPosition()
+    {
+        if (_transform.localPosition == _startPosition) yield break;
+
+        float elapsedTime = 0f;
+        float duration = 0.2f;
+        Vector3 startPos = _transform.localPosition;
+
+        while (elapsedTime < duration)
+        {
+            _transform.localPosition = Vector3.Lerp(startPos, _startPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        _transform.localPosition = _startPosition; // 최종 위치 보정
+    }
+
 
     private void CheckIfCanBePlaced()
     {
@@ -157,36 +174,20 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
-    // 배치 후 Hold 블록 비활성화 및 원위치 이동
     private IEnumerator ResetHoldShapeAfterPlacement()
     {
-        yield return new WaitForSeconds(0.1f); // 약간의 지연 후 처리
+        yield return new WaitForSeconds(0.1f);
 
         foreach (var square in _currentHoldShape)
         {
-            square.SetActive(false);
+            Destroy(square);
         }
+        _currentHoldShape.Clear();
 
         _shapeActive = false;
-        _transform.localPosition = _startPosition; // 원래 위치로 이동
+        _transform.localPosition = _startPosition;
     }
 
-    // 실패 시 부드럽게 원래 위치로 이동
-    private IEnumerator MoveBackToStartPosition()
-    {
-        float elapsedTime = 0f;
-        float duration = 0.2f;
-        Vector3 startPos = _transform.localPosition;
-
-        while (elapsedTime < duration)
-        {
-            _transform.localPosition = Vector3.Lerp(startPos, _startPosition, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        _transform.localPosition = _startPosition; // 보정
-    }
 
     private int GetNumberOfSquares(ShapeData shapeData)
     {

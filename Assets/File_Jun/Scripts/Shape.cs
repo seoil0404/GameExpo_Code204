@@ -102,7 +102,16 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     {
         _transform.localPosition = _startPosition;
         CreateShape(shapeData);
+
+        if (Grid.instance != null && Grid.instance.enemies.Count > 0)
+        {
+            foreach (var enemy in Grid.instance.enemies)
+            {
+                enemy.GetComponent<EnemyStats>()?.DecideNextAction();
+            }
+        }
     }
+
 
     private int GetNumberOfSquares(ShapeData shapeData)
     {
