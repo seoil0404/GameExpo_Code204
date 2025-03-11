@@ -22,11 +22,13 @@ public class EnemyStats : MonoBehaviour
     private static List<GameObject> enemies = new List<GameObject>();
     private int damageReceivedLastTurn = 0;
 	private AttackEffectSpawner attackEffectSpawner;
+    private EnemyNextAction enemyNextAction;
 
-	private void Awake() 
+    private void Awake() 
 	{
 		attackEffectSpawner = GetComponentInChildren<AttackEffectSpawner>();
-	}
+        enemyNextAction = GetComponentInChildren<EnemyNextAction>();
+    }
 
 	private void Start()
     {
@@ -77,6 +79,15 @@ public class EnemyStats : MonoBehaviour
         UpdateHealthText();
     }
 
+    public void DecideNextAction()
+    {
+        int totalOptions = enemyData.enemySkills.Count + 1;
+        if (enemyNextAction != null)
+        {
+            enemyNextAction.DecideNextAction(totalOptions, atk);
+        }   
+    }
+
     public int GetCurrentHp()
     {
         return hp;
@@ -84,26 +95,31 @@ public class EnemyStats : MonoBehaviour
 
     public void PerformTurnAction(Grid grid)
     {
-        if (enemyData.enemySkills == null || enemyData.enemySkills.Count == 0)
+        if (enemyNextAction == null)
         {
-            AttackPlayer();
+            Debug.LogError($"[EnemyStats] {gameObject.name}의 EnemyNextAction이 설정되지 않음!");
             return;
         }
+        int actionIndex = enemyNextAction.GetNextActionIndex();
 
-        int totalOptions = enemyData.enemySkills.Count + 1;
-        int randomIndex = Random.Range(0, totalOptions);
-
-        if (randomIndex == enemyData.enemySkills.Count)
+        if (actionIndex == 1)
         {
             AttackPlayer();
         }
         else
         {
-            EnemySkill chosenSkill = enemyData.enemySkills[randomIndex];
-            Debug.Log($"[{gameObject.name}]이(가) 스킬 [{chosenSkill.skillName}]을(를) 사용합니다!");
-            chosenSkill.ActivateSkill(grid, gameObject);
+            int skillIndex = actionIndex - 2; // 2부터 스킬 시작
+            if (enemyData.enemySkills != null && skillIndex < enemyData.enemySkills.Count)
+            {
+                EnemySkill chosenSkill = enemyData.enemySkills[skillIndex];
+                Debug.Log($"[{gameObject.name}]이(가) 스킬 [{chosenSkill.skillName}]을(를) 사용합니다!");
+                chosenSkill.ActivateSkill(grid, gameObject);
+            }
         }
+
+        DecideNextAction();
     }
+
 
     public void AttackPlayer()
     {
@@ -140,10 +156,13 @@ public class EnemyStats : MonoBehaviour
 
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
-        float dodgeRoll = Random.Range(0, 100);
-        Debug.Log($"회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({dodgeChance}%)");
+        
+        float currentDodgeChance = TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.UniversalGravitation) ? 0f : dodgeChance;
 
-        if (dodgeRoll < dodgeChance)
+        float dodgeRoll = Random.Range(0, 100);
+        Debug.Log($"회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({currentDodgeChance}%)");
+
+        if (dodgeRoll < currentDodgeChance)
         {
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
@@ -167,6 +186,8 @@ public class EnemyStats : MonoBehaviour
         comboCount++;
         UpdateHealthText();
     }
+
+
 
     private void UpdateHealthText()
     {

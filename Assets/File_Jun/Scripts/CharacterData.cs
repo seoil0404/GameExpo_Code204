@@ -92,7 +92,17 @@ public class CharacterData
         
     }
 
-   
+    public void ApplyCondemnationEffect()
+    {
+        if (TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.Condemnation))
+        {
+            ExecutionRate += 5;
+            Debug.Log($"{CharacterName}의 처형율이 5 증가하여 현재 {ExecutionRate}이(가) 되었습니다.");
+        }
+    }
+
+
+
     public void ActivateLifeSteal(int damageDealt)
     {
         int healAmount = damageDealt / 2;
