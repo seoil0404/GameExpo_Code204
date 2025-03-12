@@ -80,7 +80,7 @@ public class TreasureShowManager : MonoBehaviour
                     break;
                 case CombatData.TreasureType.Condemnation:
                     currentImage.sprite = condemnation;
-                    currentDescription.DescriptionText = "설명\r\n주인 또한 집어삼키는 검인 에고 소드는 끊임없이 먹이를 갈망한다.\r\n\r\n능력\r\n+ 처형율 5%\r\n처형율에 따라 모든 것을 처형합니다. (본인도 처형합니다.)\r\nHP 게이지에 처형 가능 HP가 표시됩니다.";
+                    currentDescription.DescriptionText = "설명\r\n주인 또한 집어삼키는 검인 에고 소드는 끊임없이 먹이를 갈망한다.\r\n\r\n능력\r\n+ 처형률 5%\r\n처형률에 따라 모든 것을 처형합니다. (본인도 처형합니다.)\r\nHP 게이지에 처형 가능 HP가 표시됩니다.";
                     break;
                 case CombatData.TreasureType.MoneyBack:
                     currentImage.sprite = moneyBack;
