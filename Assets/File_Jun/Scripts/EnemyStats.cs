@@ -108,7 +108,7 @@ public class EnemyStats : MonoBehaviour
         }
         else
         {
-            int skillIndex = actionIndex - 2; // 2부터 스킬 시작
+            int skillIndex = actionIndex - 2;
             if (enemyData.enemySkills != null && skillIndex < enemyData.enemySkills.Count)
             {
                 EnemySkill chosenSkill = enemyData.enemySkills[skillIndex];
@@ -209,7 +209,7 @@ public class EnemyStats : MonoBehaviour
             Grid.instance.RemoveEnemy(gameObject);
         }
 
-        Destroy(gameObject);
+        Scene.Controller.OnClearScene();
     }
 
     public static void AddEnemy(GameObject enemy)

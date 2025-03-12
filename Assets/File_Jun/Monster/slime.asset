@@ -19,4 +19,4 @@ MonoBehaviour:
   dodgeChance: 0
   enemySkills: []
   habitat: 0
-  enemyType: 0
+  enemyType: 2

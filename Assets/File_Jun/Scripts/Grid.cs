@@ -26,7 +26,6 @@ public class Grid : MonoBehaviour
 
     public static Grid instance;
 
-    // ¡Ú ±Ã±Ø±â È¿°ú °ü·Ã ÇÊµå
     public float ultimateDamageMultiplier = 1f;
     public int additionalExecutionDamage = 0;
 
