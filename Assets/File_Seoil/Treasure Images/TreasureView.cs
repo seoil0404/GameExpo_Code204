@@ -28,9 +28,10 @@ public class TreasureView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         gameObject.transform.SetAsLastSibling();
 
         currentDescription = Instantiate(descriptionPrefab, transform).GetComponent<DescriptionView>();
+        Vector3 tempScale = currentDescription.transform.localScale;
 
-        currentDescription.transform.localScale = Vector3.one * startScale;
-        currentDescription.transform.DOScale(Vector3.one * endScale, scaleDuration);
+        currentDescription.transform.localScale = tempScale * startScale;
+        currentDescription.transform.DOScale(tempScale * endScale, scaleDuration);
 
         currentDescription.Description.text = descriptionText;
 
