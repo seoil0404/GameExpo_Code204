@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
     public List<GameObject> squareShapeImages;
+    public GameObject assignedObject; // 인스펙터에서 할당할 오브젝트
+
     private List<GameObject> _currentHoldShape = new List<GameObject>();
     private ShapeData _heldShapeData;
     private string _heldShapeColorName = "default";
@@ -30,13 +32,14 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         _heldShapeData = shapeData;
 
-
+        // 기존 블록 제거
         foreach (var block in _currentHoldShape)
         {
             Destroy(block);
         }
         _currentHoldShape.Clear();
 
+        // 색상에 맞는 블록 찾기
         GameObject selectedBlockPrefab = squareShapeImages.Find(prefab => prefab.name.ToLower() == colorName);
 
         if (selectedBlockPrefab == null)
@@ -47,6 +50,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         _heldShapeColorName = selectedBlockPrefab.name.ToLower();
 
+        // 블록 생성
         int totalSquares = GetNumberOfSquares(_heldShapeData);
         for (int i = 0; i < totalSquares; i++)
         {
@@ -76,6 +80,12 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     currentIndexInList++;
                 }
             }
+        }
+
+        // 블록이 생성되면 assignedObject를 비활성화
+        if (assignedObject != null)
+        {
+            assignedObject.SetActive(false);
         }
 
         _startPosition = _transform.localPosition;
@@ -145,8 +155,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
-
-
     private IEnumerator MoveBackToStartPosition()
     {
         if (_transform.localPosition == _startPosition) yield break;
@@ -169,6 +177,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         yield return new WaitForSeconds(0.1f);
 
+        // 블록을 배치하면 기존 블록 삭제
         foreach (var square in _currentHoldShape)
         {
             Destroy(square);
@@ -177,6 +186,11 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         _shapeActive = false;
         _transform.localPosition = _startPosition;
+
+        if (assignedObject != null)
+        {
+            assignedObject.SetActive(true);
+        }
     }
 
     private int GetNumberOfSquares(ShapeData shapeData)
