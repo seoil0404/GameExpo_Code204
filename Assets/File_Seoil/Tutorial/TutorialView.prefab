@@ -193,11 +193,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialImage: {fileID: 5129612677987301807}
   sprites:
-  - {fileID: 21300000, guid: 57f485a0d8ad2f649896af39e51451f3, type: 3}
-  - {fileID: 21300000, guid: ce358faa70843d641b616706a8b292a1, type: 3}
-  - {fileID: 21300000, guid: 6ec46b4f896ef00419bb8f079236b045, type: 3}
-  - {fileID: 21300000, guid: f62860d614e238041917a64b71807f61, type: 3}
-  - {fileID: 21300000, guid: bfab37b5201d41f4182c468cd7d07668, type: 3}
+  - {fileID: 21300000, guid: e00bfdc2d81223544b4463ae56ff144c, type: 3}
+  - {fileID: 21300000, guid: a3073dbccdd49ef48902803631a08e4f, type: 3}
+  - {fileID: 21300000, guid: e09fb50a97f87a442b1762d258ea8de0, type: 3}
+  - {fileID: 21300000, guid: da193d6f3f4fbe84b84d6d19d37cb22f, type: 3}
+  - {fileID: 21300000, guid: 94d9c8bcae277794c8a42a5ca71e0837, type: 3}
 --- !u!1 &5539301742332485504
 GameObject:
   m_ObjectHideFlags: 0

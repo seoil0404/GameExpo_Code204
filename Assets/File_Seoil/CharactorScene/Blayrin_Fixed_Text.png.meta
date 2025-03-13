@@ -1,0 +1,2704 @@
+fileFormatVersion: 2
+guid: ae1d0b9a6e3f85a42ab52290b1fc31c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3037294093039158574
+    second: Blarin_0
+  - first:
+      213: -5331833212829085395
+    second: Blarin_1
+  - first:
+      213: -83144647095879103
+    second: Blarin_2
+  - first:
+      213: -9108580882403529552
+    second: Blarin_3
+  - first:
+      213: 189665992072210841
+    second: Blarin_4
+  - first:
+      213: -4793616025856185124
+    second: Blarin_5
+  - first:
+      213: -3868689770819034428
+    second: Blarin_6
+  - first:
+      213: 6713591710247701650
+    second: Blarin_7
+  - first:
+      213: 3632171090567753052
+    second: Blarin_8
+  - first:
+      213: -3412378159902256395
+    second: Blarin_9
+  - first:
+      213: -4169263586606073890
+    second: Blarin_10
+  - first:
+      213: -7430278034888721711
+    second: Blarin_11
+  - first:
+      213: 4788959101497426019
+    second: Blarin_12
+  - first:
+      213: 3270152545880953330
+    second: Blarin_13
+  - first:
+      213: -7497520886420987835
+    second: Blarin_14
+  - first:
+      213: -2479855094514936154
+    second: Blarin_15
+  - first:
+      213: -196212473485546909
+    second: Blarin_16
+  - first:
+      213: -9081704814833517108
+    second: Blarin_17
+  - first:
+      213: -3709918618979692751
+    second: Blarin_18
+  - first:
+      213: 5643950658523296017
+    second: Blarin_19
+  - first:
+      213: 7365593047061087989
+    second: Blarin_20
+  - first:
+      213: -3165122069045856794
+    second: Blarin_21
+  - first:
+      213: 4453481340949189712
+    second: Blarin_22
+  - first:
+      213: 724932904042149777
+    second: Blarin_23
+  - first:
+      213: -9007836330518243046
+    second: Blarin_24
+  - first:
+      213: -1979853804980386833
+    second: Blarin_25
+  - first:
+      213: -6940439784471869031
+    second: Blarin_26
+  - first:
+      213: -6256914096459157360
+    second: Blarin_27
+  - first:
+      213: -7922272419275897780
+    second: Blarin_28
+  - first:
+      213: -4468486080857174402
+    second: Blarin_29
+  - first:
+      213: -340781755987380354
+    second: Blarin_30
+  - first:
+      213: -4901600656181690508
+    second: Blarin_31
+  - first:
+      213: 5853135368280564873
+    second: Blarin_32
+  - first:
+      213: -3772183745091179424
+    second: Blarin_33
+  - first:
+      213: -1376818828398005425
+    second: Blarin_34
+  - first:
+      213: -414555171078098254
+    second: Blarin_35
+  - first:
+      213: -8152429104627640767
+    second: Blarin_36
+  - first:
+      213: 4937923947713707502
+    second: Blarin_37
+  - first:
+      213: -3174994786326452855
+    second: Blarin_38
+  - first:
+      213: 8935950785673080012
+    second: Blarin_39
+  - first:
+      213: 3031175426167622730
+    second: Blarin_40
+  - first:
+      213: 7605616643969479887
+    second: Blarin_41
+  - first:
+      213: -3339285729065305180
+    second: Blarin_42
+  - first:
+      213: -3710421992264257494
+    second: Blarin_43
+  - first:
+      213: -5354963106112503268
+    second: Blarin_44
+  - first:
+      213: 6993101382947171573
+    second: Blarin_45
+  - first:
+      213: 544867504795379630
+    second: Blarin_46
+  - first:
+      213: 3471887301393112254
+    second: Blarin_47
+  - first:
+      213: 7143929669949449731
+    second: Blarin_48
+  - first:
+      213: 6058104208818857531
+    second: Blarin_49
+  - first:
+      213: -7202839620678518058
+    second: Blarin_50
+  - first:
+      213: -4903633775555070990
+    second: Blarin_51
+  - first:
+      213: 3568973880010569184
+    second: Blarin_52
+  - first:
+      213: 5355418603460275901
+    second: Blarin_53
+  - first:
+      213: 5477344775021325436
+    second: Blarin_54
+  - first:
+      213: 6663633837351396995
+    second: Blarin_55
+  - first:
+      213: -131888247396616528
+    second: Blarin_56
+  - first:
+      213: 7572916954198263567
+    second: Blarin_57
+  - first:
+      213: -8941024834573555694
+    second: Blarin_58
+  - first:
+      213: -8192531221131639290
+    second: Blarin_59
+  - first:
+      213: -2978979714990416920
+    second: Blarin_60
+  - first:
+      213: 6859640888804995172
+    second: Blarin_61
+  - first:
+      213: 5163611976749065638
+    second: Blarin_62
+  - first:
+      213: 7308243896422554277
+    second: Blarin_63
+  - first:
+      213: 1443699633809094633
+    second: Blarin_64
+  - first:
+      213: 7100377330820794954
+    second: Blarin_65
+  - first:
+      213: 9200036332066079918
+    second: Blarin_66
+  - first:
+      213: -6516879197994985139
+    second: Blarin_67
+  - first:
+      213: -6416746512831746377
+    second: Blarin_68
+  - first:
+      213: -7183002563938459634
+    second: Blarin_69
+  - first:
+      213: -3759122436621801795
+    second: Blarin_70
+  - first:
+      213: 1401783547484307470
+    second: Blarin_71
+  - first:
+      213: 539540672864788075
+    second: Blarin_72
+  - first:
+      213: 8816925904383813804
+    second: Blarin_73
+  - first:
+      213: 6881203898499105613
+    second: Blarin_74
+  - first:
+      213: -2641967448568692382
+    second: Blarin_75
+  - first:
+      213: 2908044310158754205
+    second: Blarin_76
+  - first:
+      213: -5457634902132816729
+    second: Blarin_77
+  - first:
+      213: -708064227108667302
+    second: Blarin_78
+  - first:
+      213: -993689961219569826
+    second: Blarin_79
+  - first:
+      213: -7515372100356075718
+    second: Blarin_80
+  - first:
+      213: -1436501885250905444
+    second: Blarin_81
+  - first:
+      213: 2420533303845419850
+    second: Blarin_82
+  - first:
+      213: -2507014417984383934
+    second: Blarin_83
+  - first:
+      213: 3541940613712328082
+    second: Blarin_84
+  - first:
+      213: -2693642646681615088
+    second: Blarin_85
+  - first:
+      213: 2998381539501800498
+    second: Blarin_86
+  - first:
+      213: -7774003586124448145
+    second: Blarin_87
+  - first:
+      213: 1733447815460805260
+    second: Blarin_88
+  - first:
+      213: 3556211751156493832
+    second: Blarin_89
+  - first:
+      213: 2451810988561331047
+    second: Blarin_90
+  - first:
+      213: 7147421815572330660
+    second: Blarin_91
+  - first:
+      213: -1211133279081748364
+    second: Blarin_92
+  - first:
+      213: -1329138605489923867
+    second: Blarin_93
+  - first:
+      213: 1593744634588118428
+    second: Blarin_94
+  - first:
+      213: -5033923619829382376
+    second: Blarin_95
+  - first:
+      213: 5762190028796465727
+    second: Blarin_96
+  - first:
+      213: -6428076125560501587
+    second: Blarin_97
+  - first:
+      213: -4932806941756128270
+    second: Blarin_98
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blarin_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 701
+        width: 75
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da320a5d1d59d5d0800000000000000
+      internalID: -3037294093039158574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 711
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2151b331f58106b0800000000000000
+      internalID: -5331833212829085395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 671
+        width: 49
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14affdc426c98def0800000000000000
+      internalID: -83144647095879103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 665
+        width: 15
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc6c6062f1d79180800000000000000
+      internalID: -9108580882403529552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_4
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 693
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 999af630734d1a200800000000000000
+      internalID: 189665992072210841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_5
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 665
+        width: 16
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdce8354f97a97db0800000000000000
+      internalID: -4793616025856185124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 685
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c2e4209627af4ac0800000000000000
+      internalID: -3868689770819034428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_7
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 666
+        width: 54
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c425027187b2d50800000000000000
+      internalID: 6713591710247701650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 667
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5debb0ec50186230800000000000000
+      internalID: 3632171090567753052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_9
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 599
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f299b3a42cc4a0d0800000000000000
+      internalID: -3412378159902256395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 596
+        width: 9
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7bf519bdcc326c0800000000000000
+      internalID: -4169263586606073890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 596
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1daf11c9e7952e890800000000000000
+      internalID: -7430278034888721711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 618
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360c0a80eecc57240800000000000000
+      internalID: 4788959101497426019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_13
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 602
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f1d29a1a6ae16d20800000000000000
+      internalID: 3270152545880953330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 602
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5402ec43a7473f790800000000000000
+      internalID: -7497520886420987835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_15
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 598
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a69efc2ee8c59dd0800000000000000
+      internalID: -2479855094514936154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_16
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 602
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36aa4618bc9e64df0800000000000000
+      internalID: -196212473485546909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_17
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 602
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdb4ec769d47f180800000000000000
+      internalID: -9081704814833517108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 601
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f8b1a0ca8b38cc0800000000000000
+      internalID: -3709918618979692751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_19
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 545
+        width: 39
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111fc139837535e40800000000000000
+      internalID: 5643950658523296017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_20
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 551
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6c92a0ad7d73660800000000000000
+      internalID: 7365593047061087989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_21
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 535
+        width: 39
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5b5cb6f3a3314d0800000000000000
+      internalID: -3165122069045856794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_22
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 543
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0545b1d1fa1fdcd30800000000000000
+      internalID: 4453481340949189712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_23
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 528
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197bc67a2aa7f0a00800000000000000
+      internalID: 724932904042149777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_24
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 482
+        width: 58
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a191a9c359cbdf280800000000000000
+      internalID: -9007836330518243046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_25
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 499
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe340fe34752684e0800000000000000
+      internalID: -1979853804980386833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_26
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 489
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 999c09db9ca9eaf90800000000000000
+      internalID: -6940439784471869031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_27
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090fa62a7c9fa29a0800000000000000
+      internalID: -6256914096459157360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_28
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 495
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c448f2b653f6e0290800000000000000
+      internalID: -7922272419275897780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_29
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 484
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e0bb2a59fbcf1c0800000000000000
+      internalID: -4468486080857174402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_30
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 500
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7730786ccc454bf0800000000000000
+      internalID: -340781755987380354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_31
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 482
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ff7794c240afbb0800000000000000
+      internalID: -4901600656181690508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_32
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 482
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98463a03b938a3150800000000000000
+      internalID: 5853135368280564873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_33
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 500
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06c6656aed286abc0800000000000000
+      internalID: -3772183745091179424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_34
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 497
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43744df19e84ece0800000000000000
+      internalID: -1376818828398005425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_35
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 486
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2b610b4443f3af0800000000000000
+      internalID: -414555171078098254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_36
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 483
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1461d1a3ce0ccde80800000000000000
+      internalID: -8152429104627640767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_37
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 494
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eedbe5f0ba7078440800000000000000
+      internalID: 4937923947713707502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_38
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 482
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9856b4d401720f3d0800000000000000
+      internalID: -3174994786326452855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_39
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 483
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cccaa6615efd20c70800000000000000
+      internalID: 8935950785673080012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_40
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 493
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c4d908df5e01a20800000000000000
+      internalID: 3031175426167622730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_41
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 482
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc479999a049c8960800000000000000
+      internalID: 7605616643969479887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_42
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 494
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abf78b525978a1d0800000000000000
+      internalID: -3339285729065305180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_43
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 482
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20ba405bdee18cc0800000000000000
+      internalID: -3710421992264257494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_44
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1287d24d695fa5b0800000000000000
+      internalID: -5354963106112503268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_45
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 483
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fcebd028ac7c0160800000000000000
+      internalID: 6993101382947171573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_46
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 497
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea76bf8db12cf8700800000000000000
+      internalID: 544867504795379630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_47
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 505
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebcd9b31b1f9e2030800000000000000
+      internalID: 3471887301393112254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_48
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 483
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 306e5b54f26542360800000000000000
+      internalID: 7143929669949449731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_49
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 490
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3662f24ea5b21450800000000000000
+      internalID: 6058104208818857531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_50
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 493
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6daf85bf68f5a0c90800000000000000
+      internalID: -7202839620678518058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_51
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 482
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3be6bcf0bc2fbb0800000000000000
+      internalID: -4903633775555070990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_52
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 482
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e57daaa5da878130800000000000000
+      internalID: 3568973880010569184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_53
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 494
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbea4ca78d4425a40800000000000000
+      internalID: 5355418603460275901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_54
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 483
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7cec7b7d00730c40800000000000000
+      internalID: 5477344775021325436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_55
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 495
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3866a9c6babf97c50800000000000000
+      internalID: 6663633837351396995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_56
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 483
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b630e776507b2ef0800000000000000
+      internalID: -131888247396616528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_57
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 482
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f074588c8d7681960800000000000000
+      internalID: 7572916954198263567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_58
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 482
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2182c47d8491be380800000000000000
+      internalID: -8941024834573555694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_59
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 483
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606c621a2484e4e80800000000000000
+      internalID: -8192531221131639290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_60
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 481
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ebd6e68bb988a6d0800000000000000
+      internalID: -2978979714990416920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_61
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 481
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46077ff5b07523f50800000000000000
+      internalID: 6859640888804995172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_62
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 483
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5a4102cb5d8a740800000000000000
+      internalID: 5163611976749065638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_63
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 486
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aade226a191c6560800000000000000
+      internalID: 7308243896422554277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_64
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 373
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e77d8bfa2d090410800000000000000
+      internalID: 1443699633809094633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_65
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 362
+        width: 17
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a4fce109b998260800000000000000
+      internalID: 7100377330820794954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_66
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 362
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea48c75dc481daf70800000000000000
+      internalID: 9200036332066079918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_67
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 383
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d495067b5e46f85a0800000000000000
+      internalID: -6516879197994985139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_68
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 370
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7beefe04b0323f6a0800000000000000
+      internalID: -6416746512831746377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_69
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 362
+        width: 39
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e006abba939d05c90800000000000000
+      internalID: -7183002563938459634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_70
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 363
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6e4f18f0ae4dbc0800000000000000
+      internalID: -3759122436621801795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_71
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 326
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e000acf95b2247310800000000000000
+      internalID: 1401783547484307470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_72
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 319
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6e1bf32265dc7700800000000000000
+      internalID: 539540672864788075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_73
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 319
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca8acbd55630c5a70800000000000000
+      internalID: 8816925904383813804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_74
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 316
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43821dcc72fe7f50800000000000000
+      internalID: 6881203898499105613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_75
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 332
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2610bef6a98d55bd0800000000000000
+      internalID: -2641967448568692382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_76
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 321
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91cb1284e27b5820800000000000000
+      internalID: 2908044310158754205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_77
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 316
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a48998e8f59244b0800000000000000
+      internalID: -5457634902132816729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_78
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 333
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50c60146537c26f0800000000000000
+      internalID: -708064227108667302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_79
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 315
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57c2acbe34b532f0800000000000000
+      internalID: -993689961219569826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_80
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 328
+        width: 60
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f056394e804b790800000000000000
+      internalID: -7515372100356075718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_81
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 333
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ad0727525801ce0800000000000000
+      internalID: -1436501885250905444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_82
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 316
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b75be1736779120800000000000000
+      internalID: 2420533303845419850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_83
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 316
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24412496bab453dd0800000000000000
+      internalID: -2507014417984383934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_84
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 325
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2953adfd830872130800000000000000
+      internalID: 3541940613712328082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_85
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 315
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01503bcc8424e9ad0800000000000000
+      internalID: -2693642646681615088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_86
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 315
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23cf713cf146c9920800000000000000
+      internalID: 2998381539501800498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_87
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 315
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e70764de03d1490800000000000000
+      internalID: -7774003586124448145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_88
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 320
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ad73d9a917e0810800000000000000
+      internalID: 1733447815460805260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_89
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 315
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ea0cdfeb33a5130800000000000000
+      internalID: 3556211751156493832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_90
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 327
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763f8959a15960220800000000000000
+      internalID: 2451810988561331047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_91
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 323
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a8f019c54eb03360800000000000000
+      internalID: 7147421815572330660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_92
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 326
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478ada413b0313fe0800000000000000
+      internalID: -1211133279081748364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_93
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 315
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8d38afa73fd8de0800000000000000
+      internalID: -1329138605489923867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_94
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 316
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d3f471d4e1e1610800000000000000
+      internalID: 1593744634588118428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_95
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 315
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8130f9d7329e32ab0800000000000000
+      internalID: -5033923619829382376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_96
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 315
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3216b24d4967ff40800000000000000
+      internalID: 5762190028796465727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_97
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 316
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa0cca32d2eac6a0800000000000000
+      internalID: -6428076125560501587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blarin_98
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 319
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f38b0bb8362b8bb0800000000000000
+      internalID: -4932806941756128270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Blarin_0: -3037294093039158574
+      Blarin_1: -5331833212829085395
+      Blarin_10: -4169263586606073890
+      Blarin_11: -7430278034888721711
+      Blarin_12: 4788959101497426019
+      Blarin_13: 3270152545880953330
+      Blarin_14: -7497520886420987835
+      Blarin_15: -2479855094514936154
+      Blarin_16: -196212473485546909
+      Blarin_17: -9081704814833517108
+      Blarin_18: -3709918618979692751
+      Blarin_19: 5643950658523296017
+      Blarin_2: -83144647095879103
+      Blarin_20: 7365593047061087989
+      Blarin_21: -3165122069045856794
+      Blarin_22: 4453481340949189712
+      Blarin_23: 724932904042149777
+      Blarin_24: -9007836330518243046
+      Blarin_25: -1979853804980386833
+      Blarin_26: -6940439784471869031
+      Blarin_27: -6256914096459157360
+      Blarin_28: -7922272419275897780
+      Blarin_29: -4468486080857174402
+      Blarin_3: -9108580882403529552
+      Blarin_30: -340781755987380354
+      Blarin_31: -4901600656181690508
+      Blarin_32: 5853135368280564873
+      Blarin_33: -3772183745091179424
+      Blarin_34: -1376818828398005425
+      Blarin_35: -414555171078098254
+      Blarin_36: -8152429104627640767
+      Blarin_37: 4937923947713707502
+      Blarin_38: -3174994786326452855
+      Blarin_39: 8935950785673080012
+      Blarin_4: 189665992072210841
+      Blarin_40: 3031175426167622730
+      Blarin_41: 7605616643969479887
+      Blarin_42: -3339285729065305180
+      Blarin_43: -3710421992264257494
+      Blarin_44: -5354963106112503268
+      Blarin_45: 6993101382947171573
+      Blarin_46: 544867504795379630
+      Blarin_47: 3471887301393112254
+      Blarin_48: 7143929669949449731
+      Blarin_49: 6058104208818857531
+      Blarin_5: -4793616025856185124
+      Blarin_50: -7202839620678518058
+      Blarin_51: -4903633775555070990
+      Blarin_52: 3568973880010569184
+      Blarin_53: 5355418603460275901
+      Blarin_54: 5477344775021325436
+      Blarin_55: 6663633837351396995
+      Blarin_56: -131888247396616528
+      Blarin_57: 7572916954198263567
+      Blarin_58: -8941024834573555694
+      Blarin_59: -8192531221131639290
+      Blarin_6: -3868689770819034428
+      Blarin_60: -2978979714990416920
+      Blarin_61: 6859640888804995172
+      Blarin_62: 5163611976749065638
+      Blarin_63: 7308243896422554277
+      Blarin_64: 1443699633809094633
+      Blarin_65: 7100377330820794954
+      Blarin_66: 9200036332066079918
+      Blarin_67: -6516879197994985139
+      Blarin_68: -6416746512831746377
+      Blarin_69: -7183002563938459634
+      Blarin_7: 6713591710247701650
+      Blarin_70: -3759122436621801795
+      Blarin_71: 1401783547484307470
+      Blarin_72: 539540672864788075
+      Blarin_73: 8816925904383813804
+      Blarin_74: 6881203898499105613
+      Blarin_75: -2641967448568692382
+      Blarin_76: 2908044310158754205
+      Blarin_77: -5457634902132816729
+      Blarin_78: -708064227108667302
+      Blarin_79: -993689961219569826
+      Blarin_8: 3632171090567753052
+      Blarin_80: -7515372100356075718
+      Blarin_81: -1436501885250905444
+      Blarin_82: 2420533303845419850
+      Blarin_83: -2507014417984383934
+      Blarin_84: 3541940613712328082
+      Blarin_85: -2693642646681615088
+      Blarin_86: 2998381539501800498
+      Blarin_87: -7774003586124448145
+      Blarin_88: 1733447815460805260
+      Blarin_89: 3556211751156493832
+      Blarin_9: -3412378159902256395
+      Blarin_90: 2451810988561331047
+      Blarin_91: 7147421815572330660
+      Blarin_92: -1211133279081748364
+      Blarin_93: -1329138605489923867
+      Blarin_94: 1593744634588118428
+      Blarin_95: -5033923619829382376
+      Blarin_96: 5762190028796465727
+      Blarin_97: -6428076125560501587
+      Blarin_98: -4932806941756128270
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
