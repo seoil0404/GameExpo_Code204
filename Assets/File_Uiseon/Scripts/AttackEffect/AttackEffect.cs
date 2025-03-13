@@ -37,17 +37,18 @@ public class AttackEffect : MonoBehaviour {
 
 	public void Shoot(GameObject receiverObject, GameObject casterObject, Action onAttack) {
 
-	Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, receiverObject.transform.position);
+		Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, receiverObject.transform.position);
 
-	if (receiverObject.TryGetComponent<Image>(out var image)) {
-		Vector2 rectCenter = image.rectTransform.rect.center;
-		screenPos += (Vector3)rectCenter;
-	}
+		if (receiverObject.TryGetComponent<Image>(out var image)) {
+			Vector2 rectCenter = image.rectTransform.rect.center;
+			screenPos += (Vector3)rectCenter;
+		}
 
-	RectTransform canvasRect = receiverObject.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-	RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, screenPos, Camera.main, out Vector3 worldPos);
+		// 월드 좌표로 변환
+		RectTransform canvasRect = receiverObject.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+		RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, screenPos, Camera.main, out Vector3 worldPos);
 
-	Vector2 targetPosition = worldPos;
+		Vector2 targetPosition = worldPos;
 		
 		float progress = 0f;
 		Vector2 start = transform.position;
