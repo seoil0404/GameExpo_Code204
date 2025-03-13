@@ -410,6 +410,7 @@ public class Grid : MonoBehaviour
         if (enemies.Contains(enemy))
         {
             enemies.Remove(enemy);
+            Destroy(enemy);
             Debug.Log($"[{enemy.name}]이(가) 리스트에서 제거되었습니다.");
         }
         else
@@ -425,13 +426,12 @@ public class Grid : MonoBehaviour
 
     
 
-    // Grid.cs 내에 추가할 메서드
+
     public void DropAllBlocks()
     {
         for (int col = 0; col < columns; col++)
         {
             List<GridSquare> occupiedSquares = new List<GridSquare>();
-            // 해당 열의 모든 행을 순회하며 점유된 블록 수집
             for (int row = 0; row < rows; row++)
             {
                 int index = row * columns + col;

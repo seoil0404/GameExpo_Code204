@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogWarning("[EnemySpawner] SpecialCombat 감지됨! Common으로 변경 후 난이도 10배 증가 및 한 마리만 생성");
             Specialcombating = true;
             combatData.EnemyType = EnemyData.EnemyType.Common;
-            currentDifficulty *= 10;
+            currentDifficulty *= 3;
 
             if (TreasureEffect.IsGiantResistanceHammerActive())
             {

@@ -989,7 +989,7 @@ MonoBehaviour:
   - {fileID: 1502797150}
   - {fileID: 442319506}
   - {fileID: 1423395872}
-  hold: {fileID: 0}
+  hold: {fileID: 1722810546}
 --- !u!1001 &625514789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2317,6 +2317,8 @@ RectTransform:
   m_Children:
   - {fileID: 2113767447}
   - {fileID: 1817219909}
+  - {fileID: 1722810547}
+  - {fileID: 805645669}
   - {fileID: 391285830}
   - {fileID: 1500822510}
   - {fileID: 366733019}
@@ -2324,8 +2326,6 @@ RectTransform:
   - {fileID: 1132816790}
   - {fileID: 1738287322}
   - {fileID: 1149303048}
-  - {fileID: 1722810547}
-  - {fileID: 805645669}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2848,6 +2848,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888725011}
     m_Modifications:
+    - target: {fileID: 5105528666678824110, guid: 57602e27ba7f19a4abd3df224e0cf5f6, type: 3}
+      propertyPath: assignedObject
+      value: 
+      objectReference: {fileID: 1722810546}
     - target: {fileID: 5725601572337003395, guid: 57602e27ba7f19a4abd3df224e0cf5f6, type: 3}
       propertyPath: m_Name
       value: HoldShape

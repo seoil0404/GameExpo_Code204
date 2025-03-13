@@ -48,46 +48,55 @@ public class ShapeSquare : MonoBehaviour
 
                         Debug.Log($"HOLD 공간에 블록이 생성됨: {selectedShape.CurrentShapeColorName}");
 
-                        var shapeLeft = shapeStorage.shapeList.Count(shape => shape.IsAnyOfShapeSquareActive());
+                        // 블록 개수 판단 및 적 공격 실행을 0.5초 후에 호출
+                        Invoke(nameof(CheckAndRequestNewShapes), 0.5f);
+                    }
+                }
+            }
+        }
+    }
 
-                        if (shapeLeft == 0)
+    private void CheckAndRequestNewShapes()
+    {
+        ShapeStorage shapeStorage = FindFirstObjectByType<ShapeStorage>();
+        if (shapeStorage == null) return;
+
+        var shapeLeft = shapeStorage.shapeList.Count(shape => shape.IsAnyOfShapeSquareActive());
+
+        if (shapeLeft == 0)
+        {
+            Debug.Log("모든 블록이 사라졌음! 새로운 블록을 요청합니다.");
+            GameEvents.RequestNewShapes();
+
+            Grid grid = FindFirstObjectByType<Grid>();
+            if (grid != null)
+            {
+                grid.enemies = grid.enemies.FindAll(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null);
+
+                if (grid.enemies.Count > 0)
+                {
+                    Debug.Log($"[{grid.enemies.Count}]명의 적이 남아 있습니다. 공격을 실행합니다.");
+
+                    foreach (var enemy in grid.enemies)
+                    {
+                        EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
+                        if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
                         {
-                            Debug.Log("모든 블록이 사라졌음! 새로운 블록을 요청합니다.");
-                            GameEvents.RequestNewShapes();
-
-                            Grid grid = FindFirstObjectByType<Grid>();
-                            if (grid != null)
-                            {
-                                grid.enemies = grid.enemies.FindAll(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null);
-
-                                if (grid.enemies.Count > 0)
-                                {
-                                    Debug.Log($"[{grid.enemies.Count}]명의 적이 남아 있습니다. 공격을 실행합니다.");
-
-                                    foreach (var enemy in grid.enemies)
-                                    {
-                                        EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
-                                        if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
-                                        {
-                                            enemyStats.PerformTurnAction(grid);
-                                            Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
-                                        }
-                                        else
-                                        {
-                                            Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    Debug.LogWarning("공격할 적이 없습니다.");
-                                }
-
-                                grid.CheckIfGameEnded();
-                            }
+                            enemyStats.PerformTurnAction(grid);
+                            Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
+                        }
+                        else
+                        {
+                            Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
                         }
                     }
                 }
+                else
+                {
+                    Debug.LogWarning("공격할 적이 없습니다.");
+                }
+
+                grid.CheckIfGameEnded();
             }
         }
     }
