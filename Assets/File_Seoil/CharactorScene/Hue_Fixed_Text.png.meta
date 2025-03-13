@@ -1,0 +1,2834 @@
+fileFormatVersion: 2
+guid: 7e235c1f96f4f614fa99a03fb5596e32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6737960044005741557
+    second: Hue_0
+  - first:
+      213: 8104394837285070354
+    second: Hue_1
+  - first:
+      213: -2920642248141003533
+    second: Hue_2
+  - first:
+      213: -8937829272683747304
+    second: Hue_3
+  - first:
+      213: 5787248204160567169
+    second: Hue_4
+  - first:
+      213: -1633592340595988577
+    second: Hue_5
+  - first:
+      213: 152527038587809168
+    second: Hue_6
+  - first:
+      213: -6804889762237639910
+    second: Hue_7
+  - first:
+      213: 4249975226639486119
+    second: Hue_8
+  - first:
+      213: 2222782733800773349
+    second: Hue_9
+  - first:
+      213: -7199072888809957236
+    second: Hue_10
+  - first:
+      213: -4958768878739777185
+    second: Hue_11
+  - first:
+      213: 1664395175157200275
+    second: Hue_12
+  - first:
+      213: 5496521550620932458
+    second: Hue_13
+  - first:
+      213: 7222120861797271301
+    second: Hue_14
+  - first:
+      213: -2980798963123095345
+    second: Hue_15
+  - first:
+      213: 4210101738476026666
+    second: Hue_16
+  - first:
+      213: -4454143823278420752
+    second: Hue_17
+  - first:
+      213: 7653117865080562862
+    second: Hue_18
+  - first:
+      213: -71057452471393971
+    second: Hue_19
+  - first:
+      213: 734439133994475155
+    second: Hue_20
+  - first:
+      213: -5537450148039894517
+    second: Hue_21
+  - first:
+      213: 7667694296426107285
+    second: Hue_22
+  - first:
+      213: -5469977243084168427
+    second: Hue_23
+  - first:
+      213: 4644598381907814839
+    second: Hue_24
+  - first:
+      213: -2863680043727821464
+    second: Hue_25
+  - first:
+      213: 9086543116543668426
+    second: Hue_26
+  - first:
+      213: -6706800710736900526
+    second: Hue_27
+  - first:
+      213: 7562764564435852433
+    second: Hue_28
+  - first:
+      213: 1459261000199777068
+    second: Hue_29
+  - first:
+      213: -597060542735711242
+    second: Hue_30
+  - first:
+      213: -161411034105084941
+    second: Hue_31
+  - first:
+      213: -4351915984869343294
+    second: Hue_32
+  - first:
+      213: -5820099004403575824
+    second: Hue_33
+  - first:
+      213: 997643576846916522
+    second: Hue_34
+  - first:
+      213: 1470070819539495818
+    second: Hue_35
+  - first:
+      213: -6939473296864720884
+    second: Hue_36
+  - first:
+      213: 8546869188019305949
+    second: Hue_37
+  - first:
+      213: 4643571536340797102
+    second: Hue_38
+  - first:
+      213: 5892054145883699702
+    second: Hue_39
+  - first:
+      213: 522291147648090573
+    second: Hue_40
+  - first:
+      213: 2064814245121327378
+    second: Hue_41
+  - first:
+      213: 8690745976785972763
+    second: Hue_42
+  - first:
+      213: 2235037716552979840
+    second: Hue_43
+  - first:
+      213: -3700889228028615984
+    second: Hue_44
+  - first:
+      213: 625657430977144274
+    second: Hue_45
+  - first:
+      213: -5376246048421742533
+    second: Hue_46
+  - first:
+      213: 4964872938263396937
+    second: Hue_47
+  - first:
+      213: 2236213612752948481
+    second: Hue_48
+  - first:
+      213: -7592935313043491399
+    second: Hue_49
+  - first:
+      213: 7987685874938399745
+    second: Hue_50
+  - first:
+      213: 2536318511591564355
+    second: Hue_51
+  - first:
+      213: -5333507212428850283
+    second: Hue_52
+  - first:
+      213: 137208346958082727
+    second: Hue_53
+  - first:
+      213: -6371874223629250710
+    second: Hue_54
+  - first:
+      213: 8191645748409245634
+    second: Hue_55
+  - first:
+      213: -1182954519116855400
+    second: Hue_56
+  - first:
+      213: -6210541530727177716
+    second: Hue_57
+  - first:
+      213: -3072318998702614316
+    second: Hue_58
+  - first:
+      213: 5319788641269723812
+    second: Hue_59
+  - first:
+      213: -74626557532215824
+    second: Hue_60
+  - first:
+      213: 1688705430701051493
+    second: Hue_61
+  - first:
+      213: -6153883264874643945
+    second: Hue_62
+  - first:
+      213: -5288613631632559419
+    second: Hue_63
+  - first:
+      213: 8065803380259339977
+    second: Hue_64
+  - first:
+      213: -5082176815516464511
+    second: Hue_65
+  - first:
+      213: -6583998553672470907
+    second: Hue_66
+  - first:
+      213: -8204147570072746468
+    second: Hue_67
+  - first:
+      213: -666499493429909781
+    second: Hue_68
+  - first:
+      213: -5085209570382700175
+    second: Hue_69
+  - first:
+      213: -107726190414431218
+    second: Hue_70
+  - first:
+      213: 7121093818883477604
+    second: Hue_71
+  - first:
+      213: 2791205896877279916
+    second: Hue_72
+  - first:
+      213: -2659916952300909926
+    second: Hue_73
+  - first:
+      213: -2747390346514395318
+    second: Hue_74
+  - first:
+      213: 4973459756445773405
+    second: Hue_75
+  - first:
+      213: -7767073603367267974
+    second: Hue_76
+  - first:
+      213: 3254336899712628757
+    second: Hue_77
+  - first:
+      213: 3458406097083791667
+    second: Hue_78
+  - first:
+      213: -2745088328481032565
+    second: Hue_79
+  - first:
+      213: 241648765413531483
+    second: Hue_80
+  - first:
+      213: 8821746775084659885
+    second: Hue_81
+  - first:
+      213: -5947757696116331348
+    second: Hue_82
+  - first:
+      213: 3396854759255145177
+    second: Hue_83
+  - first:
+      213: -5503205566516237540
+    second: Hue_84
+  - first:
+      213: -582208301984185871
+    second: Hue_85
+  - first:
+      213: -6383406144162771719
+    second: Hue_86
+  - first:
+      213: 3211456724620475913
+    second: Hue_87
+  - first:
+      213: 3133512171447979898
+    second: Hue_88
+  - first:
+      213: 2276028318124786356
+    second: Hue_89
+  - first:
+      213: -8659074002989842604
+    second: Hue_90
+  - first:
+      213: -7504145692297199366
+    second: Hue_91
+  - first:
+      213: 594895954328336823
+    second: Hue_92
+  - first:
+      213: 3830510769003263182
+    second: Hue_93
+  - first:
+      213: -1430356065072628576
+    second: Hue_94
+  - first:
+      213: 2296249197513764058
+    second: Hue_95
+  - first:
+      213: -768550972969065572
+    second: Hue_96
+  - first:
+      213: 2823105120995620290
+    second: Hue_97
+  - first:
+      213: 3449574958702401321
+    second: Hue_98
+  - first:
+      213: -203427786566685738
+    second: Hue_99
+  - first:
+      213: -4750471819553783840
+    second: Hue_100
+  - first:
+      213: -6695053052016018857
+    second: Hue_101
+  - first:
+      213: -7324778728467755121
+    second: Hue_102
+  - first:
+      213: -5407891044662110662
+    second: Hue_103
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hue_0
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 726
+        width: 60
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c234a0a05fd72a0800000000000000
+      internalID: -6737960044005741557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 736
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 216e2e36a28987070800000000000000
+      internalID: 8104394837285070354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_2
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 665
+        width: 76
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4ae8b795bc777d0800000000000000
+      internalID: -2920642248141003533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 698
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818e89291a376f380800000000000000
+      internalID: -8937829272683747304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_4
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 600
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187020c549f605050800000000000000
+      internalID: 5787248204160567169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_5
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 597
+        width: 9
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f972afedb605459e0800000000000000
+      internalID: -1633592340595988577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 597
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d2ba19882ed1200800000000000000
+      internalID: 152527038587809168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_7
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 619
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a13122aa0dc2091a0800000000000000
+      internalID: -6804889762237639910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 603
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac8e0883f1fafa30800000000000000
+      internalID: 4249975226639486119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_9
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 603
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e6111d9e19e8de10800000000000000
+      internalID: 2222782733800773349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_10
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 599
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8856569951c71c90800000000000000
+      internalID: -7199072888809957236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_11
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 603
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59147b3af9ee2bb0800000000000000
+      internalID: -4958768878739777185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_12
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 603
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3957e1de79e191710800000000000000
+      internalID: 1664395175157200275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_13
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 602
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a693a0d7a31974c40800000000000000
+      internalID: 5496521550620932458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_14
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 544
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5074d5cc8a02a3460800000000000000
+      internalID: 7222120861797271301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 552
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8f130d22312a6d0800000000000000
+      internalID: -2980798963123095345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_16
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 530
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b3e1e99394d6a30800000000000000
+      internalID: 4210101738476026666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_17
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 539
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc4df2bac3bf22c0800000000000000
+      internalID: -4454143823278420752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_18
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 558
+        width: 26
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4a25c7626553a60800000000000000
+      internalID: 7653117865080562862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_19
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 529
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d416cca9f9d830ff0800000000000000
+      internalID: -71057452471393971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_20
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 529
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ed2ea4080413a00800000000000000
+      internalID: 734439133994475155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_21
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 546
+        width: 39
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ad5a4dd660723b0800000000000000
+      internalID: -5537450148039894517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_22
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 529
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59154c0665f196a60800000000000000
+      internalID: 7667694296426107285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_23
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 531
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5136f78bdacb614b0800000000000000
+      internalID: -5469977243084168427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_24
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 493
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b928f5ce9de47040800000000000000
+      internalID: 4644598381907814839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_25
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 483
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8656a333c2a2248d0800000000000000
+      internalID: -2863680043727821464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_26
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 500
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac03bd962d2e91e70800000000000000
+      internalID: 9086543116543668426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_27
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 493
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e8039a948ace2a0800000000000000
+      internalID: -6706800710736900526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_28
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 490
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19c5c175d4654f860800000000000000
+      internalID: 7562764564435852433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_29
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 483
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b2d7fe526504410800000000000000
+      internalID: 1459261000199777068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_30
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 491
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f306d88990d6b7f0800000000000000
+      internalID: -597060542735711242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_31
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 482
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f38659058d82cdf0800000000000000
+      internalID: -161411034105084941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_32
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cfb48d1873ea93c0800000000000000
+      internalID: -4351915984869343294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_33
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 482
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f39becaacada3fa0800000000000000
+      internalID: -5820099004403575824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_34
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab19622c8758dd00800000000000000
+      internalID: 997643576846916522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_35
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 483
+        width: 59
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ba1512f9db66410800000000000000
+      internalID: 1470070819539495818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_36
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 500
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08c11cadc902bf90800000000000000
+      internalID: -6939473296864720884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_37
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 500
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd3f954e349c9670800000000000000
+      internalID: 8546869188019305949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_38
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 495
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea645b8a5b7417040800000000000000
+      internalID: 4643571536340797102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_39
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 482
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9f3ca3708c4c150800000000000000
+      internalID: 5892054145883699702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_40
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 487
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc145e4180d8f3700800000000000000
+      internalID: 522291147648090573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_41
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 493
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2118f97bd91b7ac10800000000000000
+      internalID: 2064814245121327378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_42
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1eab7b9b6bbb9870800000000000000
+      internalID: 8690745976785972763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_43
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0859db226f2740f10800000000000000
+      internalID: 2235037716552979840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_44
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 483
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2e842fadcc3acc0800000000000000
+      internalID: -3700889228028615984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_45
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 500
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5e97c5e18cea800800000000000000
+      internalID: 625657430977144274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_46
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3879ba14bcb365b0800000000000000
+      internalID: -5376246048421742533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_47
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 491
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942c320e1a5c6e440800000000000000
+      internalID: 4964872938263396937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_48
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 482
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d480ece60a80f10800000000000000
+      internalID: 2236213612752948481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_49
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 482
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5f587df8970a690800000000000000
+      internalID: -7592935313043491399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_50
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 482
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ccb119bf5f9de60800000000000000
+      internalID: 7987685874938399745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_51
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 482
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344a9a09f30d23320800000000000000
+      internalID: 2536318511591564355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_52
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 483
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bc13cc2739bf5b0800000000000000
+      internalID: -5333507212428850283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_53
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 483
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2b7acb34677e100800000000000000
+      internalID: 137208346958082727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_54
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 483
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f4c1b372e8297a0800000000000000
+      internalID: -6371874223629250710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_55
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 434
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf95cf28629ea170800000000000000
+      internalID: 8191645748409245634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_56
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 438
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897c896e12d459fe0800000000000000
+      internalID: -1182954519116855400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_57
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 429
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c022236f169bfc9a0800000000000000
+      internalID: -6210541530727177716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_58
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 442
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d895a5062eec55d0800000000000000
+      internalID: -3072318998702614316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_59
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 429
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a23a03759fa3d940800000000000000
+      internalID: 5319788641269723812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_60
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 445
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f56b739a8fd6fef0800000000000000
+      internalID: -74626557532215824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_61
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 442
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e853f54ac7f6710800000000000000
+      internalID: 1688705430701051493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_62
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 447
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71efce776c3099aa0800000000000000
+      internalID: -6153883264874643945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_63
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 438
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2b04c1ce11b96b0800000000000000
+      internalID: -5288613631632559419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_64
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 429
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ceb08c907d7fef60800000000000000
+      internalID: 8065803380259339977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_65
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 437
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a4a61ec1b7879b0800000000000000
+      internalID: -5082176815516464511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_66
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 440
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58eaaaee230f0a4a0800000000000000
+      internalID: -6583998553672470907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_67
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 429
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c160ee0a043052e80800000000000000
+      internalID: -8204147570072746468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_68
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 434
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6e123fd3e10c6f0800000000000000
+      internalID: -666499493429909781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_69
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 429
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1712cec96d4bd69b0800000000000000
+      internalID: -5085209570382700175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_70
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 430
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c775fb997418ef0800000000000000
+      internalID: -107726190414431218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_71
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 430
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46097ce591533d260800000000000000
+      internalID: 7121093818883477604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_72
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 433
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa885a89fa5cb620800000000000000
+      internalID: 2791205896877279916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_73
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 372
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a801eef93161bd0800000000000000
+      internalID: -2659916952300909926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_74
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 363
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f0ca0490f4fd9d0800000000000000
+      internalID: -2747390346514395318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_75
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 361
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ea6a74c47450540800000000000000
+      internalID: 4973459756445773405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_76
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 330
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a711bfe95bfc53490800000000000000
+      internalID: -7767073603367267974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_77
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 329
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51831d60b2ab92d20800000000000000
+      internalID: 3254336899712628757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_78
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 315
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33979b9950abeff20800000000000000
+      internalID: 3458406097083791667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_79
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 315
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8631d795bc77e9d0800000000000000
+      internalID: -2745088328481032565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_80
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 326
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f92e695428a5300800000000000000
+      internalID: 241648765413531483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_81
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 326
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da47e5bc3f32d6a70800000000000000
+      internalID: 8821746775084659885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_82
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 315
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cace3e053e1557da0800000000000000
+      internalID: -5947757696116331348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_83
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 315
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9da7ffef76d042f20800000000000000
+      internalID: 3396854759255145177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_84
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 323
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1be8d9c1bfa0a3b0800000000000000
+      internalID: -5503205566516237540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_85
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 315
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f103fe42a49be7f0800000000000000
+      internalID: -582208301984185871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_86
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 320
+        width: 59
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fcc120cee59967a0800000000000000
+      internalID: -6383406144162771719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_87
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 332
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90efa8240e2619c20800000000000000
+      internalID: 3211456724620475913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_88
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 324
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f0586c7b87c7b20800000000000000
+      internalID: 3133512171447979898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_89
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 316
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2ce8842b3169f10800000000000000
+      internalID: 2276028318124786356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_90
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 333
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f78ff621ac4d780800000000000000
+      internalID: -8659074002989842604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_91
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 315
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af009d3604bebd790800000000000000
+      internalID: -7504145692297199366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_92
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 315
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9be04f7be714800800000000000000
+      internalID: 594895954328336823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_93
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 324
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec47fbedf35b82530800000000000000
+      internalID: 3830510769003263182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_94
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 315
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ac3507bcba562ce0800000000000000
+      internalID: -1430356065072628576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_95
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 325
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc6595aa7aeddf10800000000000000
+      internalID: 2296249197513764058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_96
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 323
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c93e56846fe8555f0800000000000000
+      internalID: -768550972969065572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_97
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 315
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5b78c662fad2720800000000000000
+      internalID: 2823105120995620290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_98
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 316
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9271a87f52a5fdf20800000000000000
+      internalID: 3449574958702401321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_99
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 315
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dbaf3481874d2df0800000000000000
+      internalID: -203427786566685738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_100
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 316
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef3ef79c0fe21eb0800000000000000
+      internalID: -4750471819553783840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_101
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 315
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ab03a98b46613a0800000000000000
+      internalID: -6695053052016018857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_102
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 316
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f87570e88295a90800000000000000
+      internalID: -7324778728467755121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hue_103
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 319
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3616e24fbf43f4b0800000000000000
+      internalID: -5407891044662110662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hue_0: -6737960044005741557
+      Hue_1: 8104394837285070354
+      Hue_10: -7199072888809957236
+      Hue_100: -4750471819553783840
+      Hue_101: -6695053052016018857
+      Hue_102: -7324778728467755121
+      Hue_103: -5407891044662110662
+      Hue_11: -4958768878739777185
+      Hue_12: 1664395175157200275
+      Hue_13: 5496521550620932458
+      Hue_14: 7222120861797271301
+      Hue_15: -2980798963123095345
+      Hue_16: 4210101738476026666
+      Hue_17: -4454143823278420752
+      Hue_18: 7653117865080562862
+      Hue_19: -71057452471393971
+      Hue_2: -2920642248141003533
+      Hue_20: 734439133994475155
+      Hue_21: -5537450148039894517
+      Hue_22: 7667694296426107285
+      Hue_23: -5469977243084168427
+      Hue_24: 4644598381907814839
+      Hue_25: -2863680043727821464
+      Hue_26: 9086543116543668426
+      Hue_27: -6706800710736900526
+      Hue_28: 7562764564435852433
+      Hue_29: 1459261000199777068
+      Hue_3: -8937829272683747304
+      Hue_30: -597060542735711242
+      Hue_31: -161411034105084941
+      Hue_32: -4351915984869343294
+      Hue_33: -5820099004403575824
+      Hue_34: 997643576846916522
+      Hue_35: 1470070819539495818
+      Hue_36: -6939473296864720884
+      Hue_37: 8546869188019305949
+      Hue_38: 4643571536340797102
+      Hue_39: 5892054145883699702
+      Hue_4: 5787248204160567169
+      Hue_40: 522291147648090573
+      Hue_41: 2064814245121327378
+      Hue_42: 8690745976785972763
+      Hue_43: 2235037716552979840
+      Hue_44: -3700889228028615984
+      Hue_45: 625657430977144274
+      Hue_46: -5376246048421742533
+      Hue_47: 4964872938263396937
+      Hue_48: 2236213612752948481
+      Hue_49: -7592935313043491399
+      Hue_5: -1633592340595988577
+      Hue_50: 7987685874938399745
+      Hue_51: 2536318511591564355
+      Hue_52: -5333507212428850283
+      Hue_53: 137208346958082727
+      Hue_54: -6371874223629250710
+      Hue_55: 8191645748409245634
+      Hue_56: -1182954519116855400
+      Hue_57: -6210541530727177716
+      Hue_58: -3072318998702614316
+      Hue_59: 5319788641269723812
+      Hue_6: 152527038587809168
+      Hue_60: -74626557532215824
+      Hue_61: 1688705430701051493
+      Hue_62: -6153883264874643945
+      Hue_63: -5288613631632559419
+      Hue_64: 8065803380259339977
+      Hue_65: -5082176815516464511
+      Hue_66: -6583998553672470907
+      Hue_67: -8204147570072746468
+      Hue_68: -666499493429909781
+      Hue_69: -5085209570382700175
+      Hue_7: -6804889762237639910
+      Hue_70: -107726190414431218
+      Hue_71: 7121093818883477604
+      Hue_72: 2791205896877279916
+      Hue_73: -2659916952300909926
+      Hue_74: -2747390346514395318
+      Hue_75: 4973459756445773405
+      Hue_76: -7767073603367267974
+      Hue_77: 3254336899712628757
+      Hue_78: 3458406097083791667
+      Hue_79: -2745088328481032565
+      Hue_8: 4249975226639486119
+      Hue_80: 241648765413531483
+      Hue_81: 8821746775084659885
+      Hue_82: -5947757696116331348
+      Hue_83: 3396854759255145177
+      Hue_84: -5503205566516237540
+      Hue_85: -582208301984185871
+      Hue_86: -6383406144162771719
+      Hue_87: 3211456724620475913
+      Hue_88: 3133512171447979898
+      Hue_89: 2276028318124786356
+      Hue_9: 2222782733800773349
+      Hue_90: -8659074002989842604
+      Hue_91: -7504145692297199366
+      Hue_92: 594895954328336823
+      Hue_93: 3830510769003263182
+      Hue_94: -1430356065072628576
+      Hue_95: 2296249197513764058
+      Hue_96: -768550972969065572
+      Hue_97: 2823105120995620290
+      Hue_98: 3449574958702401321
+      Hue_99: -203427786566685738
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
