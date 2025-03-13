@@ -19,7 +19,15 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        LoadDifficulty();
+        if (GameStartTracker.IsHavetobeReset)
+        {
+            ResetDifficulty();
+            GameStartTracker.IsHavetobeReset = false;
+        }
+        else
+        {
+            LoadDifficulty();
+        }
 
         if (combatData == null)
         {

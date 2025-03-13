@@ -98,7 +98,7 @@ public class EnemyStats : MonoBehaviour
         if (enemyNextAction == null)
         {
             Debug.LogError($"[EnemyStats] {gameObject.name}의 EnemyNextAction이 설정되지 않음!");
-            return;
+			return;
         }
         int actionIndex = enemyNextAction.GetNextActionIndex();
 
@@ -209,7 +209,6 @@ public class EnemyStats : MonoBehaviour
             Grid.instance.RemoveEnemy(gameObject);
         }
 
-        Scene.Controller.OnClearScene();
     }
 
     public static void AddEnemy(GameObject enemy)

@@ -23,21 +23,20 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         _transform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
-        _startPosition = _transform.localPosition; // 초기 위치 저장
+        _startPosition = _transform.localPosition;
     }
 
     public void CreateShape(ShapeData shapeData, string colorName)
     {
         _heldShapeData = shapeData;
 
-        // 기존 블록 제거
+
         foreach (var block in _currentHoldShape)
         {
             Destroy(block);
         }
         _currentHoldShape.Clear();
 
-        // 색상에 맞는 블록 찾기
         GameObject selectedBlockPrefab = squareShapeImages.Find(prefab => prefab.name.ToLower() == colorName);
 
         if (selectedBlockPrefab == null)
@@ -48,7 +47,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         _heldShapeColorName = selectedBlockPrefab.name.ToLower();
 
-        // 블록 생성
         int totalSquares = GetNumberOfSquares(_heldShapeData);
         for (int i = 0; i < totalSquares; i++)
         {
@@ -80,7 +78,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
         }
 
-        // 블록이 생성된 위치를 초기 위치로 설정
         _startPosition = _transform.localPosition;
     }
 
@@ -120,41 +117,15 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         CheckIfCanBePlaced();
     }
 
-    private IEnumerator MoveBackToStartPosition()
-    {
-        if (_transform.localPosition == _startPosition) yield break;
-
-        float elapsedTime = 0f;
-        float duration = 0.2f;
-        Vector3 startPos = _transform.localPosition;
-
-        while (elapsedTime < duration)
-        {
-            _transform.localPosition = Vector3.Lerp(startPos, _startPosition, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        _transform.localPosition = _startPosition; // 최종 위치 보정
-    }
-
-
     private void CheckIfCanBePlaced()
     {
         List<GridSquare> detectedSquares = new List<GridSquare>();
 
-        foreach (var block in _currentHoldShape)
+        foreach (var square in GameObject.FindObjectsOfType<GridSquare>())
         {
-            Vector2 worldPosition = block.transform.position;
-            Collider2D hit = Physics2D.OverlapCircle(worldPosition, 0.05f);
-
-            if (hit != null)
+            if (square.Selected && !square.SquareOccupied)
             {
-                GridSquare gridSquare = hit.GetComponent<GridSquare>();
-                if (gridSquare != null && gridSquare.CanUseThisSquare())
-                {
-                    detectedSquares.Add(gridSquare);
-                }
+                detectedSquares.Add(square);
             }
         }
 
@@ -174,6 +145,26 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
+
+
+    private IEnumerator MoveBackToStartPosition()
+    {
+        if (_transform.localPosition == _startPosition) yield break;
+
+        float elapsedTime = 0f;
+        float duration = 0.2f;
+        Vector3 startPos = _transform.localPosition;
+
+        while (elapsedTime < duration)
+        {
+            _transform.localPosition = Vector3.Lerp(startPos, _startPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        _transform.localPosition = _startPosition;
+    }
+
     private IEnumerator ResetHoldShapeAfterPlacement()
     {
         yield return new WaitForSeconds(0.1f);
@@ -187,7 +178,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         _shapeActive = false;
         _transform.localPosition = _startPosition;
     }
-
 
     private int GetNumberOfSquares(ShapeData shapeData)
     {
