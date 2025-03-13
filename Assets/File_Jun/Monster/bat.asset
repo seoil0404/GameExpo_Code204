@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: bat
   m_EditorClassIdentifier: 
   enemyName: bat
-  baseHP: 15
-  baseATK: 3
+  baseHP: 4
+  baseATK: 2
   enemySprite: {fileID: 2690748404400343338, guid: 5932b5bbd5e05d64aa7c8b7227fe3575, type: 3}
   dodgeChance: 10
   enemySkills:

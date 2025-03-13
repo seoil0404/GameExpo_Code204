@@ -23,6 +23,7 @@ public class AttackEffect : MonoBehaviour {
 	public float AttackRange { get; set; } = 0f;
 
 	public AttackEffectMovement MovementMethods { get; set; }
+	
 	public AttackEffectEffector[] Effectors { get; set; }
 
 	//======================================================================| Unity Behaviours
@@ -49,11 +50,12 @@ public class AttackEffect : MonoBehaviour {
 
 		Vector2 targetPosition = worldPos;
 
+		// 월드 좌표로 변환
+		RectTransform canvasRect = receiverObject.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+		RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, screenPos, Camera.main, out Vector3 worldPos);
+		targetPosition = worldPos;
 
-		if (AttackRange != 0f) {
-			targetPosition.x += Random.Range(-AttackRange, AttackRange) / 2f;
-			targetPosition.y += Random.Range(-AttackRange, AttackRange) / 2f;
-		}
+	Vector2 targetPosition = worldPos;
 		
 		float progress = 0f;
 		Vector2 start = transform.position;

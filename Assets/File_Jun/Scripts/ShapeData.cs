@@ -55,4 +55,18 @@ public class ShapeData : ScriptableObject
             board[i] = new Row(columns);
         }
     }
+
+ 
+    public int GetNumberOfSquares()
+    {
+        int number = 0;
+        foreach (var row in board)
+        {
+            foreach (var active in row.column)
+            {
+                if (active) number++;
+            }
+        }
+        return number;
+    }
 }

@@ -16,5 +16,7 @@ public class EnemyData : ScriptableObject
 
     public HabitatType habitat;
     public EnemyType enemyType; 
+
+
 }
  

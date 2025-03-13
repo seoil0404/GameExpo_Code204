@@ -124,6 +124,18 @@ public class CharacterManager : MonoBehaviour
         Debug.Log($"[CharacterManager] ±Ã±Ø±â °ÔÀÌÁö ÀúÀåµÊ: {selectedCharacter.characterData.CurrentUltimateGauge}");
     }
 
+    public void RecoverHp(int amount)
+    {
+        selectedCharacter.characterData.CurrentHp += amount;
+        if (selectedCharacter.characterData.CurrentHp > selectedCharacter.characterData.MaxHp)
+        {
+            selectedCharacter.characterData.CurrentHp = selectedCharacter.characterData.MaxHp;
+        }
+        SaveHp();
+        Debug.Log($"[CharacterManager] HP È¸º¹µÊ: {amount}, ÇöÀç HP: {selectedCharacter.characterData.CurrentHp}");
+    }
+
+
     public void LoadUltimateGauge()
     {
         if (PlayerPrefs.HasKey(UltimateKey))

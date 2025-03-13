@@ -8,8 +8,6 @@ public class GridSquare : MonoBehaviour
     public Image activeImage;
     public Image normalImage;
     public List<Sprite> normalImages;
-
-
     public Sprite blueSprite;
     public Sprite redSprite;
     public Sprite yellowSprite;

@@ -19,7 +19,15 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        LoadDifficulty();
+        if (GameStartTracker.IsHavetobeReset)
+        {
+            ResetDifficulty();
+            GameStartTracker.IsHavetobeReset = false;
+        }
+        else
+        {
+            LoadDifficulty();
+        }
 
         if (combatData == null)
         {
@@ -32,6 +40,12 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogWarning("[EnemySpawner] SpecialCombat 감지됨! Common으로 변경 후 난이도 10배 증가 및 한 마리만 생성");
             combatData.EnemyType = EnemyData.EnemyType.Common;
             currentDifficulty *= 10;
+
+            if (TreasureEffect.IsGiantResistanceHammerActive())
+            {
+                currentDifficulty /= 2;
+                Debug.Log("[EnemySpawner] GiantResistanceHammer 효과 적용됨! 난이도가 절반으로 감소");
+            }
 
             SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
         }
@@ -53,6 +67,7 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogWarning("[EnemySpawner] 스폰된 적이 없습니다. 필터링 과정 확인 필요");
         }
     }
+
 
     public void SaveDifficulty()
     {

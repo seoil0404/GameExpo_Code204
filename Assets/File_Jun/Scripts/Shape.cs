@@ -104,6 +104,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         CreateShape(shapeData);
     }
 
+
     private int GetNumberOfSquares(ShapeData shapeData)
     {
         int number = 0;
@@ -208,7 +209,20 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         );
 
         offset = (Vector2)rectTransform.localPosition - localMousePosition;
+
+        ShapeStorage shapeStorage = FindFirstObjectByType<ShapeStorage>();
+
+
+        if (shapeStorage != null)
+        {
+            Shape selectedShape = shapeStorage.GetCurrentSelectedShape();
+            if (selectedShape != null)
+            {
+                Debug.Log($"선택된 블럭 모양: {selectedShape.CurrentShapeColorName}");
+            }
+        }
     }
+
 
     public void OnDrag(PointerEventData eventData)
     {

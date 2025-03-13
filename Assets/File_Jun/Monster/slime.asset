@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: slime
   m_EditorClassIdentifier: 
   enemyName: slime
-  baseHP: 30
-  baseATK: 2
+  baseHP: 14
+  baseATK: 1
   enemySprite: {fileID: 368543389579951487, guid: bb8e80cee9db99641b0557e725084c1e, type: 3}
   dodgeChance: 0
   enemySkills: []

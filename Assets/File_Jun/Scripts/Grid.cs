@@ -26,7 +26,6 @@ public class Grid : MonoBehaviour
 
     public static Grid instance;
 
-    // ★ 궁극기 효과 관련 필드
     public float ultimateDamageMultiplier = 1f;
     public int additionalExecutionDamage = 0;
 
@@ -241,12 +240,27 @@ public class Grid : MonoBehaviour
         ultimateDamageMultiplier = 1f;
         additionalExecutionDamage = 0;
 
-        // enemyStats.ReceiveDamage는 두 개의 인자를 받도록 정의되어 있으므로,
-        // baseDamage와 columns를 함께 전달합니다.
-        enemyStats.ReceiveDamage(baseDamage, columns);
-        Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+		AttackEffectSpawner attackEffectSpawner = 
+			CharacterManager.selectedCharacter.characterData.AttackEffectSpawner;
 
-	}
+		if (attackEffectSpawner != null)
+		{
+			attackEffectSpawner.Spawn(
+				() => {
+					enemyStats.ReceiveDamage(baseDamage, columns);
+					Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+					CheckIfGameEnded();
+				}
+			);
+		}
+		else 
+		{
+			// enemyStats.ReceiveDamage는 두 개의 인자를 받도록 정의되어 있으므로,
+			// baseDamage와 columns를 함께 전달합니다.
+			enemyStats.ReceiveDamage(baseDamage, columns);
+			Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+		}
+    }
 
     public void CheckIfGameEnded()
     {
@@ -255,15 +269,28 @@ public class Grid : MonoBehaviour
             Debug.LogWarning("enemies 리스트가 `null` 상태입니다. 게임 종료 체크를 하지 않습니다.");
             return;
         }
+
         bool allEnemiesDefeated = enemies.All(enemy => enemy.GetComponent<EnemyStats>().GetCurrentHp() <= 0);
         if (allEnemiesDefeated)
         {
-            Debug.Log(" 모든 적이 처치되었습니다. 다음 스테이지로 이동합니다.");
+            Debug.Log("모든 적이 처치되었습니다. 다음 스테이지로 이동합니다.");
+
+            if (TreasureEffect.IsEmergencyFoodActive())
+            {
+                CharacterManager characterManager = FindFirstObjectByType<CharacterManager>();
+                if (characterManager != null)
+                {
+                    characterManager.RecoverHp(6);
+                    Debug.Log("[EmergencyFood] 비상식량 효과로 HP가 6 회복되었습니다!");
+                }
+            }
+
             FindFirstObjectByType<EnemySpawner>().IncreaseDifficulty();
             MoveNextScene();
         }
     }
 
+        
     public void MoveNextScene()
     {
         Scene.Controller.OnClearScene();
@@ -338,7 +365,13 @@ public class Grid : MonoBehaviour
 
     public void SelectEnemy(GameObject enemy)
     {
-		CharacterManager.selectedCharacter.characterData.AttackEffectSpawner.TargetTransform = enemy.transform;
+
+		AttackEffectSpawner attackEffectSpawner =
+			CharacterManager.selectedCharacter.characterData.AttackEffectSpawner;
+
+		if (attackEffectSpawner != null) {
+			attackEffectSpawner.TargetTransform = enemy.transform;
+		}
         selectedEnemy = enemy;
         Debug.Log($"[{selectedEnemy.name}]을(를) 선택했습니다.");
     }
@@ -382,6 +415,8 @@ public class Grid : MonoBehaviour
     {
         return selectedEnemy;
     }
+
+    
 
     // Grid.cs 내에 추가할 메서드
     public void DropAllBlocks()

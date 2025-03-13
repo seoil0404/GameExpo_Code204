@@ -79,8 +79,14 @@ public class MinoEffectHelper : MonoBehaviour {
 
     private IEnumerator RemoveEffectWhenDone(VisualEffect visualEffect) {
 		
-		yield return new WaitUntil(() => visualEffect.aliveParticleCount == 0);
-		Destroy(visualEffect);
+		yield return new WaitUntil(() => {
+			if (visualEffect == null) return true;
+			return visualEffect.aliveParticleCount == 0;
+		});
+
+		if (visualEffect != null) {
+			Destroy(visualEffect);
+		}
 
 	}
 

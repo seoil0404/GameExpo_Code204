@@ -55,5 +55,12 @@ public class CombatData : ScriptableObject
     /// </summary>
     [Serializable]
     public enum TreasureType
-    { UniversalGravitation, BusinessAcumen, Condemnation, MoneyBack, EmergencyFood, GiantResistanceHammer }
+    { 
+        UniversalGravitation, 
+        BusinessAcumen, 
+        Condemnation, 
+        MoneyBack, 
+        EmergencyFood, 
+        GiantResistanceHammer 
+    }
 }
