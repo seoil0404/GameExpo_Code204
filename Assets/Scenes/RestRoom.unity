@@ -165,15 +165,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323842738037405791, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
       propertyPath: m_LocalScale.x
-      value: 215.99998
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6323842738037405791, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
       propertyPath: m_LocalScale.y
-      value: 215.99998
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6323842738037405791, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
       propertyPath: m_LocalScale.z
-      value: 215.99998
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6323842738037405791, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -223,6 +223,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6323842738037405791, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537264911589934604, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -231,6 +239,21 @@ PrefabInstance:
 --- !u!224 &350512884 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6323842738037405791, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+  m_PrefabInstance: {fileID: 350512883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &350512885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7155551018938168851, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+  m_PrefabInstance: {fileID: 350512883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &350512886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6227952430082630606, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+  m_PrefabInstance: {fileID: 350512883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &350512887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7537264911589934604, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
   m_PrefabInstance: {fileID: 350512883}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &917473292
@@ -518,6 +541,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
   - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
   - {fileID: 11400000, guid: e377c252009c31d42b735da085234713, type: 2}
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
+  level_1: {fileID: 350512887}
+  level_2: {fileID: 350512886}
+  level_3: {fileID: 350512885}
   HealAmount: 0.4
 --- !u!1 &1045638069
 GameObject:
