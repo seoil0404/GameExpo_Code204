@@ -209,7 +209,6 @@ public class EnemyStats : MonoBehaviour
             Grid.instance.RemoveEnemy(gameObject);
         }
 
-        Scene.Controller.OnClearScene();
     }
 
     public static void AddEnemy(GameObject enemy)

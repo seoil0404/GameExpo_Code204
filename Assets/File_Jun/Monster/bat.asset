@@ -20,4 +20,4 @@ MonoBehaviour:
   enemySkills:
   - {fileID: 11400000, guid: 705e146bb6edc1c46ae2755706cb0dc3, type: 2}
   habitat: 0
-  enemyType: 2
+  enemyType: 0
