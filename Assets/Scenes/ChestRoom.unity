@@ -702,6 +702,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
+  level_1: {fileID: 441710752}
+  level_2: {fileID: 481032001752278303}
+  level_3: {fileID: 481032001752278302}
 --- !u!114 &919311874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,6 +1389,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatData: {fileID: 0}
+  level_1: {fileID: 0}
+  level_2: {fileID: 0}
+  level_3: {fileID: 0}
 --- !u!1 &1810546894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,11 +1655,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7537264911589934604, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+--- !u!1 &481032001752278302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7155551018938168851, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+  m_PrefabInstance: {fileID: 481032001752278301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &481032001752278303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6227952430082630606, guid: ace087d6762266241a490c07d1ffb0ae, type: 3}
+  m_PrefabInstance: {fileID: 481032001752278301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
