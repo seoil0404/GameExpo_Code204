@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class Grid : MonoBehaviour
 {
@@ -387,15 +388,21 @@ public class Grid : MonoBehaviour
         int x = Random.Range(0, gridSize - 3);
         int y = Random.Range(0, gridSize - 3);
         Debug.Log($"[{x}, {y}] 위치에서 4x4 블록을 비활성화합니다.");
+
         for (int i = x; i < x + 4; i++)
         {
             for (int j = y; j < y + 4; j++)
             {
                 int index = j * gridSize + i;
-                if (index < _gridSquares.Count)
+                if (index < _gridSquares.Count) {
                     _gridSquares[index].GetComponent<GridSquare>().DeactivateBlock();
+					MinoEffectHelper.Instance.PlayMinoEffectSingle(_gridSquares[index]);
+				}
+					
             }
         }
+
+
     }
 
     public void RemoveEnemy(GameObject enemy)

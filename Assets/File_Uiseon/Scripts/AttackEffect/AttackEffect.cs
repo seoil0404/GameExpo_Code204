@@ -49,13 +49,6 @@ public class AttackEffect : MonoBehaviour {
 		RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, screenPos, Camera.main, out Vector3 worldPos);
 
 		Vector2 targetPosition = worldPos;
-
-		// 월드 좌표로 변환
-		RectTransform canvasRect = receiverObject.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-		RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRect, screenPos, Camera.main, out Vector3 worldPos);
-		targetPosition = worldPos;
-
-	Vector2 targetPosition = worldPos;
 		
 		float progress = 0f;
 		Vector2 start = transform.position;
