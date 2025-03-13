@@ -23,6 +23,7 @@ public class CharacterData
     
     public UltimateSkill ultimateSkill;
     public bool NegateNextDamage = false;
+    public bool NextAttackLifeSteal = false;
 
     public Action OnHpChanged;
     public Action OnUltimateGaugeChanged;
@@ -102,11 +103,11 @@ public class CharacterData
     }
 
 
-
-    public void ActivateLifeSteal(int damageDealt)
+    public void ActivateLifeSteal()
     {
-        int healAmount = damageDealt / 2;
-        CurrentHp += healAmount;
-        Debug.Log($"{CharacterName}의 흡혈 효과 발동: {healAmount} 만큼 체력이 회복되었습니다. (피해의 절반)");
+        NegateNextDamage = true; // 적 공격 무효화 1회
+        NextAttackLifeSteal = true; // 흡혈 1회 발동
+        Debug.Log("궁극기 발동: 공격 무효화 + 흡혈 활성화");
     }
+
 }
