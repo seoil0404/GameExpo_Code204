@@ -211,7 +211,16 @@ public class Grid : MonoBehaviour
 
     private void DealDamageToSelectedEnemy(int completedLines)
     {
-        if (selectedEnemy == null)
+
+		if (CharacterManager.selectedCharacter.characterData != null) {
+			DealDamageToSelectedEnemyInner(completedLines);
+		}
+
+    }
+
+	private void DealDamageToSelectedEnemyInner(int completedLines) {
+
+	    if (selectedEnemy == null)
         {
             Debug.Log("선택된 적이 없습니다.");
             return;
@@ -236,8 +245,8 @@ public class Grid : MonoBehaviour
         // baseDamage와 columns를 함께 전달합니다.
         enemyStats.ReceiveDamage(baseDamage, columns);
         Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
-    }
 
+	}
 
     public void CheckIfGameEnded()
     {
