@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: skeleton
   m_EditorClassIdentifier: 
   enemyName: minokeleton
-  baseHP: 5
-  baseATK: 8
+  baseHP: 3
+  baseATK: 4
   enemySprite: {fileID: 6691698368905853389, guid: a2a486d9d7cd6484e9590c5e582cd2cd, type: 3}
   dodgeChance: 0
   enemySkills:
