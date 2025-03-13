@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 495bf9073df1aef41a28e5df7dbb1325
+guid: 1745ca812397cd5469a663be57e3784e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3083720808202176516
-    second: businessAcumen_0
+      213: 3959331266936784569
+    second: "\uACE0\uADC0\uD55C \uD53C_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: businessAcumen_0
+      name: "\uACE0\uADC0\uD55C \uD53C_0"
       rect:
         serializedVersion: 2
-        x: 248
-        y: 25
-        width: 522
-        height: 935
+        x: 158
+        y: 253
+        width: 929
+        height: 646
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf7f0a0634c6435d0800000000000000
-      internalID: -3083720808202176516
+      spriteID: 9b64dd15fce52f630800000000000000
+      internalID: 3959331266936784569
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      businessAcumen_0: -3083720808202176516
+      "\uACE0\uADC0\uD55C \uD53C_0": 3959331266936784569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
