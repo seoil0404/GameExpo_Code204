@@ -28,8 +28,16 @@ public class UltimateGauge : MonoBehaviour
                 HughUltimateGauge.enabled = true;
                 break;
         }
-        characters[GameData.SelectedCharacterIndex - 1].characterData.OnUltimateGaugeChanged = UpdateUltimateGauge;
+        characters[GameData.SelectedCharacterIndex - 1].characterData.OnUltimateGaugeChanged += UpdateUltimateGauge;
         UpdateUltimateGauge();
+    }
+
+    void OnDestroy()
+    {
+        if (characters != null && characters.Length > 0 && characters[GameData.SelectedCharacterIndex - 1] != null)
+        {
+            characters[GameData.SelectedCharacterIndex - 1].characterData.OnUltimateGaugeChanged -= UpdateUltimateGauge;
+        }
     }
 
     void UpdateUltimateGauge()
