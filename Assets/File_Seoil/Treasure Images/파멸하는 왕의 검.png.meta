@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 495bf9073df1aef41a28e5df7dbb1325
+guid: 94afbc64b0cc7274da5bbfec0af03ba5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3083720808202176516
-    second: businessAcumen_0
+      213: 2247468047103701722
+    second: "\uD30C\uBA78\uD558\uB294 \uC655\uC758 \uAC80_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: businessAcumen_0
+      name: "\uD30C\uBA78\uD558\uB294 \uC655\uC758 \uAC80_0"
       rect:
         serializedVersion: 2
-        x: 248
-        y: 25
-        width: 522
-        height: 935
+        x: 0
+        y: 38
+        width: 1280
+        height: 1222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf7f0a0634c6435d0800000000000000
-      internalID: -3083720808202176516
+      spriteID: ad238aff74c903f10800000000000000
+      internalID: 2247468047103701722
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      businessAcumen_0: -3083720808202176516
+      "\uD30C\uBA78\uD558\uB294 \uC655\uC758 \uAC80_0": 2247468047103701722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

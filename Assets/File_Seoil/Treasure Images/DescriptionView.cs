@@ -12,21 +12,10 @@ public class DescriptionView : MonoBehaviour
 
     private void HandleFlip()
     {
-        if (GetComponentInParent<Canvas>().renderMode == RenderMode.ScreenSpaceCamera)
-        {
-            if (transform.position.x > 0) 
-                FlipDescription();
-        }
-        else if (GetComponentInParent<Canvas>().renderMode == RenderMode.ScreenSpaceOverlay)
-        {
-            if (RectTransformUtility.WorldToScreenPoint(null, transform.position).x > GetComponentInParent<CanvasScaler>().referenceResolution.x / 2)
-                FlipDescription();
-        }
-        else
-        {
-            if (transform.position.x > 0)
-                FlipDescription();
-        }
+        if (transform.position.x > Screen.width / 2)
+            FlipDescription();
+
+        Debug.Log(RectTransformUtility.WorldToScreenPoint(null, transform.position).x + " " + GetComponentInParent<CanvasScaler>().referenceResolution.x / 2);
     }
 
     private void FlipDescription()

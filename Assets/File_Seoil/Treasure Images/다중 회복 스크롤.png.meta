@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 495bf9073df1aef41a28e5df7dbb1325
+guid: c46ad3caee421984ba6ba129a0a472bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3083720808202176516
-    second: businessAcumen_0
+      213: 6920825743476083324
+    second: "\uB2E4\uC911 \uD68C\uBCF5 \uC2A4\uD06C\uB864_0"
+  - first:
+      213: -7159359966532796838
+    second: "\uB2E4\uC911 \uD68C\uBCF5 \uC2A4\uD06C\uB864_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: businessAcumen_0
+      name: "\uB2E4\uC911 \uD68C\uBCF5 \uC2A4\uD06C\uB864_0"
       rect:
         serializedVersion: 2
-        x: 248
-        y: 25
-        width: 522
-        height: 935
+        x: 189
+        y: 205
+        width: 1149
+        height: 1064
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf7f0a0634c6435d0800000000000000
-      internalID: -3083720808202176516
+      spriteID: c7a45487856bb0060800000000000000
+      internalID: 6920825743476083324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uB2E4\uC911 \uD68C\uBCF5 \uC2A4\uD06C\uB864_1"
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 45
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ef8a7da08d4ac90800000000000000
+      internalID: -7159359966532796838
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      businessAcumen_0: -3083720808202176516
+      "\uB2E4\uC911 \uD68C\uBCF5 \uC2A4\uD06C\uB864_0": 6920825743476083324
+      "\uB2E4\uC911 \uD68C\uBCF5 \uC2A4\uD06C\uB864_1": -7159359966532796838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
