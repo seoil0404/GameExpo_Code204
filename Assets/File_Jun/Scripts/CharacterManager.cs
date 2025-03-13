@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour
 {
+    public static CharacterManager instance;
+
     [SerializeField] private Character[] characters = null;
     public Text CharacterNameText;
     public Slider UltimateGaugeSlider;
@@ -17,6 +19,11 @@ public class CharacterManager : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
         if (GameData.SelectedCharacterIndex <= 0 || GameData.SelectedCharacterIndex > characters.Length)
             GameData.SelectedCharacterIndex = 1;
 
@@ -65,9 +72,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (selectedCharacter.characterData.NegateNextDamage)
         {
-            // 피해 무효화 후, 피해의 절반만큼 회복
-            selectedCharacter.characterData.ActivateLifeSteal(totalDamage);
-            Debug.Log($"{selectedCharacter.characterData.CharacterName}의 궁극기 효과로 인해 {totalDamage} 데미지가 무효화되고, {totalDamage / 2} 만큼 회복되었습니다.");
+            Debug.Log($"{selectedCharacter.characterData.CharacterName}의 궁극기 효과로 인해 {totalDamage} 데미지가 무효화되었습니다.");
             selectedCharacter.characterData.NegateNextDamage = false;
             return;
         }
@@ -80,6 +85,20 @@ public class CharacterManager : MonoBehaviour
         if (selectedCharacter.characterData.CurrentHp <= 0)
             CharacterDied();
     }
+
+
+    public void RecoverHpFromDamage(int damageDealt)
+    {
+        int healAmount = damageDealt / 2;
+        selectedCharacter.characterData.CurrentHp += healAmount;
+
+        if (selectedCharacter.characterData.CurrentHp > selectedCharacter.characterData.MaxHp)
+            selectedCharacter.characterData.CurrentHp = selectedCharacter.characterData.MaxHp;
+
+        SaveHp();
+        Debug.Log($"[CharacterManager] 궁극기 흡혈 효과: {damageDealt} 데미지를 가해 {healAmount} 만큼 HP 회복. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
+    }
+
 
     private void CharacterDied()
     {

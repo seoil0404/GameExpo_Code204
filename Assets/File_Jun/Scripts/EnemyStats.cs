@@ -32,6 +32,7 @@ public class EnemyStats : MonoBehaviour
 
 	private void Start()
     {
+
         characterManager = FindFirstObjectByType<CharacterManager>();
 
         if (characterManager == null)
@@ -156,7 +157,6 @@ public class EnemyStats : MonoBehaviour
 
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
-        
         float currentDodgeChance = TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.UniversalGravitation) ? 0f : dodgeChance;
 
         float dodgeRoll = Random.Range(0, 100);
@@ -168,14 +168,20 @@ public class EnemyStats : MonoBehaviour
             return;
         }
 
-        int totalBlocksUsed = completedLines;
-        int baseDamage = totalBlocksUsed;
-        int calculatedDamage = baseDamage;
+        int totalBlocksUsed = completedLines * gridColumns;
+        int calculatedDamage = totalBlocksUsed;
 
         damageReceivedLastTurn = calculatedDamage;
         hp -= calculatedDamage;
 
         Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
+
+        
+        if (CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal)
+        {
+            CharacterManager.instance.RecoverHpFromDamage(calculatedDamage);
+            CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal = false;
+        }
 
         if (hp <= 0)
         {
@@ -186,6 +192,7 @@ public class EnemyStats : MonoBehaviour
         comboCount++;
         UpdateHealthText();
     }
+
 
 
 
