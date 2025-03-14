@@ -44,8 +44,6 @@ public class ShapeStorage : MonoBehaviour
         }
     }
 
-
-
     public Shape GetCurrentSelectedShape()
     {
         foreach (var shape in shapeList)

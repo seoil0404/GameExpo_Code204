@@ -160,7 +160,7 @@ public class Grid : MonoBehaviour
         CheckIfGameEnded();
     }
 
-    private void CheckIfAnyLineIsCompleted()
+    public void CheckIfAnyLineIsCompleted()
     {
         List<int[]> lines = _lineIndicator.columnIndexes.Select(column => _lineIndicator.GetVerticalLine(column)).ToList();
         for (var row = 0; row < rows; row++)

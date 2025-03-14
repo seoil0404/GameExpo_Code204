@@ -39,22 +39,42 @@ public class ShapeSquare : MonoBehaviour
                 Shape selectedShape = shapeStorage.GetCurrentSelectedShape();
                 if (selectedShape != null)
                 {
+                    Debug.Log($"현재 선택된 블록: {selectedShape.gameObject.name}");
+
+                    foreach (Transform child in selectedShape.transform)
+                    {
+                        if (child.gameObject.activeSelf)
+                        {
+                            Debug.Log($"블록 비활성화: {child.gameObject.name}");
+                            child.gameObject.SetActive(false);
+                        }
+                    }
+
                     HoldShape holdShape = FindFirstObjectByType<HoldShape>();
                     if (holdShape != null)
                     {
+                        Debug.Log($"[{selectedShape.gameObject.name}] DeactivateShape() 실행 전 상태: {selectedShape.gameObject.activeSelf}");
                         selectedShape.DeactivateShape();
+                        Debug.Log($"[{selectedShape.gameObject.name}] DeactivateShape() 실행 후 상태: {selectedShape.gameObject.activeSelf}");
 
                         holdShape.CreateShape(selectedShape.CurrentShapeData, selectedShape.CurrentShapeColorName);
-
                         Debug.Log($"HOLD 공간에 블록이 생성됨: {selectedShape.CurrentShapeColorName}");
-
-                        // 블록 개수 판단 및 적 공격 실행을 0.5초 후에 호출
                         Invoke(nameof(CheckAndRequestNewShapes), 0.5f);
                     }
                 }
+                else
+                {
+                    Debug.LogWarning("선택된 Shape이 없습니다!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("ShapeStorage를 찾을 수 없습니다!");
             }
         }
     }
+
+
 
     private void CheckAndRequestNewShapes()
     {

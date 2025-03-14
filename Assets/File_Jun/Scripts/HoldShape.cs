@@ -32,14 +32,13 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         _heldShapeData = shapeData;
 
-        // 기존 블록 제거
         foreach (var block in _currentHoldShape)
         {
             Destroy(block);
         }
         _currentHoldShape.Clear();
 
-        // 색상에 맞는 블록 찾기
+
         GameObject selectedBlockPrefab = squareShapeImages.Find(prefab => prefab.name.ToLower() == colorName);
 
         if (selectedBlockPrefab == null)
@@ -50,7 +49,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         _heldShapeColorName = selectedBlockPrefab.name.ToLower();
 
-        // 블록 생성
         int totalSquares = GetNumberOfSquares(_heldShapeData);
         for (int i = 0; i < totalSquares; i++)
         {
@@ -82,7 +80,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
         }
 
-        // 블록이 생성되면 assignedObject를 비활성화
         if (assignedObject != null)
         {
             assignedObject.SetActive(false);
@@ -147,6 +144,16 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
             StartCoroutine(ResetHoldShapeAfterPlacement());
             Debug.Log("[HoldShape] 블록이 성공적으로 배치됨!");
+
+            Grid gridInstance = FindFirstObjectByType<Grid>();
+            if (gridInstance != null)
+            {
+                gridInstance.CheckIfAnyLineIsCompleted();
+            }
+            else
+            {
+                Debug.LogWarning("[HoldShape] Grid 인스턴스를 찾을 수 없습니다!");
+            }
         }
         else
         {
@@ -154,6 +161,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             StartCoroutine(MoveBackToStartPosition());
         }
     }
+
 
     private IEnumerator MoveBackToStartPosition()
     {
@@ -177,7 +185,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         yield return new WaitForSeconds(0.1f);
 
-        // 블록을 배치하면 기존 블록 삭제
         foreach (var square in _currentHoldShape)
         {
             Destroy(square);
