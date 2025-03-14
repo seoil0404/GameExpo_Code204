@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,6 +11,8 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     public List<GameObject> squareShapeImages;
     public Vector3 shapeSelectedScale;
     public Vector2 offset = new Vector2(0f, 700f);
+	private Vector2 position;
+	private Vector2 scale;
 
     [HideInInspector]
     public ShapeData CurrentShapeData;
@@ -24,6 +28,13 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     private string currentShapeColorName = "default";
     public string CurrentShapeColorName => currentShapeColorName;
 
+	[Header("Mino Draw Effect")]
+	public float MinoDestroyOffset;
+	public float MinoDrawDuration;
+	public Ease MinoDrawEase;
+
+	public Transform BagUIPosition;
+
     public void Awake()
     {
         _shapeStartScale = GetComponent<RectTransform>().localScale;
@@ -31,6 +42,11 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         _canvas = GetComponentInParent<Canvas>();
         _startPosition = _transform.localPosition;
     }
+
+	private void Start() {
+		position = transform.position;
+		scale = transform.localScale;
+	}
 
     private void OnDisable()
     {
@@ -94,10 +110,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         }
     }
 
-    void Start()
-    {
-    }
-
     public void RequestNewShape(ShapeData shapeData)
     {
         _transform.localPosition = _startPosition;
@@ -119,57 +131,70 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         return number;
     }
 
-    public void CreateShape(ShapeData shapeData)
-    {
-        CurrentShapeData = shapeData;
-        TotalSquareNumber = GetNumberOfSquares(shapeData);
+	public void CreateShape(ShapeData shapeData) {
+		StartCoroutine(CreateShapeInner(shapeData));
+	}
 
+	private IEnumerator CreateShapeInner(ShapeData shapeData)
+	{
+		CurrentShapeData = shapeData;
+		TotalSquareNumber = GetNumberOfSquares(shapeData);
 
-        foreach (var block in _currentShape)
-        {
-            Destroy(block);
-        }
-        _currentShape.Clear();
+		foreach (var block in _currentShape)
+		{
+			Destroy(block);
+		}
+		_currentShape.Clear();
 
+		//yield return new WaitForSeconds(MinoDestroyOffset);
 
-        GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
+		GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
+		currentShapeColorName = selectedBlockPrefab.name.ToLower();
 
+		for (int i = 0; i < TotalSquareNumber; i++)
+		{
+			GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
+			_currentShape.Add(newBlock);
+			newBlock.SetActive(false);
+		}
 
+		var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
+		var moveDistance = new Vector2(
+			squareRect.rect.width * squareRect.localScale.x,
+			squareRect.rect.height * squareRect.localScale.y
+		);
 
-        currentShapeColorName = selectedBlockPrefab.name.ToLower();
+		int currentIndexInList = 0;
+		for (var row = 0; row < shapeData.rows; row++)
+		{
+			for (var column = 0; column < shapeData.columns; column++)
+			{
+				if (shapeData.board[row].column[column])
+				{
+					_currentShape[currentIndexInList].SetActive(true);
+					_currentShape[currentIndexInList].GetComponent<RectTransform>().localPosition = new Vector2(
+						GetXPositionForShapeSquare(shapeData, column, moveDistance),
+						GetYPositionForShapeSquare(shapeData, row, moveDistance)
+					);
+					currentIndexInList++;
+				}
+			}
+		}
 
+		yield return null;
+		//StartCoroutine(PlayMinoDrawAnimation());
+	}
 
-        for (int i = 0; i < TotalSquareNumber; i++)
-        {
-            GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
-            _currentShape.Add(newBlock);
-            newBlock.SetActive(false);
-        }
+	private IEnumerator PlayMinoDrawAnimation()
+	{
+		transform.position = BagUIPosition.position;
+		//transform.localScale = Vector2.zero;
 
+		yield return null;
 
-        var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
-        var moveDistance = new Vector2(
-            squareRect.rect.width * squareRect.localScale.x,
-            squareRect.rect.height * squareRect.localScale.y
-        );
-
-        int currentIndexInList = 0;
-        for (var row = 0; row < shapeData.rows; row++)
-        {
-            for (var column = 0; column < shapeData.columns; column++)
-            {
-                if (shapeData.board[row].column[column])
-                {
-                    _currentShape[currentIndexInList].SetActive(true);
-                    _currentShape[currentIndexInList].GetComponent<RectTransform>().localPosition = new Vector2(
-                        GetXPositionForShapeSquare(shapeData, column, moveDistance),
-                        GetYPositionForShapeSquare(shapeData, row, moveDistance)
-                    );
-                    currentIndexInList++;
-                }
-            }
-        }
-    }
+		transform.DOMove(position, MinoDrawDuration).SetEase(MinoDrawEase);
+		//transform.DOScale(scale, MinoDrawDuration).SetEase(MinoDrawEase);
+	}
 
     public float GetXPositionForShapeSquare(ShapeData shapeData, int column, Vector2 moveDistance)
     {
