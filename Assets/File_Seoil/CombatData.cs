@@ -37,6 +37,12 @@ public class CombatData : ScriptableObject
         Scene.treasureShowManager.UpdateTreasureImages();
     }
 
+    public void AddAllTreasureData()
+    {
+        foreach(TreasureType type in Enum.GetValues(typeof(TreasureType))) 
+            AddTreasureData(type);
+    }
+
     public TreasureType[] TreasureData
     {
         get
