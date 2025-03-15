@@ -18,8 +18,10 @@ MonoBehaviour:
     characterPrefab: {fileID: 2047942871196441207, guid: e52dee6778f06b340882aaaad62edd88, type: 3}
     maxHp: 80
     currentHp: 80
-    maxUltimateGauge: 35
-    currentUltimateGauge: 35
+    maxUltimateGauge: 15
+    currentUltimateGauge: 0
     executionRate: 5
     ultimateSkill: {fileID: 11400000, guid: c43ec66cae3f96545a5b5ce5a4562026, type: 2}
     NegateNextDamage: 0
+    NextAttackLifeSteal: 0
+    AttackEffectSpawner: {fileID: 0}
