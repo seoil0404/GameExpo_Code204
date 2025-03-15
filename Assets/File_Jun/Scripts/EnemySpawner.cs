@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogWarning("[EnemySpawner] SpecialCombat 감지됨! Common으로 변경 후 난이도 10배 증가 및 한 마리만 생성");
             Specialcombating = true;
             combatData.EnemyType = EnemyData.EnemyType.Common;
-            currentDifficulty *= 10;
+            currentDifficulty *= 3;
 
             if (TreasureEffect.IsGiantResistanceHammerActive())
             {
@@ -119,8 +119,6 @@ public class EnemySpawner : MonoBehaviour
         ResetSpawnPoints();
         enemies.Clear();
 
-        Debug.Log($"[EnemySpawner] 적 생성 시작 - Habitat: {selectedHabitat}, EnemyType: {selectedEnemyType}, 한 마리 생성 여부: {forceOneEnemy}");
-
         int numberOfEnemies = forceOneEnemy ? 1 : DetermineEnemyCount();
 
         List<GameObject> filteredEnemies = enemyPrefabs.FindAll(enemy =>
@@ -129,14 +127,12 @@ public class EnemySpawner : MonoBehaviour
 
             if (stats == null || stats.enemyData == null)
             {
-                Debug.LogWarning($"[EnemySpawner] {enemy.name}에 EnemyStats 또는 EnemyData가 없습니다!");
                 return false;
             }
 
             bool matches = stats.enemyData.habitat == selectedHabitat &&
                            stats.enemyData.enemyType == selectedEnemyType;
 
-            Debug.Log($"[EnemySpawner] 검사 중 - {enemy.name}: Habitat = {stats.enemyData.habitat}, EnemyType = {stats.enemyData.enemyType}, 매칭 여부: {matches}");
 
             return matches;
         });

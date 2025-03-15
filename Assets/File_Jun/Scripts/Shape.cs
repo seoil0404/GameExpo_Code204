@@ -69,7 +69,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
             }
         }
     }
-
+     
     public void DeactivateShape()
     {
         if (_shapeActive)
@@ -212,10 +212,11 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
         ShapeStorage shapeStorage = FindFirstObjectByType<ShapeStorage>();
 
+        Shape selectedShape = shapeStorage.GetCurrentSelectedShape();
+
 
         if (shapeStorage != null)
         {
-            Shape selectedShape = shapeStorage.GetCurrentSelectedShape();
             if (selectedShape != null)
             {
                 Debug.Log($"선택된 블럭 모양: {selectedShape.CurrentShapeColorName}");
@@ -236,12 +237,14 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
             _transform.localPosition = localMousePosition + offset;
         }
     }
-
     public void OnEndDrag(PointerEventData eventData)
     {
         GetComponent<RectTransform>().localScale = _shapeStartScale;
         GameEvents.CheckIfShapeCanBePlaced();
+
     }
+
+
 
     public void OnPointerDown(PointerEventData eventData)
     {
