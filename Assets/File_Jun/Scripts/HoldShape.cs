@@ -28,7 +28,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         _startPosition = _transform.localPosition;
     }
 
-    public void CreateShape(ShapeData shapeData, string colorName)
+    public void CreateShape(ShapeData shapeData, string colorName, Quaternion rotation)
     {
         _heldShapeData = shapeData;
 
@@ -37,7 +37,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             Destroy(block);
         }
         _currentHoldShape.Clear();
-
 
         GameObject selectedBlockPrefab = squareShapeImages.Find(prefab => prefab.name.ToLower() == colorName);
 
@@ -86,7 +85,10 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
 
         _startPosition = _transform.localPosition;
+
+        _transform.rotation = rotation;
     }
+
 
     public void OnPointerDown(PointerEventData eventData) { }
 

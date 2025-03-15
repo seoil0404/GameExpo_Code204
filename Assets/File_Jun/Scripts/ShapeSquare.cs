@@ -26,6 +26,7 @@ public class ShapeSquare : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!hasCreatedHoldBlock && other.CompareTag("Hold"))
@@ -57,8 +58,10 @@ public class ShapeSquare : MonoBehaviour
                         selectedShape.DeactivateShape();
                         Debug.Log($"[{selectedShape.gameObject.name}] DeactivateShape() 실행 후 상태: {selectedShape.gameObject.activeSelf}");
 
-                        holdShape.CreateShape(selectedShape.CurrentShapeData, selectedShape.CurrentShapeColorName);
-                        Debug.Log($"HOLD 공간에 블록이 생성됨: {selectedShape.CurrentShapeColorName}");
+                        Quaternion currentRotation = selectedShape.GetComponent<RectTransform>().rotation;
+                        holdShape.CreateShape(selectedShape.CurrentShapeData, selectedShape.CurrentShapeColorName, currentRotation);
+
+                        Debug.Log($"HOLD 공간에 블록이 생성됨: {selectedShape.CurrentShapeColorName} (회전: {currentRotation.eulerAngles.z}도)");
                         Invoke(nameof(CheckAndRequestNewShapes), 0.5f);
                     }
                 }
@@ -73,6 +76,7 @@ public class ShapeSquare : MonoBehaviour
             }
         }
     }
+
 
 
 
