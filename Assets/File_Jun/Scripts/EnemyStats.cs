@@ -29,11 +29,6 @@ public class EnemyStats : MonoBehaviour
 
     public bool HasUsedSwallowBlock => hasUsedSwallowBlock;
 
-    public void SetSwallowBlockUsed()
-    {
-        hasUsedSwallowBlock = true;
-    }
-
     private void Awake() 
 	{
 		attackEffectSpawner = GetComponentInChildren<AttackEffectSpawner>();
@@ -96,16 +91,10 @@ public class EnemyStats : MonoBehaviour
     {
         int totalOptions = enemyData.enemySkills.Count + 1;
 
-        if (HasUsedSwallowBlock)
+        // 만약 이 적이 SwallowBlock을 이미 사용했다면, 사용 가능한 스킬 옵션을 줄인다.
+        if (hasUsedSwallowBlock)
         {
-            foreach (var skill in enemyData.enemySkills)
-            {
-                if (skill.skillType == EnemySkill.SkillType.SwallowBlock)
-                {
-                    totalOptions -= 1;
-                    break;
-                }
-            }
+            totalOptions -= 1;
         }
 
         if (enemyNextAction != null)
@@ -113,6 +102,13 @@ public class EnemyStats : MonoBehaviour
             enemyNextAction.DecideNextAction(totalOptions, atk);
         }
     }
+
+    
+    public void SetSwallowBlockUsed()
+    {
+        hasUsedSwallowBlock = true;
+    }
+
 
     public int GetCurrentHp()
     {
