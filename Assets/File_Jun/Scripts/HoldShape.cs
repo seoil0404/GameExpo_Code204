@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
     public List<GameObject> squareShapeImages;
+    public GameObject assignedObject; // 인스펙터에서 할당할 오브젝트
+
     private List<GameObject> _currentHoldShape = new List<GameObject>();
     private ShapeData _heldShapeData;
     private string _heldShapeColorName = "default";
@@ -26,10 +28,9 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         _startPosition = _transform.localPosition;
     }
 
-    public void CreateShape(ShapeData shapeData, string colorName)
+    public void CreateShape(ShapeData shapeData, string colorName, Quaternion rotation)
     {
         _heldShapeData = shapeData;
-
 
         foreach (var block in _currentHoldShape)
         {
@@ -78,8 +79,16 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
         }
 
+        if (assignedObject != null)
+        {
+            assignedObject.SetActive(false);
+        }
+
         _startPosition = _transform.localPosition;
+
+        _transform.rotation = rotation;
     }
+
 
     public void OnPointerDown(PointerEventData eventData) { }
 
@@ -137,6 +146,16 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
             StartCoroutine(ResetHoldShapeAfterPlacement());
             Debug.Log("[HoldShape] 블록이 성공적으로 배치됨!");
+
+            Grid gridInstance = FindFirstObjectByType<Grid>();
+            if (gridInstance != null)
+            {
+                gridInstance.CheckIfAnyLineIsCompleted();
+            }
+            else
+            {
+                Debug.LogWarning("[HoldShape] Grid 인스턴스를 찾을 수 없습니다!");
+            }
         }
         else
         {
@@ -144,7 +163,6 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             StartCoroutine(MoveBackToStartPosition());
         }
     }
-
 
 
     private IEnumerator MoveBackToStartPosition()
@@ -177,6 +195,11 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         _shapeActive = false;
         _transform.localPosition = _startPosition;
+
+        if (assignedObject != null)
+        {
+            assignedObject.SetActive(true);
+        }
     }
 
     private int GetNumberOfSquares(ShapeData shapeData)

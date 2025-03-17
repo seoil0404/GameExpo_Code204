@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class EnemySpawner : MonoBehaviour
     public float twoEnemiesChance = 0.4f;
     public float oneEnemiesChance = 0.4f;
 
+    bool Specialcombating = false;
+
     private List<Transform> availableSpawnPoints;
     public List<GameObject> enemies = new List<GameObject>();
 
@@ -22,11 +25,11 @@ public class EnemySpawner : MonoBehaviour
         if (GameStartTracker.IsHavetobeReset)
         {
             ResetDifficulty();
-            GameStartTracker.IsHavetobeReset = false;
         }
         else
         {
             LoadDifficulty();
+            
         }
 
         if (combatData == null)
@@ -38,8 +41,9 @@ public class EnemySpawner : MonoBehaviour
         if (combatData.EnemyType == EnemyData.EnemyType.SpecialCombat)
         {
             Debug.LogWarning("[EnemySpawner] SpecialCombat 감지됨! Common으로 변경 후 난이도 10배 증가 및 한 마리만 생성");
+            Specialcombating = true;
             combatData.EnemyType = EnemyData.EnemyType.Common;
-            currentDifficulty *= 10;
+            currentDifficulty *= 3;
 
             if (TreasureEffect.IsGiantResistanceHammerActive())
             {
@@ -47,6 +51,11 @@ public class EnemySpawner : MonoBehaviour
                 Debug.Log("[EnemySpawner] GiantResistanceHammer 효과 적용됨! 난이도가 절반으로 감소");
             }
 
+            SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
+        }
+        else if(combatData.EnemyType == EnemyData.EnemyType.Boss)
+        {
+            Debug.LogWarning("[EnemySpawner] Boss 감지됨 적 하나만 생성");
             SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
         }
         else
@@ -82,7 +91,19 @@ public class EnemySpawner : MonoBehaviour
 
     public void IncreaseDifficulty()
     {
-        currentDifficulty++;
+        if (Specialcombating)
+        {
+            currentDifficulty = currentDifficulty / 2 + 2;
+        }
+        else if (combatData.EnemyType == EnemyData.EnemyType.Boss)
+        {
+            currentDifficulty += 3;
+        }
+        else
+        {
+            currentDifficulty++;
+        }
+
         SaveDifficulty();
     }
 
@@ -98,8 +119,6 @@ public class EnemySpawner : MonoBehaviour
         ResetSpawnPoints();
         enemies.Clear();
 
-        Debug.Log($"[EnemySpawner] 적 생성 시작 - Habitat: {selectedHabitat}, EnemyType: {selectedEnemyType}, 한 마리 생성 여부: {forceOneEnemy}");
-
         int numberOfEnemies = forceOneEnemy ? 1 : DetermineEnemyCount();
 
         List<GameObject> filteredEnemies = enemyPrefabs.FindAll(enemy =>
@@ -108,14 +127,12 @@ public class EnemySpawner : MonoBehaviour
 
             if (stats == null || stats.enemyData == null)
             {
-                Debug.LogWarning($"[EnemySpawner] {enemy.name}에 EnemyStats 또는 EnemyData가 없습니다!");
                 return false;
             }
 
             bool matches = stats.enemyData.habitat == selectedHabitat &&
                            stats.enemyData.enemyType == selectedEnemyType;
 
-            Debug.Log($"[EnemySpawner] 검사 중 - {enemy.name}: Habitat = {stats.enemyData.habitat}, EnemyType = {stats.enemyData.enemyType}, 매칭 여부: {matches}");
 
             return matches;
         });

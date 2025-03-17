@@ -486,12 +486,30 @@ MonoBehaviour:
   treasurePrefab: {fileID: 7445554111297285105, guid: fc2fe4606dac523488f6a4f92268c940, type: 3}
   defaultPosition: {x: 30, y: -45}
   treasureInterval: 45
-  universalGravition: {fileID: -4110795844797011256, guid: 97d474da9eefb074eaf5b7cd19e2a5be, type: 3}
-  businessAcumen: {fileID: -3083720808202176516, guid: 495bf9073df1aef41a28e5df7dbb1325, type: 3}
-  condemnation: {fileID: 2621704525415786886, guid: 971398150bc51ca4aacb06717195ec20, type: 3}
+  universalGravition: {fileID: 21300000, guid: 97d474da9eefb074eaf5b7cd19e2a5be, type: 3}
+  businessAcumen: {fileID: 21300000, guid: 495bf9073df1aef41a28e5df7dbb1325, type: 3}
+  condemnation: {fileID: 21300000, guid: 971398150bc51ca4aacb06717195ec20, type: 3}
   moneyBack: {fileID: 21300000, guid: dddfecac0b43fa14e84aa387915eb5e3, type: 3}
   emergencyFood: {fileID: 21300000, guid: 5ba7be57f84817d4d9cd3c24022a33c4, type: 3}
   giantResistanceHammer: {fileID: 21300000, guid: fe0969814b2ce4a4a8c2a53af6c2182b, type: 3}
+  nobleBlood: {fileID: 21300000, guid: 1745ca812397cd5469a663be57e3784e, type: 3}
+  boneCanine: {fileID: 21300000, guid: f1f0b5dfa3b6f8447b999518e237b211, type: 3}
+  goldAndSilver: {fileID: 21300000, guid: 78e703c4439b4114682020018eef9968, type: 3}
+  goldenHair: {fileID: 21300000, guid: 46343cc302fe31846a959aa50ebcda95, type: 3}
+  woodPile: {fileID: 21300000, guid: b65570992cc0b7146bf65f2e320b3e3c, type: 3}
+  corruptTouch: {fileID: 21300000, guid: 2321ecb6333b41a4593cceb0543e677a, type: 3}
+  ringOfTime: {fileID: 21300000, guid: 4f26ffca467060849b922a411dc1b623, type: 3}
+  holyShield: {fileID: 21300000, guid: 756bd9ece5713aa479e311c2e9cacab2, type: 3}
+  etherMemberShip: {fileID: 21300000, guid: 532a85544e41ea44eb863657693909ed, type: 3}
+  soulLantern: {fileID: 21300000, guid: d85d5d993292c754f90a9ed1ca502c4e, type: 3}
+  totemOfResistance: {fileID: 21300000, guid: 5270339140207874cb17afc4ed5e375b, type: 3}
+  orderDefenceCloak: {fileID: 21300000, guid: 11fd48925b7a1754e9ab922c77a7bf7c, type: 3}
+  caneOfGravity: {fileID: 21300000, guid: 2c2f62e63c1550446bb823b3cbcf81ff, type: 3}
+  talismanOfPower: {fileID: 21300000, guid: 69613031a09a7c1499807db55355f55a, type: 3}
+  swordOfRuinedKing: {fileID: 21300000, guid: 94afbc64b0cc7274da5bbfec0af03ba5, type: 3}
+  shoesOfHermes: {fileID: 21300000, guid: 2158c80d809b32146a0548d844b73dda, type: 3}
+  goldenApple: {fileID: 21300000, guid: 2bdb78e7290b98245ac03c0556f62ad5, type: 3}
+  multipleCureScroll: {fileID: 21300000, guid: c46ad3caee421984ba6ba129a0a472bf, type: 3}
 --- !u!1 &8549096711893090029
 GameObject:
   m_ObjectHideFlags: 0

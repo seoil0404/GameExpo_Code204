@@ -9,21 +9,18 @@ public class ShapeStorage : MonoBehaviour
     public List<Shape> shapeList;
     public GameObject hold;
 
+    private Dictionary<ShapeData, int> shapePool = new Dictionary<ShapeData, int>();
+    private int totalShapesRemaining;
+
     void Start()
     {
-        foreach (var shape in shapeList)
-        {
-            var shapeIndex = Random.Range(0, shapeData.Count);
-            shape.CreateShape(shapeData[shapeIndex]);
+        InitializeShapePool();
+        DrawNewShapes();
+    }
 
-            if (Grid.instance != null && Grid.instance.enemies.Count > 0)
-            {
-                foreach (var enemy in Grid.instance.enemies)
-                {
-                    enemy.GetComponent<EnemyStats>()?.DecideNextAction();
-                }
-            }
-        }
+    private void OnEnable()
+    {
+        GameEvents.RequestNewShapes += RequestNewShapes;
     }
 
     private void OnDisable()
@@ -31,20 +28,64 @@ public class ShapeStorage : MonoBehaviour
         GameEvents.RequestNewShapes -= RequestNewShapes;
     }
 
-    private void OnEnable()
+    private void InitializeShapePool()
     {
-        GameEvents.RequestNewShapes += RequestNewShapes;
+        shapePool.Clear();
+        totalShapesRemaining = 0;
 
-        if (Grid.instance != null && Grid.instance.enemies.Count > 0)
+        foreach (var shape in shapeData)
         {
-            foreach (var enemy in Grid.instance.enemies)
+            shapePool[shape] = 3;
+            totalShapesRemaining += 3;
+        }
+    }
+
+    private void DrawNewShapes()
+    {
+        if (totalShapesRemaining <= 0)
+        {
+            InitializeShapePool();
+        }
+
+        foreach (var shape in shapeList)
+        {
+            ShapeData selectedShape = GetRandomShape();
+            if (selectedShape != null)
             {
-                enemy.GetComponent<EnemyStats>()?.DecideNextAction();
+                shape.RequestNewShape(selectedShape);
+
+                int randomRotation = Random.Range(0, 4) * 90;
+                Quaternion rotation = Quaternion.Euler(0, 0, randomRotation);
+                shape.GetComponent<RectTransform>().rotation = rotation;
+
+                SetHoldShape(selectedShape, shape.CurrentShapeColorName, rotation);
             }
         }
     }
 
 
+
+
+    private ShapeData GetRandomShape()
+    {
+        List<ShapeData> availableShapes = new List<ShapeData>();
+
+        foreach (var entry in shapePool)
+        {
+            if (entry.Value > 0) 
+            {
+                availableShapes.Add(entry.Key);
+            }
+        }
+
+        if (availableShapes.Count == 0) return null;
+
+        ShapeData chosenShape = availableShapes[Random.Range(0, availableShapes.Count)];
+        shapePool[chosenShape]--;
+        totalShapesRemaining--;
+
+        return chosenShape;
+    }
 
     public Shape GetCurrentSelectedShape()
     {
@@ -56,24 +97,21 @@ public class ShapeStorage : MonoBehaviour
         return null;
     }
 
-    private void RequestNewShapes()
+    public void RequestNewShapes()
     {
-        foreach(var shape in shapeList)
-        {
-            var shapeIndex = Random.Range(0, shapeData.Count);
-            shape.RequestNewShape(shapeData[shapeIndex]);
-        }
+        DrawNewShapes();
     }
 
-    public void SetHoldShape(ShapeData shapeData, string colorName)
+    public void SetHoldShape(ShapeData shapeData, string colorName, Quaternion rotation)
     {
         if (hold == null) return;
 
         HoldShape holdShape = hold.GetComponent<HoldShape>();
         if (holdShape != null)
         {
-            holdShape.CreateShape(shapeData, colorName);
+            holdShape.CreateShape(shapeData, colorName, rotation);
         }
     }
+
 
 }

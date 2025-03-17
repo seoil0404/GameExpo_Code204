@@ -32,6 +32,7 @@ public class EnemyStats : MonoBehaviour
 
 	private void Start()
     {
+
         characterManager = FindFirstObjectByType<CharacterManager>();
 
         if (characterManager == null)
@@ -69,7 +70,7 @@ public class EnemyStats : MonoBehaviour
         hp = maxHp;
 
         // ATK 계산: 기본 ATK + (난이도 / (레벨 % 4))
-        atk = enemyData.baseATK + (difficulty / Mathf.Max(habitatLevel % 4, 1));
+        atk = enemyData.baseATK + (difficulty / Mathf.Max(4 - habitatLevel, 1));
 
         dodgeChance = enemyData.dodgeChance;
 
@@ -154,9 +155,10 @@ public class EnemyStats : MonoBehaviour
 		}
 	}
 
+
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
-        
+
         float currentDodgeChance = TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.UniversalGravitation) ? 0f : dodgeChance;
 
         float dodgeRoll = Random.Range(0, 100);
@@ -177,6 +179,12 @@ public class EnemyStats : MonoBehaviour
 
         Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
 
+        if (CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal)
+        {
+            CharacterManager.instance.RecoverHpFromDamage(calculatedDamage);
+            CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal = false;
+        }
+
         if (hp <= 0)
         {
             hp = 0;
@@ -186,6 +194,8 @@ public class EnemyStats : MonoBehaviour
         comboCount++;
         UpdateHealthText();
     }
+
+
 
 
 

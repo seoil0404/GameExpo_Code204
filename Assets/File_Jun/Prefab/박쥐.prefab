@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 4676855129767954926}
   - component: {fileID: 1199959639655230800}
   - component: {fileID: 572111356102599652}
-  - component: {fileID: 1713159813816830516}
+  - component: {fileID: 9072058493576230126}
   m_Layer: 0
   m_Name: "\uBC15\uC950"
   m_TagString: Untagged
@@ -263,6 +263,7 @@ RectTransform:
   - {fileID: 3736670793792394769}
   - {fileID: 7061839862576060770}
   - {fileID: 5239459884517064452}
+  - {fileID: 2290215798769488381}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -386,6 +387,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9072058493576230126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796952719653305977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283e3eea0fb0e134d8c1b89a6d209c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionImages:
+  - {fileID: 2289481473746329526}
+  - {fileID: 280017201709578}
+  damageText: {fileID: 7083699487033349215}
 --- !u!1 &3683994645019369112
 GameObject:
   m_ObjectHideFlags: 0
