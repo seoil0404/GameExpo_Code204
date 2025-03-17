@@ -11,7 +11,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     public List<GameObject> squareShapeImages;
     public Vector3 shapeSelectedScale;
     public Vector2 offset = new Vector2(0f, 700f);
-	private Vector2 position;
 	private Vector2 scale;
 
     [HideInInspector]
@@ -44,7 +43,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     }
 
 	private void Start() {
-		position = transform.position;
 		scale = transform.localScale;
 	}
 
@@ -114,6 +112,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     {
         _transform.localPosition = _startPosition;
         CreateShape(shapeData);
+		StartCoroutine(PlayMinoDrawAnimation());
     }
 
 
@@ -132,10 +131,10 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     }
 
 	public void CreateShape(ShapeData shapeData) {
-		StartCoroutine(CreateShapeInner(shapeData));
+		CreateShapeInner(shapeData);
 	}
 
-	private IEnumerator CreateShapeInner(ShapeData shapeData)
+	private void CreateShapeInner(ShapeData shapeData)
 	{
 		CurrentShapeData = shapeData;
 		TotalSquareNumber = GetNumberOfSquares(shapeData);
@@ -145,8 +144,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 			Destroy(block);
 		}
 		_currentShape.Clear();
-
-		//yield return new WaitForSeconds(MinoDestroyOffset);
 
 		GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
 		currentShapeColorName = selectedBlockPrefab.name.ToLower();
@@ -180,20 +177,20 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 				}
 			}
 		}
-
-		yield return null;
-		//StartCoroutine(PlayMinoDrawAnimation());
 	}
 
 	private IEnumerator PlayMinoDrawAnimation()
 	{
+		Vector2 startPosition = transform.position;
+		Vector2 startScale = transform.localScale;
+
 		transform.position = BagUIPosition.position;
-		//transform.localScale = Vector2.zero;
+		transform.localScale = Vector2.one * 0.01f;
+			
+		yield return new WaitForSeconds(MinoDestroyOffset);
 
-		yield return null;
-
-		transform.DOMove(position, MinoDrawDuration).SetEase(MinoDrawEase);
-		//transform.DOScale(scale, MinoDrawDuration).SetEase(MinoDrawEase);
+		transform.DOMove(startPosition, MinoDrawDuration).SetEase(MinoDrawEase);
+		transform.DOScale(startScale, MinoDrawDuration).SetEase(MinoDrawEase);
 	}
 
     public float GetXPositionForShapeSquare(ShapeData shapeData, int column, Vector2 moveDistance)
