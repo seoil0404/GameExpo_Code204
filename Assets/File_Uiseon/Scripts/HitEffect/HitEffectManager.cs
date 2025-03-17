@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using static UnityEditor.Experimental.GraphView.Port;
 
 public class HitEffectManager : MonoBehaviour {
 
@@ -45,6 +46,29 @@ public class HitEffectManager : MonoBehaviour {
 	[field: SerializeField]
 	public float AttackRotationDuration { get; private set; }
 
+	[Header("Miss")]
+	[SerializeField]
+	private GameObject MissObject;
+
+	[SerializeField]
+	private float MissMovement;
+
+	[SerializeField]
+	private float MissDuration;
+
+	[SerializeField]
+	private Ease MissEase;
+
+	[Header("Miss Blink")]
+	[SerializeField]
+	private float BlinkOpacity;
+
+	[SerializeField]
+	private float BlinkDuration;
+
+	[SerializeField]
+	private float BlinkSpeed;
+
 	//======================================================================| Unity Behaviours
 
 	private void Awake() {
@@ -77,6 +101,27 @@ public class HitEffectManager : MonoBehaviour {
 
 		StartCoroutine(SetSpriteColor(receiverObject, PoisonColor));
 		StartCoroutine(DestroyParticleWithParentOnDone(instantiated, 1));
+
+	}
+
+	public void OnMiss(GameObject receiverObject, GameObject casterObject) {
+
+		GameObject instantiated = Instantiate(MissObject);
+		instantiated.transform.position = receiverObject.transform.position;
+
+		instantiated.transform
+			.DOLocalMove(receiverObject.transform.position + Vector3.up * MissMovement, MissDuration)
+			.SetEase(MissEase);
+
+		instantiated.GetComponentInChildren<SpriteRenderer>()
+			.DOFade(0f, MissDuration)
+			.SetEase(MissEase)
+			.OnComplete(() => {
+				Destroy(instantiated);
+			});
+
+		StartCoroutine(BlinkMissObject(receiverObject));
+		RotateHittedObject(receiverObject, casterObject);
 
 	}
 
@@ -142,6 +187,44 @@ public class HitEffectManager : MonoBehaviour {
 
 		Destroy(parent.gameObject);
 
+	}
+
+	private IEnumerator BlinkMissObject(GameObject receiverObject) {
+
+		SpriteRenderer[] spriteRenderers = receiverObject.GetComponentsInChildren<SpriteRenderer>();
+		Image[] imageRenderers = receiverObject.GetComponentsInChildren<Image>();
+
+		float spent = 0f;
+
+		while (spent < BlinkDuration) {
+
+		float amplitude = 0.5f - (BlinkOpacity * 0.5f);
+		float offset = 0.5f + (BlinkOpacity * 0.5f);
+		float opacity = amplitude * Mathf.Sin(BlinkSpeed * Time.time) + offset;
+
+			Debug.Log(opacity);
+
+			foreach (var spriteRenderer in spriteRenderers) {
+				spriteRenderer.color = spriteRenderer.color.WithAlpha(opacity);
+			}
+
+			foreach (var imageRenderer in imageRenderers) {
+				imageRenderer.color = imageRenderer.color.WithAlpha(opacity);
+			}
+
+			spent += Time.deltaTime;
+			yield return null;
+
+		}
+
+		foreach (var spriteRenderer in spriteRenderers) {
+			spriteRenderer.color = spriteRenderer.color.WithAlpha(1f);
+		}
+
+		foreach (var imageRenderer in imageRenderers) {
+			imageRenderer.color = imageRenderer.color.WithAlpha(1f);
+		}
+		
 	}
 
 	private void RotateHittedObject(GameObject receiverObject, GameObject casterObject) {
