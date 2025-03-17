@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 221441405}
   - component: {fileID: 221441404}
   - component: {fileID: 221441406}
+  - component: {fileID: 221441407}
   m_Layer: 5
   m_Name: Target
   m_TagString: Untagged
@@ -239,6 +240,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: 277
   Target: {fileID: 221441402}
+--- !u!114 &221441407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221441402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b7b2502de668c46bd07da8b8e61c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 127
+  me: {fileID: 221441402}
+  you: {fileID: 1285094066}
 --- !u!1 &512252112
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,8 +584,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -858351799
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 6691698368905853389, guid: a2a486d9d7cd6484e9590c5e582cd2cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1221,6 +1237,34 @@ PrefabInstance:
     - target: {fileID: 7497202458853943602, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
+      propertyPath: MissEase
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
+      propertyPath: BlinkSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
+      propertyPath: MissObject
+      value: 
+      objectReference: {fileID: 8833783793440209702, guid: 94c9c9bf09f0f224d85aa44f67119292, type: 3}
+    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
+      propertyPath: BlinkOpacity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
+      propertyPath: MissDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
+      propertyPath: MissMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
+      propertyPath: BlinkDuration
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
