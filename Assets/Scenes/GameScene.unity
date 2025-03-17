@@ -717,7 +717,7 @@ PrefabInstance:
     - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: BagUIPosition
       value: 
-      objectReference: {fileID: 754099438}
+      objectReference: {fileID: 1077747596}
     - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: CurrentShapeData
       value: 
@@ -768,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0.50000006
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_AnchorMax.x
@@ -836,11 +836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -459
+      value: -453.6
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -428
+      value: -413.14
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1422,6 +1422,41 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1077747595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077747596}
+  m_Layer: 0
+  m_Name: BagPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1077747596
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077747595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1888725011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -566, y: -87}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1108402589
@@ -2190,7 +2225,7 @@ PrefabInstance:
     - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: BagUIPosition
       value: 
-      objectReference: {fileID: 754099438}
+      objectReference: {fileID: 1077747596}
     - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: CurrentShapeData
       value: 
@@ -2305,7 +2340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -459
+      value: -453.6
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2521,8 +2556,10 @@ RectTransform:
   - {fileID: 1132816790}
   - {fileID: 1738287322}
   - {fileID: 1149303048}
-  - {fileID: 1722810547}
-  - {fileID: 805645669}
+  - {fileID: 819995043}
+  - {fileID: 1574589240}
+  - {fileID: 2002858123}
+  - {fileID: 1077747596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3251,7 +3288,7 @@ PrefabInstance:
     - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: BagUIPosition
       value: 
-      objectReference: {fileID: 754099438}
+      objectReference: {fileID: 1077747596}
     - target: {fileID: 3015961911848251970, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: CurrentShapeData
       value: 
@@ -3442,7 +3479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -459
+      value: -453.6
       objectReference: {fileID: 0}
     - target: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
       propertyPath: m_AnchoredPosition.y
