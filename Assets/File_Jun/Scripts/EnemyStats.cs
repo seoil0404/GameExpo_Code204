@@ -9,6 +9,8 @@ public class EnemyStats : MonoBehaviour
     public Text healthText;
     public EnemyHealthBar enemyHealthBar;
 
+
+
     [Header("Scriptable")]
     [SerializeField] private GoldData goldData;
 
@@ -23,6 +25,14 @@ public class EnemyStats : MonoBehaviour
     private int damageReceivedLastTurn = 0;
 	private AttackEffectSpawner attackEffectSpawner;
     private EnemyNextAction enemyNextAction;
+    private bool hasUsedSwallowBlock = false;
+
+    public bool HasUsedSwallowBlock => hasUsedSwallowBlock;
+
+    public void SetSwallowBlockUsed()
+    {
+        hasUsedSwallowBlock = true;
+    }
 
     private void Awake() 
 	{
@@ -39,6 +49,8 @@ public class EnemyStats : MonoBehaviour
         {
             Debug.LogError("CharacterManager를 찾을 수 없습니다!");
         }
+
+        DecideNextAction();
     }
 
     public int GetHabitatLevel(EnemyData.HabitatType habitat)
@@ -83,10 +95,23 @@ public class EnemyStats : MonoBehaviour
     public void DecideNextAction()
     {
         int totalOptions = enemyData.enemySkills.Count + 1;
+
+        if (HasUsedSwallowBlock)
+        {
+            foreach (var skill in enemyData.enemySkills)
+            {
+                if (skill.skillType == EnemySkill.SkillType.SwallowBlock)
+                {
+                    totalOptions -= 1;
+                    break;
+                }
+            }
+        }
+
         if (enemyNextAction != null)
         {
             enemyNextAction.DecideNextAction(totalOptions, atk);
-        }   
+        }
     }
 
     public int GetCurrentHp()
@@ -269,4 +294,5 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         EnemySelector.SelectRandomEnemy();
     }
+
 }

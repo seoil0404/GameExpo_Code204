@@ -18,5 +18,5 @@ public class EnemyData : ScriptableObject
     public EnemyType enemyType; 
 
 
-}
+}   
  

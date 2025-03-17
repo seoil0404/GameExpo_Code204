@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -111,6 +112,16 @@ public class ShapeStorage : MonoBehaviour
         {
             holdShape.CreateShape(shapeData, colorName, rotation);
         }
+    }
+
+    public Shape GetRandomActiveShape()
+    {
+        List<Shape> activeShapes = shapeList.Where(shape => shape.gameObject.activeSelf).ToList();
+
+        if (activeShapes.Count == 0)
+            return null;
+
+        return activeShapes[Random.Range(0, activeShapes.Count)];
     }
 
 

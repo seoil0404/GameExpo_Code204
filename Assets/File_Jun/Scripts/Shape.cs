@@ -265,6 +265,18 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
 
     }
 
+    public void DeactivateEntireShape()
+    {
+        if (_shapeActive)
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            _shapeActive = false;
+            Debug.Log($"[Shape] {gameObject.name}의 모든 블록이 비활성화되었습니다.");
+        }
+    }
 
 
     public void OnPointerDown(PointerEventData eventData)
