@@ -18,12 +18,18 @@ public class HitEffectManager : MonoBehaviour {
 	[SerializeField]
 	private VisualEffect HitEffect;
 
+	[SerializeField]
+	private GameObject PoisonObject;
+
 	[Header("Hit Color Change")]
 	[SerializeField]
 	private float HitColorDuration;
 
 	[SerializeField]
 	private Gradient HitColor;
+
+	[SerializeField]
+	private Gradient PoisonColor;
 
 	[field: Header("Hit Rotation")]
 	[field: SerializeField]
@@ -58,13 +64,23 @@ public class HitEffectManager : MonoBehaviour {
 		VisualEffect instantiated = Instantiate(HitEffect);
 		instantiated.transform.position = position;
 
-		StartCoroutine(SetSpriteColor(receiverObject));
+		StartCoroutine(SetSpriteColor(receiverObject, HitColor));
 		StartCoroutine(DestroyParticleOnDone(instantiated));
 		RotateHittedObject(receiverObject, casterObject);
 
 	}
 
-	private IEnumerator SetSpriteColor(GameObject receiverObject) {
+	public void OnPoison(GameObject receiverObject) {
+
+		VisualEffect instantiated = Instantiate(PoisonObject).GetComponentInChildren<VisualEffect>();
+		instantiated.transform.position = receiverObject.transform.position;
+
+		StartCoroutine(SetSpriteColor(receiverObject, PoisonColor));
+		StartCoroutine(DestroyParticleWithParentOnDone(instantiated, 1));
+
+	}
+
+	private IEnumerator SetSpriteColor(GameObject receiverObject, Gradient gradient) {
 
 		var spriteDatas = receiverObject
 			.GetComponents<SpriteRenderer>()
@@ -82,7 +98,7 @@ public class HitEffectManager : MonoBehaviour {
 			foreach (var (spriteRenderer, color) in spriteDatas) {
 
 				float progress = spent / HitColorDuration;
-				Color currentColor = HitColor.Evaluate(progress);
+				Color currentColor = gradient.Evaluate(progress);
 				Color blendedColor = Color.Lerp(color, currentColor, 0.5f);
 				
 				spriteRenderer.color = blendedColor;
@@ -92,7 +108,7 @@ public class HitEffectManager : MonoBehaviour {
 			foreach (var (imageRenderer, color) in imageDatas) {
 			
 				float progress = spent / HitColorDuration;
-				Color currentColor = HitColor.Evaluate(progress);
+				Color currentColor = gradient.Evaluate(progress);
 				Color blendedColor = Color.Lerp(color, currentColor, 0.5f);
 
 				imageRenderer.color = blendedColor;
@@ -105,7 +121,7 @@ public class HitEffectManager : MonoBehaviour {
 		}
 
 		foreach (var (spriteRenderer, color) in spriteDatas) {
-			spriteRenderer.color = color;
+			spriteRenderer.color = Color.white;
 		}
 
 	}
@@ -113,6 +129,19 @@ public class HitEffectManager : MonoBehaviour {
 	private IEnumerator DestroyParticleOnDone(VisualEffect effect) {
 		yield return new WaitUntil(() => effect.aliveParticleCount == 0);
 		Destroy(effect.gameObject);
+	}
+
+	private IEnumerator DestroyParticleWithParentOnDone(VisualEffect effect, int parentLevel) {
+
+		yield return new WaitUntil(() => effect.aliveParticleCount == 0);
+
+		Transform parent = effect.transform;
+		for (int i = 0; i < parentLevel; i++) {
+			parent = parent.parent;
+		}
+
+		Destroy(parent.gameObject);
+
 	}
 
 	private void RotateHittedObject(GameObject receiverObject, GameObject casterObject) {
