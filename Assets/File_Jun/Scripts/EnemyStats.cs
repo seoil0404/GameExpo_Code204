@@ -9,6 +9,8 @@ public class EnemyStats : MonoBehaviour
     public Text healthText;
     public EnemyHealthBar enemyHealthBar;
 
+
+
     [Header("Scriptable")]
     [SerializeField] private GoldData goldData;
 
@@ -23,6 +25,9 @@ public class EnemyStats : MonoBehaviour
     private int damageReceivedLastTurn = 0;
 	private AttackEffectSpawner attackEffectSpawner;
     private EnemyNextAction enemyNextAction;
+    private bool hasUsedSwallowBlock = false;
+
+    public bool HasUsedSwallowBlock => hasUsedSwallowBlock;
 
     private void Awake() 
 	{
@@ -39,6 +44,8 @@ public class EnemyStats : MonoBehaviour
         {
             Debug.LogError("CharacterManager를 찾을 수 없습니다!");
         }
+
+        DecideNextAction();
     }
 
     public int GetHabitatLevel(EnemyData.HabitatType habitat)
@@ -83,11 +90,25 @@ public class EnemyStats : MonoBehaviour
     public void DecideNextAction()
     {
         int totalOptions = enemyData.enemySkills.Count + 1;
+
+        // 만약 이 적이 SwallowBlock을 이미 사용했다면, 사용 가능한 스킬 옵션을 줄인다.
+        if (hasUsedSwallowBlock)
+        {
+            totalOptions -= 1;
+        }
+
         if (enemyNextAction != null)
         {
             enemyNextAction.DecideNextAction(totalOptions, atk);
-        }   
+        }
     }
+
+    
+    public void SetSwallowBlockUsed()
+    {
+        hasUsedSwallowBlock = true;
+    }
+
 
     public int GetCurrentHp()
     {
@@ -269,4 +290,5 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         EnemySelector.SelectRandomEnemy();
     }
+
 }
