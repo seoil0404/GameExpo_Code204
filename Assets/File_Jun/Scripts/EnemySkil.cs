@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp }
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock }
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -37,6 +37,39 @@ public class EnemySkill : ScriptableObject
                 }
                 Debug.Log($"{enemy.name}이(가) [힘 증가] 스킬을 사용하여 ATK를 강화했다.");
                 break;
+
+            case SkillType.SwallowBlock:
+                if (enemyStats != null && !enemyStats.HasUsedSwallowBlock)
+                {
+                    ShapeStorage shapeStorage = FindFirstObjectByType<ShapeStorage>();
+                    if (shapeStorage != null)
+                    {
+                        Shape targetShape = shapeStorage.GetRandomActiveShape();
+                        if (targetShape != null)
+                        {
+                            targetShape.DeactivateEntireShape();
+                            enemyStats.SetSwallowBlockUsed();
+                            Debug.Log($"{enemy.name}이(가) [블록 삼키기] 스킬을 사용하고 EnemySkill을 비웠습니다.");
+                        }
+                        else
+                        {
+                            Debug.LogWarning("[SwallowBlock] 활성화된 블록 모양이 없어 스킬을 사용할 수 없습니다.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("[SwallowBlock] ShapeStorage를 찾을 수 없습니다.");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("[SwallowBlock] 이미 사용된 스킬입니다. 다시 사용할 수 없습니다.");
+                }
+                break;
+
+
+
+
         }
     }
 }
