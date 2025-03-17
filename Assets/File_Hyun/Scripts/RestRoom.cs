@@ -12,7 +12,7 @@ public class RestRoom : MonoBehaviour
         Debug.Log($"최대체력의 {HealAmount}만큼 회복");
 
         Scene.Controller.OnClearScene();
-        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = null;
+        //characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = null;
         Debug.Log("휴식방 종료");
     }
 }
