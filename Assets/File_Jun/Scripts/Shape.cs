@@ -112,7 +112,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     {
         _transform.localPosition = _startPosition;
         CreateShape(shapeData);
-		StartCoroutine(PlayMinoDrawAnimation());
     }
 
 

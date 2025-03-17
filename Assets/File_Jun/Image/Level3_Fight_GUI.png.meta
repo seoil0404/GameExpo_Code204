@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Level3_Fight_GUI_0: -3974661460272350772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
