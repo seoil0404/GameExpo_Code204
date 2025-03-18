@@ -138,6 +138,15 @@ public class Grid : MonoBehaviour
             Debug.Log("모든 블록이 배치 완료! 새로운 블록을 생성합니다.");
             GameEvents.RequestNewShapes();
 
+            foreach (var enemy in enemies)
+            {
+                var enemyStats = enemy.GetComponent<EnemyStats>();
+                if (enemyStats != null)
+                {
+                    enemyStats.DeactivateDamageMultiplier();
+                }
+            }
+
             enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
             foreach (var enemy in enemies)
             {
@@ -160,6 +169,7 @@ public class Grid : MonoBehaviour
         }
         CheckIfGameEnded();
     }
+
 
 
     public void CheckIfAnyLineIsCompleted()

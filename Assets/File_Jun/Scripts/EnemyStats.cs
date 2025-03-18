@@ -30,6 +30,17 @@ public class EnemyStats : MonoBehaviour
     private int poisonDamage = 0;
     private int poisonDuration = 0;
 
+    private bool isDamageMultiplierActive = false;
+
+    public void ActivateDamageMultiplier()
+    {
+        isDamageMultiplierActive = true;
+    }
+
+    public void DeactivateDamageMultiplier()
+    {
+        isDamageMultiplierActive = false;
+    }
     public bool HasUsedSwallowBlock => hasUsedSwallowBlock;
 
     private void Awake() 
@@ -156,26 +167,33 @@ public class EnemyStats : MonoBehaviour
 
     }
 
-	private void AttackPlayerInner() {
-
+    private void AttackPlayerInner()
+    {
         int damage = atk;
 
- 		if (attackEffectSpawner != null)
-		{
-			GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
-			attackEffectSpawner.TargetTransform = target.transform;
-			attackEffectSpawner.Spawn(() =>
-			{
-				Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-				characterManager.ApplyDamageToCharacter(damage);
-			});
-		}
-		else
-		{
-  			Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-			characterManager.ApplyDamageToCharacter(damage);
-		}
-	}
+        if (isDamageMultiplierActive)
+        {
+            damage = Mathf.RoundToInt(damage * 1.2f);
+            Debug.Log($"[{gameObject.name}]이(가) 1.2배 피해를 가합니다! 최종 데미지: {damage}");
+        }
+
+        if (attackEffectSpawner != null)
+        {
+            GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
+            attackEffectSpawner.TargetTransform = target.transform;
+            attackEffectSpawner.Spawn(() =>
+            {
+                Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+                characterManager.ApplyDamageToCharacter(damage);
+            });
+        }
+        else
+        {
+            Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+            characterManager.ApplyDamageToCharacter(damage);
+        }
+    }
+
 
 
     public void ReceiveDamage(int completedLines, int gridColumns)

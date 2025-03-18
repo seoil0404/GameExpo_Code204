@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll }
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1 }
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -85,6 +85,13 @@ public class EnemySkill : ScriptableObject
                 }
                 break;
 
+            case SkillType.Minokwizard1:
+                if (enemyStats != null)
+                {
+                    enemyStats.ActivateDamageMultiplier();
+                    Debug.Log($"{enemy.name}이(가) [미노크 위저드] 스킬을 사용하여 한 턴 동안 1.2배 피해 증가!");
+                }
+                break;
         }
     }
 }
