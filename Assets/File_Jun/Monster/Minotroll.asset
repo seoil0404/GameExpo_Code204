@@ -15,8 +15,9 @@ MonoBehaviour:
   enemyName: Minotoll
   baseHP: 20
   baseATK: 2
-  enemySprite: {fileID: 0}
+  enemySprite: {fileID: -6815437586108985893, guid: 7fb9b9baed069f3458aa35ab892b289f, type: 3}
   dodgeChance: 0
-  enemySkills: []
+  enemySkills:
+  - {fileID: 11400000, guid: a8ae623556570ee4095f77542dcb0e81, type: 2}
   habitat: 1
   enemyType: 0

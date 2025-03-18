@@ -335,4 +335,11 @@ public class EnemyStats : MonoBehaviour
         return atk;
     }
 
+    public void IncreaseATKByOne()
+    {
+        atk += 1;
+        Debug.Log($"[{gameObject.name}]의 ATK가 1 증가! 현재 ATK: {atk}");
+    }
+
+
 }
