@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 985ed342a2ad4b04381d312ae6c3cd12, type: 3}
-  m_Name: slime
+  m_Name: Minotroll
   m_EditorClassIdentifier: 
-  enemyName: slime
-  baseHP: 14
-  baseATK: 1
-  enemySprite: {fileID: 368543389579951487, guid: bb8e80cee9db99641b0557e725084c1e, type: 3}
+  enemyName: Minotoll
+  baseHP: 20
+  baseATK: 2
+  enemySprite: {fileID: 0}
   dodgeChance: 0
-  enemySkills:
-  - {fileID: 11400000, guid: 5b0cd8d7ca19604439aa00cee39ef053, type: 2}
-  habitat: 0
+  enemySkills: []
+  habitat: 1
   enemyType: 0
