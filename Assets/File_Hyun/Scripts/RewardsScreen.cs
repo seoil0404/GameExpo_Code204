@@ -1,16 +1,25 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RewardsScreen : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GoldData goldData;
+    public Text GoldEarned;
+
+    private int firstGold;
+
+    private void Start()
     {
-        
+        firstGold = goldData.InGameGold;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
-        
+        GoldEarned.text = "+" + (goldData.InGameGold - firstGold) + "G";
+    }
+
+    public void CloseRewardsScreen()
+    {
+        Scene.Controller.OnClearScene();
     }
 }
