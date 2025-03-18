@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock }
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison }
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -68,7 +68,14 @@ public class EnemySkill : ScriptableObject
                 break;
 
 
-
+            case SkillType.Poison:
+                if (enemyStats != null)
+                {
+                    int poisonDamage = enemyStats.GetAttack();
+                    enemyStats.ApplyPoison(poisonDamage);
+                    Debug.Log($"{enemy.name}이(가) [독 공격]을 사용! 피해: {poisonDamage / 2}, 지속시간: {poisonDamage / 2}");
+                }
+                break;
 
         }
     }

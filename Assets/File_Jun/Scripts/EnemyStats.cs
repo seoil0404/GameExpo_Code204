@@ -27,6 +27,9 @@ public class EnemyStats : MonoBehaviour
     private EnemyNextAction enemyNextAction;
     private bool hasUsedSwallowBlock = false;
 
+    private int poisonDamage = 0;
+    private int poisonDuration = 0;
+
     public bool HasUsedSwallowBlock => hasUsedSwallowBlock;
 
     private void Awake() 
@@ -59,7 +62,7 @@ public class EnemyStats : MonoBehaviour
             case EnemyData.HabitatType.DevilCastle:
                 return 3;
             default:
-                return 1; // 기본값
+                return 1;
         }
     }
 
@@ -72,11 +75,9 @@ public class EnemyStats : MonoBehaviour
     {
         int habitatLevel = GetHabitatLevel(habitat);
 
-        // HP 계산: (기본 HP) + (난이도 * 레벨)
         maxHp = enemyData.baseHP + (difficulty * habitatLevel);
         hp = maxHp;
 
-        // ATK 계산: 기본 ATK + (난이도 / (레벨 % 4))
         atk = enemyData.baseATK + (difficulty / Mathf.Max(4 - habitatLevel, 1));
 
         dodgeChance = enemyData.dodgeChance;
@@ -91,7 +92,7 @@ public class EnemyStats : MonoBehaviour
     {
         int totalOptions = enemyData.enemySkills.Count + 1;
 
-        // 만약 이 적이 SwallowBlock을 이미 사용했다면, 사용 가능한 스킬 옵션을 줄인다.
+
         if (hasUsedSwallowBlock)
         {
             totalOptions -= 1;
@@ -289,6 +290,49 @@ public class EnemyStats : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         EnemySelector.SelectRandomEnemy();
+    }
+
+
+
+    public void ApplyPoison(int damage)
+    {
+        int newPoison = damage / 2;
+
+        if (newPoison <= 0)
+            return;
+
+        poisonDamage += newPoison;
+        poisonDuration += newPoison;
+
+        Debug.Log($"[{gameObject.name}]이(가) 플레이어에게 독을 적용! 총 피해량: {poisonDamage}, 지속 시간: {poisonDuration}");
+    }
+
+    public void ApplyPoisonDamageToPlayer()
+    {
+        if (poisonDuration > 0)
+        {
+            characterManager.ApplyDamageToCharacter(poisonDamage);
+            Debug.Log($"[플레이어]이(가) {poisonDamage}의 독 피해를 입음. 남은 턴: {poisonDuration - 1}");
+            HitEffectManager.Instance.OnPoison(CharacterManager.currentCharacterInstance);
+
+            poisonDamage--;
+            poisonDuration--;
+
+            if (poisonDuration <= 0)
+            {
+                Debug.Log("[플레이어]의 독 효과가 종료되었습니다.");
+            }
+        }
+    }
+
+    public int GetPoisonDuration()
+    {
+        return poisonDuration;
+    }
+    
+    public int GetAttack()
+    {
+        return atk;
     }
 
 }

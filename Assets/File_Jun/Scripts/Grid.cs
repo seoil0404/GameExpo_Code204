@@ -116,6 +116,7 @@ public class Grid : MonoBehaviour
         var currentSelectedShape = shapeStorage.GetCurrentSelectedShape();
         if (currentSelectedShape == null)
             return;
+
         if (currentSelectedShape.TotalSquareNumber == squareIndexes.Count)
         {
             string shapeColorName = currentSelectedShape.CurrentShapeColorName;
@@ -128,37 +129,38 @@ public class Grid : MonoBehaviour
         {
             GameEvents.MoveShapeToStartPosition();
         }
+
         var shapeLeft = shapeStorage.shapeList.Count(shape => shape.IsAnyOfShapeSquareActive());
         Debug.Log($"남은 블록 개수: {shapeLeft}");
+
         if (shapeLeft == 0)
         {
             Debug.Log("모든 블록이 배치 완료! 새로운 블록을 생성합니다.");
             GameEvents.RequestNewShapes();
+
             enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
-            if (enemies.Count > 0)
+            foreach (var enemy in enemies)
             {
-                Debug.Log($"[CheckIfShapeCanBePlaced] 블록이 모두 배치 완료됨. 현재 적의 개수: {enemies.Count}");
-                foreach (var enemy in enemies)
+                var enemyStats = enemy.GetComponent<EnemyStats>();
+                if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
                 {
-                    var enemyStats = enemy.GetComponent<EnemyStats>();
-                    if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+                    if (enemyStats.GetPoisonDuration() > 0)
                     {
-                        enemyStats.PerformTurnAction(this);
-                        Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
+                        enemyStats.ApplyPoisonDamageToPlayer();
                     }
-                    else
-                    {
-                        Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
-                    }
+
+                    enemyStats.PerformTurnAction(this);
+                    Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
                 }
-            }
-            else
-            {
-                Debug.LogWarning("[CheckIfShapeCanBePlaced] 공격할 적이 없습니다.");
+                else
+                {
+                    Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
+                }
             }
         }
         CheckIfGameEnded();
     }
+
 
     public void CheckIfAnyLineIsCompleted()
     {
