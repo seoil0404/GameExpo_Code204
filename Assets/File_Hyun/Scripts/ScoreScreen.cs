@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class ScoreScreen : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (gameObject.activeSelf && Input.GetMouseButtonDown(0))
+        {
+            GameStartTracker.IsHavetobeReset = true;
+            Scene.Controller.LoadScene(Scene.MainScene);
+        }
     }
 }
