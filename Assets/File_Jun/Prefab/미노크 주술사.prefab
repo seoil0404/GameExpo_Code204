@@ -275,7 +275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.8, y: -7.100006}
+  m_AnchoredPosition: {x: -75.1, y: 104.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6298133463502235932
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TargetTransform>k__BackingField: {fileID: 0}
-  <EffectPrefab>k__BackingField: {fileID: 3306394572961429089, guid: 99e09a8468220ad4b9f6aad839bb55da, type: 3}
+  <EffectPrefab>k__BackingField: {fileID: -1287189240809339827, guid: d116bc1717633654aaa4295660c925cf, type: 3}
 --- !u!1 &4284792376515115659
 GameObject:
   m_ObjectHideFlags: 0

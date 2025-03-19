@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8120918297380311595}
-  - component: {fileID: 2940841266945058979}
+  - component: {fileID: 3956165039859230891}
   m_Layer: 0
   m_Name: AttackSpawner
   m_TagString: Untagged
@@ -281,7 +281,7 @@ RectTransform:
   m_AnchoredPosition: {x: -100.8, y: -7.100006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2940841266945058979
+--- !u!114 &3956165039859230891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,11 +290,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6762465069550648666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba54fe8ea52d1814bbe620c1d04263ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad57d622278f8e4d903630110629e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <TargetTransform>k__BackingField: {fileID: 0}
-  <EffectPrefab>k__BackingField: {fileID: 3306394572961429089, guid: 99e09a8468220ad4b9f6aad839bb55da, type: 3}
+  <EffectPrefab>k__BackingField: {fileID: 0}
+  <ApproachEase>k__BackingField: 9
+  <ApproachDuraion>k__BackingField: 0.2
+  <GapBetweenTarget>k__BackingField: 0.2
+  <RetreatWaitingDuration>k__BackingField: 0
+  <RetreatEase>k__BackingField: 9
+  <RetreatDuraion>k__BackingField: 0.2
+  <AttackWaitingDuration>k__BackingField: 0.1
+  <AttackingDuration>k__BackingField: 0.2
+  <AttackingAngle>k__BackingField: 15
+  <AttackEffect>k__BackingField: {fileID: 7902741046813970667, guid: acdccde8cd484c041ba22c555f215dc3, type: 3}
 --- !u!1 &7555376316033681821
 GameObject:
   m_ObjectHideFlags: 0
