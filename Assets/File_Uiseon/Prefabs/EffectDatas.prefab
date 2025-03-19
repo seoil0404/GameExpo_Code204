@@ -111,3 +111,10 @@ MonoBehaviour:
   <HitRotationDuration>k__BackingField: 0.08
   <AttackRotationAngle>k__BackingField: 15
   <AttackRotationDuration>k__BackingField: 0.2
+  MissObject: {fileID: 8833783793440209702, guid: 94c9c9bf09f0f224d85aa44f67119292, type: 3}
+  MissMovement: 1
+  MissDuration: 2
+  MissEase: 15
+  BlinkOpacity: 0.5
+  BlinkDuration: 1.5
+  BlinkSpeed: 15

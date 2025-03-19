@@ -187,6 +187,7 @@ public class EnemyStats : MonoBehaviour
 
         if (dodgeRoll < currentDodgeChance)
         {
+			HitEffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }

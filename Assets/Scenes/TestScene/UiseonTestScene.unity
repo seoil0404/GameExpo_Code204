@@ -1238,34 +1238,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
-      propertyPath: MissEase
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
-      propertyPath: BlinkSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
-      propertyPath: MissObject
-      value: 
-      objectReference: {fileID: 8833783793440209702, guid: 94c9c9bf09f0f224d85aa44f67119292, type: 3}
-    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
-      propertyPath: BlinkOpacity
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
-      propertyPath: MissDuration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
-      propertyPath: MissMovement
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7826458802615642501, guid: 05406370e2916514d9af9dbc5293f8fb, type: 3}
-      propertyPath: BlinkDuration
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -18,5 +18,5 @@ MonoBehaviour:
   enemySprite: {fileID: 657193517335828509, guid: 61415338015c2ba4da322a643744b510, type: 3}
   dodgeChance: 0
   enemySkills: []
-  habitat: 1
+  habitat: 0
   enemyType: 0
