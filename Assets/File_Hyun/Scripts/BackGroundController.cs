@@ -10,6 +10,8 @@ public class BackGroundController : MonoBehaviour
 
     private void Start()
     {
+        transform.SetAsFirstSibling();
+
         level_1.SetActive(false);
         level_2.SetActive(false);
         level_3.SetActive(false);

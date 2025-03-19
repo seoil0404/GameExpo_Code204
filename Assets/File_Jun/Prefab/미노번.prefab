@@ -613,6 +613,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2392228768597032045}
     m_Modifications:
+    - target: {fileID: 1106989570912624711, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 55.914
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106989570912624711, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 49.6553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106989570912624711, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 17.029
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106989570912624711, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 178.39
+      objectReference: {fileID: 0}
     - target: {fileID: 3005362758299353928, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -705,6 +721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explaner
       objectReference: {fileID: 0}
+    - target: {fileID: 8670430734104832551, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3262310651707003250, guid: 317b603413bc1c444be7ffe6d3f2bd8f, type: 3}
     - target: {fileID: 9040868413099657524, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -19,5 +19,5 @@ MonoBehaviour:
   dodgeChance: 0
   enemySkills:
   - {fileID: 11400000, guid: 095198b1b1bddb3468f7138af81bd70e, type: 2}
-  habitat: 1
+  habitat: 0
   enemyType: 0
