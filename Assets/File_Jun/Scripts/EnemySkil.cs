@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1 }
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2}
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -90,6 +90,19 @@ public class EnemySkill : ScriptableObject
                 {
                     enemyStats.ActivateDamageMultiplier();
                     Debug.Log($"{enemy.name}이(가) [미노크 위저드] 스킬을 사용하여 한 턴 동안 1.2배 피해 증가!");
+                }
+                break;
+
+            case SkillType.Minokwizard2:
+                HoldShape holdShape = FindFirstObjectByType<HoldShape>();
+                if (holdShape != null)
+                {
+                    holdShape.ToggleShapeLock();
+                    Debug.Log($"{enemy.name}이(가) [Minokwizard2] 스킬을 사용하여 블록을 봉인하려고 시도했습니다.");
+                }
+                else
+                {
+                    Debug.LogWarning("[Minokwizard2] HoldShape을 찾을 수 없습니다!");
                 }
                 break;
         }
