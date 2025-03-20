@@ -8,9 +8,15 @@ public class RewardsScreen : MonoBehaviour
 
     private int firstGold;
 
-    private void Start()
+    private bool isFirstInit = true;
+
+    private void OnDisable()
     {
-        firstGold = goldData.InGameGold;
+        if (isFirstInit)
+        {
+            firstGold = goldData.InGameGold;
+            isFirstInit = false;
+        }
     }
 
     void OnEnable()
