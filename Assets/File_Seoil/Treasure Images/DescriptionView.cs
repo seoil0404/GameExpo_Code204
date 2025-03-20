@@ -15,7 +15,7 @@ public class DescriptionView : MonoBehaviour
         if (transform.position.x > Screen.width / 2)
             FlipDescription();
 
-        Debug.Log(RectTransformUtility.WorldToScreenPoint(null, transform.position).x + " " + GetComponentInParent<CanvasScaler>().referenceResolution.x / 2);
+        Debug.Log(transform.position.x + " " + Screen.width/2);
     }
 
     private void FlipDescription()
