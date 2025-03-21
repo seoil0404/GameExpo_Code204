@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,11 +8,11 @@ using UnityEngine.UI;
 using UnityEngine.VFX;
 using static UnityEditor.Experimental.GraphView.Port;
 
-public class HitEffectManager : MonoBehaviour {
+public class EffectManager : MonoBehaviour {
 
 	//======================================================================| Singleton
 
-	public static HitEffectManager Instance = null;
+	public static EffectManager Instance = null;
 
 	//======================================================================| Fields
 
@@ -69,6 +70,11 @@ public class HitEffectManager : MonoBehaviour {
 	[SerializeField]
 	private float BlinkSpeed;
 
+	[Header("Shield")]
+	[SerializeField]
+	private GameObject ShieldObject;
+	private readonly Dictionary<GameObject, ShieldEffect> shieldEffects = new();
+
 	//======================================================================| Unity Behaviours
 
 	private void Awake() {
@@ -122,6 +128,46 @@ public class HitEffectManager : MonoBehaviour {
 
 		StartCoroutine(BlinkMissObject(receiverObject));
 		RotateHittedObject(receiverObject, casterObject);
+
+	}
+
+	public void SpawnShield(GameObject target) {
+
+		if (shieldEffects.TryGetValue(target, out var instantiatedShield)) {
+			if (instantiatedShield == null) {
+				shieldEffects.Remove(target);
+			}
+			else if (!instantiatedShield.isActiveAndEnabled) {
+				Destroy(instantiatedShield.transform.parent.gameObject);
+				shieldEffects.Remove(target);
+			}
+			else {
+				return;
+			}
+		}
+
+		GameObject instantiated = Instantiate(ShieldObject);
+		instantiated.transform.position = target.transform.position;
+		instantiated.transform.parent = target.transform;
+
+		ShieldEffect shieldEffect = instantiated.GetComponentInChildren<ShieldEffect>();
+		shieldEffects[target] = shieldEffect;
+
+
+	}
+
+	public void RemoveShield(GameObject target) {
+
+		if (shieldEffects.TryGetValue(target, out var instantiated)) {
+			if (instantiated != null && !instantiated.isActiveAndEnabled) {
+				Destroy(instantiated.transform.parent.gameObject);
+			}
+			else {
+				instantiated.Stop();
+			}
+			shieldEffects.Remove(target);
+
+		}
 
 	}
 

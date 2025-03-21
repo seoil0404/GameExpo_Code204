@@ -118,3 +118,4 @@ MonoBehaviour:
   BlinkOpacity: 0.5
   BlinkDuration: 1.5
   BlinkSpeed: 15
+  ShieldObject: {fileID: 2685650044910763336, guid: bdbe69ac5fb779b48ba051f5914ff072, type: 3}

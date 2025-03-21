@@ -16,8 +16,8 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Vector3 _startPosition;
     private RectTransform _transform;
     private Canvas _canvas;
-    private bool _shapeActive = true;
-    private Vector2 offset;
+	private bool _shapeActive = true;
+	private Vector2 offset;
     private bool isShapeLocked = false; // 블록 이동 제한 여부
 
     public string HeldShapeColorName => _heldShapeColorName;

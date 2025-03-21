@@ -206,7 +206,7 @@ public class EnemyStats : MonoBehaviour
 
         if (dodgeRoll < currentDodgeChance)
         {
-			HitEffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
+			EffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }
@@ -332,7 +332,7 @@ public class EnemyStats : MonoBehaviour
         {
             characterManager.ApplyDamageToCharacter(poisonDamage);
             Debug.Log($"[플레이어]이(가) {poisonDamage}의 독 피해를 입음. 남은 턴: {poisonDuration - 1}");
-            HitEffectManager.Instance.OnPoison(CharacterManager.currentCharacterInstance);
+            EffectManager.Instance.OnPoison(CharacterManager.currentCharacterInstance);
 
             poisonDamage--;
             poisonDuration--;

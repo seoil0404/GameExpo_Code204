@@ -7,7 +7,7 @@ public class PoisonTest : MonoBehaviour {
 
 	private void Update() {
 		if (Input.GetKeyDown(Key)) {
-			HitEffectManager.Instance.OnPoison(Target);	
+			EffectManager.Instance.OnPoison(Target);	
 		}
 	}
 

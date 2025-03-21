@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 221441404}
   - component: {fileID: 221441406}
   - component: {fileID: 221441407}
+  - component: {fileID: 221441408}
   m_Layer: 5
   m_Name: Target
   m_TagString: Untagged
@@ -255,6 +256,20 @@ MonoBehaviour:
   key: 127
   me: {fileID: 221441402}
   you: {fileID: 1285094066}
+--- !u!114 &221441408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221441402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd8edff28eab694c86352865f9e1cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 122
+  Inactive: 97
 --- !u!1 &512252112
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +531,7 @@ GameObject:
   - component: {fileID: 1285094067}
   - component: {fileID: 1285094069}
   - component: {fileID: 1285094068}
+  - component: {fileID: 1285094070}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -611,6 +627,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.2
+--- !u!114 &1285094070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285094066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd8edff28eab694c86352865f9e1cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 120
+  Inactive: 115
 --- !u!1 &1608222310
 GameObject:
   m_ObjectHideFlags: 0
