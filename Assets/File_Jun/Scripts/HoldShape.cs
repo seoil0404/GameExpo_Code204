@@ -18,6 +18,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Canvas _canvas;
     private bool _shapeActive = true;
     private Vector2 offset;
+    private bool isShapeLocked = false; // 블록 이동 제한 여부
 
     public string HeldShapeColorName => _heldShapeColorName;
 
@@ -27,6 +28,31 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         _canvas = GetComponentInParent<Canvas>();
         _startPosition = _transform.localPosition;
     }
+
+    public void ApplyMinokwizard2Effect()
+    {
+        if (assignedObject != null && !assignedObject.activeSelf)
+        {
+            isShapeLocked = true;
+            Debug.Log("[HoldShape] 블록이 봉인되었습니다!");
+        }
+        else if (assignedObject != null && assignedObject.activeSelf)
+        {
+            assignedObject.SetActive(false);
+            Debug.Log("[HoldShape] assignedObject가 비활성화되었습니다.");
+        }
+    }
+
+    public void RestoreAssignedObject()
+    {
+        if (assignedObject != null && !assignedObject.activeSelf)
+        {
+            assignedObject.SetActive(true);
+            Debug.Log("[HoldShape] assignedObject가 다시 활성화되었습니다.");
+        }
+        isShapeLocked = false;
+    }
+
 
     public void CreateShape(ShapeData shapeData, string colorName, Quaternion rotation)
     {
@@ -94,6 +120,12 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (isShapeLocked)
+        {
+            Debug.Log("[HoldShape] 블록이 봉인되어 움직일 수 없습니다!");
+            return;
+        }
+
         GetComponent<RectTransform>().localScale = Vector3.one;
 
         Vector2 localMousePosition;
@@ -107,8 +139,11 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
+
     public void OnDrag(PointerEventData eventData)
     {
+        if (isShapeLocked) return;
+
         Vector2 localMousePosition;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 _canvas.transform as RectTransform,
@@ -120,8 +155,11 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
+
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (isShapeLocked) return;
+
         GetComponent<RectTransform>().localScale = Vector3.one;
         CheckIfCanBePlaced();
     }
@@ -214,6 +252,31 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         return number;
     }
+
+    public void UnlockShape()
+    {
+        isShapeLocked = false;
+        if (assignedObject != null)
+        {
+            assignedObject.SetActive(true);
+        }
+        Debug.Log("[HoldShape] 블록 봉인이 해제되었습니다.");
+    }
+
+    public void ToggleShapeLock()
+    {
+        if (assignedObject != null && !assignedObject.activeSelf)
+        {
+            isShapeLocked = true;
+            Debug.Log("[HoldShape] 블록이 봉인되었습니다.");
+        }
+        else
+        {
+            assignedObject.SetActive(false);
+            Debug.Log("[HoldShape] 블록을 비활성화합니다.");
+        }
+    }
+
 
     private float GetXPositionForShapeSquare(ShapeData shapeData, int column, Vector2 moveDistance)
     {

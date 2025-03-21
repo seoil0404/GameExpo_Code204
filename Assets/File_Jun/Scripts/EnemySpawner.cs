@@ -133,7 +133,6 @@ public class EnemySpawner : MonoBehaviour
             bool matches = stats.enemyData.habitat == selectedHabitat &&
                            stats.enemyData.enemyType == selectedEnemyType;
 
-
             return matches;
         });
 
@@ -154,7 +153,19 @@ public class EnemySpawner : MonoBehaviour
             }
 
             GameObject selectedEnemy = filteredEnemies[Random.Range(0, filteredEnemies.Count)];
-            Transform spawnPoint = GetRandomSpawnPoint();
+
+        
+            Transform spawnPoint;
+            if (selectedEnemyType == EnemyData.EnemyType.Boss && spawnPoints.Count > 1)
+            {
+                spawnPoint = spawnPoints[1];
+                Debug.Log("[EnemySpawner] BOSS 스테이지 감지됨! 두 번째 스폰 포인트에서 스폰");
+            }
+            else
+            {
+                spawnPoint = GetRandomSpawnPoint();
+            }
+
             GameObject enemyInstance = Instantiate(selectedEnemy, spawnPoint.position, Quaternion.identity, canvasTransform);
 
             Debug.Log($"[EnemySpawner] 적 생성됨: {enemyInstance.name} 위치: {spawnPoint.position}");
@@ -172,6 +183,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (enemies.Count > 0) StartCoroutine(DelayedSelectRandomEnemy());
     }
+
 
     private void ResetSpawnPoints()
     {

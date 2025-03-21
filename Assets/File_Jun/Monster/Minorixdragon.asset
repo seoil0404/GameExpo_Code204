@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 985ed342a2ad4b04381d312ae6c3cd12, type: 3}
-  m_Name: Miinokwizard
+  m_Name: Minorixdragon
   m_EditorClassIdentifier: 
-  enemyName: "\uBBF8\uB178\uD06C \uC8FC\uC220\uC0AC"
-  baseHP: 15
-  baseATK: 4
-  enemySprite: {fileID: 2596552556267567030, guid: 93857602474ea164785a18c3f85e5120, type: 3}
+  enemyName: Minorixdragon
+  baseHP: 150
+  baseATK: 5
+  enemySprite: {fileID: -5412910156287300836, guid: 7ddb04fe3424a5f4ca40831fc04aa883, type: 3}
   dodgeChance: 0
-  enemySkills:
-  - {fileID: 11400000, guid: bb76dea25c6425349b4afc7a2fca8cb4, type: 2}
-  - {fileID: 11400000, guid: 81c36d23d373ffe4684b909548039379, type: 2}
+  enemySkills: []
   habitat: 1
   enemyType: 0
