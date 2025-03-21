@@ -75,6 +75,24 @@ public class EffectManager : MonoBehaviour {
 	private GameObject ShieldObject;
 	private readonly Dictionary<GameObject, ShieldEffect> shieldEffects = new();
 
+	[Header("Buff")]
+	[SerializeField]
+	private VisualEffect ArrowDownEffect;
+
+	[SerializeField]
+	private VisualEffect ArrowUpEffect;
+
+	[SerializeField]
+	private float ArrowDuration;
+
+	//======================================================================| Colors
+
+	public static readonly Color ColorOfThron = new(15, 145, 17);
+	public static readonly Color ColorOfPower = new(191, 10, 14);
+	public static readonly Color ColorOfHealDecreasment = new(191, 10, 14);
+	public static readonly Color ColorOfWeakness = new(56, 0, 191);
+	public static readonly Color ColorOfSilence = new(255, 255, 255);
+
 	//======================================================================| Unity Behaviours
 
 	private void Awake() {
@@ -169,6 +187,34 @@ public class EffectManager : MonoBehaviour {
 
 		}
 
+	}
+
+	public void OnBuff(GameObject target, Color color) {
+		
+		VisualEffect instantiated = Instantiate(ArrowUpEffect);
+		instantiated.transform.position = target.transform.position;
+
+		instantiated.SetVector4("Color", color);
+		StartCoroutine(RemoveWhen(instantiated, ArrowDuration));
+
+	}
+
+	public void OnDebuff(GameObject target, Color color) {
+		
+		VisualEffect instantiated = Instantiate(ArrowDownEffect);
+		instantiated.transform.position = target.transform.position;
+
+		instantiated.SetVector4("Color", new(color.r, color.g, color.b, 0f));
+		StartCoroutine(RemoveWhen(instantiated, ArrowDuration));
+
+	}
+
+	private IEnumerator RemoveWhen(VisualEffect visualEffect, float time) {
+		yield return new WaitForSeconds(time);
+		visualEffect.Stop();
+
+		yield return new WaitForSeconds(1f);
+		Destroy(visualEffect.gameObject);
 	}
 
 	private IEnumerator SetSpriteColor(GameObject receiverObject, Gradient gradient) {
