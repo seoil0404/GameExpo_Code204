@@ -33,8 +33,7 @@ public class CombatData : ScriptableObject
 
         treasureData.Add(type);
 
-        if (!Application.isPlaying) return;
-        else Scene.treasureShowManager.UpdateTreasureImages();
+        if (Scene.treasureShowManager != null) Scene.treasureShowManager.UpdateTreasureImages();
     }
 
     public void AddAllTreasureData()

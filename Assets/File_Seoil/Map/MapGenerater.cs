@@ -44,7 +44,7 @@ public class MapGenerater : MonoBehaviour
 
     private List<List<Stage>> mapInfo;
     private StageCountInfo stageCountInfo;
-    public readonly int floorNumber = 5;
+    public readonly int floorNumber = 15;
 
     public List<List<Stage>> MapInfo => mapInfo;
     public Sprite ClearSprite => clearSprite;

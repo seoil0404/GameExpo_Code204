@@ -36,10 +36,18 @@ public class TreasureView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         currentDescription.Description.text = descriptionText;
 
         currentDescription.gameObject.GetComponent<RectTransform>().anchoredPosition = defaultPosition;
+
+        Scene.Controller.OnLoadScene += Destroy;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(currentDescription != null) Destroy(currentDescription.gameObject);
+        Scene.Controller.OnLoadScene -= Destroy;
+        Destroy();
+    }
+
+    public void Destroy()
+    {
+        if (currentDescription != null) Destroy(currentDescription.gameObject);
     }
 }
