@@ -11,16 +11,9 @@ public class Stage
     private GameObject allocatedStageObject;
     private RectTransform stageObjectRectTransform;
 
-    public LevelType levelType;
     public StageType stageType;
 
     public Sprite AllocatedSprite;
-
-    [Serializable]
-    public enum LevelType
-    {
-        Forest, Castle, DevilCastle
-    }
 
     [Serializable]
     public enum StageType

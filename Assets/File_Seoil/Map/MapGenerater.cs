@@ -46,30 +46,15 @@ public class MapGenerater : MonoBehaviour
     private StageCountInfo stageCountInfo;
     public readonly int floorNumber = 15;
 
-    private Stage.LevelType levelType;
-
     public List<List<Stage>> MapInfo => mapInfo;
     public Sprite ClearSprite => clearSprite;
     public Sprite FightingSprite => fightingSprite;
 
     public void GenerateNextLevelMap()
     {
-        switch(levelType)
-        {
-            case Stage.LevelType.Forest:
-                levelType = Stage.LevelType.Castle;
-                break;
-            case Stage.LevelType.Castle:
-                levelType = Stage.LevelType.DevilCastle;
-                break;
-            case Stage.LevelType.DevilCastle:
-                mapManager.ClearGame();
-                return;
-        }
-
         Scene.mapManager = null;
 
-        Instantiate(prefabData.MapPrefab);
+        Scene.Controller.LoadScene(Scene.MapScene);
         Destroy(highMap);
     }
     
@@ -132,8 +117,6 @@ public class MapGenerater : MonoBehaviour
                 stage.AllocatedStageObject = Instantiate(stagePrefab, mapScrollView.transform);
                 
                 stage.AllocatedStageObject.GetComponent<StageMonoBehavior>().mapManager = mapManager;
-
-                stage.levelType = levelType;
 
                 SetStageType(stage, GetRandomStageType());
             }

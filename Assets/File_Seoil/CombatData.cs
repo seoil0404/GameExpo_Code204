@@ -16,7 +16,6 @@ public class CombatData : ScriptableObject
         HabitatType = EnemyData.HabitatType.Forest;
         EnemyType = EnemyData.EnemyType.Common;
 
-        Debug.Log("Clear");
         treasureData = new List<TreasureType>();
     }
 
@@ -34,13 +33,15 @@ public class CombatData : ScriptableObject
 
         treasureData.Add(type);
 
-        Scene.treasureShowManager.UpdateTreasureImages();
+        if (Scene.treasureShowManager != null) Scene.treasureShowManager.UpdateTreasureImages();
     }
 
     public void AddAllTreasureData()
     {
-        foreach(TreasureType type in Enum.GetValues(typeof(TreasureType))) 
+        foreach(TreasureType type in Enum.GetValues(typeof(TreasureType)))
+        {
             AddTreasureData(type);
+        }
     }
 
     public TreasureType[] TreasureData

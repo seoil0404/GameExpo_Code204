@@ -118,3 +118,7 @@ MonoBehaviour:
   BlinkOpacity: 0.5
   BlinkDuration: 1.5
   BlinkSpeed: 15
+  ShieldObject: {fileID: 2685650044910763336, guid: bdbe69ac5fb779b48ba051f5914ff072, type: 3}
+  ArrowDownEffect: {fileID: 4926683832323823914, guid: 6738513e0232eea4390cae9627993ed5, type: 3}
+  ArrowUpEffect: {fileID: 4926683832323823914, guid: c2b3437db266d5f4baf28d3dd8007e55, type: 3}
+  ArrowDuration: 1

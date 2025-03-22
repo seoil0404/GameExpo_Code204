@@ -7,6 +7,8 @@ public class Initializer : MonoBehaviour
 
     public void Initialize()
     {
+        Debug.Log("[Initiazer] Initialize");
+
         goldData.InGameGold = 0;
         combatData.Initialize();
     }

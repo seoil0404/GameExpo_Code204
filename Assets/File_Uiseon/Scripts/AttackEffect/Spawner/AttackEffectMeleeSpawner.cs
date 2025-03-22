@@ -98,7 +98,7 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 		}
 
-		HitEffectManager.Instance.OnHit(
+		EffectManager.Instance.OnHit(
 			TargetTransform.gameObject,
 			TargetTransform.position,
 			transform.parent.gameObject

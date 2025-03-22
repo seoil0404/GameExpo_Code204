@@ -13,6 +13,7 @@ public class CharacterManager : MonoBehaviour
     public Transform SpawnPoint;
     public static GameObject currentCharacterInstance;
     public static Character selectedCharacter;
+    [SerializeField] private GameObject scoreScreen;
     private static int savedHp = -1;
     private const string HpKey = "SavedHp";
     private const string UltimateKey = "SavedUltimateGauge";
@@ -103,8 +104,7 @@ public class CharacterManager : MonoBehaviour
     private void CharacterDied()
     {
         Debug.Log("캐릭터가 죽었습니다!");
-        GameStartTracker.IsHavetobeReset = true;
-        Scene.Controller.LoadScene(Scene.MainScene);
+        scoreScreen.SetActive(true);
     }
 
     public void SaveHp()

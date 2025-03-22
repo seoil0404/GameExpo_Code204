@@ -30,6 +30,8 @@ public class Grid : MonoBehaviour
     public float ultimateDamageMultiplier = 1f;
     public int additionalExecutionDamage = 0;
 
+    [SerializeField] private GameObject rewardsScreen;
+
     private void Awake()
     {
         if (instance == null)
@@ -313,7 +315,11 @@ public class Grid : MonoBehaviour
         
     public void MoveNextScene()
     {
-        Scene.Controller.OnClearScene();
+        Debug.Log("다음 씬으로 이동합니다.");
+        if (rewardsScreen != null)
+            rewardsScreen.SetActive(true);
+        else
+            Scene.Controller.OnClearScene();
     }
 
     public void ResetGrid()

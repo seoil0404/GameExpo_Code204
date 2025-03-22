@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,11 +8,11 @@ using UnityEngine.UI;
 using UnityEngine.VFX;
 using static UnityEditor.Experimental.GraphView.Port;
 
-public class HitEffectManager : MonoBehaviour {
+public class EffectManager : MonoBehaviour {
 
 	//======================================================================| Singleton
 
-	public static HitEffectManager Instance = null;
+	public static EffectManager Instance = null;
 
 	//======================================================================| Fields
 
@@ -69,6 +70,29 @@ public class HitEffectManager : MonoBehaviour {
 	[SerializeField]
 	private float BlinkSpeed;
 
+	[Header("Shield")]
+	[SerializeField]
+	private GameObject ShieldObject;
+	private readonly Dictionary<GameObject, ShieldEffect> shieldEffects = new();
+
+	[Header("Buff")]
+	[SerializeField]
+	private VisualEffect ArrowDownEffect;
+
+	[SerializeField]
+	private VisualEffect ArrowUpEffect;
+
+	[SerializeField]
+	private float ArrowDuration;
+
+	//======================================================================| Colors
+
+	public static readonly Color ColorOfThron = new(15, 145, 17);
+	public static readonly Color ColorOfPower = new(191, 10, 14);
+	public static readonly Color ColorOfHealDecreasment = new(191, 10, 14);
+	public static readonly Color ColorOfWeakness = new(56, 0, 191);
+	public static readonly Color ColorOfSilence = new(255, 255, 255);
+
 	//======================================================================| Unity Behaviours
 
 	private void Awake() {
@@ -123,6 +147,74 @@ public class HitEffectManager : MonoBehaviour {
 		StartCoroutine(BlinkMissObject(receiverObject));
 		RotateHittedObject(receiverObject, casterObject);
 
+	}
+
+	public void SpawnShield(GameObject target) {
+
+		if (shieldEffects.TryGetValue(target, out var instantiatedShield)) {
+			if (instantiatedShield == null) {
+				shieldEffects.Remove(target);
+			}
+			else if (!instantiatedShield.isActiveAndEnabled) {
+				Destroy(instantiatedShield.transform.parent.gameObject);
+				shieldEffects.Remove(target);
+			}
+			else {
+				return;
+			}
+		}
+
+		GameObject instantiated = Instantiate(ShieldObject);
+		instantiated.transform.position = target.transform.position;
+		instantiated.transform.parent = target.transform;
+
+		ShieldEffect shieldEffect = instantiated.GetComponentInChildren<ShieldEffect>();
+		shieldEffects[target] = shieldEffect;
+
+
+	}
+
+	public void RemoveShield(GameObject target) {
+
+		if (shieldEffects.TryGetValue(target, out var instantiated)) {
+			if (instantiated != null && !instantiated.isActiveAndEnabled) {
+				Destroy(instantiated.transform.parent.gameObject);
+			}
+			else {
+				instantiated.Stop();
+			}
+			shieldEffects.Remove(target);
+
+		}
+
+	}
+
+	public void OnBuff(GameObject target, Color color) {
+		
+		VisualEffect instantiated = Instantiate(ArrowUpEffect);
+		instantiated.transform.position = target.transform.position;
+
+		instantiated.SetVector4("Color", color);
+		StartCoroutine(RemoveWhen(instantiated, ArrowDuration));
+
+	}
+
+	public void OnDebuff(GameObject target, Color color) {
+		
+		VisualEffect instantiated = Instantiate(ArrowDownEffect);
+		instantiated.transform.position = target.transform.position;
+
+		instantiated.SetVector4("Color", new(color.r, color.g, color.b, 0f));
+		StartCoroutine(RemoveWhen(instantiated, ArrowDuration));
+
+	}
+
+	private IEnumerator RemoveWhen(VisualEffect visualEffect, float time) {
+		yield return new WaitForSeconds(time);
+		visualEffect.Stop();
+
+		yield return new WaitForSeconds(1f);
+		Destroy(visualEffect.gameObject);
 	}
 
 	private IEnumerator SetSpriteColor(GameObject receiverObject, Gradient gradient) {

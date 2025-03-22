@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,8 @@ public class SceneController : MonoBehaviour
     private LoadingManager currentLoading;
 
     private bool IsSceneMoving = false;
+
+    public Action OnLoadScene;
 
     public bool IsGameSceneFirstLoading = true;
 
@@ -91,6 +94,7 @@ public class SceneController : MonoBehaviour
                     break;
             }
 
+        if(OnLoadScene != null) OnLoadScene.Invoke();
         SceneManager.LoadScene(sceneName);
 
         if(sceneName == Scene.GameScene && IsGameSceneFirstLoading)

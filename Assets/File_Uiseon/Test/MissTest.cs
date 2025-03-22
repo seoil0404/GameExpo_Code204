@@ -9,7 +9,7 @@ public class MissTest : MonoBehaviour
 	private void Update() {
 		
 		if (Input.GetKeyDown(key)) {
-			HitEffectManager.Instance.OnMiss(you, me);
+			EffectManager.Instance.OnMiss(you, me);
 		}
 
 	}
