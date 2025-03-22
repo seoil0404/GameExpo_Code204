@@ -64,7 +64,7 @@ public class AttackEffect : MonoBehaviour {
 				Effectors.OnFlyingAll(this);
 			})
 			.OnComplete(() => {
-				HitEffectManager.Instance.OnHit(receiverObject, targetPosition, casterObject);
+				EffectManager.Instance.OnHit(receiverObject, targetPosition, casterObject);
 				Effectors.OnCompleteAll(this);
 				StartCoroutine(DestroyOnReady());
 				onAttack?.Invoke();
@@ -74,8 +74,8 @@ public class AttackEffect : MonoBehaviour {
 
 	private void RotateCaster(GameObject reseiverObject, GameObject casterObject) {
 				
-		float attackRotationAngle = HitEffectManager.Instance.AttackRotationAngle;
-		float attackRotationDuration = HitEffectManager.Instance.AttackRotationDuration;
+		float attackRotationAngle = EffectManager.Instance.AttackRotationAngle;
+		float attackRotationDuration = EffectManager.Instance.AttackRotationDuration;
 
 		bool isFlipped = 
 			reseiverObject.transform.position.x <

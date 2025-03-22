@@ -30,6 +30,8 @@ public class Grid : MonoBehaviour
     public float ultimateDamageMultiplier = 1f;
     public int additionalExecutionDamage = 0;
 
+    [SerializeField] private GameObject rewardsScreen;
+
     private void Awake()
     {
         if (instance == null)
@@ -137,6 +139,13 @@ public class Grid : MonoBehaviour
         {
             Debug.Log("모든 블록이 배치 완료! 새로운 블록을 생성합니다.");
             GameEvents.RequestNewShapes();
+
+            HoldShape holdShape = FindFirstObjectByType<HoldShape>();
+            if (holdShape != null)
+            {
+                holdShape.RestoreAssignedObject();
+                holdShape.UnlockShape();
+            }
 
             foreach (var enemy in enemies)
             {
@@ -306,7 +315,11 @@ public class Grid : MonoBehaviour
         
     public void MoveNextScene()
     {
-        Scene.Controller.OnClearScene();
+        Debug.Log("다음 씬으로 이동합니다.");
+        if (rewardsScreen != null)
+            rewardsScreen.SetActive(true);
+        else
+            Scene.Controller.OnClearScene();
     }
 
     public void ResetGrid()
@@ -317,11 +330,37 @@ public class Grid : MonoBehaviour
             gridSquare.ClearOccupied();
             gridSquare.Deactivate();
         }
+
+        HoldShape holdShape = FindFirstObjectByType<HoldShape>();
+        if (holdShape != null)
+        {
+            holdShape.RestoreAssignedObject();
+            holdShape.UnlockShape();
+        }
+        else
+        {
+            Debug.LogWarning("[ResetGrid] HoldShape 인스턴스를 찾을 수 없습니다.");
+        }
+
+        foreach (var enemy in enemies)
+        {
+            var enemyStats = enemy.GetComponent<EnemyStats>();
+            if (enemyStats != null)
+            {
+                enemyStats.DeactivateDamageMultiplier();
+            }
+        }
+        enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
         foreach (var enemy in enemies)
         {
             var enemyStats = enemy.GetComponent<EnemyStats>();
             if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
             {
+                if (enemyStats.GetPoisonDuration() > 0)
+                {
+                    enemyStats.ApplyPoisonDamageToPlayer();
+                }
+
                 enemyStats.PerformTurnAction(this);
                 Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
             }
@@ -330,10 +369,13 @@ public class Grid : MonoBehaviour
                 Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
             }
         }
+
         Debug.Log("그리드가 리셋되었습니다.");
         comboCount--;
+
         CheckIfGameEnded();
     }
+
 
     public void DestroyRandomPlayerBlock()
     {
