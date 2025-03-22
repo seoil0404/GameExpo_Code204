@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2, ThornAttack, PetrifyBlockArea }
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2, ThornAttack, PetrifyBlockArea, Heal20Percent, SpawnSpecialMino }
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -122,6 +122,21 @@ public class EnemySkill : ScriptableObject
                 Debug.Log($"{enemy.name}이(가) [미노 석화] 스킬을 사용하여 3x3 석화 블록을 생성했다.");
                 break;
 
+            case SkillType.Heal20Percent:
+                if (enemyStats != null)
+                {
+                    enemyStats.HealByPercentage(0.2f);
+                    Debug.Log($"{enemy.name}이(가) [회복] 스킬을 사용하여 최대 체력의 20%를 회복했습니다.");
+                }
+                break;
+
+            case SkillType.SpawnSpecialMino:
+                if (enemyStats != null && grid != null)
+                {
+                    grid.SpawnSpecialMino(enemy);
+                    Debug.Log($"{enemy.name}이(가) [특수 미노]를 보드에 생성했습니다.");
+                }
+                break;
 
         }
     }

@@ -232,11 +232,25 @@ public class Grid : MonoBehaviour
         {
             MinoEffectHelper.Instance.PlayMinoEffect(_gridSquares, line);
             foreach (var squareIndex in line)
-                _gridSquares[squareIndex].GetComponent<GridSquare>().ClearOccupied();
+            {
+                var gs = _gridSquares[squareIndex].GetComponent<GridSquare>();
+                GameObject owner = gs.GetSpecialMinoOwner();
+                if (owner != null)
+                {
+                    var stats = owner.GetComponent<EnemyStats>();
+                    if (stats != null)
+                    {
+                        stats.IncreaseATKByTwo();
+                    }
+                    gs.ClearSpecialMinoOwner();
+                }
+                gs.ClearOccupied();
+            }
             linesCompleted++;
         }
         return linesCompleted;
     }
+
 
     private void DealDamageToSelectedEnemy(int completedLines)
     {
@@ -565,6 +579,38 @@ public class Grid : MonoBehaviour
             }
         }
 
+    }
+
+    public void SpawnSpecialMino(GameObject enemy)
+    {
+        if (_gridSquares.Count == 0)
+        {
+            Debug.LogWarning("그리드에 블록을 생성할 공간이 없습니다.");
+            return;
+        }
+
+        // 빈 칸 가져오기
+        List<GridSquare> emptySquares = _gridSquares
+            .Select(sq => sq.GetComponent<GridSquare>())
+            .Where(sq => !sq.SquareOccupied)
+            .ToList();
+
+        if (emptySquares.Count == 0)
+        {
+            Debug.LogWarning("모든 칸이 차 있어서 블록을 생성할 공간이 없습니다.");
+            return;
+        }
+
+        // 랜덤 빈 칸 선택
+        int randomIndex = Random.Range(0, emptySquares.Count);
+        GridSquare gs = emptySquares[randomIndex];
+
+        gs.SetOccupied();
+        gs.ActivateSquare();
+        gs.SetBlockSpriteToDefault();
+        gs.SetSpecialMinoOwner(enemy);  // 시전자 저장
+
+        Debug.Log($"특수 블록이 위치 {gs.SquareIndex}에 생성되었습니다. 시전자: {enemy.name}");
     }
 
 }

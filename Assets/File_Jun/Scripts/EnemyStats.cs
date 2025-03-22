@@ -416,5 +416,21 @@ public class EnemyStats : MonoBehaviour
         Debug.Log($"[{gameObject.name}]의 가시 수치 초기화됨 (0으로 설정)");
     }
 
+    public void HealByPercentage(float percentage)
+    {
+        int healAmount = Mathf.RoundToInt(maxHp * percentage);
+        hp += healAmount;
+        if (hp > maxHp)
+            hp = maxHp;
+
+        UpdateHealthText();
+        Debug.Log($"[{gameObject.name}]이(가) {healAmount} 만큼 회복했습니다. 현재 HP: {hp}");
+    }
+
+    public void IncreaseATKByTwo()
+    {
+        atk += 2;
+        Debug.Log($"[{gameObject.name}]의 ATK가 2 증가! 현재 ATK: {atk}");
+    }
 
 }
