@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 985ed342a2ad4b04381d312ae6c3cd12, type: 3}
-  m_Name: Minorixdragon
+  m_Name: Migoil
   m_EditorClassIdentifier: 
-  enemyName: Minorixdragon
-  baseHP: 150
-  baseATK: 5
-  enemySprite: {fileID: -5412910156287300836, guid: 7ddb04fe3424a5f4ca40831fc04aa883, type: 3}
-  dodgeChance: 0
+  enemyName: "\uBBF8\uACE0\uC77C"
+  baseHP: 15
+  baseATK: 3
+  enemySprite: {fileID: 0}
+  dodgeChance: 10
   enemySkills:
+  - {fileID: 11400000, guid: 75355030bbcb5a64584eb7de229fa88e, type: 2}
   - {fileID: 11400000, guid: 81c36d23d373ffe4684b909548039379, type: 2}
-  habitat: 1
-  enemyType: 2
-  defaultAttackType: 1
+  habitat: 2
+  enemyType: 0
+  defaultAttackType: 0

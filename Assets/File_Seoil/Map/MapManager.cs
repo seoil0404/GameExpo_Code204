@@ -5,6 +5,9 @@ public class MapManager : MonoBehaviour
 {
     [SerializeField] private bool isStatic;
 
+    [Header("Scriptable")]
+    [SerializeField] private CombatData combatData;
+
     [Header("MonoBehavior")]
     public GameObject highMap;
     [SerializeField] private GameManager gameManager;
@@ -56,7 +59,8 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            if(currentStage.stageType == Stage.StageType.Combat && Scene.Controller.IsGameSceneFirstLoading) Scene.Controller.IsGameSceneFirstLoading = false;
+            if(currentStage.stageType == Stage.StageType.Combat && Scene.Controller.IsGameSceneFirstLoading) 
+                Scene.Controller.IsGameSceneFirstLoading = false;
 
             isCurrentStageCleared = true;
 
@@ -64,7 +68,11 @@ public class MapManager : MonoBehaviour
 
             currentStage.AllocatedStageObject.GetComponent<StageMonoBehavior>().OnCleared();
 
-            if (currentStage.stageType == Stage.StageType.Boss) ClearCurrentLevel();
+            if (currentStage.stageType == Stage.StageType.Boss)
+            {
+                ClearCurrentLevel();
+                return;
+            }
 
             Scene.Controller.LoadScene(Scene.MapScene);
         }
@@ -72,7 +80,7 @@ public class MapManager : MonoBehaviour
 
     public void ClearGame()
     {
-
+        Debug.Log("Game Cleared");
     }
 
     private void Awake()
@@ -111,6 +119,21 @@ public class MapManager : MonoBehaviour
 
     private void ClearCurrentLevel()
     {
+        switch(combatData.HabitatType)
+        {
+            case EnemyData.HabitatType.Forest:
+                combatData.HabitatType = EnemyData.HabitatType.Castle;
+                break;
+            case EnemyData.HabitatType.Castle:
+                combatData.HabitatType = EnemyData.HabitatType.DevilCastle;
+                break;
+            case EnemyData.HabitatType.DevilCastle:
+                ClearGame();
+                break;
+        }
+
+        Debug.Log("[MapManager] Clear Current Level");
+
         mapGenerater.GenerateNextLevelMap();
     }
 
@@ -167,7 +190,7 @@ public class MapManager : MonoBehaviour
 
                     currentStage.objectSpriteRenderer.sprite = mapGenerater.FightingSprite;
 
-                    gameManager.OnStageStarted(stage.stageType, stage.levelType);
+                    gameManager.OnStageStarted(stage.stageType);
                 }
             }
         }

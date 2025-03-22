@@ -7,6 +7,12 @@ public class EnemyData : ScriptableObject
     public enum HabitatType { Forest, Castle, DevilCastle }
     public enum EnemyType { Common, SpecialCombat, Boss }
 
+    public enum DefaultAttackType
+    {
+        Normal,
+        ThornAttack
+    }
+
     public string enemyName;
     public int baseHP;
     public int baseATK;
@@ -15,7 +21,9 @@ public class EnemyData : ScriptableObject
     public List<EnemySkill> enemySkills;
 
     public HabitatType habitat;
-    public EnemyType enemyType; 
+    public EnemyType enemyType;
+
+    public DefaultAttackType defaultAttackType = DefaultAttackType.Normal;
 
 
 }   

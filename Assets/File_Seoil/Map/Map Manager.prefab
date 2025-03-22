@@ -305,12 +305,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStatic: 0
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   highMap: {fileID: 0}
   gameManager: {fileID: 0}
   treasureShowManager: {fileID: 0}
   map: {fileID: 5595564828724413120}
   keyManager: {fileID: 11400000, guid: a3dc505679128054da943b8486d08042, type: 2}
   mapGenerater: {fileID: 8182459156880451314}
+  goldShowManager: {fileID: 0}
   isAllowOpen: 1
 --- !u!114 &8182459156880451314
 MonoBehaviour:

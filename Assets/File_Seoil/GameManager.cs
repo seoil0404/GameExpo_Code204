@@ -24,21 +24,8 @@ public class GameManager : MonoBehaviour
         mapManager.ClearCurrentStage();
     }
 
-    public void OnStageStarted(Stage.StageType stageType, Stage.LevelType levelType)
+    public void OnStageStarted(Stage.StageType stageType)
     {
-        switch(levelType)
-        {
-            case Stage.LevelType.Forest:
-                combatData.HabitatType = EnemyData.HabitatType.Forest;
-                break;
-            case Stage.LevelType.Castle:
-                combatData.HabitatType = EnemyData.HabitatType.Castle;
-                break;
-            case Stage.LevelType.DevilCastle:
-                combatData.HabitatType = EnemyData.HabitatType.DevilCastle;
-                break;
-        }
-
         switch(stageType)
         {
             case Stage.StageType.Combat:

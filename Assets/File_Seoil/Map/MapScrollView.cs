@@ -29,12 +29,15 @@ public class MapScrollView : MonoBehaviour
         
         scrollRate *= sensitivity;
         
-        if (toPos + scrollRate > maxValue || toPos + scrollRate < minValue)
+        if (toPos + scrollRate > maxValue)
         {
-            return;
+            toPos = maxValue;
         }
-
-        toPos += scrollRate;
+        else if (toPos + scrollRate < minValue)
+        {
+            toPos = minValue;
+        }
+        else toPos += scrollRate;
 
         rectTransform.anchoredPosition = Vector3.Lerp(
             rectTransform.anchoredPosition,

@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 985ed342a2ad4b04381d312ae6c3cd12, type: 3}
-  m_Name: Minorixdragon
+  m_Name: Deathknigtino
   m_EditorClassIdentifier: 
-  enemyName: Minorixdragon
-  baseHP: 150
-  baseATK: 5
-  enemySprite: {fileID: -5412910156287300836, guid: 7ddb04fe3424a5f4ca40831fc04aa883, type: 3}
+  enemyName: "\uB370\uC2A4\uB098\uC774\uD2F0\uB178"
+  baseHP: 20
+  baseATK: 2
+  enemySprite: {fileID: 1248784056254802929, guid: 3a9fe004d9b0a62449997197ace93bcc, type: 3}
   dodgeChance: 0
   enemySkills:
-  - {fileID: 11400000, guid: 81c36d23d373ffe4684b909548039379, type: 2}
-  habitat: 1
-  enemyType: 2
-  defaultAttackType: 1
+  - {fileID: 11400000, guid: f99ed94b1378d5c4fbef5de1fad52c07, type: 2}
+  - {fileID: 11400000, guid: fe64e005d45637f49abdaa34291dd9f8, type: 2}
+  habitat: 2
+  enemyType: 0
+  defaultAttackType: 0
