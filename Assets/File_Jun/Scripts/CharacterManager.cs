@@ -37,6 +37,12 @@ public class CharacterManager : MonoBehaviour
             SaveHp();
             ResetUltimateGauge();
             GameStartTracker.IsHavetobeReset = false;
+            var treasureEffect = GameObject.FindObjectOfType<TreasureEffect>();
+            if (treasureEffect.Condemnation)
+            {
+                selectedCharacter.characterData.ExecutionRate += 5;
+                Debug.Log("Condemnation 보물 효과로 처형률 +5 증가됨");
+            }
         }
 
         LoadHp();

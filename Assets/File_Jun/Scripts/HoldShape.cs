@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
     public List<GameObject> squareShapeImages;
-    public GameObject assignedObject; // 인스펙터에서 할당할 오브젝트
+    public GameObject assignedObject;
 
     private List<GameObject> _currentHoldShape = new List<GameObject>();
     private ShapeData _heldShapeData;
@@ -18,7 +18,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Canvas _canvas;
 	private bool _shapeActive = true;
 	private Vector2 offset;
-    private bool isShapeLocked = false; // 블록 이동 제한 여부
+    private bool isShapeLocked = false;
 
     public string HeldShapeColorName => _heldShapeColorName;
 

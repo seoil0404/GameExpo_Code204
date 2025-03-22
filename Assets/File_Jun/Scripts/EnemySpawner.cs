@@ -45,12 +45,6 @@ public class EnemySpawner : MonoBehaviour
             combatData.EnemyType = EnemyData.EnemyType.Common;
             currentDifficulty *= 3;
 
-            if (TreasureEffect.IsGiantResistanceHammerActive())
-            {
-                currentDifficulty /= 2;
-                Debug.Log("[EnemySpawner] GiantResistanceHammer 효과 적용됨! 난이도가 절반으로 감소");
-            }
-
             SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
         }
         else if(combatData.EnemyType == EnemyData.EnemyType.Boss)

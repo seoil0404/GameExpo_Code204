@@ -319,16 +319,6 @@ public class Grid : MonoBehaviour
         {
             Debug.Log("모든 적이 처치되었습니다. 다음 스테이지로 이동합니다.");
 
-            if (TreasureEffect.IsEmergencyFoodActive())
-            {
-                CharacterManager characterManager = FindFirstObjectByType<CharacterManager>();
-                if (characterManager != null)
-                {
-                    characterManager.RecoverHp(6);
-                    Debug.Log("[EmergencyFood] 비상식량 효과로 HP가 6 회복되었습니다!");
-                }
-            }
-
             FindFirstObjectByType<EnemySpawner>().IncreaseDifficulty();
             MoveNextScene();
         }

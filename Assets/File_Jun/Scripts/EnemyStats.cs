@@ -206,7 +206,7 @@ public class EnemyStats : MonoBehaviour
 
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
-        float currentDodgeChance = TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.UniversalGravitation) ? 0f : dodgeChance;
+        float currentDodgeChance = dodgeChance;
         float dodgeRoll = Random.Range(0, 100);
 
         if (dodgeRoll < currentDodgeChance)
