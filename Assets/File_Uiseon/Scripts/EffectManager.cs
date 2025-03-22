@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using static UnityEditor.Experimental.GraphView.Port;
 
 public class EffectManager : MonoBehaviour {
 
@@ -31,7 +32,7 @@ public class EffectManager : MonoBehaviour {
 
 	[SerializeField]
 	private Gradient PoisonColor;
-
+	
 	[field: Header("Hit Rotation")]
 	[field: SerializeField]
 	public float HitRotationAngle { get; private set; }
@@ -324,11 +325,12 @@ public class EffectManager : MonoBehaviour {
 			Debug.Log(opacity);
 
 			foreach (var spriteRenderer in spriteRenderers) {
-				spriteRenderer.color = spriteRenderer.color.WithAlpha(opacity);
+				spriteRenderer.color = new(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity);
+				//spriteRenderer.color.WithAlpha(opacity);
 			}
 
 			foreach (var imageRenderer in imageRenderers) {
-				imageRenderer.color = imageRenderer.color.WithAlpha(opacity);
+				imageRenderer.color = new(imageRenderer.color.r, imageRenderer.color.g, imageRenderer.color.b, opacity);
 			}
 
 			spent += Time.deltaTime;
@@ -337,11 +339,10 @@ public class EffectManager : MonoBehaviour {
 		}
 
 		foreach (var spriteRenderer in spriteRenderers) {
-			spriteRenderer.color = spriteRenderer.color.WithAlpha(1f);
+			spriteRenderer.color = new(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
 		}
-
 		foreach (var imageRenderer in imageRenderers) {
-			imageRenderer.color = imageRenderer.color.WithAlpha(1f);
+			imageRenderer.color = new(imageRenderer.color.r, imageRenderer.color.g, imageRenderer.color.b, 1f);
 		}
 		
 	}
