@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2}
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2, ThornAttack}
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -105,6 +105,19 @@ public class EnemySkill : ScriptableObject
                     Debug.LogWarning("[Minokwizard2] HoldShape을 찾을 수 없습니다!");
                 }
                 break;
+
+            case SkillType.ThornAttack:
+                if (enemyStats != null && grid != null)
+                {
+                    int thornDamage = Mathf.RoundToInt(enemyStats.GetAttack() / 2f);
+                    CharacterManager.instance.ApplyDamageToCharacter(thornDamage);
+                    enemyStats.IncreaseThorn();
+
+                    Debug.Log($"[{enemy.name}]이(가) [가시 공격] 스킬 사용! 플레이어에게 {thornDamage} 데미지 + 가시 1 증가");
+                }
+                break;
+
+
         }
     }
 }

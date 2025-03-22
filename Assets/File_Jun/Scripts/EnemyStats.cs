@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
     public EnemyData enemyData;
     public Text healthText;
     public EnemyHealthBar enemyHealthBar;
-
+    private int thornCount = 0;
 
 
     [Header("Scriptable")]
@@ -132,13 +132,21 @@ public class EnemyStats : MonoBehaviour
         if (enemyNextAction == null)
         {
             Debug.LogError($"[EnemyStats] {gameObject.name}의 EnemyNextAction이 설정되지 않음!");
-			return;
+            return;
         }
+
         int actionIndex = enemyNextAction.GetNextActionIndex();
 
         if (actionIndex == 1)
         {
-            AttackPlayer();
+            if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.ThornAttack)
+            {
+                PerformThornAttack();
+            }
+            else
+            {
+                AttackPlayer();
+            }
         }
         else
         {
@@ -198,27 +206,31 @@ public class EnemyStats : MonoBehaviour
 
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
-
         float currentDodgeChance = TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.UniversalGravitation) ? 0f : dodgeChance;
-
         float dodgeRoll = Random.Range(0, 100);
-        Debug.Log($"회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({currentDodgeChance}%)");
 
         if (dodgeRoll < currentDodgeChance)
         {
-			EffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
+            EffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }
 
-        int totalBlocksUsed = completedLines;
-        int baseDamage = totalBlocksUsed;
+        int baseDamage = completedLines;
         int calculatedDamage = baseDamage;
 
         damageReceivedLastTurn = calculatedDamage;
         hp -= calculatedDamage;
 
         Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
+
+        if (thornCount > 0)
+        {
+            int thornDamage = thornCount;
+            Debug.Log($"[{gameObject.name}]의 가시에 의해 플레이어가 {thornDamage} 반사 피해를 입습니다!");
+            characterManager.ApplyDamageToCharacter(thornDamage);
+            //EffectManager.Instance.OnThorn(CharacterManager.currentCharacterInstance);
+        }
 
         if (CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal)
         {
@@ -235,6 +247,7 @@ public class EnemyStats : MonoBehaviour
         comboCount++;
         UpdateHealthText();
     }
+
 
 
 
@@ -358,6 +371,49 @@ public class EnemyStats : MonoBehaviour
     {
         atk += 1;
         Debug.Log($"[{gameObject.name}]의 ATK가 1 증가! 현재 ATK: {atk}");
+    }
+
+
+    public void IncreaseThorn()
+    {
+        thornCount++;
+        Debug.Log($"[{gameObject.name}]의 가시 수치가 1 증가! 현재: {thornCount}");
+    }
+
+    public int GetThornCount()
+    {
+        return thornCount;
+    }
+
+
+    public void PerformThornAttack()
+    {
+        int thornDamage = Mathf.RoundToInt(atk / 2f);
+
+        if (attackEffectSpawner != null)
+        {
+            GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
+            attackEffectSpawner.TargetTransform = target.transform;
+            attackEffectSpawner.Spawn(() =>
+            {
+                Debug.Log($"[{gameObject.name}]이(가) [가시 공격]으로 플레이어에게 {thornDamage} 데미지!");
+                characterManager.ApplyDamageToCharacter(thornDamage);
+                IncreaseThorn();
+            });
+        }
+        else
+        {
+            Debug.Log($"[{gameObject.name}]이(가) [가시 공격]으로 플레이어에게 {thornDamage} 데미지!");
+            characterManager.ApplyDamageToCharacter(thornDamage);
+            IncreaseThorn();
+        }
+    }
+
+
+    public void ResetThorn()
+    {
+        thornCount = 0;
+        Debug.Log($"[{gameObject.name}]의 가시 수치 초기화됨 (0으로 설정)");
     }
 
 

@@ -130,7 +130,6 @@ MonoBehaviour:
   actionImages:
   - {fileID: 7604595063412824413}
   - {fileID: 3607701208880574478}
-  - {fileID: 8524701679130707169}
   damageText: {fileID: 1442126638503989940}
 --- !u!1 &2645113185426691142
 GameObject:
@@ -793,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1106989570912624711, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1106989570912624711, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
       propertyPath: m_LocalScale.y
@@ -939,6 +938,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explaner
       objectReference: {fileID: 0}
+    - target: {fileID: 8670430734104832551, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2653188147807208781, guid: e80a7a32025e5794cb0287df8f7178c0, type: 3}
+    - target: {fileID: 9040868413099657524, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -974,17 +981,6 @@ RectTransform:
 --- !u!114 &7604595063412824413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2578976100047209332, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
-  m_PrefabInstance: {fileID: 5351032761201220137}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8524701679130707169 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4327815141054963400, guid: 7ea10071d031f3a4895068a384878d7f, type: 3}
   m_PrefabInstance: {fileID: 5351032761201220137}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

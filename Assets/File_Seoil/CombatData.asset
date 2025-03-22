@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34d6cd84508a5b46a3aa1a02871dc84, type: 3}
   m_Name: CombatData
   m_EditorClassIdentifier: 
-  HabitatType: 0
-  EnemyType: 0
+  HabitatType: 1
+  EnemyType: 2
   treasureData: 

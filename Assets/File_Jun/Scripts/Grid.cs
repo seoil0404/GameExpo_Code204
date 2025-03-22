@@ -153,6 +153,7 @@ public class Grid : MonoBehaviour
                 if (enemyStats != null)
                 {
                     enemyStats.DeactivateDamageMultiplier();
+                    enemyStats.ResetThorn();
                 }
             }
 
@@ -324,6 +325,7 @@ public class Grid : MonoBehaviour
 
     public void ResetGrid()
     {
+        
         foreach (var square in _gridSquares)
         {
             var gridSquare = square.GetComponent<GridSquare>();
@@ -348,6 +350,7 @@ public class Grid : MonoBehaviour
             if (enemyStats != null)
             {
                 enemyStats.DeactivateDamageMultiplier();
+                enemyStats.ResetThorn();
             }
         }
         enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
