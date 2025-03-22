@@ -11,7 +11,7 @@ public class CharacterManager : MonoBehaviour
     public Text CharacterNameText;
     public Slider UltimateGaugeSlider;
     public Transform SpawnPoint;
-    private static GameObject currentCharacterInstance;
+    public static GameObject currentCharacterInstance;
     public static Character selectedCharacter;
     private static int savedHp = -1;
     private const string HpKey = "SavedHp";

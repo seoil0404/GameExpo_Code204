@@ -9,6 +9,8 @@ public class EnemyStats : MonoBehaviour
     public Text healthText;
     public EnemyHealthBar enemyHealthBar;
 
+
+
     [Header("Scriptable")]
     [SerializeField] private GoldData goldData;
 
@@ -23,6 +25,23 @@ public class EnemyStats : MonoBehaviour
     private int damageReceivedLastTurn = 0;
 	private AttackEffectSpawner attackEffectSpawner;
     private EnemyNextAction enemyNextAction;
+    private bool hasUsedSwallowBlock = false;
+
+    private int poisonDamage = 0;
+    private int poisonDuration = 0;
+
+    private bool isDamageMultiplierActive = false;
+
+    public void ActivateDamageMultiplier()
+    {
+        isDamageMultiplierActive = true;
+    }
+
+    public void DeactivateDamageMultiplier()
+    {
+        isDamageMultiplierActive = false;
+    }
+    public bool HasUsedSwallowBlock => hasUsedSwallowBlock;
 
     private void Awake() 
 	{
@@ -39,6 +58,8 @@ public class EnemyStats : MonoBehaviour
         {
             Debug.LogError("CharacterManager를 찾을 수 없습니다!");
         }
+
+        DecideNextAction();
     }
 
     public int GetHabitatLevel(EnemyData.HabitatType habitat)
@@ -52,7 +73,7 @@ public class EnemyStats : MonoBehaviour
             case EnemyData.HabitatType.DevilCastle:
                 return 3;
             default:
-                return 1; // 기본값
+                return 1;
         }
     }
 
@@ -65,11 +86,9 @@ public class EnemyStats : MonoBehaviour
     {
         int habitatLevel = GetHabitatLevel(habitat);
 
-        // HP 계산: (기본 HP) + (난이도 * 레벨)
         maxHp = enemyData.baseHP + (difficulty * habitatLevel);
         hp = maxHp;
 
-        // ATK 계산: 기본 ATK + (난이도 / (레벨 % 4))
         atk = enemyData.baseATK + (difficulty / Mathf.Max(4 - habitatLevel, 1));
 
         dodgeChance = enemyData.dodgeChance;
@@ -83,11 +102,25 @@ public class EnemyStats : MonoBehaviour
     public void DecideNextAction()
     {
         int totalOptions = enemyData.enemySkills.Count + 1;
+
+
+        if (hasUsedSwallowBlock)
+        {
+            totalOptions -= 1;
+        }
+
         if (enemyNextAction != null)
         {
             enemyNextAction.DecideNextAction(totalOptions, atk);
-        }   
+        }
     }
+
+    
+    public void SetSwallowBlockUsed()
+    {
+        hasUsedSwallowBlock = true;
+    }
+
 
     public int GetCurrentHp()
     {
@@ -134,26 +167,33 @@ public class EnemyStats : MonoBehaviour
 
     }
 
-	private void AttackPlayerInner() {
-
+    private void AttackPlayerInner()
+    {
         int damage = atk;
 
- 		if (attackEffectSpawner != null)
-		{
-			GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
-			attackEffectSpawner.TargetTransform = target.transform;
-			attackEffectSpawner.Spawn(() =>
-			{
-				Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-				characterManager.ApplyDamageToCharacter(damage);
-			});
-		}
-		else
-		{
-  			Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-			characterManager.ApplyDamageToCharacter(damage);
-		}
-	}
+        if (isDamageMultiplierActive)
+        {
+            damage = Mathf.RoundToInt(damage * 1.2f);
+            Debug.Log($"[{gameObject.name}]이(가) 1.2배 피해를 가합니다! 최종 데미지: {damage}");
+        }
+
+        if (attackEffectSpawner != null)
+        {
+            GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
+            attackEffectSpawner.TargetTransform = target.transform;
+            attackEffectSpawner.Spawn(() =>
+            {
+                Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+                characterManager.ApplyDamageToCharacter(damage);
+            });
+        }
+        else
+        {
+            Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
+            characterManager.ApplyDamageToCharacter(damage);
+        }
+    }
+
 
 
     public void ReceiveDamage(int completedLines, int gridColumns)
@@ -166,6 +206,7 @@ public class EnemyStats : MonoBehaviour
 
         if (dodgeRoll < currentDodgeChance)
         {
+			HitEffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }
@@ -269,4 +310,55 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         EnemySelector.SelectRandomEnemy();
     }
+
+
+
+    public void ApplyPoison(int damage)
+    {
+        int newPoison = damage / 2;
+
+        if (newPoison <= 0)
+            return;
+
+        poisonDamage += newPoison;
+        poisonDuration += newPoison;
+
+        Debug.Log($"[{gameObject.name}]이(가) 플레이어에게 독을 적용! 총 피해량: {poisonDamage}, 지속 시간: {poisonDuration}");
+    }
+
+    public void ApplyPoisonDamageToPlayer()
+    {
+        if (poisonDuration > 0)
+        {
+            characterManager.ApplyDamageToCharacter(poisonDamage);
+            Debug.Log($"[플레이어]이(가) {poisonDamage}의 독 피해를 입음. 남은 턴: {poisonDuration - 1}");
+            HitEffectManager.Instance.OnPoison(CharacterManager.currentCharacterInstance);
+
+            poisonDamage--;
+            poisonDuration--;
+
+            if (poisonDuration <= 0)
+            {
+                Debug.Log("[플레이어]의 독 효과가 종료되었습니다.");
+            }
+        }
+    }
+
+    public int GetPoisonDuration()
+    {
+        return poisonDuration;
+    }
+    
+    public int GetAttack()
+    {
+        return atk;
+    }
+
+    public void IncreaseATKByOne()
+    {
+        atk += 1;
+        Debug.Log($"[{gameObject.name}]의 ATK가 1 증가! 현재 ATK: {atk}");
+    }
+
+
 }

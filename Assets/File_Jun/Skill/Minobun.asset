@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ea0d9f7ecafa8d419067ace9293ae4a, type: 3}
-  m_Name: EnemySkill
+  m_Name: Minobun
   m_EditorClassIdentifier: 
-  skillName: slime
-  skillDescription: eat block
-  skillType: 2
+  skillName: "\uB3C4\uC625"
+  skillDescription: 
+  skillType: 6

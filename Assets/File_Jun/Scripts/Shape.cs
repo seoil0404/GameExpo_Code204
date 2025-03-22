@@ -1,5 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,6 +11,7 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     public List<GameObject> squareShapeImages;
     public Vector3 shapeSelectedScale;
     public Vector2 offset = new Vector2(0f, 700f);
+	private Vector2 scale;
 
     [HideInInspector]
     public ShapeData CurrentShapeData;
@@ -24,6 +27,13 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
     private string currentShapeColorName = "default";
     public string CurrentShapeColorName => currentShapeColorName;
 
+	[Header("Mino Draw Effect")]
+	public float MinoDestroyOffset;
+	public float MinoDrawDuration;
+	public Ease MinoDrawEase;
+
+	public Transform BagUIPosition;
+
     public void Awake()
     {
         _shapeStartScale = GetComponent<RectTransform>().localScale;
@@ -31,6 +41,10 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         _canvas = GetComponentInParent<Canvas>();
         _startPosition = _transform.localPosition;
     }
+
+	private void Start() {
+		scale = transform.localScale;
+	}
 
     private void OnDisable()
     {
@@ -94,10 +108,6 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         }
     }
 
-    void Start()
-    {
-    }
-
     public void RequestNewShape(ShapeData shapeData)
     {
         _transform.localPosition = _startPosition;
@@ -119,57 +129,68 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         return number;
     }
 
-    public void CreateShape(ShapeData shapeData)
-    {
-        CurrentShapeData = shapeData;
-        TotalSquareNumber = GetNumberOfSquares(shapeData);
+	public void CreateShape(ShapeData shapeData) {
+		CreateShapeInner(shapeData);
+	}
 
+	private void CreateShapeInner(ShapeData shapeData)
+	{
+		CurrentShapeData = shapeData;
+		TotalSquareNumber = GetNumberOfSquares(shapeData);
 
-        foreach (var block in _currentShape)
-        {
-            Destroy(block);
-        }
-        _currentShape.Clear();
+		foreach (var block in _currentShape)
+		{
+			Destroy(block);
+		}
+		_currentShape.Clear();
 
+		GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
+		currentShapeColorName = selectedBlockPrefab.name.ToLower();
 
-        GameObject selectedBlockPrefab = squareShapeImages[Random.Range(0, squareShapeImages.Count)];
+		for (int i = 0; i < TotalSquareNumber; i++)
+		{
+			GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
+			_currentShape.Add(newBlock);
+			newBlock.SetActive(false);
+		}
 
+		var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
+		var moveDistance = new Vector2(
+			squareRect.rect.width * squareRect.localScale.x,
+			squareRect.rect.height * squareRect.localScale.y
+		);
 
+		int currentIndexInList = 0;
+		for (var row = 0; row < shapeData.rows; row++)
+		{
+			for (var column = 0; column < shapeData.columns; column++)
+			{
+				if (shapeData.board[row].column[column])
+				{
+					_currentShape[currentIndexInList].SetActive(true);
+					_currentShape[currentIndexInList].GetComponent<RectTransform>().localPosition = new Vector2(
+						GetXPositionForShapeSquare(shapeData, column, moveDistance),
+						GetYPositionForShapeSquare(shapeData, row, moveDistance)
+					);
+					currentIndexInList++;
+				}
+			}
+		}
+	}
 
-        currentShapeColorName = selectedBlockPrefab.name.ToLower();
+	private IEnumerator PlayMinoDrawAnimation()
+	{
+		Vector2 startPosition = transform.position;
+		Vector2 startScale = transform.localScale;
 
+		transform.position = BagUIPosition.position;
+		transform.localScale = Vector2.one * 0.01f;
+			
+		yield return new WaitForSeconds(MinoDestroyOffset);
 
-        for (int i = 0; i < TotalSquareNumber; i++)
-        {
-            GameObject newBlock = Instantiate(selectedBlockPrefab, transform);
-            _currentShape.Add(newBlock);
-            newBlock.SetActive(false);
-        }
-
-
-        var squareRect = selectedBlockPrefab.GetComponent<RectTransform>();
-        var moveDistance = new Vector2(
-            squareRect.rect.width * squareRect.localScale.x,
-            squareRect.rect.height * squareRect.localScale.y
-        );
-
-        int currentIndexInList = 0;
-        for (var row = 0; row < shapeData.rows; row++)
-        {
-            for (var column = 0; column < shapeData.columns; column++)
-            {
-                if (shapeData.board[row].column[column])
-                {
-                    _currentShape[currentIndexInList].SetActive(true);
-                    _currentShape[currentIndexInList].GetComponent<RectTransform>().localPosition = new Vector2(
-                        GetXPositionForShapeSquare(shapeData, column, moveDistance),
-                        GetYPositionForShapeSquare(shapeData, row, moveDistance)
-                    );
-                    currentIndexInList++;
-                }
-            }
-        }
-    }
+		transform.DOMove(startPosition, MinoDrawDuration).SetEase(MinoDrawEase);
+		transform.DOScale(startScale, MinoDrawDuration).SetEase(MinoDrawEase);
+	}
 
     public float GetXPositionForShapeSquare(ShapeData shapeData, int column, Vector2 moveDistance)
     {
@@ -242,6 +263,28 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
         GetComponent<RectTransform>().localScale = _shapeStartScale;
         GameEvents.CheckIfShapeCanBePlaced();
 
+    }
+
+    public void DeactivateEntireShape()
+    {
+        if (_shapeActive)
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            _shapeActive = false;
+            Debug.Log($"[Shape] {gameObject.name}의 모든 블록이 비활성화되었습니다.");
+
+            int shapeLeft = FindObjectsOfType<Shape>().Count(shape => shape.IsAnyOfShapeSquareActive());
+            Debug.Log($"남아있는 블록 개수: {shapeLeft}");
+
+            if (shapeLeft == 0)
+            {
+                Debug.Log("모든 블록이 비활성화됨. 새로운 블록을 생성합니다.");
+                GameEvents.RequestNewShapes();
+            }
+        }
     }
 
 

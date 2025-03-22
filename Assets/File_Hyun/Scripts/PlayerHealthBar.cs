@@ -19,8 +19,17 @@ public class PlayerHealthBar : MonoBehaviour
         Executable.SetActive(false);
         heeledHp.fillAmount = 0;
         FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
+        //characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = UpdateHpBar;
+        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged += UpdateHpBar;
         UpdateHpBar();
-        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = UpdateHpBar;
+    }
+
+    void OnDestroy()
+    {
+        if (characters != null && characters.Length > 0 && characters[GameData.SelectedCharacterIndex - 1] != null)
+        {
+            characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged -= UpdateHpBar;
+        }
     }
 
     void UpdateHpBar()

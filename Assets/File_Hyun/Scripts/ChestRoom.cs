@@ -1,48 +1,51 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using static CombatData;
-using static EnemyData;
 
 public class ChestRoom : MonoBehaviour
 {
     public CombatData combatData;
-    public GameObject level_1;
-    public GameObject level_2;
-    public GameObject level_3;
 
+    [SerializeField] private SpriteRenderer chestRenderer;
+    [SerializeField] private Sprite closedChestSprite;
+    [SerializeField] private Sprite openChestSprite;
+    [SerializeField] private Text relicNameText;
+    [SerializeField] private GameObject Button;
+
+    private bool isChestOpened = false;
 
     private void Start()
     {
-        level_1.SetActive(false);
-        level_2.SetActive(false);
-        level_3.SetActive(false);
+        relicNameText.text = "당신은 모험중 낡고 녹슨 상자를 발견했다.";
+        chestRenderer.sprite = closedChestSprite;
+    }
 
-        switch (combatData.HabitatType)
+    private void OnMouseDown()
+    {
+        if (!isChestOpened)
         {
-            case HabitatType.Forest:
-                level_1.SetActive(true);
-                break;
-            case HabitatType.Castle:
-                level_2.SetActive(true);
-                break;
-            case HabitatType.DevilCastle:
-                level_3.SetActive(true);
-                break;
-            default:
-                Debug.LogWarning("Unknown Habitat Type!");
-                break;
+            OpenChest();
         }
     }
 
-    public void GetRelics()
+    private void OpenChest()
+    {
+        isChestOpened = true;
+        chestRenderer.sprite = openChestSprite;
+        GetRelic();
+        Button.SetActive(true);
+        Debug.Log("상자를 열었습니다.");
+    }
+
+    private void GetRelic()
     {
         TreasureType[] availableTreasures = (TreasureType[])Enum.GetValues(typeof(TreasureType));
         if (availableTreasures.Length == 0) return;
 
         TreasureType randomTreasure = availableTreasures[UnityEngine.Random.Range(0, availableTreasures.Length)];
-
         combatData.AddTreasureData(randomTreasure);
-        Debug.Log($"[LootBox] {randomTreasure} 획득!");
+        relicNameText.text = $"상자 속에서 {randomTreasure}을 발견했다.";
     }
 
     public void EndChestRoom()
