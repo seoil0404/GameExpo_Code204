@@ -6,7 +6,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
-using static UnityEditor.Experimental.GraphView.Port;
 
 public class EffectManager : MonoBehaviour {
 
