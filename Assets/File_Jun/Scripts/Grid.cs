@@ -140,6 +140,12 @@ public class Grid : MonoBehaviour
             Debug.Log("모든 블록이 배치 완료! 새로운 블록을 생성합니다.");
             GameEvents.RequestNewShapes();
 
+            foreach (var square in _gridSquares)
+            {
+                var gs = square.GetComponent<GridSquare>();
+                gs.ClearPetrified();
+            }
+
             HoldShape holdShape = FindFirstObjectByType<HoldShape>();
             if (holdShape != null)
             {
@@ -212,7 +218,8 @@ public class Grid : MonoBehaviour
             bool lineCompleted = true;
             foreach (var squareIndex in line)
             {
-                if (!_gridSquares[squareIndex].GetComponent<GridSquare>().SquareOccupied)
+                var gs = _gridSquares[squareIndex].GetComponent<GridSquare>();
+                if (!gs.SquareOccupied || gs.IsPetrified())
                 {
                     lineCompleted = false;
                     break;
@@ -520,4 +527,44 @@ public class Grid : MonoBehaviour
         }
         Debug.Log("DropAllBlocks: 모든 블록이 아래로 떨어졌습니다.");
     }
+
+
+    public void Spawn3x3PetrifiedBlocks()
+    {
+        if (_gridSquares.Count == 0)
+        {
+            Debug.LogWarning("그리드가 비어 있어 석화 블록을 생성할 수 없습니다.");
+            return;
+        }
+
+        int safeMin = 1;
+        int safeMaxX = columns - 2;
+        int safeMaxY = rows - 2;
+
+        int centerX = Random.Range(safeMin, safeMaxX + 1);
+        int centerY = Random.Range(safeMin, safeMaxY + 1);
+
+        Debug.Log($"[석화] 3x3 블록 석화 중심 좌표: ({centerX}, {centerY})");
+
+        for (int dy = -1; dy <= 1; dy++)
+        {
+            for (int dx = -1; dx <= 1; dx++)
+            {
+                int x = centerX + dx;
+                int y = centerY + dy;
+                int index = y * columns + x;
+
+                if (index >= 0 && index < _gridSquares.Count)
+                {
+                    GridSquare gs = _gridSquares[index].GetComponent<GridSquare>();
+                    if (!gs.SquareOccupied)
+                    {
+                        gs.PetrifyBlock();
+                    }
+                }
+            }
+        }
+
+    }
+
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985ed342a2ad4b04381d312ae6c3cd12, type: 3}
+  m_Name: HighVampire
+  m_EditorClassIdentifier: 
+  enemyName: "\uACE0\uC704\uD761\uD608\uADC0"
+  baseHP: 15
+  baseATK: 4
+  enemySprite: {fileID: -3369390543426049443, guid: 165b24f7cb7786c47bd4f5e83b99a5ec, type: 3}
+  dodgeChance: 0
+  enemySkills: []
+  habitat: 2
+  enemyType: 0
+  defaultAttackType: 0

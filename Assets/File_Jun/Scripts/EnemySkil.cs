@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2, ThornAttack}
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2, ThornAttack, PetrifyBlockArea }
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -115,6 +115,11 @@ public class EnemySkill : ScriptableObject
 
                     Debug.Log($"[{enemy.name}]이(가) [가시 공격] 스킬 사용! 플레이어에게 {thornDamage} 데미지 + 가시 1 증가");
                 }
+                break;
+
+            case SkillType.PetrifyBlockArea:
+                grid.Spawn3x3PetrifiedBlocks();
+                Debug.Log($"{enemy.name}이(가) [미노 석화] 스킬을 사용하여 3x3 석화 블록을 생성했다.");
                 break;
 
 

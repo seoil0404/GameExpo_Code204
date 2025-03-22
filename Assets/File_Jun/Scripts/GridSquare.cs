@@ -13,6 +13,7 @@ public class GridSquare : MonoBehaviour
     public Sprite yellowSprite;
     public Sprite violetSprite;
     public Sprite defaultSprite;
+    private bool isPetrified = false;
 
     public bool Selected { get; set; }
     public int SquareIndex { get; set; }
@@ -163,6 +164,29 @@ public class GridSquare : MonoBehaviour
         {
             Selected = false;
             hooverImage.gameObject.SetActive(false);
+        }
+    }
+
+    public void PetrifyBlock()
+    {
+        SetOccupied();
+        ActivateSquare();
+        SetBlockSpriteToDefault();
+        isPetrified = true;
+    }
+
+    public bool IsPetrified()
+    {
+        return isPetrified;
+    }
+
+    public void ClearPetrified()
+    {
+        if (isPetrified)
+        {
+            isPetrified = false;
+            ClearOccupied();
+            Deactivate();
         }
     }
 }
