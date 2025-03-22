@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.709999, y: -1.5600001}
+  m_AnchoredPosition: {x: -5.92, y: -1.32}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &221441404
@@ -297,8 +297,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 512252113}
-  - component: {fileID: 512252115}
   - component: {fileID: 512252114}
+  - component: {fileID: 512252115}
   m_Layer: 0
   m_Name: TestSpawner
   m_TagString: Untagged
@@ -348,11 +348,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 512252112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba54fe8ea52d1814bbe620c1d04263ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bb0e8c4c744f8d4b8d58522490cf0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <TargetTransform>k__BackingField: {fileID: 221441403}
-  <EffectPrefab>k__BackingField: {fileID: -1287189240809339827, guid: 7a2a915c4e228cc448337543534f57ba, type: 3}
+  <EffectPrefab>k__BackingField: {fileID: 0}
+  _DamageDelay: 1
 --- !u!1 &520912098
 GameObject:
   m_ObjectHideFlags: 0

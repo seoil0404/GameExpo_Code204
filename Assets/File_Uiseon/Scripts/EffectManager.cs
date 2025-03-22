@@ -85,6 +85,13 @@ public class EffectManager : MonoBehaviour {
 	[SerializeField]
 	private float ArrowDuration;
 
+	[Header("Dragon Breath")]
+	[SerializeField]
+	private VisualEffect DragonBreathObject;
+
+	[SerializeField]
+	private float DragonBreashDuration;
+
 	//======================================================================| Colors
 
 	public static readonly Color ColorOfThron = new(15, 145, 17);
@@ -206,6 +213,27 @@ public class EffectManager : MonoBehaviour {
 
 		instantiated.SetVector4("Color", new(color.r, color.g, color.b, 0f));
 		StartCoroutine(RemoveWhen(instantiated, ArrowDuration));
+
+	}
+
+	public void OnDragonBreath(GameObject target, GameObject caster) {
+		StartCoroutine(OnDragonBreathInner(target, caster));
+	}
+
+	private IEnumerator OnDragonBreathInner(GameObject target, GameObject caster) {
+
+		VisualEffect instantiated = Instantiate(DragonBreathObject);
+		instantiated.transform.position = caster.transform.position;
+
+		instantiated.SetVector2("TargetPosition", target.transform.position - caster.transform.position);
+
+		yield return new WaitForSeconds(DragonBreashDuration);
+
+		instantiated.Stop();
+
+		yield return new WaitUntil(() => instantiated.aliveParticleCount == 0);
+
+		Destroy(instantiated.gameObject);
 
 	}
 
