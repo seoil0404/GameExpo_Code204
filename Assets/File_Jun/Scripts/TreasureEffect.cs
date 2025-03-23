@@ -32,7 +32,7 @@ public class TreasureEffect : MonoBehaviour
     public bool GoldenApple;
     public bool MultipleCureScroll;
 
-    void Start()
+    void Awake()
     {
         if (combatData == null)
         {

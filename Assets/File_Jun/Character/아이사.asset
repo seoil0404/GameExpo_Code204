@@ -16,8 +16,8 @@ MonoBehaviour:
     characterName: "\uC544\uC774\uC0AC"
     ultimateSkillDescription: "\uCD5C\uC885 \uB370\uBBF8\uC9C0 x2"
     characterPrefab: {fileID: 407350982448144962, guid: 3de0507909d7278499545af6e031e5d7, type: 3}
-    maxHp: 6000
-    currentHp: 6000
+    maxHp: 75
+    currentHp: 75
     maxUltimateGauge: 15
     currentUltimateGauge: 0
     executionRate: 0

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour
 {
+    [Header("Scriptable")]
+    [SerializeField] private GoldData goldData;
+
     public static CharacterManager instance;
 
     [SerializeField] private Character[] characters = null;
@@ -17,8 +20,11 @@ public class CharacterManager : MonoBehaviour
     private static int savedHp = -1;
     private const string HpKey = "SavedHp";
     private const string UltimateKey = "SavedUltimateGauge";
+    private int lastCheckedHpBonus = 0;
 
-    void Awake()
+
+
+    void Start()
     {
         if (instance == null)
             instance = this;
@@ -29,15 +35,15 @@ public class CharacterManager : MonoBehaviour
             GameData.SelectedCharacterIndex = 1;
 
         selectedCharacter = characters[GameData.SelectedCharacterIndex - 1];
-
+        var treasureEffect = FindObjectOfType<TreasureEffect>();
         if (GameStartTracker.IsHavetobeReset)
         {
             Debug.Log("캐릭터 초기화 실행");
+            selectedCharacter.characterData.Initialize();
             ResetHp();
             SaveHp();
             ResetUltimateGauge();
             GameStartTracker.IsHavetobeReset = false;
-            var treasureEffect = GameObject.FindObjectOfType<TreasureEffect>();
             if (treasureEffect.Condemnation)
             {
                 selectedCharacter.characterData.ExecutionRate += 5;
@@ -51,13 +57,22 @@ public class CharacterManager : MonoBehaviour
         if (currentCharacterInstance == null)
             InitializeCharacter(selectedCharacter);
 
+        if (treasureEffect.MoneyBack && !GameStartTracker.IsUsedMoneyBag)
+        {
+            GameStartTracker.IsUsedMoneyBag = true;
+            goldData.InGameGold += 100;
+            Debug.Log("MoneyBag 보물 효과로 골드 100 지급!");
+        }
+
     }
 
-	private void Update() {
+    private void Update() {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			selectedCharacter.characterData.AttackEffectSpawner.Spawn();
 		}
-	}
+
+        CheckGoldAndHeal();
+    }
 
 	public void InitializeCharacter(Character character)
     {
@@ -180,4 +195,26 @@ public class CharacterManager : MonoBehaviour
         SaveUltimateGauge();
         Debug.Log($"[CharacterManager] 궁극기 게이지 초기화됨: {selectedCharacter.characterData.CurrentUltimateGauge}");
     }
+
+    private void CheckGoldAndHeal()
+    {
+        var treasureEffect = FindObjectOfType<TreasureEffect>();
+        if (treasureEffect == null || !treasureEffect.BusinessAcumen)
+            return;
+
+        int bonusCount = goldData.InGameGold / 30;
+
+        if (bonusCount > lastCheckedHpBonus)
+        {
+            int healAmount = bonusCount - lastCheckedHpBonus;
+            selectedCharacter.characterData.CurrentHp += healAmount;
+            lastCheckedHpBonus = bonusCount;
+            SaveHp();
+
+            Debug.Log($"[BusinessAcumen] 골드 {goldData.InGameGold} → HP {healAmount} 회복됨!");
+        }
+    }
+
+
+
 }

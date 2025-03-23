@@ -18,6 +18,8 @@ public class CharacterData
     [SerializeField]
     private int currentUltimateGauge;
     [SerializeField]
+    private int baseExecutionRate;
+    [SerializeField]
     private int executionRate;
 
     
@@ -33,6 +35,7 @@ public class CharacterData
     public void Initialize()
     {
         currentUltimateGauge = 0;
+        executionRate = baseExecutionRate;
     }
 
     public string CharacterName => characterName;

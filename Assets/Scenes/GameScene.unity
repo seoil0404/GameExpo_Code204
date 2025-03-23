@@ -2122,7 +2122,7 @@ MonoBehaviour:
   combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   UniversalGravitation: 0
   BusinessAcumen: 0
-  Condemnation: 1
+  Condemnation: 0
   MoneyBack: 0
   EmergencyFood: 0
   GiantResistanceHammer: 0
@@ -2358,6 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e499578bbadb0e4c87250ee01b6417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
   characters:
   - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
   - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
