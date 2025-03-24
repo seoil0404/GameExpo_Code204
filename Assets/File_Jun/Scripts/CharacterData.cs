@@ -21,8 +21,12 @@ public class CharacterData
     private int baseExecutionRate;
     [SerializeField]
     private int executionRate;
+    [SerializeField]
+    private int characterATK;
+    [SerializeField]
+    private int currentCharacterATK;
 
-    
+
     public UltimateSkill ultimateSkill;
     public bool NegateNextDamage = false;
     public bool NextAttackLifeSteal = false;
@@ -36,6 +40,7 @@ public class CharacterData
     {
         currentUltimateGauge = 0;
         executionRate = baseExecutionRate;
+        currentCharacterATK = characterATK;
 
         TreasureEffect treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.GoldenApple)
@@ -111,6 +116,26 @@ public class CharacterData
         NegateNextDamage = true; // Àû °ø°Ý ¹«È¿È­ 1È¸
         NextAttackLifeSteal = true; // ÈíÇ÷ 1È¸ ¹ßµ¿
         Debug.Log("±Ã±Ø±â ¹ßµ¿: °ø°Ý ¹«È¿È­ + ÈíÇ÷ È°¼ºÈ­");
+    }
+
+    public int CharacterATK
+    {
+        get => characterATK;
+        set
+        {
+            characterATK = Mathf.Max(0, value);
+            Debug.Log($"±âº» ATK set: {characterATK}");
+        }
+    }
+
+    public int CurrentCharacterATK
+    {
+        get => currentCharacterATK;
+        set
+        {
+            currentCharacterATK = Mathf.Max(0, value);
+            Debug.Log($"ÇöÀç ATK set: {currentCharacterATK}");
+        }
     }
 
 }

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded01854c601a774fa39517294673c1e, type: 3}
   m_Name: GoldData
   m_EditorClassIdentifier: 
+  inGameGold: 0
+  bossGold: 0
+  ShowManager: {fileID: 0}

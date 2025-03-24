@@ -242,7 +242,7 @@ public class EnemyStats : MonoBehaviour
             return;
         }
 
-        int baseDamage = completedLines;
+        int baseDamage = completedLines + CharacterManager.selectedCharacter.characterData.CurrentCharacterATK;
         int calculatedDamage = baseDamage;
 
         var treasureEffect = FindFirstObjectByType<TreasureEffect>();
@@ -283,10 +283,6 @@ public class EnemyStats : MonoBehaviour
 
 
 
-
-
-
-
     private void UpdateHealthText()
     {
         if (healthText != null)
@@ -300,13 +296,19 @@ public class EnemyStats : MonoBehaviour
     {
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
 
+        var treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.SoulLantern)
+        {
+            CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
+            Debug.Log("[SoulLantern] 보물 효과: 플레이어 현재 ATK +1!");
+        }
+
         goldData.InGameGold += maxHp;
 
         if (Grid.instance != null)
         {
             Grid.instance.RemoveEnemy(gameObject);
         }
-
     }
 
     public static void AddEnemy(GameObject enemy)

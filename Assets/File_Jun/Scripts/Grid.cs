@@ -146,6 +146,22 @@ public class Grid : MonoBehaviour
                 gs.ClearPetrified();
             }
 
+            TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
+            if (treasureEffect != null && treasureEffect.CorruptTouch)
+            {
+                GameObject selectedEnemy = GetSelectedEnemy();
+                if (selectedEnemy != null)
+                {
+                    EnemyStats enemyStats = selectedEnemy.GetComponent<EnemyStats>();
+                    if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+                    {
+                        enemyStats.ReceiveDamage(1, columns);
+                        EffectManager.Instance.OnPoison(selectedEnemy);
+                        Debug.Log("[CorruptTouch] 선택된 적의 HP가 1 감소됨");
+                    }
+                }
+            }
+
             HoldShape holdShape = FindFirstObjectByType<HoldShape>();
             if (holdShape != null)
             {
@@ -399,6 +415,22 @@ public class Grid : MonoBehaviour
             else
             {
                 Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
+            }
+        }
+
+        TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.CorruptTouch)
+        {
+            GameObject selectedEnemy = GetSelectedEnemy();
+            if (selectedEnemy != null)
+            {
+                EnemyStats enemyStats = selectedEnemy.GetComponent<EnemyStats>();
+                if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+                {
+                    enemyStats.ReceiveDamage(1, columns);
+                    EffectManager.Instance.OnPoison(selectedEnemy);
+                    Debug.Log("[CorruptTouch] 선택된 적의 HP가 1 감소됨");
+                }
             }
         }
 
