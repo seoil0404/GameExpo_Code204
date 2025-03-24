@@ -6,7 +6,7 @@ public class EnemySkill : ScriptableObject
     public string skillName;
     public string skillDescription;
 
-    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2, ThornAttack, PetrifyBlockArea, Heal20Percent, SpawnSpecialMino }
+    public enum SkillType { SpawnBlock, DestroyBlock, SealBlock, DestroyArea, PowerUp, SwallowBlock, Poison, Minotroll, Minokwizard1, Minokwizard2, ThornAttack, PetrifyBlockArea, Heal20Percent, SpawnSpecialMino, SpawnHealingMino }
     public SkillType skillType;
 
     public void ActivateSkill(Grid grid, GameObject enemy)
@@ -137,6 +137,18 @@ public class EnemySkill : ScriptableObject
                     Debug.Log($"{enemy.name}이(가) [특수 미노]를 보드에 생성했습니다.");
                 }
                 break;
+
+            case SkillType.SpawnHealingMino:
+                if (enemyStats != null && grid != null)
+                {
+                    grid.SpawnHealingMino(enemy);
+                    Debug.Log($"{enemy.name}이(가) [힐 미노]를 보드에 생성했습니다.");
+                }
+                break;
+
+
+
+
 
         }
     }

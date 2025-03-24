@@ -22,6 +22,7 @@ public class GridSquare : MonoBehaviour
     private string blockColor = "Default";
     private GameObject sealingEnemy;
     private GameObject specialMinoOwner;
+    private GameObject lifestealMinoOwner;
 
     void Start()
     {
@@ -204,6 +205,21 @@ public class GridSquare : MonoBehaviour
     public GameObject GetSpecialMinoOwner()
     {
         return specialMinoOwner;
+    }
+
+    public void SetLifestealMinoOwner(GameObject owner)
+    {
+        lifestealMinoOwner = owner;
+    }
+
+    public GameObject GetLifestealMinoOwner()
+    {
+        return lifestealMinoOwner;
+    }
+
+    public void ClearLifestealMinoOwner()
+    {
+        lifestealMinoOwner = null;
     }
 
 }

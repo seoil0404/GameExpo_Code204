@@ -201,12 +201,30 @@ public class EnemyStats : MonoBehaviour
             {
                 Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
                 characterManager.ApplyDamageToCharacter(damage);
+
+                if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.LifeSteal)
+                {
+                    int healAmount = damage / 2;
+                    hp += healAmount;
+                    if (hp > maxHp) hp = maxHp;
+                    UpdateHealthText();
+                    Debug.Log($"[{gameObject.name}]이(가) 흡혈 공격으로 {healAmount} HP 회복!");
+                }
             });
         }
         else
         {
             Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
             characterManager.ApplyDamageToCharacter(damage);
+
+            if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.LifeSteal)
+            {
+                int healAmount = damage / 2;
+                hp += healAmount;
+                if (hp > maxHp) hp = maxHp;
+                UpdateHealthText();
+                Debug.Log($"[{gameObject.name}]이(가) 흡혈 공격으로 {healAmount} HP 회복!");
+            }
         }
     }
 
@@ -447,6 +465,21 @@ public class EnemyStats : MonoBehaviour
     {
         atk += 2;
         Debug.Log($"[{gameObject.name}]의 ATK가 2 증가! 현재 ATK: {atk}");
+    }
+
+    public int GetMaxHp()
+    {
+        return maxHp;
+    }
+
+    public void HealByAmount(int amount)
+    {
+        hp += amount;
+        if (hp > maxHp)
+            hp = maxHp;
+
+        UpdateHealthText();
+        Debug.Log($"[{gameObject.name}]이(가) {amount}만큼 회복했습니다. 현재 HP: {hp}");
     }
 
 }

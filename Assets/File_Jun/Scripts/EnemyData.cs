@@ -10,9 +10,10 @@ public class EnemyData : ScriptableObject
     public enum DefaultAttackType
     {
         Normal,
-        ThornAttack
-    }
+        ThornAttack,
+        LifeSteal
 
+    }
     public string enemyName;
     public int baseHP;
     public int baseATK;

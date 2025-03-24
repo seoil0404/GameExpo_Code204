@@ -20,4 +20,4 @@ MonoBehaviour:
   enemySkills: []
   habitat: 2
   enemyType: 0
-  defaultAttackType: 0
+  defaultAttackType: 2

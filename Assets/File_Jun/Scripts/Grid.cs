@@ -231,9 +231,11 @@ public class Grid : MonoBehaviour
         foreach (var line in completedLines)
         {
             MinoEffectHelper.Instance.PlayMinoEffect(_gridSquares, line);
+
             foreach (var squareIndex in line)
             {
                 var gs = _gridSquares[squareIndex].GetComponent<GridSquare>();
+
                 GameObject owner = gs.GetSpecialMinoOwner();
                 if (owner != null)
                 {
@@ -244,10 +246,26 @@ public class Grid : MonoBehaviour
                     }
                     gs.ClearSpecialMinoOwner();
                 }
+
+                GameObject lifestealOwner = gs.GetLifestealMinoOwner();
+                if (lifestealOwner != null)
+                {
+                    var stats = lifestealOwner.GetComponent<EnemyStats>();
+                    if (stats != null)
+                    {
+                        int healAmount = Mathf.RoundToInt(stats.GetMaxHp() * 0.2f);
+                        stats.HealByAmount(healAmount);
+                        Debug.Log($"[흡혈 미노] {lifestealOwner.name}이(가) {healAmount} 만큼 회복했습니다.");
+                    }
+                    gs.ClearLifestealMinoOwner();
+                }
+
                 gs.ClearOccupied();
             }
+
             linesCompleted++;
         }
+
         return linesCompleted;
     }
 
@@ -579,7 +597,6 @@ public class Grid : MonoBehaviour
             return;
         }
 
-        // 빈 칸 가져오기
         List<GridSquare> emptySquares = _gridSquares
             .Select(sq => sq.GetComponent<GridSquare>())
             .Where(sq => !sq.SquareOccupied)
@@ -591,16 +608,40 @@ public class Grid : MonoBehaviour
             return;
         }
 
-        // 랜덤 빈 칸 선택
         int randomIndex = Random.Range(0, emptySquares.Count);
         GridSquare gs = emptySquares[randomIndex];
 
         gs.SetOccupied();
         gs.ActivateSquare();
         gs.SetBlockSpriteToDefault();
-        gs.SetSpecialMinoOwner(enemy);  // 시전자 저장
+        gs.SetSpecialMinoOwner(enemy);
+        CheckIfAnyLineIsCompleted();
 
         Debug.Log($"특수 블록이 위치 {gs.SquareIndex}에 생성되었습니다. 시전자: {enemy.name}");
     }
+
+    public void SpawnHealingMino(GameObject enemy)
+    {
+        if (_gridSquares.Count == 0) return;
+
+        List<GridSquare> emptySquares = _gridSquares
+            .Select(sq => sq.GetComponent<GridSquare>())
+            .Where(sq => !sq.SquareOccupied)
+            .ToList();
+
+        if (emptySquares.Count == 0) return;
+
+        int randomIndex = Random.Range(0, emptySquares.Count);
+        GridSquare gs = emptySquares[randomIndex];
+
+        gs.SetOccupied();
+        gs.ActivateSquare();
+        gs.SetBlockSpriteToDefault();
+        gs.SetLifestealMinoOwner(enemy);
+        CheckIfAnyLineIsCompleted();
+
+        Debug.Log($"힐 미노가 위치 {gs.SquareIndex}에 생성되었습니다. 시전자: {enemy.name}");
+    }
+
 
 }
