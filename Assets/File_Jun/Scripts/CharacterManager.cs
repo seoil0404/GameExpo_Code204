@@ -21,6 +21,8 @@ public class CharacterManager : MonoBehaviour
     private const string HpKey = "SavedHp";
     private const string UltimateKey = "SavedUltimateGauge";
     private int lastCheckedHpBonus = 0;
+    public float CharacterBaseDodgeChance = 0f;
+
 
 
 
@@ -64,6 +66,12 @@ public class CharacterManager : MonoBehaviour
             Debug.Log("MoneyBag 보물 효과로 골드 100 지급!");
         }
 
+        if (treasureEffect.ShoesOfHermes)
+        {
+            CharacterBaseDodgeChance = 10f;
+            Debug.Log("ShoesOfHermes 보물 효과로 캐릭터 회피 확률이 10%로 설정됨");
+        }
+
     }
 
     private void Update() {
@@ -98,6 +106,14 @@ public class CharacterManager : MonoBehaviour
             selectedCharacter.characterData.NegateNextDamage = false;
             return;
         }
+
+        float dodgeRoll = Random.Range(0f, 100f);
+        if (dodgeRoll < CharacterBaseDodgeChance)
+        {
+            Debug.Log($"[CharacterManager] {selectedCharacter.characterData.CharacterName}이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
+            return;
+        }
+
 
         selectedCharacter.characterData.CurrentHp -= totalDamage;
         savedHp = selectedCharacter.characterData.CurrentHp;

@@ -227,6 +227,14 @@ public class EnemyStats : MonoBehaviour
         int baseDamage = completedLines;
         int calculatedDamage = baseDamage;
 
+        var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.SwordOfRuinedKing)
+        {
+            int bonusDamage = Mathf.CeilToInt(maxHp * 0.08f);
+            calculatedDamage += bonusDamage;
+            Debug.Log($"[SwordOfRuinedKing] {gameObject.name}에게 보너스 데미지 {bonusDamage} 적용! 총 데미지: {calculatedDamage}");
+        }
+
         damageReceivedLastTurn = calculatedDamage;
         hp -= calculatedDamage;
 
@@ -237,7 +245,6 @@ public class EnemyStats : MonoBehaviour
             int thornDamage = thornCount;
             Debug.Log($"[{gameObject.name}]의 가시에 의해 플레이어가 {thornDamage} 반사 피해를 입습니다!");
             characterManager.ApplyDamageToCharacter(thornDamage);
-            //EffectManager.Instance.OnThorn(CharacterManager.currentCharacterInstance);
         }
 
         if (CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal)
@@ -255,6 +262,7 @@ public class EnemyStats : MonoBehaviour
         comboCount++;
         UpdateHealthText();
     }
+
 
 
 
