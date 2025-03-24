@@ -24,6 +24,7 @@ public class PlayerHealthBar : MonoBehaviour
         UpdateHpBar();
     }
 
+    
     void OnDestroy()
     {
         if (characters != null && characters.Length > 0 && characters[GameData.SelectedCharacterIndex - 1] != null)

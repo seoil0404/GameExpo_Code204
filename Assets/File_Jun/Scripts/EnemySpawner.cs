@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     private List<Transform> availableSpawnPoints;
     public List<GameObject> enemies = new List<GameObject>();
 
-    private void Awake()
+    private void Start()
     {
         if (GameStartTracker.IsHavetobeReset)
         {

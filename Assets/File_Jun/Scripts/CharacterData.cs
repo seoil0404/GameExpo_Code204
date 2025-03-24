@@ -36,6 +36,13 @@ public class CharacterData
     {
         currentUltimateGauge = 0;
         executionRate = baseExecutionRate;
+
+        TreasureEffect treasureEffect = GameObject.FindObjectOfType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.GoldenApple)
+        {
+            MaxHp += 10;
+            Debug.Log("GoldenApple È¿°ú Àû¿ëµÊ! MaxHp +10");
+        }
     }
 
     public string CharacterName => characterName;

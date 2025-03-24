@@ -84,6 +84,7 @@ public class EnemyStats : MonoBehaviour
 
     public void SetStats(int difficulty, EnemyData.HabitatType habitat)
     {
+        Debug.Log($"[SetStats] 함수가 호출되었습니다! {gameObject.name}");
         int habitatLevel = GetHabitatLevel(habitat);
 
         maxHp = enemyData.baseHP + (difficulty * habitatLevel);
@@ -92,6 +93,13 @@ public class EnemyStats : MonoBehaviour
         atk = enemyData.baseATK + (difficulty / Mathf.Max(4 - habitatLevel, 1));
 
         dodgeChance = enemyData.dodgeChance;
+
+        var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.UniversalGravitation)
+        {
+            dodgeChance = 0;
+            Debug.Log($"[보물 효과 적용] {gameObject.name}의 회피율이 0으로 설정되었습니다 (UniversalGravitation)");
+        }
 
         Debug.Log($"[EnemyStats] {gameObject.name} 스탯 설정 완료 - HP: {hp}, ATK: {atk}, " +
                   $"난이도: {difficulty}, 레벨: {habitatLevel}");
