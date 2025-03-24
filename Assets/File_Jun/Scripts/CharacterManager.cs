@@ -35,7 +35,7 @@ public class CharacterManager : MonoBehaviour
             GameData.SelectedCharacterIndex = 1;
 
         selectedCharacter = characters[GameData.SelectedCharacterIndex - 1];
-        var treasureEffect = FindObjectOfType<TreasureEffect>();
+        var treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
         if (GameStartTracker.IsHavetobeReset)
         {
             Debug.Log("캐릭터 초기화 실행");
@@ -198,7 +198,7 @@ public class CharacterManager : MonoBehaviour
 
     private void CheckGoldAndHeal()
     {
-        var treasureEffect = FindObjectOfType<TreasureEffect>();
+        var treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect == null || !treasureEffect.BusinessAcumen)
             return;
 

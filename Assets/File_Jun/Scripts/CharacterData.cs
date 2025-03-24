@@ -37,7 +37,7 @@ public class CharacterData
         currentUltimateGauge = 0;
         executionRate = baseExecutionRate;
 
-        TreasureEffect treasureEffect = GameObject.FindObjectOfType<TreasureEffect>();
+        TreasureEffect treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.GoldenApple)
         {
             MaxHp += 10;

@@ -17,8 +17,7 @@ public class PlayerHealthBar : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(DelayedStartLogic());
-
+        StartCoroutine(SetupHpBar());
     }
 
     
@@ -55,13 +54,12 @@ public class PlayerHealthBar : MonoBehaviour
         }
     }
 
-    private IEnumerator DelayedStartLogic()
+    private IEnumerator SetupHpBar()
     {
         yield return null;
         Executable.SetActive(false);
         heeledHp.fillAmount = 0;
         FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
-        //characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = UpdateHpBar;
         characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged += UpdateHpBar;
         UpdateHpBar();
     }
