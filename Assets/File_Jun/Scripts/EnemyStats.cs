@@ -253,6 +253,17 @@ public class EnemyStats : MonoBehaviour
             Debug.Log($"[SwordOfRuinedKing] {gameObject.name}¿¡°Ô º¸³Ê½º µ¥¹ÌÁö {bonusDamage} Àû¿ë! ÃÑ µ¥¹ÌÁö: {calculatedDamage}");
         }
 
+        if (treasureEffect.GoldenHair && baseDamage >= 32)
+        {
+            CharacterManager.selectedCharacter.characterData.CurrentHp += calculatedDamage;
+           
+            goldData.InGameGold += 100;
+            CharacterManager.instance.RecoverHpFromDamage(calculatedDamage);
+
+
+            Debug.Log($"[GoldenHair] baseDamage {baseDamage} ¡Ã 32 ¡æ HP {calculatedDamage} È¸º¹ + °ñµå 100 È¹µæ!");
+        }
+
         damageReceivedLastTurn = calculatedDamage;
         hp -= calculatedDamage;
 
