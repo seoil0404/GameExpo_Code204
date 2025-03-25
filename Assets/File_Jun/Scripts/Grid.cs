@@ -30,6 +30,8 @@ public class Grid : MonoBehaviour
     public float ultimateDamageMultiplier = 1f;
     public int additionalExecutionDamage = 0;
 
+    private int turnCounter = 0;
+
     [SerializeField] private GameObject rewardsScreen;
 
     private void Awake()
@@ -146,7 +148,18 @@ public class Grid : MonoBehaviour
                 gs.ClearPetrified();
             }
 
-            TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
+            var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+            if (treasureEffect != null && treasureEffect.TalismanOfPower)
+            {
+                turnCounter++;
+
+                if (turnCounter % 2 == 0)
+                {
+                    CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
+                    Debug.Log("[TalismanOfPower] 2턴 경과! 캐릭터 ATK +2 증가");
+                }
+            }
+
             if (treasureEffect != null && treasureEffect.CorruptTouch)
             {
                 GameObject selectedEnemy = GetSelectedEnemy();
@@ -433,6 +446,18 @@ public class Grid : MonoBehaviour
                 }
             }
         }
+
+        if (treasureEffect != null && treasureEffect.TalismanOfPower)
+        {
+            turnCounter++;
+
+            if (turnCounter % 2 == 0)
+            {
+                CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
+                Debug.Log("[TalismanOfPower] 2턴 경과! 캐릭터 ATK +2 증가");
+            }
+        }
+
 
         Debug.Log("그리드가 리셋되었습니다.");
         comboCount--;

@@ -135,7 +135,7 @@ public class CharacterData
         {
             currentCharacterATK = Mathf.Max(0, value);
             Debug.Log($"ÇöÀç ATK set: {currentCharacterATK}");
-        }
+        }   
     }
 
 }
