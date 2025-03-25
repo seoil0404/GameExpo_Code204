@@ -53,6 +53,24 @@ public class CharacterManager : MonoBehaviour
             }
         }
 
+        if (treasureEffect.NobleBlood)
+        {
+            int recoverAmount = Mathf.Max(1, selectedCharacter.characterData.CurrentHp / 10);
+            selectedCharacter.characterData.CurrentHp += recoverAmount;
+
+            if (selectedCharacter.characterData.CurrentHp > selectedCharacter.characterData.MaxHp)
+                selectedCharacter.characterData.CurrentHp = selectedCharacter.characterData.MaxHp;
+
+            SaveHp();
+            Debug.Log($"[NobleBlood] 보물 효과로 현재 체력의 1/10({recoverAmount}) 회복됨. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
+        }
+
+        if (treasureEffect.HolyShield)
+        {
+            selectedCharacter.characterData.IsInvincible = true;
+            Debug.Log("[HolyShield] 보물 효과로 무효화 상태가 시작 시 1턴간 적용됩니다.");
+        }
+
         LoadHp();
         LoadUltimateGauge();
 
@@ -100,6 +118,13 @@ public class CharacterManager : MonoBehaviour
 
     public void ApplyDamageToCharacter(int totalDamage)
     {
+
+        if (selectedCharacter.characterData.IsInvincible)
+        {
+            Debug.Log($"{selectedCharacter.characterData.CharacterName}은(는) 무효화 상태이므로 피해 {totalDamage} 무효화됨!");
+            return;
+        }
+
         if (selectedCharacter.characterData.NegateNextDamage)
         {
             Debug.Log($"{selectedCharacter.characterData.CharacterName}의 궁극기 효과로 인해 {totalDamage} 데미지가 무효화되었습니다.");

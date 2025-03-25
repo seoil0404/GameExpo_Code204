@@ -1113,6 +1113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reset
       objectReference: {fileID: 0}
+    - target: {fileID: 4332549530349998543, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8791602504971515972, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1209,7 +1213,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4399213795865930314, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2367,6 +2372,7 @@ MonoBehaviour:
   UltimateGaugeSlider: {fileID: 1132816791}
   SpawnPoint: {fileID: 1753523601}
   scoreScreen: {fileID: 2110268313}
+  CharacterBaseDodgeChance: 0
 --- !u!1001 &1807534033
 PrefabInstance:
   m_ObjectHideFlags: 0

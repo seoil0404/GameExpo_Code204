@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
@@ -211,6 +212,15 @@ public class Grid : MonoBehaviour
                     Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
                 }
             }
+
+            if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
+            {
+
+                CharacterManager.selectedCharacter.characterData.IsInvincible = false;
+                //EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
+                Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
+
+            }
         }
         CheckIfGameEnded();
     }
@@ -227,7 +237,6 @@ public class Grid : MonoBehaviour
         {
             DealDamageToSelectedEnemy(completedLines);
             comboCount++;
-            // 부서진 줄 하나당 궁극기 게이지 1씩 증가
             CharacterManager.selectedCharacter.characterData.CurrentUltimateGauge += completedLines;
             CharacterManager.SaveUltimateGauge();
         }
@@ -383,7 +392,7 @@ public class Grid : MonoBehaviour
 
     public void ResetGrid()
     {
-        
+            
         foreach (var square in _gridSquares)
         {
             var gridSquare = square.GetComponent<GridSquare>();
@@ -458,6 +467,13 @@ public class Grid : MonoBehaviour
             }
         }
 
+        if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
+        {
+
+            CharacterManager.selectedCharacter.characterData.IsInvincible = false;
+            //EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
+            Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
+        }
 
         Debug.Log("그리드가 리셋되었습니다.");
         comboCount--;

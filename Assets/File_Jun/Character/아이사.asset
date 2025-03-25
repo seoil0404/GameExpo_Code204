@@ -17,14 +17,15 @@ MonoBehaviour:
     ultimateSkillDescription: "\uCD5C\uC885 \uB370\uBBF8\uC9C0 x2"
     characterPrefab: {fileID: 407350982448144962, guid: 3de0507909d7278499545af6e031e5d7, type: 3}
     maxHp: 75
-    currentHp: 68
+    currentHp: 44
     maxUltimateGauge: 15
-    currentUltimateGauge: 1
+    currentUltimateGauge: 15
     baseExecutionRate: 0
     executionRate: 0
     characterATK: 0
-    currentCharacterATK: 30
+    currentCharacterATK: 0
     ultimateSkill: {fileID: 11400000, guid: f0aba4ea15bfbf04eaf6aa8a29982ea7, type: 2}
     NegateNextDamage: 0
     NextAttackLifeSteal: 0
     AttackEffectSpawner: {fileID: 0}
+    IsInvincible: 0

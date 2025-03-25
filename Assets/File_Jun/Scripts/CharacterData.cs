@@ -36,6 +36,9 @@ public class CharacterData
 	
 	public AttackEffectSpawner AttackEffectSpawner;
 
+    public bool IsInvincible = false;
+
+
     public void Initialize()
     {
         currentUltimateGauge = 0;

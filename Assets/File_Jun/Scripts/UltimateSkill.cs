@@ -8,10 +8,10 @@ public class UltimateSkill : ScriptableObject
 
     public enum UltimateType
     {
-        StackAndDouble,            // 기존: 블록을 아래로 쌓고 클리어 데미지 2배
-        NegateDamageCureLifeSteal, // 다음 피해 무효화 + 상태 이상 치료 + 흡혈(피해의 절반 회복)
-        EvolveSwordIncreaseExecution, // 검 진화: 처형율 +5, 다음 공격에 처형율 추가 데미지 적용
-        DropBlocksAndDoubleDamage  // 새로 추가: 판에 배치된 블록들을 아래로 떨어뜨리고 클리어 데미지 2배
+        StackAndDouble,           
+        NegateDamageCureLifeSteal,
+        EvolveSwordIncreaseExecution,
+        DropBlocksAndDoubleDamage 
     }
     public UltimateType ultimateType;
 
@@ -26,10 +26,12 @@ public class UltimateSkill : ScriptableObject
                 break;
 
             case UltimateType.NegateDamageCureLifeSteal:
-                character.characterData.NegateNextDamage = true;
+                character.characterData.IsInvincible = true;
                 character.characterData.CureStatusEffects();
-                Debug.Log($"{character.characterData.CharacterName}의 궁극기 [{skillName}] (NegateDamageCureLifeSteal) 발동됨.");
+                character.characterData.NextAttackLifeSteal = true;
+                Debug.Log($"{character.characterData.CharacterName}의 궁극기 [{skillName}] 발동: 무효화 + 상태이상 치료 + 흡혈 활성화");
                 break;
+
 
             case UltimateType.EvolveSwordIncreaseExecution:
                 character.characterData.ExecutionRate += 5;
@@ -38,8 +40,8 @@ public class UltimateSkill : ScriptableObject
                 break;
 
             case UltimateType.DropBlocksAndDoubleDamage:
-                grid.DropAllBlocks(); // 판 위의 블록들을 아래로 떨어뜨림
-                grid.ultimateDamageMultiplier = 2f; // 클리어 데미지 2배 적용
+                grid.DropAllBlocks();
+                grid.ultimateDamageMultiplier = 2f;
                 Debug.Log($"{character.characterData.CharacterName}의 궁극기 [{skillName}] (DropBlocksAndDoubleDamage) 발동됨.");
                 break;
         }
