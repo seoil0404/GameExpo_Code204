@@ -108,10 +108,16 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 
 	private void AttackEnd() {
-		
+
+		Debug.LogWarning($"{casterTransform.gameObject.name} Start Attack End");
+
 		casterTransform
 			.DORotate(Vector3.zero, AttackingDuration / 1.5f)
-			.OnComplete(() => StartCoroutine(Retreat()));
+			.OnComplete(() =>
+			{
+				Debug.LogWarning($"{casterTransform.gameObject.name} Attack End Complete");	
+                StartCoroutine(Retreat());
+			});
 
 	}
 
@@ -119,9 +125,12 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 		
 		yield return new WaitForSeconds(RetreatWaitingDuration);
 
-		casterTransform
-			.DOLocalMove(startPosition, RetreatDuraion)
-			.SetEase(RetreatEase);
-	}
+		Debug.LogWarning($"{casterTransform.gameObject.name} Start Retreat [CurrentPos: {casterTransform.position}, TargetPosition: {startPosition}]");
+
+        casterTransform
+			.DOMove(startPosition, RetreatDuraion)
+			.SetEase(RetreatEase)
+			.OnComplete(() => Debug.LogWarning($"{casterTransform.gameObject.name} Retreat Complete"));
+    }
 
 }
