@@ -62,7 +62,7 @@ public class CharacterData
         {
             float ratio = (float)currentHp / maxHp;
             maxHp = Mathf.Max(value, 1);
-            currentHp = Mathf.RoundToInt(maxHp * ratio);
+            CurrentHp = Mathf.RoundToInt(maxHp * ratio);
             OnHpChanged?.Invoke();
             Debug.Log($"최대체력 set: {maxHp}");
         }
@@ -105,16 +105,12 @@ public class CharacterData
             Debug.Log($"처형율 set: {executionRate}");
         }
     }
-
     
     public void CureStatusEffects()
     {
         Debug.Log($"{CharacterName}의 상태 이상 효과가 모두 치료되었습니다.");
         
     }
-
-
-
 
     public void ActivateLifeSteal()
     {
@@ -142,5 +138,4 @@ public class CharacterData
             Debug.Log($"현재 ATK set: {currentCharacterATK}");
         }   
     }
-
 }
