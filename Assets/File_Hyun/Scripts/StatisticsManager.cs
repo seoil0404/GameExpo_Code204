@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatisticsManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class StatisticsManager : MonoBehaviour
     private float totalPlayTime;
 
     private float adventureStartTime;
+    public GoldData goldData;
+    public int firstGold;
 
     void Awake()
     {
@@ -31,11 +34,27 @@ public class StatisticsManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadTotalStatistics();
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        setFirstGold();
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        setFirstGold();
+    }
+
+    private void setFirstGold()
+    {
+        firstGold = goldData.InGameGold;
     }
 
     public void StartAdventure()

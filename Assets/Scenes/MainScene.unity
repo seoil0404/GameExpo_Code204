@@ -1621,6 +1621,8 @@ MonoBehaviour:
   TotalDamageDealtThisRun: 0
   ClearLineCountThisRun: 0
   BossCoinsEarnedThisRun: 0
+  goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
+  firstGold: 0
 --- !u!1 &543736027
 GameObject:
   m_ObjectHideFlags: 0
