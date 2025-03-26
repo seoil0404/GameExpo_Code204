@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class StatisticsManager : MonoBehaviour
 {
@@ -44,16 +45,17 @@ public class StatisticsManager : MonoBehaviour
 
     private void Start()
     {
-        setFirstGold();
+        StartCoroutine(setFirstGold());
     }
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
-        setFirstGold();
+        StartCoroutine(setFirstGold());
     }
 
-    private void setFirstGold()
+    private IEnumerator setFirstGold()
     {
+        yield return null;
         firstGold = goldData.InGameGold;
     }
 
