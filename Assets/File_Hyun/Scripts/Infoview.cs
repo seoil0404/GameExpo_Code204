@@ -11,7 +11,6 @@ public class Infoview : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Infoview Start");
         if (Name != null) Name.text = characters[GameData.SelectedCharacterIndex - 1].characterData.CharacterName;
         if(Floor != null) Floor.text = $"[ {StatisticsManager.Instance.CurrentFloor}   /   {StatisticsManager.Instance.CurrentRoom + 1} ]";
     }
