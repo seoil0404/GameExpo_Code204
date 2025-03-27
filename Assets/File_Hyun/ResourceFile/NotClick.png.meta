@@ -103,12 +103,12 @@ TextureImporter:
       name: NotClick_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 14
         y: 2
-        width: 584
-        height: 584
+        width: 572
+        height: 572
       alignment: 9
-      pivot: {x: 0.021364415, y: 0.9786584}
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
