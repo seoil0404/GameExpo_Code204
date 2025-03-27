@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class MinoEffectPool : MonoBehaviour
 {
     public GameObject[] minoPrefabs;
-    public int initialPoolSize = 30;
+    public int initialPoolSize = 12;
     public float shrinkCheckInterval = 3f;
     public int shrinkThreshold = 10;
     public int shrinkPerCycle = 2;
