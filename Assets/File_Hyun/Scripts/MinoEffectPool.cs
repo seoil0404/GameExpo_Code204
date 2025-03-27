@@ -44,7 +44,7 @@ public class MinoEffectPool : MonoBehaviour
 
         MinoEffect effect = pool.Dequeue();
         effect.transform.position = position;
-        effect.transform.SetParent(parent, true); //
+        effect.transform.SetParent(parent, true);
         effect.gameObject.SetActive(true);
         effect.Init(this);
         return effect;
