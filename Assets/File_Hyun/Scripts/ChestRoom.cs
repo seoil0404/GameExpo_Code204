@@ -51,6 +51,7 @@ public class ChestRoom : MonoBehaviour
     public void EndChestRoom()
     {
         Scene.Controller.OnClearScene();
+        StatisticsManager.Instance.CurrentRoom++;
         Debug.Log("상자방 종료");
     }
 }

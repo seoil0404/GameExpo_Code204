@@ -203,6 +203,7 @@ public class EventRoom : MonoBehaviour
     private void EndEventRoom()
     {
         Scene.Controller.OnClearScene();
+        StatisticsManager.Instance.CurrentRoom++;
         Debug.Log("이벤트방 종료");
     }
 }

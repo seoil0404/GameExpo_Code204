@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
+
 
 public class StatisticsManager : MonoBehaviour
 {
@@ -25,8 +27,14 @@ public class StatisticsManager : MonoBehaviour
     private float totalPlayTime;
 
     private float adventureStartTime;
+
     public GoldData goldData;
     public int firstGold;
+
+    public int CurrentRoom = 0;
+    public int CurrentFloor = 1;
+
+    private string previousSceneName = "";
 
     void Awake()
     {
@@ -36,6 +44,7 @@ public class StatisticsManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             LoadTotalStatistics();
             SceneManager.sceneLoaded += OnSceneLoaded;
+            previousSceneName = SceneManager.GetActiveScene().name;
         }
         else
         {
@@ -46,11 +55,16 @@ public class StatisticsManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(setFirstGold());
+        Debug.Log($"{CurrentFloor} | {CurrentRoom}");
     }
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         StartCoroutine(setFirstGold());
+        string newSceneName = scene.name;
+        if (previousSceneName == "CharacterScene" && newSceneName == "MapScene")
+            StartAdventure();
+        previousSceneName = newSceneName;
     }
 
     private IEnumerator setFirstGold()
@@ -79,17 +93,18 @@ public class StatisticsManager : MonoBehaviour
         }
 
         UpdateTotalStatistics();
-        SaveTotalStatistics();
     }
 
     public void FailAdventure()
     {
         UpdateTotalStatistics();
-        SaveTotalStatistics();
+        ResetAdventureStats();
     }
 
     private void ResetAdventureStats()
     {
+        CurrentRoom = 0;
+        CurrentFloor = 1;
         HighestFloorReached = 0;
         BossesKilledThisRun = 0;
         MonstersKilledThisRun = 0;
@@ -104,6 +119,7 @@ public class StatisticsManager : MonoBehaviour
         totalEnemiesKilled += MonstersKilledThisRun + BossesKilledThisRun;
         totalBossesKilled += BossesKilledThisRun;
         totalPlayTime += Time.time - adventureStartTime;
+        SaveTotalStatistics();
     }
 
     private void SaveTotalStatistics()

@@ -133,7 +133,8 @@ public class MapManager : MonoBehaviour
         }
 
         Debug.Log("[MapManager] Clear Current Level");
-
+        StatisticsManager.Instance.CurrentFloor++;
+        StatisticsManager.Instance.CurrentRoom = 0;
         mapGenerater.GenerateNextLevelMap();
     }
 
