@@ -143,6 +143,8 @@ public class EnemyStats : MonoBehaviour
             return;
         }
 
+        enemyNextAction.HideAllActionIndicators();
+
         int actionIndex = enemyNextAction.GetNextActionIndex();
 
         if (actionIndex == 1)
@@ -167,7 +169,8 @@ public class EnemyStats : MonoBehaviour
             }
         }
 
-        DecideNextAction();
+        StartCoroutine(DelayedActionCoroutine());
+
     }
 
 
@@ -493,6 +496,12 @@ public class EnemyStats : MonoBehaviour
 
         UpdateHealthText();
         Debug.Log($"[{gameObject.name}]이(가) {amount}만큼 회복했습니다. 현재 HP: {hp}");
+    }
+
+    private IEnumerator DelayedActionCoroutine()
+    {
+        yield return new WaitForSeconds(2.5f);
+        DecideNextAction();
     }
 
 }
