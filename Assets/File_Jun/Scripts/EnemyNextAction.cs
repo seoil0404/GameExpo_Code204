@@ -37,6 +37,22 @@ public class EnemyNextAction : MonoBehaviour
     {
         return nextActionIndex;
     }
+
+    public void HideAllActionIndicators()
+    {
+        foreach (var image in actionImages)
+        {
+            image.gameObject.SetActive(false);
+        }
+
+        if (damageText != null)
+        {
+            damageText.gameObject.SetActive(false);
+        }
+
+        Debug.Log($"[EnemyNextAction] {gameObject.name}의 행동 표시 비활성화 완료");
+    }
+
 }
 
 

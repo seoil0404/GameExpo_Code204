@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -140,7 +141,7 @@ public class Grid : MonoBehaviour
 
         if (shapeLeft == 0)
         {
-            Debug.Log("모든 블록이 배치 완료! 새로운 블록을 생성합니다.");
+
             GameEvents.RequestNewShapes();
 
             foreach (var square in _gridSquares)
@@ -193,34 +194,7 @@ public class Grid : MonoBehaviour
                 }
             }
 
-            enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
-            foreach (var enemy in enemies)
-            {
-                var enemyStats = enemy.GetComponent<EnemyStats>();
-                if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
-                {
-                    if (enemyStats.GetPoisonDuration() > 0)
-                    {
-                        enemyStats.ApplyPoisonDamageToPlayer();
-                    }
-
-                    enemyStats.PerformTurnAction(this);
-                    Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
-                }
-                else
-                {
-                    Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
-                }
-            }
-
-            if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
-            {
-
-                CharacterManager.selectedCharacter.characterData.IsInvincible = false;
-                //EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
-                Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
-
-            }
+            StartCoroutine(EnemyTurnSequence());
         }
         CheckIfGameEnded();
     }
@@ -336,7 +310,6 @@ public class Grid : MonoBehaviour
         baseDamage = (int)(baseDamage * ultimateDamageMultiplier);
         baseDamage += additionalExecutionDamage;
 
-        // multiplier와 추가 데미지 초기화
         ultimateDamageMultiplier = 1f;
         additionalExecutionDamage = 0;
 
@@ -355,8 +328,6 @@ public class Grid : MonoBehaviour
 		}
 		else 
 		{
-			// enemyStats.ReceiveDamage는 두 개의 인자를 받도록 정의되어 있으므로,
-			// baseDamage와 columns를 함께 전달합니다.
 			enemyStats.ReceiveDamage(baseDamage, columns);
 			Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
 		}
@@ -420,25 +391,7 @@ public class Grid : MonoBehaviour
                 enemyStats.ResetThorn();
             }
         }
-        enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
-        foreach (var enemy in enemies)
-        {
-            var enemyStats = enemy.GetComponent<EnemyStats>();
-            if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
-            {
-                if (enemyStats.GetPoisonDuration() > 0)
-                {
-                    enemyStats.ApplyPoisonDamageToPlayer();
-                }
-
-                enemyStats.PerformTurnAction(this);
-                Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
-            }
-            else
-            {
-                Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
-            }
-        }
+        StartCoroutine(EnemyTurnSequence());
 
         TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.CorruptTouch)
@@ -715,6 +668,42 @@ public class Grid : MonoBehaviour
 
         Debug.Log($"힐 미노가 위치 {gs.SquareIndex}에 생성되었습니다. 시전자: {enemy.name}");
     }
+
+
+    private IEnumerator EnemyTurnSequence()
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
+        foreach (var enemy in enemies)
+        {
+            var enemyStats = enemy.GetComponent<EnemyStats>();
+            if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+            {
+                if (enemyStats.GetPoisonDuration() > 0)
+                {
+                    enemyStats.ApplyPoisonDamageToPlayer();
+                }
+
+                enemyStats.PerformTurnAction(this);
+                Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
+            }
+            else
+            {
+                Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
+            }
+        }
+
+        if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
+        {
+            CharacterManager.selectedCharacter.characterData.IsInvincible = false;
+            Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("[턴 전환] 플레이어 턴 시작!");
+    }
+
 
 
 }
