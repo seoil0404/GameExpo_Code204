@@ -355,6 +355,7 @@ public class Grid : MonoBehaviour
     public void MoveNextScene()
     {
         Debug.Log("다음 씬으로 이동합니다.");
+        StatisticsManager.Instance.CurrentRoom++;
         if (rewardsScreen != null)
             rewardsScreen.SetActive(true);
         else

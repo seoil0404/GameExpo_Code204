@@ -55,7 +55,6 @@ public class StatisticsManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(setFirstGold());
-        Debug.Log($"{CurrentFloor} | {CurrentRoom}");
     }
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
