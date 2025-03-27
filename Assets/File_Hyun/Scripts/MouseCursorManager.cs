@@ -1,44 +1,41 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MouseCursorManager : MonoBehaviour
 {
-    public RectTransform cursorRectTransform; // UI 커서 오브젝트
-    public Image cursorImage;
+    public GameObject targetObject;
 
     public Sprite idleSprite;
     public Sprite pressedSprite;
+
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
 #if !UNITY_EDITOR
         Cursor.visible = false;
 #endif
+
+        if (targetObject != null)
+        {
+            spriteRenderer = targetObject.GetComponent<SpriteRenderer>();
+        }
     }
 
     void Update()
     {
-        Vector2 mousePos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            cursorRectTransform.parent as RectTransform,
-            Input.mousePosition,
-            null,
-            out mousePos
-        );
-
-        cursorRectTransform.anchoredPosition = mousePos;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0;
+        targetObject.transform.position = mouseWorldPosition;
 
         if (Input.GetMouseButton(0))
         {
             if (pressedSprite != null)
-                cursorImage.sprite = pressedSprite;
-            cursorRectTransform.localScale = new(0.8f, 0.8f, 0.8f);
+                spriteRenderer.sprite = pressedSprite;
         }
         else
         {
             if (idleSprite != null)
-                cursorImage.sprite = idleSprite;
-            cursorRectTransform.localScale = new(0.9f, 0.9f, 0.9f);
+                spriteRenderer.sprite = idleSprite;
         }
     }
 }
