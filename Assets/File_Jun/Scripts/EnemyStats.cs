@@ -32,6 +32,9 @@ public class EnemyStats : MonoBehaviour
 
     private bool isDamageMultiplierActive = false;
 
+    private bool isSilenced = false;
+    private int silenceTurnsRemaining = 0;  
+
     public void ActivateDamageMultiplier()
     {
         isDamageMultiplierActive = true;
@@ -111,6 +114,24 @@ public class EnemyStats : MonoBehaviour
     {
         int totalOptions = enemyData.enemySkills.Count + 1;
 
+        if (isSilenced)
+        {
+            Debug.Log($"[{gameObject.name}]은(는) 침묵 상태이므로 행동을 결정하지 않습니다.");
+            if (enemyNextAction != null)
+            {
+                enemyNextAction.HideAllActionIndicators();
+            }
+            silenceTurnsRemaining--;
+
+            if (silenceTurnsRemaining <= 0)
+            {
+                isSilenced = false;
+                Debug.Log($"[{gameObject.name}]의 침묵 상태가 해제되었습니다.");
+            }
+
+            return;
+        }
+
 
         if (hasUsedSwallowBlock)
         {
@@ -146,6 +167,12 @@ public class EnemyStats : MonoBehaviour
         enemyNextAction.HideAllActionIndicators();
 
         int actionIndex = enemyNextAction.GetNextActionIndex();
+
+        if(actionIndex == 0)
+        {
+            Debug.LogError("적이 침묵상태여서 공격을 하지 않았습니다");
+            return;
+        }
 
         if (actionIndex == 1)
         {
@@ -502,6 +529,13 @@ public class EnemyStats : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         DecideNextAction();
+    }
+
+    public void ApplySilence(int turns = 1)
+    {
+        isSilenced = true;
+        silenceTurnsRemaining = turns;
+        Debug.Log($"[{gameObject.name}]이(가) {turns}턴 동안 침묵 상태에 걸렸습니다!");
     }
 
 }
