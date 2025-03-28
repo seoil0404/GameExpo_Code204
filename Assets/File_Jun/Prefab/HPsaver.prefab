@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2707953126575226098}
   - component: {fileID: 5878334486279250017}
   m_Layer: 5
-  m_Name: NANA
+  m_Name: HPsaver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
