@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 [System.Serializable]
 public class CharacterData
@@ -37,8 +38,6 @@ public class CharacterData
 	public AttackEffectSpawner AttackEffectSpawner;
 
     public bool IsInvincible = false;
-
-
     public void Initialize()
     {
         currentUltimateGauge = 0;
@@ -114,8 +113,8 @@ public class CharacterData
 
     public void ActivateLifeSteal()
     {
-        NegateNextDamage = true; // Àû °ø°Ý ¹«È¿È­ 1È¸
-        NextAttackLifeSteal = true; // ÈíÇ÷ 1È¸ ¹ßµ¿
+        NegateNextDamage = true;
+        NextAttackLifeSteal = true;
         Debug.Log("±Ã±Ø±â ¹ßµ¿: °ø°Ý ¹«È¿È­ + ÈíÇ÷ È°¼ºÈ­");
     }
 

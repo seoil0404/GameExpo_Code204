@@ -292,6 +292,15 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    public void HealByPercentageOfMaxHp(float percentage)
+    {
+        int healAmount = Mathf.RoundToInt(selectedCharacter.characterData.MaxHp * percentage);
+        selectedCharacter.characterData.CurrentHp += healAmount;
+        selectedCharacter.characterData.CurrentHp = Mathf.Min(selectedCharacter.characterData.CurrentHp, selectedCharacter.characterData.MaxHp);
+        SaveHp();
+
+        Debug.Log($"[Heal] 최대 체력의 {percentage * 100}%({healAmount}) 회복됨. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
+    }
 
 
 }

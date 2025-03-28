@@ -688,6 +688,11 @@ public class Grid : MonoBehaviour
             var enemyStats = enemy.GetComponent<EnemyStats>();
             if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
             {
+                if (enemy == GetSelectedEnemy())
+                {
+                    enemyStats.ApplyPoisonFromPlayerDamage();
+                }
+
                 if (enemyStats.GetPoisonDuration() > 0)
                 {
                     enemyStats.ApplyPoisonDamageToPlayer();
@@ -695,10 +700,6 @@ public class Grid : MonoBehaviour
 
                 enemyStats.PerformTurnAction(this);
                 Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
-            }
-            else
-            {
-                Debug.Log($"[{enemy.name}]은(는) 이미 사망하여 공격하지 않습니다.");
             }
         }
 

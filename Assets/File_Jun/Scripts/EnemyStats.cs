@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,6 +37,10 @@ public class EnemyStats : MonoBehaviour
     private int silenceTurnsRemaining = 0;
 
     private bool isExecutionEligible = false;
+
+    private int poisonStackFromPlayer = 0;
+
+    public bool ATK3UP = false;
 
     public void ActivateDamageMultiplier()
     {
@@ -274,6 +279,10 @@ public class EnemyStats : MonoBehaviour
         }
 
         int baseDamage = completedLines + CharacterManager.selectedCharacter.characterData.CurrentCharacterATK;
+        if(ATK3UP == true)
+        {
+            baseDamage += 3;
+        }
         int calculatedDamage = baseDamage;
 
         var treasureEffect = FindFirstObjectByType<TreasureEffect>();
@@ -573,5 +582,29 @@ public class EnemyStats : MonoBehaviour
         return shouldExecute;
     }
 
+    public void ApplyPoisonFromPlayer(int amount)
+    {
+        if (amount <= 0) return;
+
+        poisonStackFromPlayer += amount;
+        Debug.Log($"[{gameObject.name}]에게 플레이어의 독 {amount} 스택 적용됨. 총 스택: {poisonStackFromPlayer}");
+    }
+    public void ApplyPoisonFromPlayerDamage()
+    {
+        if (poisonStackFromPlayer > 0)
+        {
+            hp -= poisonStackFromPlayer;
+            Debug.Log($"[{gameObject.name}]이(가) 독 {poisonStackFromPlayer} 데미지를 입음!");
+            poisonStackFromPlayer--;
+
+            if (hp <= 0)
+            {
+                hp = 0;
+                Die();
+            }
+
+            UpdateHealthText();
+        }
+    }
 
 }

@@ -55,8 +55,14 @@ public class ScrollManager : MonoBehaviour
             case ScrollData.ScrollType.Energy:
                 break;
             case ScrollData.ScrollType.Poision:
+                GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
+                if (selectedEnemy != null)
+                {
+                    selectedEnemy.GetComponent<EnemyStats>().ApplyPoisonFromPlayer(5);
+                }
                 break;
             case ScrollData.ScrollType.Heal:
+                CharacterManager.instance.HealByPercentageOfMaxHp(0.15f);
                 break;
             case ScrollData.ScrollType.Reflection:
                 break;
