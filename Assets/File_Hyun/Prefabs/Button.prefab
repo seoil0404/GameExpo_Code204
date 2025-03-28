@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 4332549530349998543}
   - component: {fileID: 5790369858935160655}
   - component: {fileID: 116487281353650949}
-  - component: {fileID: 4399213795865930314}
+  - component: {fileID: 8635896394912450101}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4399213795865930314}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OnClick, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -364,7 +364,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &4399213795865930314
+--- !u!114 &8635896394912450101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,9 +373,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2272297938379899745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe5ab15bca1b12c42978b3ba3a742ce7, type: 3}
+  m_Script: {fileID: 11500000, guid: be390c72bda20b64cbb06d626f2d33de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myButton: {fileID: 4332549530349998543}
+  cooldownTime: 0.5
 --- !u!1 &2853461841625989486
 GameObject:
   m_ObjectHideFlags: 0
