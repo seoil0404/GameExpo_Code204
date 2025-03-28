@@ -52,6 +52,10 @@ public class PlayerHealthBar : MonoBehaviour
             if (GameData.SelectedCharacterIndex == 3)
                 Executable.SetActive(true);
         }
+        else
+        {
+            Executable.SetActive(false);
+        }
     }
 
     private IEnumerator SetupHpBar()
