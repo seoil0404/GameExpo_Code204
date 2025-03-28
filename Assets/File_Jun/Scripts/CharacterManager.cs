@@ -118,7 +118,6 @@ public class CharacterManager : MonoBehaviour
 
     public void ApplyDamageToCharacter(int totalDamage)
     {
-
         if (selectedCharacter.characterData.IsInvincible)
         {
             Debug.Log($"{selectedCharacter.characterData.CharacterName}은(는) 무효화 상태이므로 피해 {totalDamage} 무효화됨!");
@@ -139,15 +138,38 @@ public class CharacterManager : MonoBehaviour
             return;
         }
 
-
         selectedCharacter.characterData.CurrentHp -= totalDamage;
         savedHp = selectedCharacter.characterData.CurrentHp;
         SaveHp();
-        Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
+
+        int executionThreshold = Mathf.CeilToInt(selectedCharacter.characterData.MaxHp * (selectedCharacter.characterData.ExecutionRate / 100f));
+        if (selectedCharacter.characterData.CurrentHp <= executionThreshold)
+        {
+            var treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
+            if (treasureEffect != null && treasureEffect.TotemOfResistance && !GameStartTracker.IsUsedTotemOfResistance)
+            {
+                GameStartTracker.IsUsedTotemOfResistance = true;
+
+                int healAmount = selectedCharacter.characterData.ExecutionRate;
+                selectedCharacter.characterData.CurrentHp += healAmount;
+                selectedCharacter.characterData.CurrentHp = Mathf.Min(selectedCharacter.characterData.CurrentHp, selectedCharacter.characterData.MaxHp);
+                SaveHp();
+
+                Debug.Log($"[TotemOfResistance] 처형을 막고 HP {healAmount} 회복! 현재 HP: {selectedCharacter.characterData.CurrentHp}");
+                return;
+            }
+
+            Debug.Log("[Execution] 처형 조건 충족. 캐릭터 사망 처리");
+            CharacterDied();
+            return;
+        }
 
         if (selectedCharacter.characterData.CurrentHp <= 0)
+        {
             CharacterDied();
+        }
     }
+
 
 
     public void RecoverHpFromDamage(int damageDealt)

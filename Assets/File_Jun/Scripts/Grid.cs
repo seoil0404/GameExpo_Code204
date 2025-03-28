@@ -672,7 +672,7 @@ public class Grid : MonoBehaviour
 
     private IEnumerator EnemyTurnSequence()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
 
         enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
         foreach (var enemy in enemies)

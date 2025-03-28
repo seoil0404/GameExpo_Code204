@@ -312,11 +312,12 @@ public class EnemyStats : MonoBehaviour
             CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal = false;
         }
 
-        if (hp <= 0)
+        if (hp <= 0 || IsExecuted())
         {
             hp = 0;
             Die();
         }
+
 
         comboCount++;
         UpdateHealthText();
@@ -527,7 +528,7 @@ public class EnemyStats : MonoBehaviour
 
     private IEnumerator DelayedActionCoroutine()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         DecideNextAction();
     }
 
@@ -537,5 +538,20 @@ public class EnemyStats : MonoBehaviour
         silenceTurnsRemaining = turns;
         Debug.Log($"[{gameObject.name}]이(가) {turns}턴 동안 침묵 상태에 걸렸습니다!");
     }
+
+
+    private bool IsExecuted()
+    {
+        int executionThreshold = Mathf.CeilToInt(maxHp * (CharacterManager.selectedCharacter.characterData.ExecutionRate / 100f));
+        bool shouldExecute = hp <= executionThreshold;
+
+        if (shouldExecute)
+        {
+            Debug.Log($"[{gameObject.name}] 처형 조건 만족! 현재 HP: {hp}, 처형 기준: {executionThreshold}");
+        }
+
+        return shouldExecute;
+    }
+
 
 }
