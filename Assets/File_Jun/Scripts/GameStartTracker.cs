@@ -6,6 +6,11 @@ public class GameStartTracker : MonoBehaviour
 
     public static bool IsHavetobeReset { get; set; } = true;
 
+    public static bool IsUsedMoneyBag { get; set; } = false;
+
+    public static bool IsUsedTotemOfResistance { get; set; } = false;
+
+
     private void Awake()
     {
         if (instance != null)

@@ -70,21 +70,29 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 	private IEnumerator AttackStart(Action onAttack) {
 		
+		Debug.Log($"testLog: {casterTransform.gameObject.name} Attack Start Started");
 		yield return new WaitForSeconds(AttackWaitingDuration);
 
 		bool isFlipped =
 			startPosition.x <
 			TargetTransform.localPosition.x;
 
+		Debug.Log($"testLog: {casterTransform.gameObject.name} break 1");
+
 		float angle = AttackingAngle * (isFlipped ? -1 : 1);
 		Vector3 endRotation = Vector3.forward * angle;
+
+		Debug.Log($"testLog: {casterTransform.gameObject.name} break 2");
 
 		PlayAnimation();
 		onAttack?.Invoke();
 
+		Debug.Log($"testLog: {casterTransform.gameObject.name} break 3");
+
 		casterTransform
 			.DORotate(endRotation, AttackingDuration / 3f)
 			.SetEase(Ease.OutSine)
+			.OnKill(() => AttackEnd())
 			.OnComplete(() => AttackEnd());
 
 	}
@@ -108,10 +116,15 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 
 	private void AttackEnd() {
-		
+
+		Debug.Log($"testLog: {casterTransform.gameObject.name} Start Attack End");
+
 		casterTransform
 			.DORotate(Vector3.zero, AttackingDuration / 1.5f)
-			.OnComplete(() => StartCoroutine(Retreat()));
+			.OnComplete(() => {
+				Debug.Log($"testLog: {casterTransform.gameObject.name} Attack End Complete");	
+                StartCoroutine(Retreat());
+			});
 
 	}
 
@@ -119,9 +132,12 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 		
 		yield return new WaitForSeconds(RetreatWaitingDuration);
 
-		casterTransform
-			.DOLocalMove(startPosition, RetreatDuraion)
-			.SetEase(RetreatEase);
-	}
+		Debug.Log($"testLog: {casterTransform.gameObject.name} Start Retreat [CurrentPos: {casterTransform.position}, TargetPosition: {startPosition}]");
+
+        casterTransform
+			.DOMove(startPosition, RetreatDuraion)
+			.SetEase(RetreatEase)
+			.OnComplete(() => Debug.Log($"testLog: {casterTransform.gameObject.name} Retreat Complete"));
+    }
 
 }

@@ -122,3 +122,5 @@ MonoBehaviour:
   ArrowDownEffect: {fileID: 4926683832323823914, guid: 6738513e0232eea4390cae9627993ed5, type: 3}
   ArrowUpEffect: {fileID: 4926683832323823914, guid: c2b3437db266d5f4baf28d3dd8007e55, type: 3}
   ArrowDuration: 1
+  DragonBreathObject: {fileID: 9215431130564135819, guid: bfdf36e2d1ba68a4ca566e32c6b5abcc, type: 3}
+  DragonBreashDuration: 1

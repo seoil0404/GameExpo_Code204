@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
     public EnemyData enemyData;
     public Text healthText;
     public EnemyHealthBar enemyHealthBar;
-
+    private int thornCount = 0;
 
 
     [Header("Scriptable")]
@@ -31,6 +31,9 @@ public class EnemyStats : MonoBehaviour
     private int poisonDuration = 0;
 
     private bool isDamageMultiplierActive = false;
+
+    private bool isSilenced = false;
+    private int silenceTurnsRemaining = 0;  
 
     public void ActivateDamageMultiplier()
     {
@@ -84,6 +87,7 @@ public class EnemyStats : MonoBehaviour
 
     public void SetStats(int difficulty, EnemyData.HabitatType habitat)
     {
+        Debug.Log($"[SetStats] 함수가 호출되었습니다! {gameObject.name}");
         int habitatLevel = GetHabitatLevel(habitat);
 
         maxHp = enemyData.baseHP + (difficulty * habitatLevel);
@@ -92,6 +96,13 @@ public class EnemyStats : MonoBehaviour
         atk = enemyData.baseATK + (difficulty / Mathf.Max(4 - habitatLevel, 1));
 
         dodgeChance = enemyData.dodgeChance;
+
+        var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.UniversalGravitation)
+        {
+            dodgeChance = 0;
+            Debug.Log($"[보물 효과 적용] {gameObject.name}의 회피율이 0으로 설정되었습니다 (UniversalGravitation)");
+        }
 
         Debug.Log($"[EnemyStats] {gameObject.name} 스탯 설정 완료 - HP: {hp}, ATK: {atk}, " +
                   $"난이도: {difficulty}, 레벨: {habitatLevel}");
@@ -102,6 +113,24 @@ public class EnemyStats : MonoBehaviour
     public void DecideNextAction()
     {
         int totalOptions = enemyData.enemySkills.Count + 1;
+
+        if (isSilenced)
+        {
+            Debug.Log($"[{gameObject.name}]은(는) 침묵 상태이므로 행동을 결정하지 않습니다.");
+            if (enemyNextAction != null)
+            {
+                enemyNextAction.HideAllActionIndicators();
+            }
+            silenceTurnsRemaining--;
+
+            if (silenceTurnsRemaining <= 0)
+            {
+                isSilenced = false;
+                Debug.Log($"[{gameObject.name}]의 침묵 상태가 해제되었습니다.");
+            }
+
+            return;
+        }
 
 
         if (hasUsedSwallowBlock)
@@ -132,13 +161,29 @@ public class EnemyStats : MonoBehaviour
         if (enemyNextAction == null)
         {
             Debug.LogError($"[EnemyStats] {gameObject.name}의 EnemyNextAction이 설정되지 않음!");
-			return;
+            return;
         }
+
+        enemyNextAction.HideAllActionIndicators();
+
         int actionIndex = enemyNextAction.GetNextActionIndex();
+
+        if(actionIndex == 0)
+        {
+            Debug.LogError("적이 침묵상태여서 공격을 하지 않았습니다");
+            return;
+        }
 
         if (actionIndex == 1)
         {
-            AttackPlayer();
+            if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.ThornAttack)
+            {
+                PerformThornAttack();
+            }
+            else
+            {
+                AttackPlayer();
+            }
         }
         else
         {
@@ -151,7 +196,8 @@ public class EnemyStats : MonoBehaviour
             }
         }
 
-        DecideNextAction();
+        StartCoroutine(DelayedActionCoroutine());
+
     }
 
 
@@ -185,12 +231,30 @@ public class EnemyStats : MonoBehaviour
             {
                 Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
                 characterManager.ApplyDamageToCharacter(damage);
+
+                if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.LifeSteal)
+                {
+                    int healAmount = damage / 2;
+                    hp += healAmount;
+                    if (hp > maxHp) hp = maxHp;
+                    UpdateHealthText();
+                    Debug.Log($"[{gameObject.name}]이(가) 흡혈 공격으로 {healAmount} HP 회복!");
+                }
             });
         }
         else
         {
             Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
             characterManager.ApplyDamageToCharacter(damage);
+
+            if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.LifeSteal)
+            {
+                int healAmount = damage / 2;
+                hp += healAmount;
+                if (hp > maxHp) hp = maxHp;
+                UpdateHealthText();
+                Debug.Log($"[{gameObject.name}]이(가) 흡혈 공격으로 {healAmount} HP 회복!");
+            }
         }
     }
 
@@ -198,27 +262,49 @@ public class EnemyStats : MonoBehaviour
 
     public void ReceiveDamage(int completedLines, int gridColumns)
     {
-
-        float currentDodgeChance = TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.UniversalGravitation) ? 0f : dodgeChance;
-
+        float currentDodgeChance = dodgeChance;
         float dodgeRoll = Random.Range(0, 100);
-        Debug.Log($"회피 체크: 랜덤값({dodgeRoll}) vs 회피 확률({currentDodgeChance}%)");
 
         if (dodgeRoll < currentDodgeChance)
         {
-			EffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
+            EffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }
 
-        int totalBlocksUsed = completedLines;
-        int baseDamage = totalBlocksUsed;
+        int baseDamage = completedLines + CharacterManager.selectedCharacter.characterData.CurrentCharacterATK;
         int calculatedDamage = baseDamage;
+
+        var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.SwordOfRuinedKing)
+        {
+            int bonusDamage = Mathf.CeilToInt(maxHp * 0.08f);
+            calculatedDamage += bonusDamage;
+            Debug.Log($"[SwordOfRuinedKing] {gameObject.name}에게 보너스 데미지 {bonusDamage} 적용! 총 데미지: {calculatedDamage}");
+        }
+
+        if (treasureEffect.GoldenHair && baseDamage >= 32)
+        {
+            CharacterManager.selectedCharacter.characterData.CurrentHp += calculatedDamage;
+           
+            goldData.InGameGold += 100;
+            CharacterManager.instance.RecoverHpFromDamage(calculatedDamage);
+
+
+            Debug.Log($"[GoldenHair] baseDamage {baseDamage} ≥ 32 → HP {calculatedDamage} 회복 + 골드 100 획득!");
+        }
 
         damageReceivedLastTurn = calculatedDamage;
         hp -= calculatedDamage;
 
         Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
+
+        if (thornCount > 0)
+        {
+            int thornDamage = thornCount;
+            Debug.Log($"[{gameObject.name}]의 가시에 의해 플레이어가 {thornDamage} 반사 피해를 입습니다!");
+            characterManager.ApplyDamageToCharacter(thornDamage);
+        }
 
         if (CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal)
         {
@@ -226,17 +312,16 @@ public class EnemyStats : MonoBehaviour
             CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal = false;
         }
 
-        if (hp <= 0)
+        if (hp <= 0 || IsExecuted())
         {
             hp = 0;
             Die();
         }
 
+
         comboCount++;
         UpdateHealthText();
     }
-
-
 
 
 
@@ -253,13 +338,19 @@ public class EnemyStats : MonoBehaviour
     {
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
 
+        var treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.SoulLantern)
+        {
+            CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
+            Debug.Log("[SoulLantern] 보물 효과: 플레이어 현재 ATK +1!");
+        }
+
         goldData.InGameGold += maxHp;
 
         if (Grid.instance != null)
         {
             Grid.instance.RemoveEnemy(gameObject);
         }
-
     }
 
     public static void AddEnemy(GameObject enemy)
@@ -358,6 +449,108 @@ public class EnemyStats : MonoBehaviour
     {
         atk += 1;
         Debug.Log($"[{gameObject.name}]의 ATK가 1 증가! 현재 ATK: {atk}");
+    }
+
+
+    public void IncreaseThorn()
+    {
+        thornCount++;
+        Debug.Log($"[{gameObject.name}]의 가시 수치가 1 증가! 현재: {thornCount}");
+    }
+
+    public int GetThornCount()
+    {
+        return thornCount;
+    }
+
+
+    public void PerformThornAttack()
+    {
+        int thornDamage = Mathf.RoundToInt(atk / 2f);
+
+        if (attackEffectSpawner != null)
+        {
+            GameObject target = characterManager.SpawnPoint.GetChild(0).gameObject;
+            attackEffectSpawner.TargetTransform = target.transform;
+            attackEffectSpawner.Spawn(() =>
+            {
+                Debug.Log($"[{gameObject.name}]이(가) [가시 공격]으로 플레이어에게 {thornDamage} 데미지!");
+                characterManager.ApplyDamageToCharacter(thornDamage);
+                IncreaseThorn();
+            });
+        }
+        else
+        {
+            Debug.Log($"[{gameObject.name}]이(가) [가시 공격]으로 플레이어에게 {thornDamage} 데미지!");
+            characterManager.ApplyDamageToCharacter(thornDamage);
+            IncreaseThorn();
+        }
+    }
+
+
+    public void ResetThorn()
+    {
+        thornCount = 0;
+        Debug.Log($"[{gameObject.name}]의 가시 수치 초기화됨 (0으로 설정)");
+    }
+
+    public void HealByPercentage(float percentage)
+    {
+        int healAmount = Mathf.RoundToInt(maxHp * percentage);
+        hp += healAmount;
+        if (hp > maxHp)
+            hp = maxHp;
+
+        UpdateHealthText();
+        Debug.Log($"[{gameObject.name}]이(가) {healAmount} 만큼 회복했습니다. 현재 HP: {hp}");
+    }
+
+    public void IncreaseATKByTwo()
+    {
+        atk += 2;
+        Debug.Log($"[{gameObject.name}]의 ATK가 2 증가! 현재 ATK: {atk}");
+    }
+
+    public int GetMaxHp()
+    {
+        return maxHp;
+    }
+
+    public void HealByAmount(int amount)
+    {
+        hp += amount;
+        if (hp > maxHp)
+            hp = maxHp;
+
+        UpdateHealthText();
+        Debug.Log($"[{gameObject.name}]이(가) {amount}만큼 회복했습니다. 현재 HP: {hp}");
+    }
+
+    private IEnumerator DelayedActionCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        DecideNextAction();
+    }
+
+    public void ApplySilence(int turns = 1)
+    {
+        isSilenced = true;
+        silenceTurnsRemaining = turns;
+        Debug.Log($"[{gameObject.name}]이(가) {turns}턴 동안 침묵 상태에 걸렸습니다!");
+    }
+
+
+    private bool IsExecuted()
+    {
+        int executionThreshold = Mathf.CeilToInt(maxHp * (CharacterManager.selectedCharacter.characterData.ExecutionRate / 100f));
+        bool shouldExecute = hp <= executionThreshold;
+
+        if (shouldExecute)
+        {
+            Debug.Log($"[{gameObject.name}] 처형 조건 만족! 현재 HP: {hp}, 처형 기준: {executionThreshold}");
+        }
+
+        return shouldExecute;
     }
 
 

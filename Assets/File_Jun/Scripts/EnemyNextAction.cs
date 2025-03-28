@@ -7,7 +7,7 @@ public class EnemyNextAction : MonoBehaviour
 {
     public Image[] actionImages;  // 행동 이미지 배열 (프리팹에서 설정)
     public Text damageText;       // 개별 적의 공격 데미지 표시 텍스트
-    private int nextActionIndex = 1; // 다음 행동 (1 = 공격, 2 이상 = 스킬)
+    private int nextActionIndex = 0; // 다음 행동 (1 = 공격, 2 이상 = 스킬)
 
     public void DecideNextAction(int totalOptions, int attackDamage)
     {
@@ -37,6 +37,22 @@ public class EnemyNextAction : MonoBehaviour
     {
         return nextActionIndex;
     }
+
+    public void HideAllActionIndicators()
+    {
+        foreach (var image in actionImages)
+        {
+            image.gameObject.SetActive(false);
+        }
+
+        if (damageText != null)
+        {
+            damageText.gameObject.SetActive(false);
+        }
+
+        Debug.Log($"[EnemyNextAction] {gameObject.name}의 행동 표시 비활성화 완료");
+    }
+
 }
 
 

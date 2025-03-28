@@ -13,6 +13,7 @@ public class GridSquare : MonoBehaviour
     public Sprite yellowSprite;
     public Sprite violetSprite;
     public Sprite defaultSprite;
+    private bool isPetrified = false;
 
     public bool Selected { get; set; }
     public int SquareIndex { get; set; }
@@ -20,6 +21,8 @@ public class GridSquare : MonoBehaviour
 
     private string blockColor = "Default";
     private GameObject sealingEnemy;
+    private GameObject specialMinoOwner;
+    private GameObject lifestealMinoOwner;
 
     void Start()
     {
@@ -165,4 +168,58 @@ public class GridSquare : MonoBehaviour
             hooverImage.gameObject.SetActive(false);
         }
     }
+
+    public void PetrifyBlock()
+    {
+        SetOccupied();
+        ActivateSquare();
+        SetBlockSpriteToDefault();
+        isPetrified = true;
+    }
+
+    public bool IsPetrified()
+    {
+        return isPetrified;
+    }
+
+    public void ClearPetrified()
+    {
+        if (isPetrified)
+        {
+            isPetrified = false;
+            ClearOccupied();
+            Deactivate();
+        }
+    }
+
+    public void SetSpecialMinoOwner(GameObject owner)
+    {
+        specialMinoOwner = owner;
+    }
+
+    public void ClearSpecialMinoOwner()
+    {
+        specialMinoOwner = null;
+    }
+
+    public GameObject GetSpecialMinoOwner()
+    {
+        return specialMinoOwner;
+    }
+
+    public void SetLifestealMinoOwner(GameObject owner)
+    {
+        lifestealMinoOwner = owner;
+    }
+
+    public GameObject GetLifestealMinoOwner()
+    {
+        return lifestealMinoOwner;
+    }
+
+    public void ClearLifestealMinoOwner()
+    {
+        lifestealMinoOwner = null;
+    }
+
 }

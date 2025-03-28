@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     private List<Transform> availableSpawnPoints;
     public List<GameObject> enemies = new List<GameObject>();
 
-    private void Awake()
+    private void Start()
     {
         if (GameStartTracker.IsHavetobeReset)
         {
@@ -44,12 +44,6 @@ public class EnemySpawner : MonoBehaviour
             Specialcombating = true;
             combatData.EnemyType = EnemyData.EnemyType.Common;
             currentDifficulty *= 3;
-
-            if (TreasureEffect.IsGiantResistanceHammerActive())
-            {
-                currentDifficulty /= 2;
-                Debug.Log("[EnemySpawner] GiantResistanceHammer 효과 적용됨! 난이도가 절반으로 감소");
-            }
 
             SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
         }
@@ -181,7 +175,22 @@ public class EnemySpawner : MonoBehaviour
             enemies.Add(enemyInstance);
         }
 
-        if (enemies.Count > 0) StartCoroutine(DelayedSelectRandomEnemy());
+
+
+        if (enemies.Count > 0)
+        {
+            StartCoroutine(DelayedSelectRandomEnemy());
+            if (FindFirstObjectByType<TreasureEffect>()?.CaneOfGravity == true)
+            {
+                int index = Random.Range(0, enemies.Count);
+                EnemyStats randomStats = enemies[index].GetComponent<EnemyStats>();
+                if (randomStats != null)
+                {
+                    randomStats.ApplySilence(1);
+                    Debug.Log($"[CaneOfGravity] {randomStats.name}에게 1턴 침묵 효과 적용됨!");
+                }
+            }
+        }
     }
 
 

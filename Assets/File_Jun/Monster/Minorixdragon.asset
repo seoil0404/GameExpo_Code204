@@ -17,6 +17,8 @@ MonoBehaviour:
   baseATK: 5
   enemySprite: {fileID: -5412910156287300836, guid: 7ddb04fe3424a5f4ca40831fc04aa883, type: 3}
   dodgeChance: 0
-  enemySkills: []
+  enemySkills:
+  - {fileID: 11400000, guid: 81c36d23d373ffe4684b909548039379, type: 2}
   habitat: 1
   enemyType: 2
+  defaultAttackType: 1

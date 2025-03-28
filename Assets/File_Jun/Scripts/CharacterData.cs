@@ -18,9 +18,15 @@ public class CharacterData
     [SerializeField]
     private int currentUltimateGauge;
     [SerializeField]
+    private int baseExecutionRate;
+    [SerializeField]
     private int executionRate;
+    [SerializeField]
+    private int characterATK;
+    [SerializeField]
+    private int currentCharacterATK;
 
-    
+
     public UltimateSkill ultimateSkill;
     public bool NegateNextDamage = false;
     public bool NextAttackLifeSteal = false;
@@ -30,9 +36,21 @@ public class CharacterData
 	
 	public AttackEffectSpawner AttackEffectSpawner;
 
+    public bool IsInvincible = false;
+
+
     public void Initialize()
     {
         currentUltimateGauge = 0;
+        executionRate = baseExecutionRate;
+        currentCharacterATK = characterATK;
+
+        TreasureEffect treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.GoldenApple)
+        {
+            MaxHp += 10;
+            Debug.Log("GoldenApple 효과 적용됨! MaxHp +10");
+        }
     }
 
     public string CharacterName => characterName;
@@ -42,8 +60,10 @@ public class CharacterData
         get => maxHp;
         set
         {
+            float ratio = (float)currentHp / maxHp;
             maxHp = Mathf.Max(value, 1);
-            OnHpChanged?.Invoke();  
+            CurrentHp = Mathf.RoundToInt(maxHp * ratio);
+            OnHpChanged?.Invoke();
             Debug.Log($"최대체력 set: {maxHp}");
         }
     }
@@ -85,23 +105,12 @@ public class CharacterData
             Debug.Log($"처형율 set: {executionRate}");
         }
     }
-
     
     public void CureStatusEffects()
     {
         Debug.Log($"{CharacterName}의 상태 이상 효과가 모두 치료되었습니다.");
         
     }
-
-    public void ApplyCondemnationEffect()
-    {
-        if (TreasureEffect.IsTreasureActive(TreasureEffect.TreasureType.Condemnation))
-        {
-            ExecutionRate += 5;
-            Debug.Log($"{CharacterName}의 처형율이 5 증가하여 현재 {ExecutionRate}이(가) 되었습니다.");
-        }
-    }
-
 
     public void ActivateLifeSteal()
     {
@@ -110,4 +119,23 @@ public class CharacterData
         Debug.Log("궁극기 발동: 공격 무효화 + 흡혈 활성화");
     }
 
+    public int CharacterATK
+    {
+        get => characterATK;
+        set
+        {
+            characterATK = Mathf.Max(0, value);
+            Debug.Log($"기본 ATK set: {characterATK}");
+        }
+    }
+
+    public int CurrentCharacterATK
+    {
+        get => currentCharacterATK;
+        set
+        {
+            currentCharacterATK = Mathf.Max(0, value);
+            Debug.Log($"현재 ATK set: {currentCharacterATK}");
+        }   
+    }
 }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HabitatType: 0
   EnemyType: 0
-  treasureData: 
+  treasureData: 10000000

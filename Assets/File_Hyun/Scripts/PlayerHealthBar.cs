@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerHealthBar : MonoBehaviour
 {
@@ -16,14 +17,10 @@ public class PlayerHealthBar : MonoBehaviour
 
     void Start()
     {
-        Executable.SetActive(false);
-        heeledHp.fillAmount = 0;
-        FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
-        //characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged = UpdateHpBar;
-        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged += UpdateHpBar;
-        UpdateHpBar();
+        StartCoroutine(SetupHpBar());
     }
 
+    
     void OnDestroy()
     {
         if (characters != null && characters.Length > 0 && characters[GameData.SelectedCharacterIndex - 1] != null)
@@ -55,5 +52,15 @@ public class PlayerHealthBar : MonoBehaviour
             if (GameData.SelectedCharacterIndex == 3)
                 Executable.SetActive(true);
         }
+    }
+
+    private IEnumerator SetupHpBar()
+    {
+        yield return null;
+        Executable.SetActive(false);
+        heeledHp.fillAmount = 0;
+        FirstHp = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp;
+        characters[GameData.SelectedCharacterIndex - 1].characterData.OnHpChanged += UpdateHpBar;
+        UpdateHpBar();
     }
 }

@@ -6,7 +6,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
-using static UnityEditor.Experimental.GraphView.Port;
 
 public class EffectManager : MonoBehaviour {
 
@@ -32,7 +31,7 @@ public class EffectManager : MonoBehaviour {
 
 	[SerializeField]
 	private Gradient PoisonColor;
-
+	
 	[field: Header("Hit Rotation")]
 	[field: SerializeField]
 	public float HitRotationAngle { get; private set; }
@@ -84,6 +83,13 @@ public class EffectManager : MonoBehaviour {
 
 	[SerializeField]
 	private float ArrowDuration;
+
+	[Header("Dragon Breath")]
+	[SerializeField]
+	private VisualEffect DragonBreathObject;
+
+	[SerializeField]
+	private float DragonBreashDuration;
 
 	//======================================================================| Colors
 
@@ -209,6 +215,27 @@ public class EffectManager : MonoBehaviour {
 
 	}
 
+	public void OnDragonBreath(GameObject target, GameObject caster) {
+		StartCoroutine(OnDragonBreathInner(target, caster));
+	}
+
+	private IEnumerator OnDragonBreathInner(GameObject target, GameObject caster) {
+
+		VisualEffect instantiated = Instantiate(DragonBreathObject);
+		instantiated.transform.position = caster.transform.position;
+
+		instantiated.SetVector2("TargetPosition", target.transform.position - caster.transform.position);
+
+		yield return new WaitForSeconds(DragonBreashDuration);
+
+		instantiated.Stop();
+
+		yield return new WaitUntil(() => instantiated.aliveParticleCount == 0);
+
+		Destroy(instantiated.gameObject);
+
+	}
+
 	private IEnumerator RemoveWhen(VisualEffect visualEffect, float time) {
 		yield return new WaitForSeconds(time);
 		visualEffect.Stop();
@@ -297,11 +324,12 @@ public class EffectManager : MonoBehaviour {
 			Debug.Log(opacity);
 
 			foreach (var spriteRenderer in spriteRenderers) {
-				spriteRenderer.color = spriteRenderer.color.WithAlpha(opacity);
+				spriteRenderer.color = new(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, opacity);
+				//spriteRenderer.color.WithAlpha(opacity);
 			}
 
 			foreach (var imageRenderer in imageRenderers) {
-				imageRenderer.color = imageRenderer.color.WithAlpha(opacity);
+				imageRenderer.color = new(imageRenderer.color.r, imageRenderer.color.g, imageRenderer.color.b, opacity);
 			}
 
 			spent += Time.deltaTime;
@@ -310,11 +338,10 @@ public class EffectManager : MonoBehaviour {
 		}
 
 		foreach (var spriteRenderer in spriteRenderers) {
-			spriteRenderer.color = spriteRenderer.color.WithAlpha(1f);
+			spriteRenderer.color = new(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
 		}
-
 		foreach (var imageRenderer in imageRenderers) {
-			imageRenderer.color = imageRenderer.color.WithAlpha(1f);
+			imageRenderer.color = new(imageRenderer.color.r, imageRenderer.color.g, imageRenderer.color.b, 1f);
 		}
 		
 	}

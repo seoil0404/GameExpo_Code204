@@ -48,5 +48,8 @@ TagManager:
   - name: Canvas
     uniqueID: 3436615497
     locked: 0
+  - name: AlwaysOnTop
+    uniqueID: 3870604221
+    locked: 0
   m_RenderingLayers:
   - Default
