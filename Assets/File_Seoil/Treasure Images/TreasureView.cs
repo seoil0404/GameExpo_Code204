@@ -28,22 +28,13 @@ public class TreasureView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         gameObject.transform.SetAsLastSibling();
 
         currentDescription = Instantiate(descriptionPrefab, transform).GetComponent<DescriptionView>();
-        Vector3 tempScale = currentDescription.transform.localScale;
-
-        currentDescription.transform.localScale = tempScale * startScale;
-        currentDescription.transform.DOScale(tempScale * endScale, scaleDuration);
 
         currentDescription.Description.text = descriptionText;
-
-        currentDescription.gameObject.GetComponent<RectTransform>().anchoredPosition = defaultPosition;
-
-        Scene.Controller.OnLoadScene += Destroy;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Scene.Controller.OnLoadScene -= Destroy;
-        Destroy();
+        currentDescription.Destroy();
     }
 
     public void Destroy()

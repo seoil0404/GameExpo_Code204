@@ -130,6 +130,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Description: {fileID: 445898337990712511}
+  defaultScale: {x: 1, y: 1}
+  startScale: 0.75
+  endScale: 1
+  defaultPosition: {x: 0, y: 0}
+  scaleDuration: 0.2
 --- !u!1 &8534113614898371352
 GameObject:
   m_ObjectHideFlags: 0
