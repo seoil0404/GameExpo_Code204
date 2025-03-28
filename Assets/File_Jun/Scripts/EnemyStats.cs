@@ -42,6 +42,8 @@ public class EnemyStats : MonoBehaviour
 
     public bool ATK3UP = false;
 
+    private int healingReductionStacks = 0;
+
     public void ActivateDamageMultiplier()
     {
         isDamageMultiplierActive = true;
@@ -282,6 +284,7 @@ public class EnemyStats : MonoBehaviour
         if(ATK3UP == true)
         {
             baseDamage += 3;
+            ATK3UP = false;
         }
         int calculatedDamage = baseDamage;
 
@@ -526,6 +529,14 @@ public class EnemyStats : MonoBehaviour
     public void HealByPercentage(float percentage)
     {
         int healAmount = Mathf.RoundToInt(maxHp * percentage);
+
+        if (healingReductionStacks > 0)
+        {
+            Debug.Log($"[{gameObject.name}]은(는) 치유 감소 상태이므로 회복이 무효화됩니다.");
+            return;
+        }
+     
+
         hp += healAmount;
         if (hp > maxHp)
             hp = maxHp;
@@ -547,6 +558,12 @@ public class EnemyStats : MonoBehaviour
 
     public void HealByAmount(int amount)
     {
+        if (healingReductionStacks > 0)
+        {
+            Debug.Log($"[{gameObject.name}]은(는) 치유 감소 상태이므로 회복이 무효화됩니다.");
+            return;
+        }
+
         hp += amount;
         if (hp > maxHp)
             hp = maxHp;
@@ -554,6 +571,7 @@ public class EnemyStats : MonoBehaviour
         UpdateHealthText();
         Debug.Log($"[{gameObject.name}]이(가) {amount}만큼 회복했습니다. 현재 HP: {hp}");
     }
+
 
     private IEnumerator DelayedActionCoroutine()
     {
@@ -604,6 +622,21 @@ public class EnemyStats : MonoBehaviour
             }
 
             UpdateHealthText();
+        }
+    }
+
+    public void ApplyHealingReduction(int stacks)
+    {
+        healingReductionStacks += stacks;
+        Debug.Log($"[{gameObject.name}]에게 치유 감소 {stacks}스택 적용됨. 현재 스택: {healingReductionStacks}");
+    }
+
+    public void TickHealingReduction()
+    {
+        if (healingReductionStacks > 0)
+        {
+            healingReductionStacks--;
+            Debug.Log($"[{gameObject.name}]의 치유 감소 스택이 감소됨. 남은 스택: {healingReductionStacks}");
         }
     }
 
