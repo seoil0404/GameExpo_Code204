@@ -42,12 +42,22 @@ public class UltimateGauge : MonoBehaviour
 
     void UpdateUltimateGauge()
     {
-        float current = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentUltimateGauge;
-        float max = characters[GameData.SelectedCharacterIndex - 1].characterData.MaxUltimateGauge;
+        var characterData = characters[GameData.SelectedCharacterIndex - 1].characterData;
+        float current = characterData.CurrentUltimateGauge;
+        float baseMax = characterData.MaxUltimateGauge;
+        float max = baseMax;
+
+        var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.RingOfTime)
+        {
+            max = Mathf.CeilToInt(baseMax * 0.8f);
+        }
+
         IsaUltimateGauge.fillAmount = current / max;
         BlayrinUltimateGauge.fillAmount = current / max;
         HughUltimateGauge.fillAmount = current / max;
-        if (characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentUltimateGauge == characters[GameData.SelectedCharacterIndex - 1].characterData.MaxUltimateGauge)
+
+        if (current >= max)
         {
             UseButton.interactable = true;
             UltimateText.text = "MAX!";
@@ -55,7 +65,8 @@ public class UltimateGauge : MonoBehaviour
         else
         {
             UseButton.interactable = false;
-            UltimateText.text = characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentUltimateGauge + " / " + characters[GameData.SelectedCharacterIndex - 1].characterData.MaxUltimateGauge;
+            UltimateText.text = $"{current} / {max}";
         }
     }
+
 }
