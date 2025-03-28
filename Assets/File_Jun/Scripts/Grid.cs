@@ -191,6 +191,8 @@ public class Grid : MonoBehaviour
                 {
                     enemyStats.DeactivateDamageMultiplier();
                     enemyStats.ResetThorn();
+                    enemyStats.TickHealingReduction();
+
                 }
             }
 
@@ -397,8 +399,12 @@ public class Grid : MonoBehaviour
             {
                 enemyStats.DeactivateDamageMultiplier();
                 enemyStats.ResetThorn();
+                enemyStats.TickHealingReduction();
+
             }
         }
+
+
         StartCoroutine(EnemyTurnSequence());
 
         TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
@@ -435,6 +441,7 @@ public class Grid : MonoBehaviour
             //EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
             Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
         }
+
 
         Debug.Log("그리드가 리셋되었습니다.");
         comboCount--;

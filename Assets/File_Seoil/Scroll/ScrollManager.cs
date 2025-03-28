@@ -38,6 +38,8 @@ public class ScrollManager : MonoBehaviour
 
     private void OnUse(ref ScrollData.ScrollType type)
     {
+        GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
+        GameObject enemy = Grid.instance.GetSelectedEnemy();
         switch (type)
         {
             case ScrollData.ScrollType.ReStart:
@@ -49,13 +51,24 @@ public class ScrollManager : MonoBehaviour
             case ScrollData.ScrollType.FireBall:
                 break;
             case ScrollData.ScrollType.Curse:
+                if (selectedEnemy != null)
+                {
+                    selectedEnemy.GetComponent<EnemyStats>().ApplyHealingReduction(3);
+                }
                 break;
             case ScrollData.ScrollType.Strengh:
                 break;
             case ScrollData.ScrollType.Energy:
+                if (enemy != null)
+                {
+                    EnemyStats stats = enemy.GetComponent<EnemyStats>();
+                    if (stats != null)
+                    {
+                        stats.ATK3UP = true;
+                    }
+                }
                 break;
             case ScrollData.ScrollType.Poision:
-                GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
                 if (selectedEnemy != null)
                 {
                     selectedEnemy.GetComponent<EnemyStats>().ApplyPoisonFromPlayer(5);
