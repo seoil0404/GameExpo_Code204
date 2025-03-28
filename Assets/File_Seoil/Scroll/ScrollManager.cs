@@ -38,8 +38,6 @@ public class ScrollManager : MonoBehaviour
 
     private void OnUse(ref ScrollData.ScrollType type)
     {
-        type = ScrollData.ScrollType.None;
-
         switch (type)
         {
             case ScrollData.ScrollType.ReStart:
@@ -63,10 +61,11 @@ public class ScrollManager : MonoBehaviour
             case ScrollData.ScrollType.Reflection:
                 break;
             case ScrollData.ScrollType.Escape:
-                if(combatData.EnemyType != EnemyData.EnemyType.Boss)
+                if (combatData.EnemyType != EnemyData.EnemyType.Boss)
                 {
 
                 }
+                else return;
                 break;
             case ScrollData.ScrollType.Money:
                 break;
@@ -80,6 +79,7 @@ public class ScrollManager : MonoBehaviour
                 break;
         }
 
+        type = ScrollData.ScrollType.None;
         SyncScroll();
     }
 
