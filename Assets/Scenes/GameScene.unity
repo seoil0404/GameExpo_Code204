@@ -692,6 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollData: {fileID: 11400000, guid: b5709d26a81729947a82705913c495ef, type: 2}
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   slot1Image: {fileID: 1709034927}
   slot1ScrollView: {fileID: 1709034929}
   slot2Image: {fileID: 2037818896}
@@ -2717,7 +2718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1405444933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 260122816}
+        m_TargetAssemblyTypeName: ScrollManager, Assembly-CSharp
+        m_MethodName: OnUseSlot3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1405444933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2839,50 +2852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e07de03b7e6764cba370cbe0ec4dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1746805215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1746805216}
-  - component: {fileID: 1746805217}
-  m_Layer: 0
-  m_Name: TreasureAffect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1746805216
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746805215}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16319948, y: -0.2166774, z: 1911.0011}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1746805217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746805215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96cca92cc908f342b473763807b5e77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1709034924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,7 +2935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1709034927}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 260122816}
+        m_TargetAssemblyTypeName: ScrollManager, Assembly-CSharp
+        m_MethodName: OnUseSlot1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1709034927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3024,6 +3005,75 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8791602504971515972, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
   m_PrefabInstance: {fileID: 625514789}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1746805215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746805216}
+  - component: {fileID: 1746805217}
+  m_Layer: 0
+  m_Name: TreasureAffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1746805216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746805215}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.16319948, y: -0.2166774, z: 1911.0011}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1746805217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746805215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96cca92cc908f342b473763807b5e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatData: {fileID: 0}
+  UniversalGravitation: 0
+  BusinessAcumen: 0
+  Condemnation: 0
+  MoneyBack: 0
+  EmergencyFood: 0
+  GiantResistanceHammer: 0
+  NobleBlood: 0
+  BoneCanine: 0
+  GoldAndSilver: 0
+  GoldenHair: 0
+  WoodPile: 0
+  CorruptTouch: 0
+  RingOfTime: 0
+  HolyShield: 0
+  EtherMemberShip: 0
+  SoulLantern: 0
+  TotemOfResistance: 0
+  OrderDefenceCloak: 0
+  CaneOfGravity: 0
+  TalismanOfPower: 0
+  SwordOfRuinedKing: 0
+  ShoesOfHermes: 0
+  GoldenApple: 0
+  MultipleCureScroll: 0
 --- !u!1 &1753523600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,7 +4369,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2037818896}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 260122816}
+        m_TargetAssemblyTypeName: ScrollManager, Assembly-CSharp
+        m_MethodName: OnUseSlot2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2037818896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5162,3 +5224,4 @@ SceneRoots:
   - {fileID: 1259940422}
   - {fileID: 39166253}
   - {fileID: 571649444}
+  - {fileID: 1746805216}
