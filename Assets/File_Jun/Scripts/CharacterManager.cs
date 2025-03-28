@@ -138,12 +138,11 @@ public class CharacterManager : MonoBehaviour
             return;
         }
 
-        selectedCharacter.characterData.CurrentHp -= totalDamage;
-        savedHp = selectedCharacter.characterData.CurrentHp;
-        SaveHp();
-
+        int simulatedHp = selectedCharacter.characterData.CurrentHp - totalDamage;
         int executionThreshold = Mathf.CeilToInt(selectedCharacter.characterData.MaxHp * (selectedCharacter.characterData.ExecutionRate / 100f));
-        if (selectedCharacter.characterData.CurrentHp <= executionThreshold)
+
+
+        if (simulatedHp <= executionThreshold)
         {
             var treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
             if (treasureEffect != null && treasureEffect.TotemOfResistance && !GameStartTracker.IsUsedTotemOfResistance)
@@ -164,11 +163,18 @@ public class CharacterManager : MonoBehaviour
             return;
         }
 
+        selectedCharacter.characterData.CurrentHp = simulatedHp;
+        savedHp = selectedCharacter.characterData.CurrentHp;
+        SaveHp();
+
+        Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
+
         if (selectedCharacter.characterData.CurrentHp <= 0)
         {
             CharacterDied();
         }
     }
+
 
 
 
