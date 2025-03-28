@@ -1677,7 +1677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520719067599977187, guid: 65e668ba72132b648bab9fe6aceaf2a3, type: 3}
       propertyPath: m_Name
-      value: NANA
+      value: HPsaver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
