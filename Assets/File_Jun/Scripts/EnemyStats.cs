@@ -33,7 +33,9 @@ public class EnemyStats : MonoBehaviour
     private bool isDamageMultiplierActive = false;
 
     private bool isSilenced = false;
-    private int silenceTurnsRemaining = 0;  
+    private int silenceTurnsRemaining = 0;
+
+    private bool isExecutionEligible = false;
 
     public void ActivateDamageMultiplier()
     {
@@ -168,12 +170,7 @@ public class EnemyStats : MonoBehaviour
 
         int actionIndex = enemyNextAction.GetNextActionIndex();
 
-        if(actionIndex == 0)
-        {
-            Debug.LogError("적이 침묵상태여서 공격을 하지 않았습니다");
-            return;
-        }
-
+        
         if (actionIndex == 1)
         {
             if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.ThornAttack)
@@ -184,6 +181,10 @@ public class EnemyStats : MonoBehaviour
             {
                 AttackPlayer();
             }
+        }
+        else if(actionIndex == 0)
+        {
+            Debug.Log("적이 침묵이라 공격을 하지 않습니다.");
         }
         else
         {
@@ -283,21 +284,40 @@ public class EnemyStats : MonoBehaviour
             Debug.Log($"[SwordOfRuinedKing] {gameObject.name}에게 보너스 데미지 {bonusDamage} 적용! 총 데미지: {calculatedDamage}");
         }
 
+        if (enemyData.enemyType == EnemyData.EnemyType.Boss && treasureEffect != null && treasureEffect.BoneCanine)
+        {
+            calculatedDamage += 8;
+            Debug.Log($"[BoneCanine] 보스 {gameObject.name}에게 추가 피해 8 적용 → 총 데미지: {calculatedDamage}");
+        }
+
         if (treasureEffect.GoldenHair && baseDamage >= 32)
         {
             CharacterManager.selectedCharacter.characterData.CurrentHp += calculatedDamage;
-           
             goldData.InGameGold += 100;
             CharacterManager.instance.RecoverHpFromDamage(calculatedDamage);
-
-
             Debug.Log($"[GoldenHair] baseDamage {baseDamage} ≥ 32 → HP {calculatedDamage} 회복 + 골드 100 획득!");
         }
 
         damageReceivedLastTurn = calculatedDamage;
-        hp -= calculatedDamage;
 
+        int executionThreshold = Mathf.CeilToInt(maxHp * (CharacterManager.selectedCharacter.characterData.ExecutionRate / 100f));
+
+        if (isExecutionEligible)
+        {
+            Debug.Log($"[Execution] {gameObject.name}이(가) 처형 상태에서 피해를 받아 즉시 사망합니다.");
+            hp = 0;
+            Die();
+            return;
+        }
+
+        hp -= calculatedDamage;
         Debug.Log($"[{gameObject.name}]에게 {calculatedDamage} 데미지를 입혔습니다.");
+
+        if (hp > 0 && hp <= executionThreshold)
+        {
+            isExecutionEligible = true;
+            Debug.Log($"[{gameObject.name}]이(가) 처형 가능 상태에 들어감. (현재 HP: {hp}, 기준: {executionThreshold})");
+        }
 
         if (thornCount > 0)
         {
@@ -312,16 +332,16 @@ public class EnemyStats : MonoBehaviour
             CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal = false;
         }
 
-        if (hp <= 0 || IsExecuted())
+        if (hp <= 0)
         {
             hp = 0;
             Die();
         }
 
-
         comboCount++;
         UpdateHealthText();
     }
+
 
 
 
