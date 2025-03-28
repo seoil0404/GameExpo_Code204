@@ -45,6 +45,13 @@ public class EnemySpawner : MonoBehaviour
             combatData.EnemyType = EnemyData.EnemyType.Common;
             currentDifficulty *= 3;
 
+            var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+            if (treasureEffect != null && treasureEffect.GiantResistanceHammer)
+            {
+                currentDifficulty /= 2;
+                Debug.Log("[GiantResistanceHammer] 보물 효과로 난이도가 절반으로 감소됨!");
+            }
+
             SpawnEnemies(combatData.HabitatType, combatData.EnemyType, forceOneEnemy: true);
         }
         else if(combatData.EnemyType == EnemyData.EnemyType.Boss)

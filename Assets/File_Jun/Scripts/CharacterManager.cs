@@ -22,6 +22,7 @@ public class CharacterManager : MonoBehaviour
     private const string UltimateKey = "SavedUltimateGauge";
     private int lastCheckedHpBonus = 0;
     public float CharacterBaseDodgeChance = 0f;
+    private bool isExecutionReady = false;
 
 
 
@@ -136,13 +137,19 @@ public class CharacterManager : MonoBehaviour
         {
             Debug.Log($"[CharacterManager] {selectedCharacter.characterData.CharacterName}이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
-        }
+        }   
 
-        int simulatedHp = selectedCharacter.characterData.CurrentHp - totalDamage;
+        selectedCharacter.characterData.CurrentHp -= totalDamage;
+        savedHp = selectedCharacter.characterData.CurrentHp;
+        SaveHp();
+        if (selectedCharacter.characterData.CurrentHp <= 0)
+        {
+            CharacterDied();
+            return;
+        }
         int executionThreshold = Mathf.CeilToInt(selectedCharacter.characterData.MaxHp * (selectedCharacter.characterData.ExecutionRate / 100f));
 
-
-        if (simulatedHp <= executionThreshold)
+        if (isExecutionReady)
         {
             var treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
             if (treasureEffect != null && treasureEffect.TotemOfResistance && !GameStartTracker.IsUsedTotemOfResistance)
@@ -154,6 +161,7 @@ public class CharacterManager : MonoBehaviour
                 selectedCharacter.characterData.CurrentHp = Mathf.Min(selectedCharacter.characterData.CurrentHp, selectedCharacter.characterData.MaxHp);
                 SaveHp();
 
+                isExecutionReady = false;
                 Debug.Log($"[TotemOfResistance] 처형을 막고 HP {healAmount} 회복! 현재 HP: {selectedCharacter.characterData.CurrentHp}");
                 return;
             }
@@ -162,18 +170,17 @@ public class CharacterManager : MonoBehaviour
             CharacterDied();
             return;
         }
-
-        selectedCharacter.characterData.CurrentHp = simulatedHp;
-        savedHp = selectedCharacter.characterData.CurrentHp;
-        SaveHp();
-
-        Debug.Log($"[CharacterManager] 플레이어가 {totalDamage} 데미지를 받았습니다. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
-
-        if (selectedCharacter.characterData.CurrentHp <= 0)
+        else if (selectedCharacter.characterData.CurrentHp <= executionThreshold)
         {
-            CharacterDied();
+            isExecutionReady = true;
+            Debug.Log($"[Execution] {selectedCharacter.characterData.CharacterName}이(가) 처형 가능 상태에 진입했습니다. 다음 피해 시 처형됩니다.");
+        }
+        else
+        {
+            isExecutionReady = false;
         }
     }
+
 
 
 

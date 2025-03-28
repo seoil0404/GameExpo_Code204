@@ -346,6 +346,13 @@ public class Grid : MonoBehaviour
         {
             Debug.Log("모든 적이 처치되었습니다. 다음 스테이지로 이동합니다.");
 
+            var treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
+            if (treasureEffect != null && treasureEffect.EmergencyFood)
+            {
+                CharacterManager.instance.RecoverHp(6);
+                Debug.Log("[EmergencyFood] 보물 효과로 캐릭터 HP 6 회복됨!");
+            }
+
             FindFirstObjectByType<EnemySpawner>().IncreaseDifficulty();
             MoveNextScene();
         }
@@ -554,7 +561,7 @@ public class Grid : MonoBehaviour
                     occupiedSquares.Add(gs);
                 }
             }
-            // 해당 열의 모든 칸 초기화
+
             for (int row = 0; row < rows; row++)
             {
                 int index = row * columns + col;
@@ -562,7 +569,7 @@ public class Grid : MonoBehaviour
                 gs.ClearOccupied();
                 gs.Deactivate();
             }
-            // 수집한 블록들을 아래쪽(높은 row)부터 재배치
+
             int startRow = rows - occupiedSquares.Count;
             for (int i = 0; i < occupiedSquares.Count; i++)
             {
