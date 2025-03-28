@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0560b0ed7cd3faf4d85efe779590a311, type: 3}
+  m_Name: ScrollData
+  m_EditorClassIdentifier: 
+  Slot1: 1
+  Slot2: 5
+  Slot3: 11
+  ReStart: {fileID: 21300000, guid: f392a9024f696f64b9150fab1a870d1d, type: 3}
+  Delete: {fileID: 21300000, guid: fd0819177206d294b8c1f083ba38b718, type: 3}
+  Speed: {fileID: 21300000, guid: 1fc2644bd53fa064283a7458611854d2, type: 3}
+  FireBall: {fileID: 21300000, guid: ba2d78342f0d66a4ea53a50e9069dfc6, type: 3}
+  Curse: {fileID: 21300000, guid: 4b80be9d8d88e914bb400a25463a47e1, type: 3}
+  Strengh: {fileID: 21300000, guid: 8ae48b03c0d38a54ba32686d416ad462, type: 3}
+  Energy: {fileID: 21300000, guid: 5f1c2bfc9a552824685e0044266a700f, type: 3}
+  Poision: {fileID: 21300000, guid: 7b964073a381fa042a21b50b84602a33, type: 3}
+  Heal: {fileID: 21300000, guid: 4eea83e977041164a879c27b301f9522, type: 3}
+  Reflection: {fileID: 21300000, guid: 8a47eef1c7d50744a8d60726e53f9ff8, type: 3}
+  Escape: {fileID: 21300000, guid: 66954a0a191eaa14c9df7805096614e7, type: 3}
+  Money: {fileID: 21300000, guid: b9845cdc28a7ebe4e8c9af027716a5b9, type: 3}
+  Grow: {fileID: 21300000, guid: 885a80e88d5ff3f48b070a5fb75e27ae, type: 3}
+  FirePillar: {fileID: 21300000, guid: 445874bd9ced1494ba91860cffd9a8e5, type: 3}
+  Fill: {fileID: 21300000, guid: ceb19d4ec901860489679a91f01fdd28, type: 3}
+  Life: {fileID: 21300000, guid: b0a58e44f9b47fc4681b7f5f537e0a14, type: 3}
