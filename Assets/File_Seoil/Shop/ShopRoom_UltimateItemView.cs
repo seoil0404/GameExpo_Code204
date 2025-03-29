@@ -16,6 +16,9 @@ public class ShopRoom_UltimateItemView : MonoBehaviour, IPointerEnterHandler, IP
     [Header("MonoBehavior")]
     [SerializeField] private Text priceText;
 
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip buySound;
+
     private DescriptionView currentDescriptionView;
 
     private static int price = 100;
@@ -36,7 +39,10 @@ public class ShopRoom_UltimateItemView : MonoBehaviour, IPointerEnterHandler, IP
 
         CharacterManager.selectedCharacter.characterData.MaxUltimateGauge -= 2;
 
-        if(CharacterManager.selectedCharacter.characterData.CurrentUltimateGauge > CharacterManager.selectedCharacter.characterData.MaxUltimateGauge)
+        Scene.Controller.audioSource.clip = buySound;
+        Scene.Controller.audioSource.Play();
+
+        if (CharacterManager.selectedCharacter.characterData.CurrentUltimateGauge > CharacterManager.selectedCharacter.characterData.MaxUltimateGauge)
             CharacterManager.selectedCharacter.characterData.CurrentUltimateGauge = CharacterManager.selectedCharacter.characterData.MaxUltimateGauge;
     }
 
@@ -46,7 +52,7 @@ public class ShopRoom_UltimateItemView : MonoBehaviour, IPointerEnterHandler, IP
         else siblingTransform.SetAsLastSibling();
 
         currentDescriptionView = Instantiate(descriptionViewPrefab, transform);
-        Debug.Log("DescriptionView Instantiate");
+
         currentDescriptionView.Description.text = "궁극기 강화\n\n캐릭터의 궁극기를 강화하여 궁극기 사용시 필요 턴이 2 감소한다.";
     }
 

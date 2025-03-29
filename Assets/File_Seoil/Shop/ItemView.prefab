@@ -56,6 +56,7 @@ MonoBehaviour:
   scrollImage: {fileID: 3330132011952700203}
   priceText: {fileID: 2092209768016702882}
   scrollSelectionPrefab: {fileID: 6979219855703081681, guid: 1b39216ed67afd447b8908a0c20b4b76, type: 3}
+  buySound: {fileID: 8300000, guid: cced678118e47ea4bb34517409eafcd9, type: 3}
 --- !u!1 &2378683379863281149
 GameObject:
   m_ObjectHideFlags: 0

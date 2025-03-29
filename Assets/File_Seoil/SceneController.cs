@@ -13,6 +13,9 @@ public class SceneController : MonoBehaviour
     [SerializeField] private GoldData goldData;
     [SerializeField] private ScrollData scrollData;
 
+    [Header("MonoBehavior")]
+    public AudioSource audioSource;
+
     private LoadingManager currentLoading;
 
     private bool IsSceneMoving = false;

@@ -16,6 +16,9 @@ public class ShopRoom_ItemView : MonoBehaviour
     [Header("Prefab")]
     [SerializeField] private ScrollSelectionView scrollSelectionPrefab;
 
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip buySound;
+
     private ScrollData.ScrollType scrollType;
     private int price;
 
@@ -49,7 +52,10 @@ public class ShopRoom_ItemView : MonoBehaviour
 
         goldData.InGameGold -= price;
         Instantiate(scrollSelectionPrefab).NewScrollType = scrollType;
-        
+
+        Scene.Controller.audioSource.clip = buySound;
+        Scene.Controller.audioSource.Play();
+
         Destroy(gameObject);
     }
 }
