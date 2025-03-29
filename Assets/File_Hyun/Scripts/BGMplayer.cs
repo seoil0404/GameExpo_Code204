@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class BGMPlayer : MonoBehaviour
 {
+    public float BGM_volume = 0.3f;
+
     public AudioClip normalBGM;
     public AudioClip bossBGM;
 
@@ -13,6 +15,7 @@ public class BGMPlayer : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.loop = true;
+        audioSource.volume = BGM_volume;
     }
 
     private void Update()

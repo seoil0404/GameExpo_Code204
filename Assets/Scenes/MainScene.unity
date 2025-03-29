@@ -3196,6 +3196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2596b56bd34502f4cb181a439d70381b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM_volume: 0.3
   normalBGM: {fileID: 8300000, guid: 042faf9ead9a91b42a749caa23e79199, type: 3}
   bossBGM: {fileID: 8300000, guid: 6f28926f19b684c4a8297b1bb89eca44, type: 3}
 --- !u!1 &969788712 stripped
