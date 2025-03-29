@@ -1,16 +1,30 @@
 using UnityEngine;
 
-public class BGMplayer : MonoBehaviour
+public class BGMPlayer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public AudioClip normalBGM;
+    public AudioClip bossBGM;
+
+    private AudioSource audioSource;
+    private AudioClip currentClip;
+
+    private void Start()
     {
-        
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.loop = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (StatisticsManager.Instance == null) return;
+
+        AudioClip desiredClip = StatisticsManager.Instance.CurrentRoom < 15 ? normalBGM : bossBGM;
+
+        if (currentClip != desiredClip)
+        {
+            currentClip = desiredClip;
+            audioSource.clip = currentClip;
+            audioSource.Play();
+        }
     }
 }
