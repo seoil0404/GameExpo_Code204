@@ -44,14 +44,14 @@ public class DescriptionView : MonoBehaviour
 
     private void NormalizeScale()
     {
-        Vector2 parentScale = transform.parent.lossyScale;
+        Vector2 parentScale = transform.parent.parent.parent.localScale;
+
+        Debug.Log(parentScale.ToString());
 
         transform.localScale = new Vector2(
-            defaultScale.x / parentScale.x,
-            defaultScale.y / parentScale.x
+            defaultScale.x,
+            defaultScale.y
         );
-
-        transform.localScale *= 1.5f;
     }
 
     private void HandleFlip()

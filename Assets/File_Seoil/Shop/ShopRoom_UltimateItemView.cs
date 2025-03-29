@@ -35,7 +35,7 @@ public class ShopRoom_UltimateItemView : MonoBehaviour, IPointerEnterHandler, IP
         goldData.InGameGold -= price;
         price = (int)(price *1.2);
 
-        priceText.text = price.ToString();
+        priceText.text = price.ToString() + "G";
 
         CharacterManager.selectedCharacter.characterData.MaxUltimateGauge -= 2;
 
