@@ -582,6 +582,14 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         CharacterManager.instance.TickDodgeBuff(); 
         CharacterManager.instance.ClearReflectDamage();
+
+        if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
+        {
+            CharacterManager.selectedCharacter.characterData.IsInvincible = false;
+            EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
+            Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
+        }
+
         DecideNextAction();
     }
 
