@@ -25,6 +25,9 @@ public class CharacterManager : MonoBehaviour
     private bool isExecutionReady = false;
     private int dodgeBuffTurnsRemaining = 0;
 
+    
+    public int reflectDamage = 0; //가시 효과
+
 
 
     void Start()
@@ -85,11 +88,18 @@ public class CharacterManager : MonoBehaviour
             Debug.Log("MoneyBag 보물 효과로 골드 100 지급!");
         }
 
+        if(treasureEffect.GoldenApple && !GameStartTracker.IsUsedGoldenApple)
+        {
+            GameStartTracker.IsUsedGoldenApple = true;
+            CharacterManager.selectedCharacter.characterData.IncreaseMaxHp(10);
+            Debug.Log("황금 사과 효과로 HP10증가");
+        }
+
         if (treasureEffect.ShoesOfHermes)
         {
             CharacterBaseDodgeChance = 10f;
             Debug.Log("ShoesOfHermes 보물 효과로 캐릭터 회피 확률이 10%로 설정됨");
-        }
+        }   
 
     }
 
@@ -117,7 +127,7 @@ public class CharacterManager : MonoBehaviour
 		selectedCharacter.characterData.AttackEffectSpawner = SpawnPoint.GetComponentInChildren<AttackEffectSpawner>();
     }
 
-    public void ApplyDamageToCharacter(int totalDamage)
+    public void ApplyDamageToCharacter(int totalDamage, GameObject attacker = null)
     {
         if (selectedCharacter.characterData.IsInvincible)
         {
@@ -149,6 +159,17 @@ public class CharacterManager : MonoBehaviour
         selectedCharacter.characterData.CurrentHp -= totalDamage;
         savedHp = selectedCharacter.characterData.CurrentHp;
         SaveHp();
+
+        if (reflectDamage > 0 && attacker != null)
+        {
+            EnemyStats enemyStats = attacker.GetComponent<EnemyStats>();
+            if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+            {
+                enemyStats.TakeFixedDamage(reflectDamage);
+                Debug.Log($"[ReflectDamage] {attacker.name}에게 반사 피해 {reflectDamage} 적용됨!");
+            }
+        }
+
         if (selectedCharacter.characterData.CurrentHp <= 0)
         {
             CharacterDied();
@@ -324,5 +345,51 @@ public class CharacterManager : MonoBehaviour
             Debug.Log($"[DodgeBuff] 회피 버프 턴 감소됨. 남은 턴: {dodgeBuffTurnsRemaining}");
         }
     }
-    
+
+    public void GetGold(int Amount)
+    {
+        goldData.InGameGold += Amount;  
+    }
+
+    public void SetReflectDamage(int amount)
+    {
+        reflectDamage += amount;
+        Debug.Log($"[ReflectDamage] 다음 피해 시 반사 데미지 {reflectDamage} 적용 예정.");
+    }
+
+    public void ClearReflectDamage()
+    {
+        reflectDamage = 0;
+    }
+
+    public void TakeFixedDamageToCharacter(int amount)
+    {
+        if (amount <= 0) return;
+
+        selectedCharacter.characterData.CurrentHp -= amount;
+        savedHp = selectedCharacter.characterData.CurrentHp;
+        SaveHp();
+
+        Debug.Log($"[TakeFixedDamage] {selectedCharacter.characterData.CharacterName}이(가) 고정 피해 {amount}를 입음. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
+
+        if (selectedCharacter.characterData.CurrentHp <= 0)
+        {
+            CharacterDied();
+        }
+    }
+
+    public void DamageAllEnemies(int amount)
+    {
+        EnemyStats[] enemies = FindObjectsOfType<EnemyStats>();
+
+        foreach (var enemy in enemies)
+        {
+            if (enemy != null && enemy.GetCurrentHp() > 0)
+            {
+                enemy.TakeFixedDamage(amount);
+                Debug.Log($"[CharacterManager] {enemy.gameObject.name}에게 고정 데미지 {amount}를 줌.");
+            }
+        }
+    }
+
 }

@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myButton: {fileID: 4332549530349998543}
-  cooldownTime: 0.5
+  cooldownTime: 1
 --- !u!1 &2853461841625989486
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5606303350758811851}
   - component: {fileID: 8011796103508526891}
   - component: {fileID: 4299107279051997444}
+  - component: {fileID: 7686324137184889217}
   m_Layer: 0
   m_Name: "\uD734"
   m_TagString: Untagged
@@ -76,6 +77,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7686324137184889217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047942871196441207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb6316c9085b2a429b29917ec756b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerStrength: 0
+  PlayerPoison: 0
+  PlayerWeak: 0
+  PlayerThoron: 0
+  PlayerHealingReduction: 0
+  PlayerSilenced: 0
+  PlayerInvincible: 0
 --- !u!1 &8352114362501994660
 GameObject:
   m_ObjectHideFlags: 0

@@ -177,12 +177,6 @@ public class Grid : MonoBehaviour
                 }
             }
 
-            HoldShape holdShape = FindFirstObjectByType<HoldShape>();
-            if (holdShape != null)
-            {
-                holdShape.RestoreAssignedObject();
-                holdShape.UnlockShape();
-            }
 
             foreach (var enemy in enemies)
             {
@@ -196,9 +190,14 @@ public class Grid : MonoBehaviour
                 }
             }
 
-            StartCoroutine(EnemyTurnSequence());
+            HoldShape holdShape = FindFirstObjectByType<HoldShape>();
+            if (holdShape != null)
+            {
+                holdShape.RestoreAssignedObject();
+                holdShape.UnlockShape();
+            }
 
-            CharacterManager.instance.TickDodgeBuff();
+            StartCoroutine(EnemyTurnSequence());
         }
         CheckIfGameEnded();
     }
@@ -407,11 +406,8 @@ public class Grid : MonoBehaviour
         }
         
 
-
-
         StartCoroutine(EnemyTurnSequence());
 
-        CharacterManager.instance.TickDodgeBuff();
 
         TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.CorruptTouch)
@@ -446,7 +442,6 @@ public class Grid : MonoBehaviour
             CharacterManager.selectedCharacter.characterData.IsInvincible = false;
             Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
         }
-
 
         Debug.Log("그리드가 리셋되었습니다.");
         comboCount--;
@@ -549,6 +544,7 @@ public class Grid : MonoBehaviour
         {
             Debug.LogWarning($"[{enemy.name}]을(를) 리스트에서 찾을 수 없습니다.");
         }
+        CheckIfGameEnded();
     }
 
     public GameObject GetSelectedEnemy()

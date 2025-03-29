@@ -62,6 +62,8 @@ public class ScrollManager : MonoBehaviour
         GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
         GameObject enemy = Grid.instance.GetSelectedEnemy();
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
+        
+
         switch (type)
         {
             case ScrollData.ScrollType.ReStart:
@@ -105,19 +107,24 @@ public class ScrollManager : MonoBehaviour
                 CharacterManager.instance.HealByPercentageOfMaxHp(0.15f);
                 break;
             case ScrollData.ScrollType.Reflection:
+                CharacterManager.instance.SetReflectDamage(10);
                 break;
             case ScrollData.ScrollType.Escape:
                 if (combatData.EnemyType != EnemyData.EnemyType.Boss)
                 {
-
+                    Scene.Controller.OnClearScene();
+                    StatisticsManager.Instance.CurrentRoom++;
                 }
                 else return;
                 break;
             case ScrollData.ScrollType.Money:
+                CharacterManager.instance.GetGold(50);
                 break;
             case ScrollData.ScrollType.Grow:
+                CharacterManager.selectedCharacter.characterData.IncreaseMaxHp(5);
                 break;
             case ScrollData.ScrollType.FirePillar:
+                CharacterManager.instance.DamageAllEnemies(20);
                 break;
             case ScrollData.ScrollType.Fill:
                 break;

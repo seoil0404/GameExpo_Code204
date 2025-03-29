@@ -45,11 +45,6 @@ public class CharacterData
         currentCharacterATK = characterATK;
 
         TreasureEffect treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
-        if (treasureEffect != null && treasureEffect.GoldenApple)
-        {
-            MaxHp += 10;
-            Debug.Log("GoldenApple 효과 적용됨! MaxHp +10");
-        }
     }
 
     public string CharacterName => characterName;
@@ -59,9 +54,8 @@ public class CharacterData
         get => maxHp;
         set
         {
-            float ratio = (float)currentHp / maxHp;
             maxHp = Mathf.Max(value, 1);
-            CurrentHp = Mathf.RoundToInt(maxHp * ratio);
+            currentHp = Mathf.Min(currentHp, maxHp);
             OnHpChanged?.Invoke();
             Debug.Log($"최대체력 set: {maxHp}");
         }
@@ -144,4 +138,17 @@ public class CharacterData
             Debug.Log($"현재 ATK set: {currentCharacterATK}");
         }   
     }
+
+    public void IncreaseMaxHp(int amount)
+{
+    if (amount <= 0)
+    {
+        Debug.LogWarning("[CharacterData] 증가시킬 체력 값은 0보다 커야 합니다.");
+        return;
+    }
+
+    MaxHp += amount;
+    Debug.Log($"[{CharacterName}]의 최대 체력이 {amount}만큼 증가하여 {MaxHp}가 되었습니다.");
+}
+
 }

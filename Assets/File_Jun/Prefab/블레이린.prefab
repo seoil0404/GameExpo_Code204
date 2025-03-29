@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 771504267477964866}
   - component: {fileID: 5223519379393002034}
   - component: {fileID: 1438836639855441592}
+  - component: {fileID: -471576095643669984}
   m_Layer: 0
   m_Name: "\uBE14\uB808\uC774\uB9B0"
   m_TagString: Untagged
@@ -126,3 +127,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-471576095643669984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869753013154172315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb6316c9085b2a429b29917ec756b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerStrength: 0
+  PlayerPoison: 0
+  PlayerWeak: 0
+  PlayerThoron: 0
+  PlayerHealingReduction: 0
+  PlayerSilenced: 0
+  PlayerInvincible: 0
