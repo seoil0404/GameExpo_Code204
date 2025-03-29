@@ -156,6 +156,9 @@ public class EffectManager : MonoBehaviour {
 	}
 
 	public void SpawnShield(GameObject target) {
+
+		Debug.Log("Test: Shield Method Called");
+
 		if (shieldEffects.TryGetValue(target, out var instantiatedShield)) {
 			if (instantiatedShield == null) {
 				shieldEffects.Remove(target);
@@ -164,18 +167,20 @@ public class EffectManager : MonoBehaviour {
 				Destroy(instantiatedShield.transform.parent.gameObject);
 				shieldEffects.Remove(target);
 			}
-			else {
-				return;
-			}
 		}
+
+		Debug.Log("Test: Shield Method Check Pessed");
 
 		GameObject instantiated = Instantiate(ShieldObject);
 		instantiated.transform.position = target.transform.position;
 		instantiated.transform.parent = target.transform;
 
+		Debug.Log("Test: Shield Method Instantiated");
+
 		ShieldEffect shieldEffect = instantiated.GetComponentInChildren<ShieldEffect>();
 		shieldEffects[target] = shieldEffect;
 
+		Debug.Log("Test: Shield Method Exit");
 
 	}
 
