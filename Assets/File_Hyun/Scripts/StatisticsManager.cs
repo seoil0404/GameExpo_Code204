@@ -56,6 +56,11 @@ public class StatisticsManager : MonoBehaviour
         StartCoroutine(setFirstGold());
     }
 
+    private void Update()
+    {
+        Debug.LogWarning($"{CurrentFloor}   /   {CurrentRoom}");
+    }
+
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         StartCoroutine(setFirstGold());
