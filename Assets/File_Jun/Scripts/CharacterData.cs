@@ -75,7 +75,14 @@ public class CharacterData
 	public bool IsDead =>
 		currentHp <= 0;
 
-    public int MaxUltimateGauge => maxUltimateGauge;
+    public int MaxUltimateGauge
+    {
+        set
+        {
+            maxUltimateGauge = value;
+        }
+        get => maxUltimateGauge;
+    }
 
     public int CurrentUltimateGauge
     {
