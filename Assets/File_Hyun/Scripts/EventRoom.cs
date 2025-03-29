@@ -24,6 +24,7 @@ public class EventRoom : MonoBehaviour
     private void Start()
     {
         eventPool.Remove("µô·¹¸¶"); //
+        if(characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp <= 1) eventPool.Remove("±¼");
         ChoiceButtons.SetActive(true);
         EscObject.SetActive(false);
         TriggerRandomEvent();
@@ -119,7 +120,7 @@ public class EventRoom : MonoBehaviour
                 break;
 
             case "±¼":
-                if (Random.value < 0.7f)
+                if (Random.value < 0.7f && characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp >= 1)
                 {
                     Debug.Log("Ã¼·Â 1 °¨¼Ò");
                     characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 1;
