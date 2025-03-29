@@ -626,6 +626,7 @@ public class EnemyStats : MonoBehaviour
         if (poisonStackFromPlayer > 0)
         {
             hp -= poisonStackFromPlayer;
+            //EffectManager.Instance.OnPoison();
             Debug.Log($"[{gameObject.name}]이(가) 독 {poisonStackFromPlayer} 데미지를 입음!");
             poisonStackFromPlayer--;
 
