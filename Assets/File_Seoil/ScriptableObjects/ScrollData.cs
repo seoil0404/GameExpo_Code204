@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,7 +50,57 @@ public class ScrollData : ScriptableObject
         Fill,
         Life
     }
-    #endregion
+
+    public enum ScrollRarity
+    {
+        Normal,
+        Rare,
+        Epic,
+        Legendary
+    }
+
+    private static readonly ScrollType[] normalTypes = {
+        ScrollType.ReStart, ScrollType.Delete, ScrollType.Speed, ScrollType.FireBall, ScrollType.Curse, ScrollType.Strengh, ScrollType.Energy, ScrollType.Poision, ScrollType.Heal
+    };
+
+    private static readonly ScrollType[] rareTypes = {
+        ScrollType.Reflection, ScrollType.Escape, ScrollType.Money, ScrollType.Grow
+    };
+
+    private static readonly ScrollType[] epicTypes = {
+        ScrollType.FirePillar, ScrollType.Fill
+    };
+
+    private static readonly ScrollType[] legendaryTypes = {
+        ScrollType.Life
+    };
+
+    public static ScrollType[] NormalTypes => normalTypes.ToArray();
+    public static ScrollType[] RareTypes => rareTypes.ToArray();
+    public static ScrollType[] EpicTypes => epicTypes.ToArray();
+    public static ScrollType[] LegendaryTypes => legendaryTypes.ToArray();
+
+    public static ScrollType[] GetScrollTypesByRarity(ScrollRarity scrollRarity)
+    {
+        switch (scrollRarity)
+        {
+            case ScrollRarity.Normal:
+                return NormalTypes;
+            case ScrollRarity.Rare:
+                return RareTypes;
+            case ScrollRarity.Epic:
+                return EpicTypes;
+            case ScrollRarity.Legendary:
+                return LegendaryTypes;
+        }
+
+#if UNITY_EDITOR
+        throw new System.Exception("Unknown ScrollRarity : " + scrollRarity.ToString());
+#else
+        return NormalTypes;
+#endif
+    }
+#endregion
 
     [Header("Sprites")]
     [SerializeField] private Sprite ReStart;
@@ -68,9 +120,50 @@ public class ScrollData : ScriptableObject
     [SerializeField] private Sprite Fill;
     [SerializeField] private Sprite Life;
 
+    public static ScrollRarity GetRarity(ScrollType type)
+    {
+        switch (type)
+        {
+            case ScrollType.ReStart:
+                return ScrollRarity.Normal;
+            case ScrollType.Delete:
+                return ScrollRarity.Normal;
+            case ScrollType.Speed:
+                return ScrollRarity.Normal;
+            case ScrollType.FireBall:
+                return ScrollRarity.Normal;
+            case ScrollType.Curse:
+                return ScrollRarity.Normal;
+            case ScrollType.Strengh:
+                return ScrollRarity.Normal;
+            case ScrollType.Energy:
+                return ScrollRarity.Normal;
+            case ScrollType.Poision:
+                return ScrollRarity.Normal;
+            case ScrollType.Heal:
+                return ScrollRarity.Normal;
+            case ScrollType.Reflection:
+                return ScrollRarity.Rare;
+            case ScrollType.Escape:
+                return ScrollRarity.Rare;
+            case ScrollType.Money:
+                return ScrollRarity.Rare;
+            case ScrollType.Grow:
+                return ScrollRarity.Rare;
+            case ScrollType.FirePillar:
+                return ScrollRarity.Epic;
+            case ScrollType.Fill:
+                return ScrollRarity.Epic;
+            case ScrollType.Life:
+                return ScrollRarity.Legendary;
+            default:
+                throw new System.Exception("Unknown ScrollType : " + type.ToString());
+        }
+    }
+
     public static string GetDescription(ScrollType type)
     {
-        switch(type)
+        switch (type)
         {
             case ScrollType.None:
                 return "설명\r\n빈 슬롯이다. 스크롤을 보관할 수 있다.";

@@ -32,9 +32,14 @@ public class ScrollSelectionView : MonoBehaviour
         Color transparentColor = Color.white;
         transparentColor.a = 0;
 
-        if (slot1Image == null) slot1Image.color = transparentColor;
-        if (slot2Image == null) slot2Image.color = transparentColor;
-        if (slot3Image == null) slot3Image.color = transparentColor;
+        if (slot1Image.sprite == null) slot1Image.color = transparentColor;
+        else slot1Image.color = Color.white;
+
+        if (slot2Image.sprite == null) slot2Image.color = transparentColor;
+        else slot2Image.color = Color.white;
+
+        if (slot3Image.sprite == null) slot3Image.color = transparentColor;
+        else slot3Image.color = Color.white;
 
         slot1ScrollView.scrollType = scrollData.Slot1;
         slot2ScrollView.scrollType = scrollData.Slot2;

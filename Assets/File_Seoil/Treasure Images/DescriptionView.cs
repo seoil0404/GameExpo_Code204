@@ -25,9 +25,13 @@ public class DescriptionView : MonoBehaviour
         Scene.Controller.OnLoadScene += Destroy;
     }
 
-    public void Destroy()
+    private void OnDisable()
     {
         Scene.Controller.OnLoadScene -= Destroy;
+    }
+
+    public void Destroy()
+    {
         Destroy(gameObject);
     }
 

@@ -8,6 +8,11 @@ public class SceneController : MonoBehaviour
     [SerializeField] private GameObject loadingEffectPrefab;
     [SerializeField] private GameObject tutorialViewPrefab;
 
+    [Header("Scriptable")]
+    [SerializeField] private CombatData combatData;
+    [SerializeField] private GoldData goldData;
+    [SerializeField] private ScrollData scrollData;
+
     private LoadingManager currentLoading;
 
     private bool IsSceneMoving = false;

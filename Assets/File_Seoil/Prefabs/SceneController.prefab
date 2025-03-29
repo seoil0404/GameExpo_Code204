@@ -46,4 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingEffectPrefab: {fileID: 2348537542862496641, guid: b7a20eba5fbe464428295184ea2c34b1, type: 3}
   tutorialViewPrefab: {fileID: 3959868476929849684, guid: 21ae251f1fd89de4a92a7922d42c2b9e, type: 3}
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
+  goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
+  scrollData: {fileID: 11400000, guid: b5709d26a81729947a82705913c495ef, type: 2}
   IsGameSceneFirstLoading: 1

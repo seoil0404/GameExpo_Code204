@@ -10,11 +10,15 @@ namespace Scroll
         [Header("Prefabs")]
         [SerializeField] private DescriptionView descriptionViewPrefab;
 
+        [Header("Transform Setting")]
+        [SerializeField] private Transform siblingTransform;
+
         private DescriptionView currentDescriptionView;
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            gameObject.transform.SetAsLastSibling();
+            if(siblingTransform == null) gameObject.transform.SetAsLastSibling();
+            else siblingTransform.SetAsLastSibling();
 
             currentDescriptionView = Instantiate(descriptionViewPrefab, transform);
             currentDescriptionView.Description.text = ScrollData.GetDescription(scrollType);
