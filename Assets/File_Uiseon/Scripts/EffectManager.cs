@@ -156,7 +156,6 @@ public class EffectManager : MonoBehaviour {
 	}
 
 	public void SpawnShield(GameObject target) {
-
 		if (shieldEffects.TryGetValue(target, out var instantiatedShield)) {
 			if (instantiatedShield == null) {
 				shieldEffects.Remove(target);

@@ -3379,6 +3379,7 @@ MonoBehaviour:
   SpawnPoint: {fileID: 1753523601}
   scoreScreen: {fileID: 2110268313}
   CharacterBaseDodgeChance: 0
+  reflectDamage: 0
 --- !u!1001 &1807534033
 PrefabInstance:
   m_ObjectHideFlags: 0

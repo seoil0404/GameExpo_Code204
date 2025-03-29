@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: 62fb39c1b6e8ccd409d1a6a02803b085
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3236793739224430389
+    second: BlockFanatasia_UI_FightGUI_FightStart_0
+  - first:
+      213: 6492886292114444597
+    second: BlockFanatasia_UI_FightGUI_FightStart_1
+  - first:
+      213: 6680020322032470915
+    second: BlockFanatasia_UI_FightGUI_FightStart_2
+  - first:
+      213: -8305443560688641621
+    second: BlockFanatasia_UI_FightGUI_FightStart_3
+  - first:
+      213: 5160010003422262910
+    second: BlockFanatasia_UI_FightGUI_FightStart_4
+  - first:
+      213: 4559314678169867510
+    second: BlockFanatasia_UI_FightGUI_FightStart_5
+  - first:
+      213: -576549002985453887
+    second: BlockFanatasia_UI_FightGUI_FightStart_6
+  - first:
+      213: -2804597211101956936
+    second: BlockFanatasia_UI_FightGUI_FightStart_7
+  - first:
+      213: -3045297630255308154
+    second: BlockFanatasia_UI_FightGUI_FightStart_8
+  - first:
+      213: 7160623982004969217
+    second: BlockFanatasia_UI_FightGUI_FightStart_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_0
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 585
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc8c1525e399413d0800000000000000
+      internalID: -3236793739224430389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_1
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 574
+        width: 33
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5311c709ead5b1a50800000000000000
+      internalID: 6492886292114444597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_2
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 601
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38bc223371334bc50800000000000000
+      internalID: 6680020322032470915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_3
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 578
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9191fe5132dbc80800000000000000
+      internalID: -8305443560688641621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_4
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 550
+        width: 19
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e76327b52c90c9740800000000000000
+      internalID: 5160010003422262910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_5
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 588
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f41a832b80f54f30800000000000000
+      internalID: 4559314678169867510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_6
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 590
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c642798cbfaff7f0800000000000000
+      internalID: -576549002985453887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_7
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 553
+        width: 61
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4773622b11419d0800000000000000
+      internalID: -2804597211101956936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_8
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 551
+        width: 93
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6822b41a0fdecb5d0800000000000000
+      internalID: -3045297630255308154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockFanatasia_UI_FightGUI_FightStart_9
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 549
+        width: 59
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f9c81b295af5360800000000000000
+      internalID: 7160623982004969217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BlockFanatasia_UI_FightGUI_FightStart_0: -3236793739224430389
+      BlockFanatasia_UI_FightGUI_FightStart_1: 6492886292114444597
+      BlockFanatasia_UI_FightGUI_FightStart_2: 6680020322032470915
+      BlockFanatasia_UI_FightGUI_FightStart_3: -8305443560688641621
+      BlockFanatasia_UI_FightGUI_FightStart_4: 5160010003422262910
+      BlockFanatasia_UI_FightGUI_FightStart_5: 4559314678169867510
+      BlockFanatasia_UI_FightGUI_FightStart_6: -576549002985453887
+      BlockFanatasia_UI_FightGUI_FightStart_7: -2804597211101956936
+      BlockFanatasia_UI_FightGUI_FightStart_8: -3045297630255308154
+      BlockFanatasia_UI_FightGUI_FightStart_9: 7160623982004969217
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
