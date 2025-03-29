@@ -50,6 +50,8 @@ public class DescriptionView : MonoBehaviour
             defaultScale.x / parentScale.x,
             defaultScale.y / parentScale.x
         );
+
+        transform.localScale *= 1.5f;
     }
 
     private void HandleFlip()
