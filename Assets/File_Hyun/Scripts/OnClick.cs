@@ -5,7 +5,7 @@ using System.Collections;
 public class OnClick : MonoBehaviour
 {
     [SerializeField] private Button myButton;
-    [SerializeField] private float cooldownTime = 0.5f;
+    [SerializeField] private float cooldownTime = 1f;
 
     private void Start()
     {
