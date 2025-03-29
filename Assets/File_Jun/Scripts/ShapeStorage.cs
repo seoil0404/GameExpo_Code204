@@ -124,5 +124,37 @@ public class ShapeStorage : MonoBehaviour
         return activeShapes[Random.Range(0, activeShapes.Count)];
     }
 
+    public void RedrawOneShape()
+    {
+        var activeShapes = shapeList.Where(shape => shape.IsAnyOfShapeSquareActive()).ToList();
+
+        if (activeShapes.Count == 0)
+        {
+            Debug.LogWarning("[RedrawOneShape] 다시 뽑을 수 있는 미노가 없습니다.");
+            return;
+        }
+
+        int randomIndex = Random.Range(0, activeShapes.Count);
+        Shape shapeToReplace = activeShapes[randomIndex];
+
+        ShapeData newShape = GetRandomShape();
+        if (newShape == null)
+        {
+            Debug.LogWarning("[RedrawOneShape] 새로운 ShapeData를 가져올 수 없습니다.");
+            return;
+        }
+
+        int randomRotation = Random.Range(0, 4) * 90;
+        Quaternion rotation = Quaternion.Euler(0, 0, randomRotation);
+
+        shapeToReplace.RequestNewShape(newShape);
+        shapeToReplace.GetComponent<RectTransform>().rotation = rotation;
+
+        SetHoldShape(newShape, shapeToReplace.CurrentShapeColorName, rotation);
+
+        Debug.Log($"[RedrawOneShape] {shapeToReplace.name} 미노가 새로 뽑힌 블록으로 교체됨");
+    }
+
+
 
 }

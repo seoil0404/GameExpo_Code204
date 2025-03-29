@@ -255,7 +255,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void UnlockShape()
     {
-        isShapeLocked = false;
+        
         if (assignedObject != null)
         {
             assignedObject.SetActive(true);
@@ -275,6 +275,25 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             assignedObject.SetActive(false);
             Debug.Log("[HoldShape] 블록을 비활성화합니다.");
         }
+    }
+
+    public void ForceClearHeldShape()
+    {
+        foreach (var square in _currentHoldShape)
+        {
+            Destroy(square);
+        }
+        _currentHoldShape.Clear();
+
+        _shapeActive = false;
+        _transform.localPosition = _startPosition;
+
+        if (assignedObject != null)
+        {
+            assignedObject.SetActive(true);
+        }
+
+        Debug.Log("[HoldShape] ForceClearHeldShape(): 블록 강제 제거 및 초기화 완료");
     }
 
 

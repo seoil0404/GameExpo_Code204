@@ -197,6 +197,8 @@ public class Grid : MonoBehaviour
             }
 
             StartCoroutine(EnemyTurnSequence());
+
+            CharacterManager.instance.TickDodgeBuff();
         }
         CheckIfGameEnded();
     }
@@ -403,9 +405,13 @@ public class Grid : MonoBehaviour
 
             }
         }
+        
+
 
 
         StartCoroutine(EnemyTurnSequence());
+
+        CharacterManager.instance.TickDodgeBuff();
 
         TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.CorruptTouch)
@@ -438,7 +444,6 @@ public class Grid : MonoBehaviour
         {
 
             CharacterManager.selectedCharacter.characterData.IsInvincible = false;
-            //EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
             Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
         }
 
@@ -695,6 +700,7 @@ public class Grid : MonoBehaviour
             var enemyStats = enemy.GetComponent<EnemyStats>();
             if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
             {
+
                 if (enemy == GetSelectedEnemy())
                 {
                     enemyStats.ApplyPoisonFromPlayerDamage();

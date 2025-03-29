@@ -1,4 +1,5 @@
 using Scroll;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,15 +41,20 @@ public class ScrollManager : MonoBehaviour
     {
         GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
         GameObject enemy = Grid.instance.GetSelectedEnemy();
+        EnemyStats stats = enemy.GetComponent<EnemyStats>();
         switch (type)
         {
             case ScrollData.ScrollType.ReStart:
+                FindFirstObjectByType<ShapeStorage>()?.RedrawOneShape();
                 break;
             case ScrollData.ScrollType.Delete:
+                FindFirstObjectByType<HoldShape>()?.ForceClearHeldShape();
                 break;
             case ScrollData.ScrollType.Speed:
+                CharacterManager.instance.ApplyDodgeBuff(1);
                 break;
             case ScrollData.ScrollType.FireBall:
+                selectedEnemy.GetComponent<EnemyStats>().TakeFixedDamage(10);
                 break;
             case ScrollData.ScrollType.Curse:
                 if (selectedEnemy != null)
@@ -57,14 +63,15 @@ public class ScrollManager : MonoBehaviour
                 }
                 break;
             case ScrollData.ScrollType.Strengh:
+                stats.DeactivateDamageMultiplier();
+               
                 break;
             case ScrollData.ScrollType.Energy:
                 if (enemy != null)
                 {
-                    EnemyStats stats = enemy.GetComponent<EnemyStats>();
                     if (stats != null)
                     {
-                        stats.ATK3UP = true;
+                        stats.atk3UpTurnCount += 1;
                     }
                 }
                 break;

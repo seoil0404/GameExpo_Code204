@@ -23,7 +23,7 @@ public class CharacterManager : MonoBehaviour
     private int lastCheckedHpBonus = 0;
     public float CharacterBaseDodgeChance = 0f;
     private bool isExecutionReady = false;
-
+    private int dodgeBuffTurnsRemaining = 0;
 
 
 
@@ -132,8 +132,15 @@ public class CharacterManager : MonoBehaviour
             return;
         }
 
+        float effectiveDodgeChance = CharacterBaseDodgeChance;
+
+        if (dodgeBuffTurnsRemaining > 0)
+        {
+            effectiveDodgeChance = 50f;
+        }
+
         float dodgeRoll = Random.Range(0f, 100f);
-        if (dodgeRoll < CharacterBaseDodgeChance)
+        if (dodgeRoll < effectiveDodgeChance)
         {
             Debug.Log($"[CharacterManager] {selectedCharacter.characterData.CharacterName}이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
@@ -302,5 +309,20 @@ public class CharacterManager : MonoBehaviour
         Debug.Log($"[Heal] 최대 체력의 {percentage * 100}%({healAmount}) 회복됨. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
     }
 
+    public void ApplyDodgeBuff(int turns)
+    {
+        dodgeBuffTurnsRemaining += turns;
+        CharacterBaseDodgeChance = 50f;
+        Debug.Log($"[회피 버프] {turns}턴 동안 회피율이 50%로 설정됨");
+    }
 
+    public void TickDodgeBuff()
+    {
+        if (dodgeBuffTurnsRemaining > 0)
+        {
+            dodgeBuffTurnsRemaining--;
+            Debug.Log($"[DodgeBuff] 회피 버프 턴 감소됨. 남은 턴: {dodgeBuffTurnsRemaining}");
+        }
+    }
+    
 }
