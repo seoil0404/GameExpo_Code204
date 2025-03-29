@@ -228,10 +228,18 @@ public class CharacterManager : MonoBehaviour
 
     private void CharacterDied()
     {
+        ScrollManager scrollManager = FindObjectOfType<ScrollManager>();
+        if (scrollManager != null && scrollManager.OnUseLifeScroll())
+        {
+            Debug.Log("[Scroll] 생명 스크롤이 사용되어 캐릭터의 죽음을 방지했습니다!");
+            return;
+        }
+
         Debug.Log("캐릭터가 죽었습니다!");
         GameStartTracker.IsHavetobeReset = true;
         scoreScreen.SetActive(true);
     }
+
 
     public void SaveHp()
     {
@@ -390,6 +398,17 @@ public class CharacterManager : MonoBehaviour
                 Debug.Log($"[CharacterManager] {enemy.gameObject.name}에게 고정 데미지 {amount}를 줌.");
             }
         }
+    }
+
+    public void ResetHpAndRecoverThirtyPercent()
+    {
+        selectedCharacter.characterData.CurrentHp = 0;
+        int recoverAmount = Mathf.RoundToInt(selectedCharacter.characterData.MaxHp * 0.3f);
+        selectedCharacter.characterData.CurrentHp = recoverAmount;
+        savedHp = recoverAmount;
+        SaveHp();
+
+        Debug.Log($"[ResetHpAndRecoverThirtyPercent] HP를 0으로 만든 뒤, 최대 체력의 30%({recoverAmount})만큼 회복됨.");
     }
 
 }

@@ -51,7 +51,7 @@ public class ScrollManager : MonoBehaviour
 
         //Write Life Scroll Second Function
         {
-
+            CharacterManager.instance.ResetHpAndRecoverThirtyPercent();
         }
 
         return true;
@@ -62,7 +62,17 @@ public class ScrollManager : MonoBehaviour
         GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
         GameObject enemy = Grid.instance.GetSelectedEnemy();
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
-        
+        var treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
+
+        if (treasureEffect.GoldAndSilver)
+        {
+            CharacterManager.instance.GetGold(8);
+        }
+
+        if(treasureEffect.MultipleCureScroll)
+        {
+            CharacterManager.instance.RecoverHp(3);
+        }
 
         switch (type)
         {
@@ -129,6 +139,7 @@ public class ScrollManager : MonoBehaviour
             case ScrollData.ScrollType.Fill:
                 break;
             case ScrollData.ScrollType.Life:
+                CharacterManager.selectedCharacter.characterData.IncreaseMaxHp(10);
                 break;
         }
 
