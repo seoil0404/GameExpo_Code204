@@ -54,6 +54,7 @@ public class ScrollManager : MonoBehaviour
             CharacterManager.instance.ResetHpAndRecoverThirtyPercent();
         }
 
+        SyncScroll();
         return true;
     }
 
