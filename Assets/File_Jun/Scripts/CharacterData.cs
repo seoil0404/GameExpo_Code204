@@ -140,7 +140,7 @@ public class CharacterData
     }
 
     public void IncreaseMaxHp(int amount)
-{
+    {
     if (amount <= 0)
     {
         Debug.LogWarning("[CharacterData] 증가시킬 체력 값은 0보다 커야 합니다.");
@@ -149,6 +149,6 @@ public class CharacterData
 
     MaxHp += amount;
     Debug.Log($"[{CharacterName}]의 최대 체력이 {amount}만큼 증가하여 {MaxHp}가 되었습니다.");
-}
+    }
 
 }

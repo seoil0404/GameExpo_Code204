@@ -690,10 +690,14 @@ public class Grid : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
+        
+
         enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
         foreach (var enemy in enemies)
         {
             var enemyStats = enemy.GetComponent<EnemyStats>();
+            var treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
+
             if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
             {
 
@@ -701,7 +705,7 @@ public class Grid : MonoBehaviour
                 {
                     enemyStats.ApplyPoisonFromPlayerDamage();
                 }
-
+                
                 if (enemyStats.GetPoisonDuration() > 0)
                 {
                     enemyStats.ApplyPoisonDamageToPlayer();
@@ -709,7 +713,17 @@ public class Grid : MonoBehaviour
 
                 enemyStats.PerformTurnAction(this);
                 Debug.Log($"[{enemy.name}]이(가) 플레이어를 공격했습니다.");
+
+                if (treasureEffect != null && treasureEffect.WoodPile)
+                {
+                    if (Random.Range(0f, 1f) < 0.5f)
+                    {
+                        enemyStats.ApplyHealingReduction(1);
+                        Debug.Log($"[Woodpile] {enemy.name}에게 치유 감소 스택 1 적용됨!");
+                    }
+                }
             }
+            
         }
 
         if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)

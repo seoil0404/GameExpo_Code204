@@ -41,7 +41,8 @@ public class EnemyStats : MonoBehaviour
     private int poisonStackFromPlayer = 0; //플레이어용 독
 
     public int atk3UpTurnCount = 0;
-    private int healingReductionStacks = 0; //치유 감소
+
+    public int healingReductionStacks = 0; //치유 감소
 
 
     public void ActivateDamageMultiplier()
