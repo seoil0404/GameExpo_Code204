@@ -378,4 +378,18 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    public void DamageAllEnemies(int amount)
+    {
+        EnemyStats[] enemies = FindObjectsOfType<EnemyStats>();
+
+        foreach (var enemy in enemies)
+        {
+            if (enemy != null && enemy.GetCurrentHp() > 0)
+            {
+                enemy.TakeFixedDamage(amount);
+                Debug.Log($"[CharacterManager] {enemy.gameObject.name}에게 고정 데미지 {amount}를 줌.");
+            }
+        }
+    }
+
 }

@@ -42,6 +42,8 @@ public class ScrollManager : MonoBehaviour
         GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
         GameObject enemy = Grid.instance.GetSelectedEnemy();
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
+        
+
         switch (type)
         {
             case ScrollData.ScrollType.ReStart:
@@ -102,6 +104,7 @@ public class ScrollManager : MonoBehaviour
                 CharacterManager.selectedCharacter.characterData.IncreaseMaxHp(5);
                 break;
             case ScrollData.ScrollType.FirePillar:
+                CharacterManager.instance.DamageAllEnemies(20);
                 break;
             case ScrollData.ScrollType.Fill:
                 break;
