@@ -10,7 +10,7 @@ public class MinoClickEffectManager : MonoBehaviour
     public Color[] possibleColors;
     public int minCount = 4;
     public int maxCount = 6;
-    public float scaleMultiplier = 0.1f;
+    public float scaleMultiplier = 0.03f;
 
     private MinoEffectPool pool;
     private bool isEffectEnabled = true;

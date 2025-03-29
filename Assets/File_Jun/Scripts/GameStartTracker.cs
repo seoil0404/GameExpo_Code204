@@ -12,6 +12,10 @@ public class GameStartTracker : MonoBehaviour
 
     public static bool IsUsedGoldenApple { get; set; } = false;
 
+    public static bool IsUsedRingofTime { get; set; } = false;
+
+
+
 
     private void Awake()
     {

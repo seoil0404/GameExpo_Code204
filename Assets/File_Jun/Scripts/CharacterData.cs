@@ -15,6 +15,8 @@ public class CharacterData
     [SerializeField]
     private int currentHp;
     [SerializeField]
+    private int baseUitimateGuage;
+    [SerializeField]
     private int maxUltimateGauge;
     [SerializeField]
     private int currentUltimateGauge;
@@ -40,6 +42,7 @@ public class CharacterData
     public bool IsInvincible = false;
     public void Initialize()
     {
+        maxUltimateGauge = baseUitimateGuage;
         currentUltimateGauge = 0;
         executionRate = baseExecutionRate;
         currentCharacterATK = characterATK;
