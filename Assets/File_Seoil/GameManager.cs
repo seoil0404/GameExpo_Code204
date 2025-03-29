@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     [Header("MonoBehavior")]
     [SerializeField] private MapManager mapManager;
 
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip combatEnterSound;
+    [SerializeField] private AudioClip shopEnterSound;
+
     public void Initialize()
     {
         Scene.gameManager = this;
@@ -30,14 +34,20 @@ public class GameManager : MonoBehaviour
         {
             case Stage.StageType.Combat:
                 combatData.EnemyType = EnemyData.EnemyType.Common;
+                Scene.Controller.audioSource.clip = combatEnterSound;
+                Scene.Controller.audioSource.Play();
                 Scene.Controller.LoadScene(Scene.SceneType.GameScene);
                 break;
             case Stage.StageType.SpecialCombat:
                 combatData.EnemyType = EnemyData.EnemyType.SpecialCombat;
+                Scene.Controller.audioSource.clip = combatEnterSound;
+                Scene.Controller.audioSource.Play();
                 Scene.Controller.LoadScene(Scene.SceneType.GameScene);
                 break;
             case Stage.StageType.Boss:
                 combatData.EnemyType = EnemyData.EnemyType.Boss;
+                Scene.Controller.audioSource.clip = combatEnterSound;
+                Scene.Controller.audioSource.Play();
                 Scene.Controller.LoadScene(Scene.SceneType.GameScene);
                 break;
             case Stage.StageType.Chest:
@@ -47,6 +57,8 @@ public class GameManager : MonoBehaviour
                 Scene.Controller.LoadScene(Scene.SceneType.EventRoom);
                 break;
             case Stage.StageType.MagicStore:
+                Scene.Controller.audioSource.clip = shopEnterSound;
+                Scene.Controller.audioSource.Play();
                 Scene.Controller.LoadScene(Scene.SceneType.ShopRoom);
                 break;
             case Stage.StageType.Rest:

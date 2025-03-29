@@ -17,6 +17,10 @@ public class MapManager : MonoBehaviour
     [SerializeField] private MapGenerater mapGenerater;
     [SerializeField] private GoldShowManager goldShowManager;
 
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
+
     private List<Stage> currentList;
     private Stage currentStage;
     private bool isCurrentStageCleared = true;
@@ -156,13 +160,19 @@ public class MapManager : MonoBehaviour
     {
         goldShowManager.HideGoldData();
         treasureShowManager.Hide();
-        
+
+        Scene.Controller.audioSource.clip = openSound;
+        Scene.Controller.audioSource.Play();
+
         map.SetActive(true);
     }
     public void DisableMap()
     {
         goldShowManager.ShowGoldData();
         treasureShowManager.Show();
+
+        Scene.Controller.audioSource.clip = closeSound;
+        Scene.Controller.audioSource.Play();
 
         map.SetActive(false);
     }

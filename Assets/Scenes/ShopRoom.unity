@@ -1445,6 +1445,7 @@ MonoBehaviour:
   descriptionViewPrefab: {fileID: 2432209037003257057, guid: 2f1fb3f4b51939d4eb3b888dbde20871, type: 3}
   siblingTransform: {fileID: 1322300279}
   priceText: {fileID: 175006191}
+  buySound: {fileID: 8300000, guid: cced678118e47ea4bb34517409eafcd9, type: 3}
 --- !u!1001 &1421107788
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -293,6 +293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   mapManager: {fileID: 1977474990436616104}
+  combatEnterSound: {fileID: 8300000, guid: 13d0a811f2de05e45bdb764d21804094, type: 3}
+  shopEnterSound: {fileID: 8300000, guid: 6ab7d6d52e4ce62409a2467ef230fc54, type: 3}
 --- !u!1 &6483568726966967866
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +649,14 @@ PrefabInstance:
       propertyPath: isStatic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2635813539601055982, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7178f7dbaa4fbc34d89a9109aef5c671, type: 3}
+    - target: {fileID: 2635813539601055982, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7178f7dbaa4fbc34d89a9109aef5c671, type: 3}
     - target: {fileID: 2635813539601055982, guid: f66c2e731d7ac9c4295a1880b467c5a6, type: 3}
       propertyPath: gameManager
       value: 
