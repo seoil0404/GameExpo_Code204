@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BGMPlayer : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class BGMPlayer : MonoBehaviour
     {
         if (StatisticsManager.Instance == null) return;
 
-        AudioClip desiredClip = StatisticsManager.Instance.CurrentRoom < 15 ? normalBGM : bossBGM;
+        bool isBossCondition = StatisticsManager.Instance.CurrentRoom > 14 &&
+                               UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "GameScene";
+
+        AudioClip desiredClip = isBossCondition ? bossBGM : normalBGM;
 
         if (currentClip != desiredClip)
         {
