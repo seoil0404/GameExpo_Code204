@@ -69,11 +69,7 @@ public class CharacterManager : MonoBehaviour
             Debug.Log($"[NobleBlood] 보물 효과로 현재 체력의 1/10({recoverAmount}) 회복됨. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
         }
 
-        if (treasureEffect.HolyShield)
-        {
-            selectedCharacter.characterData.IsInvincible = true;
-            Debug.Log("[HolyShield] 보물 효과로 무효화 상태가 시작 시 1턴간 적용됩니다.");
-        }
+       
 
         LoadHp();
         LoadUltimateGauge();
@@ -88,7 +84,14 @@ public class CharacterManager : MonoBehaviour
             Debug.Log("MoneyBag 보물 효과로 골드 100 지급!");
         }
 
-        if(treasureEffect.GoldenApple && !GameStartTracker.IsUsedGoldenApple)
+        if (treasureEffect.HolyShield)
+        {
+            selectedCharacter.characterData.IsInvincible = true;
+            EffectManager.Instance.SpawnShield(currentCharacterInstance);
+            Debug.Log("[HolyShield] 보물 효과로 무효화 상태가 시작 시 1턴간 적용됩니다.");
+        }
+
+        if (treasureEffect.GoldenApple && !GameStartTracker.IsUsedGoldenApple)
         {
             GameStartTracker.IsUsedGoldenApple = true;
             CharacterManager.selectedCharacter.characterData.IncreaseMaxHp(10);
@@ -396,7 +399,7 @@ public class CharacterManager : MonoBehaviour
             {
                 enemy.TakeFixedDamage(amount);
                 Debug.Log($"[CharacterManager] {enemy.gameObject.name}에게 고정 데미지 {amount}를 줌.");
-            }
+            }   
         }
     }
 
