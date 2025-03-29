@@ -582,6 +582,14 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         CharacterManager.instance.TickDodgeBuff(); 
         CharacterManager.instance.ClearReflectDamage();
+
+        if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
+        {
+            CharacterManager.selectedCharacter.characterData.IsInvincible = false;
+            EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
+            Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
+        }
+
         DecideNextAction();
     }
 
@@ -618,6 +626,7 @@ public class EnemyStats : MonoBehaviour
         if (poisonStackFromPlayer > 0)
         {
             hp -= poisonStackFromPlayer;
+            //EffectManager.Instance.OnPoison();
             Debug.Log($"[{gameObject.name}]이(가) 독 {poisonStackFromPlayer} 데미지를 입음!");
             poisonStackFromPlayer--;
 
