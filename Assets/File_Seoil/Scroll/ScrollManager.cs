@@ -37,6 +37,26 @@ public class ScrollManager : MonoBehaviour
         if (scrollData.Slot3 != ScrollData.ScrollType.None) OnUse(ref scrollData.Slot3);
     }
 
+    public bool OnUseLifeScroll()
+    {
+        bool isSlot1Exist = scrollData.Slot1 == ScrollData.ScrollType.Life;
+        bool isSlot2Exist = scrollData.Slot2 == ScrollData.ScrollType.Life;
+        bool isSlot3Exist = scrollData.Slot3 == ScrollData.ScrollType.Life;
+
+        if (!(isSlot1Exist || isSlot2Exist || isSlot3Exist)) return false;
+
+        if (isSlot1Exist) scrollData.Slot1 = ScrollData.ScrollType.None;
+        else if (isSlot2Exist) scrollData.Slot2 = ScrollData.ScrollType.None;
+        else if (isSlot3Exist) scrollData.Slot3 = ScrollData.ScrollType.None;
+
+        //Write Life Scroll Second Function
+        {
+
+        }
+
+        return true;
+    }
+
     private void OnUse(ref ScrollData.ScrollType type)
     {
         GameObject selectedEnemy = Grid.instance.GetSelectedEnemy();
