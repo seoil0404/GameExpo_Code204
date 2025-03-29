@@ -40,7 +40,8 @@ public class EnemyStats : MonoBehaviour
 
     private int poisonStackFromPlayer = 0;
 
-    public bool ATK3UP = false;
+    public int atk3UpTurnCount = 0;
+
 
     private int healingReductionStacks = 0;
 
@@ -281,11 +282,14 @@ public class EnemyStats : MonoBehaviour
         }
 
         int baseDamage = completedLines + CharacterManager.selectedCharacter.characterData.CurrentCharacterATK;
-        if(ATK3UP == true)
+
+        if (atk3UpTurnCount > 0)
         {
             baseDamage += 3;
-            ATK3UP = false;
+            TickATK3Up();
+            Debug.Log($"[{gameObject.name}]에게 ATK +3 효과 적용 중! → 추가 피해 +3");
         }
+
         int calculatedDamage = baseDamage;
 
         var treasureEffect = FindFirstObjectByType<TreasureEffect>();
@@ -639,5 +643,31 @@ public class EnemyStats : MonoBehaviour
             Debug.Log($"[{gameObject.name}]의 치유 감소 스택이 감소됨. 남은 스택: {healingReductionStacks}");
         }
     }
+
+    public void TickATK3Up()
+    {
+        if (atk3UpTurnCount > 0)
+        {
+            atk3UpTurnCount--;
+            Debug.Log($"[{gameObject.name}]의 ATK+3 효과 남은 턴 수: {atk3UpTurnCount}");
+        }
+    }
+
+    public void TakeFixedDamage(int amount)
+    {
+        if (amount <= 0) return;
+
+        hp -= amount;
+        Debug.Log($"[{gameObject.name}]이(가) 고정 피해로 {amount} 데미지를 입었습니다!");
+
+        if (hp <= 0)
+        {
+            hp = 0;
+            Die();
+        }
+
+        UpdateHealthText();
+    }
+
 
 }
