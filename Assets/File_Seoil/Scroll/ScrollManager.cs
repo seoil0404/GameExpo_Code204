@@ -51,7 +51,7 @@ public class ScrollManager : MonoBehaviour
 
         //Write Life Scroll Second Function
         {
-
+            CharacterManager.instance.ResetHpAndRecoverThirtyPercent();
         }
 
         return true;
@@ -139,6 +139,7 @@ public class ScrollManager : MonoBehaviour
             case ScrollData.ScrollType.Fill:
                 break;
             case ScrollData.ScrollType.Life:
+                CharacterManager.selectedCharacter.characterData.IncreaseMaxHp(10);
                 break;
         }
 
