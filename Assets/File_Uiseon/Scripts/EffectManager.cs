@@ -165,9 +165,6 @@ public class EffectManager : MonoBehaviour {
 				Destroy(instantiatedShield.transform.parent.gameObject);
 				shieldEffects.Remove(target);
 			}
-			else {
-				return;
-			}
 		}
 
 		GameObject instantiated = Instantiate(ShieldObject);
