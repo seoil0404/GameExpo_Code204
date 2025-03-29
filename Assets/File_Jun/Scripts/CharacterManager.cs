@@ -57,6 +57,17 @@ public class CharacterManager : MonoBehaviour
             }
         }
 
+        if (treasureEffect.RingOfTime && !GameStartTracker.IsUsedRingofTime)
+        {
+            GameStartTracker.IsUsedRingofTime = true;
+
+            int gaugeAmount = Mathf.RoundToInt(selectedCharacter.characterData.MaxUltimateGauge * 0.8f);
+            selectedCharacter.characterData.MaxUltimateGauge = gaugeAmount;
+
+
+            Debug.Log($"[RingOfTime] 궁극기 게이지를 최대의 4/5({gaugeAmount})로 설정. 사용 처리됨.");
+        }
+
         if (treasureEffect.NobleBlood)
         {
             int recoverAmount = Mathf.Max(1, selectedCharacter.characterData.CurrentHp / 10);
