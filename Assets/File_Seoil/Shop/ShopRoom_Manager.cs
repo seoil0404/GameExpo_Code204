@@ -42,7 +42,9 @@ public class ShopRoom_Manager : MonoBehaviour
     private ScrollData.ScrollType GetRandomScroll(ScrollData.ScrollType[] scrollTypes)
     {
         int randomIndex = Random.Range(0, scrollTypes.Length);
-        
+
+        if (scrollTypes[randomIndex] == ScrollData.ScrollType.Money) return GetRandomScroll(scrollTypes);
+
         return scrollTypes[randomIndex];
     }
 
