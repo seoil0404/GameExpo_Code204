@@ -2783,6 +2783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollType: 0
   descriptionViewPrefab: {fileID: 2432209037003257057, guid: 2f1fb3f4b51939d4eb3b888dbde20871, type: 3}
+  siblingTransform: {fileID: 0}
 --- !u!224 &1423395871 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3911682594274181272, guid: 015dfb03bfeaa20489966eb4c0a5e2ae, type: 3}
@@ -3000,6 +3001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollType: 0
   descriptionViewPrefab: {fileID: 2432209037003257057, guid: 2f1fb3f4b51939d4eb3b888dbde20871, type: 3}
+  siblingTransform: {fileID: 0}
 --- !u!224 &1738287322 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8791602504971515972, guid: 16ded4312b46b5841a96b3723ca7c395, type: 3}
@@ -3049,7 +3051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96cca92cc908f342b473763807b5e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatData: {fileID: 0}
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   UniversalGravitation: 0
   BusinessAcumen: 0
   Condemnation: 0
@@ -4434,6 +4436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollType: 0
   descriptionViewPrefab: {fileID: 2432209037003257057, guid: 2f1fb3f4b51939d4eb3b888dbde20871, type: 3}
+  siblingTransform: {fileID: 0}
 --- !u!1 &2047840233
 GameObject:
   m_ObjectHideFlags: 0

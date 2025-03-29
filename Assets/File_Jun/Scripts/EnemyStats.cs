@@ -28,22 +28,21 @@ public class EnemyStats : MonoBehaviour
     private EnemyNextAction enemyNextAction;
     private bool hasUsedSwallowBlock = false;
 
-    private int poisonDamage = 0;
+    private int poisonDamage = 0; 
     private int poisonDuration = 0;
 
-    private bool isDamageMultiplierActive = false;
+    public bool isDamageMultiplierActive = false; //약화 true시 침묵중
 
-    private bool isSilenced = false;
+    private bool isSilenced = false; //침묵 true시 침묵중     
     private int silenceTurnsRemaining = 0;
 
     private bool isExecutionEligible = false;
 
-    private int poisonStackFromPlayer = 0;
+    private int poisonStackFromPlayer = 0; //플레이어용 독
 
     public int atk3UpTurnCount = 0;
+    private int healingReductionStacks = 0; //치유 감소
 
-
-    private int healingReductionStacks = 0;
 
     public void ActivateDamageMultiplier()
     {
@@ -239,7 +238,7 @@ public class EnemyStats : MonoBehaviour
             attackEffectSpawner.Spawn(() =>
             {
                 Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-                characterManager.ApplyDamageToCharacter(damage);
+                characterManager.ApplyDamageToCharacter(damage, this.gameObject);
 
                 if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.LifeSteal)
                 {
@@ -254,7 +253,7 @@ public class EnemyStats : MonoBehaviour
         else
         {
             Debug.Log($"[{gameObject.name}]이(가) 플레이어를 공격하여 {damage} 데미지를 입힙니다.");
-            characterManager.ApplyDamageToCharacter(damage);
+            characterManager.ApplyDamageToCharacter(damage, this.gameObject);
 
             if (enemyData.defaultAttackType == EnemyData.DefaultAttackType.LifeSteal)
             {
@@ -339,7 +338,7 @@ public class EnemyStats : MonoBehaviour
         {
             int thornDamage = thornCount;
             Debug.Log($"[{gameObject.name}]의 가시에 의해 플레이어가 {thornDamage} 반사 피해를 입습니다!");
-            characterManager.ApplyDamageToCharacter(thornDamage);
+            characterManager.TakeFixedDamageToCharacter(thornDamage);
         }
 
         if (CharacterManager.selectedCharacter.characterData.NextAttackLifeSteal)
@@ -457,7 +456,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (poisonDuration > 0)
         {
-            characterManager.ApplyDamageToCharacter(poisonDamage);
+            characterManager.TakeFixedDamageToCharacter(poisonDamage);
             Debug.Log($"[플레이어]이(가) {poisonDamage}의 독 피해를 입음. 남은 턴: {poisonDuration - 1}");
             EffectManager.Instance.OnPoison(CharacterManager.currentCharacterInstance);
 
@@ -511,14 +510,14 @@ public class EnemyStats : MonoBehaviour
             attackEffectSpawner.Spawn(() =>
             {
                 Debug.Log($"[{gameObject.name}]이(가) [가시 공격]으로 플레이어에게 {thornDamage} 데미지!");
-                characterManager.ApplyDamageToCharacter(thornDamage);
+                characterManager.TakeFixedDamageToCharacter(thornDamage);
                 IncreaseThorn();
             });
         }
         else
         {
             Debug.Log($"[{gameObject.name}]이(가) [가시 공격]으로 플레이어에게 {thornDamage} 데미지!");
-            characterManager.ApplyDamageToCharacter(thornDamage);
+            characterManager.TakeFixedDamageToCharacter(thornDamage);
             IncreaseThorn();
         }
     }
@@ -580,6 +579,8 @@ public class EnemyStats : MonoBehaviour
     private IEnumerator DelayedActionCoroutine()
     {
         yield return new WaitForSeconds(1.5f);
+        CharacterManager.instance.TickDodgeBuff(); 
+        CharacterManager.instance.ClearReflectDamage();
         DecideNextAction();
     }
 
