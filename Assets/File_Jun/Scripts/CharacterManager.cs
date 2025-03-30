@@ -136,9 +136,6 @@ public class CharacterManager : MonoBehaviour
     }
 
     private void Update() {
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			selectedCharacter.characterData.AttackEffectSpawner.Spawn();
-		}
 
         CheckGoldAndHeal();
     }
