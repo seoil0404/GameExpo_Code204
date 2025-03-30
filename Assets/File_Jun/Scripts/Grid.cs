@@ -320,7 +320,7 @@ public class Grid : MonoBehaviour
         
     public void MoveNextScene()
     {
-        Debug.Log("���� ������ �̵��մϴ�.");
+        
         StatisticsManager.Instance.CurrentRoom++;
         
         var combatData = FindFirstObjectByType<CombatData>();
@@ -328,10 +328,10 @@ public class Grid : MonoBehaviour
         {
             CharacterManager.selectedCharacter.characterData.CurrentHp = CharacterManager.selectedCharacter.characterData.MaxHp;
             CharacterManager.instance.SaveHp();
-            StatisticsManager.Instance.HighestFloorReached++;
-            Debug.Log("[Boss Room Clear] ĳ������ ü���� �ִ�ġ�� ȸ���Ǿ����ϴ�.");
+           
         }
 
+        StatisticsManager.Instance.HighestFloorReached++;
         if (rewardsScreen != null)
             rewardsScreen.SetActive(true);
         else

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -70,7 +71,8 @@ public class SceneController : MonoBehaviour
                     break;
                 case Scene.GameScene:
                     Scene.mapManager.DisableMap();
-                    combatData.CombatSceneCount++;
+                    if(combatData.TreasureData.Contains(CombatData.TreasureType.OrderDefenceCloak))
+                        combatData.CombatSceneCount++;
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;
