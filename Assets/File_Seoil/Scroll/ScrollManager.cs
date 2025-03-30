@@ -139,6 +139,8 @@ public class ScrollManager : MonoBehaviour
                 CharacterManager.instance.DamageAllEnemies(20);
                 break;
             case ScrollData.ScrollType.Fill:
+                type = ScrollData.ScrollType.None;
+                OnUseFill();
                 break;
             case ScrollData.ScrollType.Life:
                 CharacterManager.selectedCharacter.characterData.IncreaseMaxHp(10);
@@ -147,6 +149,29 @@ public class ScrollManager : MonoBehaviour
 
         type = ScrollData.ScrollType.None;
         SyncScroll();
+    }
+
+    private void OnUseFill()
+    {
+        int maxNum = typeof(ScrollData.ScrollType).GetEnumValues().Length;
+
+        int random = Random.Range(0, maxNum);
+        
+        if(slot1ScrollView.scrollType == ScrollData.ScrollType.None)
+        {
+            slot1ScrollView.scrollType = (ScrollData.ScrollType)random;
+            slot1Image.sprite = scrollData.GetImage((ScrollData.ScrollType)(random));
+        }
+        if (slot2ScrollView.scrollType == ScrollData.ScrollType.None)
+        {
+            slot2ScrollView.scrollType = (ScrollData.ScrollType)random;
+            slot2Image.sprite = scrollData.GetImage((ScrollData.ScrollType)(random));
+        }
+        if (slot3ScrollView.scrollType == ScrollData.ScrollType.None)
+        {
+            slot3ScrollView.scrollType = (ScrollData.ScrollType)random;
+            slot3Image.sprite = scrollData.GetImage((ScrollData.ScrollType)(random));
+        }
     }
 
     private void SyncScroll()
