@@ -17,6 +17,7 @@ public class CharacterManager : MonoBehaviour
     public static GameObject currentCharacterInstance;
     public static Character selectedCharacter;
     [SerializeField] private GameObject scoreScreen;
+    [SerializeField] private CombatData combatData;
     private static int savedHp = -1;
     private const string HpKey = "SavedHp";
     private const string UltimateKey = "SavedUltimateGauge";
@@ -50,6 +51,22 @@ public class CharacterManager : MonoBehaviour
             SaveHp();
             ResetUltimateGauge();
             GameStartTracker.IsHavetobeReset = false;
+
+            switch (GameData.SelectedCharacterIndex)
+            {
+                case 1:
+                    combatData.AddTreasureData(CombatData.TreasureType.UniversalGravitation);
+                    Debug.Log("[보물 지급] 캐릭터 1번 → UniversalGravitation 지급됨");
+                    break;
+                case 2:
+                    combatData.AddTreasureData(CombatData.TreasureType.BusinessAcumen);
+                    Debug.Log("[보물 지급] 캐릭터 2번 → BusinessAcumen 지급됨");
+                    break;
+                case 3:
+                    combatData.AddTreasureData(CombatData.TreasureType.Condemnation);
+                    Debug.Log("[보물 지급] 캐릭터 3번 → Condemnation 지급됨");
+                    break;
+            }
             if (treasureEffect.Condemnation)
             {
                 selectedCharacter.characterData.ExecutionRate += 5;
@@ -80,6 +97,7 @@ public class CharacterManager : MonoBehaviour
             Debug.Log($"[NobleBlood] 보물 효과로 현재 체력의 1/10({recoverAmount}) 회복됨. 현재 HP: {selectedCharacter.characterData.CurrentHp}");
         }
 
+        
        
 
         LoadHp();

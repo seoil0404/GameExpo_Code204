@@ -14,6 +14,8 @@ public class EnemyStats : MonoBehaviour
     [Header("Scriptable")]
     [SerializeField] private GoldData goldData;
 
+    [SerializeField] private GameObject playerTurnStateUIPrefab;
+
     private EnemySpawner spawner;
     private CharacterManager characterManager;
     private int hp;
@@ -42,6 +44,8 @@ public class EnemyStats : MonoBehaviour
     public int atk3UpTurnCount = 0;
 
     public int healingReductionStacks = 0; //치유 감소
+
+
 
 
     public void ActivateDamageMultiplier()
@@ -583,7 +587,11 @@ public class EnemyStats : MonoBehaviour
 
     private IEnumerator DelayedActionCoroutine()
     {
-        yield return new WaitForSeconds(1.5f);
+
+        yield return new WaitForSeconds(2f);
+
+        Instantiate(playerTurnStateUIPrefab);
+
         CharacterManager.instance.TickDodgeBuff(); 
         CharacterManager.instance.ClearReflectDamage();
 

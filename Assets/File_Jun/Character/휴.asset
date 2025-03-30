@@ -16,6 +16,7 @@ MonoBehaviour:
     characterName: "\uD734"
     ultimateSkillDescription: "\uCC98\uD615\uC728 + 5%,\uB370\uBBF8\uC9C0 + \uCC98\uD615\uC728"
     characterPrefab: {fileID: 2047942871196441207, guid: e52dee6778f06b340882aaaad62edd88, type: 3}
+    baseHp: 80
     maxHp: 80
     currentHp: 77
     baseUitimateGuage: 15

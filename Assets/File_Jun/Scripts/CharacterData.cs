@@ -10,6 +10,8 @@ public class CharacterData
     public GameObject characterPrefab;
 
     [SerializeField]
+    private int baseHp;
+    [SerializeField]
     private int maxHp;
     [SerializeField]
     private int currentHp;
@@ -41,6 +43,7 @@ public class CharacterData
     public bool IsInvincible = false;
     public void Initialize()
     {
+        maxHp = baseHp;
         maxUltimateGauge = baseUitimateGuage;
         currentUltimateGauge = 0;
         executionRate = baseExecutionRate;
@@ -153,4 +156,9 @@ public class CharacterData
     Debug.Log($"[{CharacterName}]의 최대 체력이 {amount}만큼 증가하여 {MaxHp}가 되었습니다.");
     }
 
+    public void ResetMaxHpToBase()
+    {
+        MaxHp = baseHp;
+        Debug.Log($"[{CharacterName}]의 최대 체력이 기본값({baseHp})으로 초기화되었습니다.");
+    }
 }

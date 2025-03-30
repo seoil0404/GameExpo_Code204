@@ -62,7 +62,12 @@ public class ShapeSquare : MonoBehaviour
                         holdShape.CreateShape(selectedShape.CurrentShapeData, selectedShape.CurrentShapeColorName, currentRotation);
 
                         Debug.Log($"HOLD 공간에 블록이 생성됨: {selectedShape.CurrentShapeColorName} (회전: {currentRotation.eulerAngles.z}도)");
-                        Invoke(nameof(CheckAndRequestNewShapes), 0.5f);
+                        var shapeLeft = shapeStorage.shapeList.Count(shape => shape.IsAnyOfShapeSquareActive());
+                        if (shapeLeft == 0)
+                        {
+                            Grid.instance.OnPlayerTurnEnded();
+                        }
+
                     }
                 }
                 else

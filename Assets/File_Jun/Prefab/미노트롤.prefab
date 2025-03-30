@@ -99,6 +99,10 @@ MonoBehaviour:
   healthText: {fileID: 832327593213613171}
   enemyHealthBar: {fileID: 2758066617226049793}
   goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
+  playerTurnStateUIPrefab: {fileID: 6549573219829308714, guid: e952df37fdb29c948bf3e239afb9e1a9, type: 3}
+  isDamageMultiplierActive: 0
+  atk3UpTurnCount: 0
+  healingReductionStacks: 0
 --- !u!114 &1782447395810029694
 MonoBehaviour:
   m_ObjectHideFlags: 0

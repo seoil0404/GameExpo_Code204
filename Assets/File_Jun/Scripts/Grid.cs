@@ -36,6 +36,8 @@ public class Grid : MonoBehaviour
 
     [SerializeField] private AudioClip placeMino;
     [SerializeField] private AudioClip minoDel;
+    [SerializeField] private GameObject enemyTurnStateUIPrefab;
+
     private AudioSource place;
     private AudioSource del;
 
@@ -150,59 +152,7 @@ public class Grid : MonoBehaviour
 
         if (shapeLeft == 0)
         {
-            foreach (var square in _gridSquares)
-            {
-                var gs = square.GetComponent<GridSquare>();
-                gs.ClearPetrified();
-            }
-
-            var treasureEffect = FindFirstObjectByType<TreasureEffect>();
-            if (treasureEffect != null && treasureEffect.TalismanOfPower)
-            {
-                turnCounter++;
-
-                if (turnCounter % 2 == 0)
-                {
-                    CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
-                    Debug.Log("[TalismanOfPower] 2턴 경과! 캐릭터 ATK +2 증가");
-                }
-            }
-
-            if (treasureEffect != null && treasureEffect.CorruptTouch)
-            {
-                GameObject selectedEnemy = GetSelectedEnemy();
-                if (selectedEnemy != null)
-                {
-                    EnemyStats enemyStats = selectedEnemy.GetComponent<EnemyStats>();
-                    if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
-                    {
-                        enemyStats.ReceiveDamage(1, columns);
-                        EffectManager.Instance.OnPoison(selectedEnemy);
-                        Debug.Log("[CorruptTouch] 선택된 적의 HP가 1 감소됨");
-                    }
-                }
-            }
-
-            foreach (var enemy in enemies)
-            {
-                var enemyStats = enemy.GetComponent<EnemyStats>();
-                if (enemyStats != null)
-                {
-                    enemyStats.DeactivateDamageMultiplier();
-                    enemyStats.ResetThorn();
-                    enemyStats.TickHealingReduction();
-
-                }
-            }
-
-            HoldShape holdShape = FindFirstObjectByType<HoldShape>();
-            if (holdShape != null)
-            {
-                holdShape.RestoreAssignedObject();
-                holdShape.UnlockShape();
-            }
-
-            StartCoroutine(EnemyTurnSequence());
+            OnPlayerTurnEnded();
         }
         CheckIfGameEnded();
     }
@@ -368,6 +318,14 @@ public class Grid : MonoBehaviour
     {
         Debug.Log("다음 씬으로 이동합니다.");
         StatisticsManager.Instance.CurrentRoom++;
+        var combatData = FindFirstObjectByType<CombatData>();
+        if (combatData != null && combatData.EnemyType == EnemyData.EnemyType.Boss)
+        {
+            CharacterManager.selectedCharacter.characterData.CurrentHp = CharacterManager.selectedCharacter.characterData.MaxHp;
+            CharacterManager.instance.SaveHp();
+            Debug.Log("[Boss Room Clear] 캐릭터의 체력이 최대치로 회복되었습니다.");
+        }
+
         if (rewardsScreen != null)
             rewardsScreen.SetActive(true);
         else
@@ -669,9 +627,69 @@ public class Grid : MonoBehaviour
         Debug.Log($"힐 미노가 위치 {gs.SquareIndex}에 생성되었습니다. 시전자: {enemy.name}");
     }
 
+    public void OnPlayerTurnEnded()
+    {
+        foreach (var square in _gridSquares)
+        {
+            var gs = square.GetComponent<GridSquare>();
+            gs.ClearPetrified();
+        }
+
+        var treasureEffect = FindFirstObjectByType<TreasureEffect>();
+        if (treasureEffect != null && treasureEffect.TalismanOfPower)
+        {
+            turnCounter++;
+
+            if (turnCounter % 2 == 0)
+            {
+                CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
+                Debug.Log("[TalismanOfPower] 2턴 경과! 캐릭터 ATK +2 증가");
+            }
+        }
+
+        if (treasureEffect != null && treasureEffect.CorruptTouch)
+        {
+            GameObject selectedEnemy = GetSelectedEnemy();
+            if (selectedEnemy != null)
+            {
+                EnemyStats enemyStats = selectedEnemy.GetComponent<EnemyStats>();
+                if (enemyStats != null && enemyStats.GetCurrentHp() > 0)
+                {
+                    enemyStats.ReceiveDamage(1, columns);
+                    EffectManager.Instance.OnPoison(selectedEnemy);
+                    Debug.Log("[CorruptTouch] 선택된 적의 HP가 1 감소됨");
+                }
+            }
+        }
+
+        foreach (var enemy in enemies)
+        {
+            var enemyStats = enemy.GetComponent<EnemyStats>();
+            if (enemyStats != null)
+            {
+                enemyStats.DeactivateDamageMultiplier();
+                enemyStats.ResetThorn();
+                enemyStats.TickHealingReduction();
+            }
+        }
+
+        HoldShape holdShape = FindFirstObjectByType<HoldShape>();
+        if (holdShape != null)
+        {
+            holdShape.RestoreAssignedObject();
+            holdShape.UnlockShape();
+        }
+
+        StartCoroutine(EnemyTurnSequence());
+        CheckIfGameEnded();
+    }
+
+
     private IEnumerator EnemyTurnSequence()
     {
-        yield return new WaitForSeconds(1.5f);
+        Instantiate(enemyTurnStateUIPrefab);
+
+        yield return new WaitForSeconds(2f);
 
         GameEvents.RequestNewShapes();
 
