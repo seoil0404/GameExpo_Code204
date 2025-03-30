@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Description: {fileID: 445898337990712511}
-  defaultScale: {x: 1, y: 1}
+  defaultScale: {x: 1.5, y: 1.5}
   startScale: 0.75
   endScale: 1
   defaultPosition: {x: 0, y: 0}

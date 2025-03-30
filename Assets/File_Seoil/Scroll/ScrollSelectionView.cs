@@ -64,7 +64,7 @@ public class ScrollSelectionView : MonoBehaviour
         Destroy();
     }
 
-    private void Destroy()
+    public void Destroy()
     {
         Destroy(gameObject);
     }

@@ -70,6 +70,7 @@ public class SceneController : MonoBehaviour
                     break;
                 case Scene.GameScene:
                     Scene.mapManager.DisableMap();
+                    combatData.CombatSceneCount++;
                     Scene.mapManager.IsAllowOpen = true;
                     Scene.mapManager.IsStatic = false;
                     break;

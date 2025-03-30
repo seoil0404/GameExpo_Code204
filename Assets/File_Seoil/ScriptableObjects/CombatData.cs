@@ -10,6 +10,8 @@ public class CombatData : ScriptableObject
 
     [SerializeField] private List<TreasureType> treasureData;
 
+    public int CombatSceneCount = 0;
+
     public void Initialize()
     {
         HabitatType = EnemyData.HabitatType.Forest;

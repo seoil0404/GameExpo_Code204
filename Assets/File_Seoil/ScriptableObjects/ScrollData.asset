@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0560b0ed7cd3faf4d85efe779590a311, type: 3}
   m_Name: ScrollData
   m_EditorClassIdentifier: 
-  Slot1: 10
-  Slot2: 14
+  Slot1: 0
+  Slot2: 0
   Slot3: 0
   ReStart: {fileID: 21300000, guid: f392a9024f696f64b9150fab1a870d1d, type: 3}
   Delete: {fileID: 21300000, guid: fd0819177206d294b8c1f083ba38b718, type: 3}
