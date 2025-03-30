@@ -1813,6 +1813,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17e59946b10212f4bae3dcacd0c71c6c, type: 2}
   - {fileID: 11400000, guid: a96dc9c0644820d4a9ea50e1f46a7fcd, type: 2}
   - {fileID: 11400000, guid: e377c252009c31d42b735da085234713, type: 2}
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
   eventUI: {fileID: 1584843870}
   ChoiceButtons: {fileID: 1991404064}
