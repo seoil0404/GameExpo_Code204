@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CombatData", menuName = "Scriptable Objects/CombatData")]

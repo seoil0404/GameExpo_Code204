@@ -1,6 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class ButtonHoverEffect : MonoBehaviour
 {
