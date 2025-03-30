@@ -242,7 +242,7 @@ public class CharacterManager : MonoBehaviour
 
     private void CharacterDied()
     {
-        ScrollManager scrollManager = FindObjectOfType<ScrollManager>();
+        ScrollManager scrollManager = FindAnyObjectByType<ScrollManager>();
         if (scrollManager != null && scrollManager.OnUseLifeScroll())
         {
             Debug.Log("[Scroll] 생명 스크롤이 사용되어 캐릭터의 죽음을 방지했습니다!");
@@ -404,7 +404,7 @@ public class CharacterManager : MonoBehaviour
 
     public void DamageAllEnemies(int amount)
     {
-        EnemyStats[] enemies = FindObjectsOfType<EnemyStats>();
+        EnemyStats[] enemies = FindObjectsByType<EnemyStats>(FindObjectsSortMode.None);
 
         foreach (var enemy in enemies)
         {

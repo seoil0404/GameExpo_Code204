@@ -276,7 +276,8 @@ public class Shape : MonoBehaviour, IPointerClickHandler, IPointerUpHandler, IBe
             _shapeActive = false;
             Debug.Log($"[Shape] {gameObject.name}의 모든 블록이 비활성화되었습니다.");
 
-            int shapeLeft = FindObjectsOfType<Shape>().Count(shape => shape.IsAnyOfShapeSquareActive());
+            int shapeLeft = FindObjectsByType<Shape>(FindObjectsSortMode.None)
+                 .Count(shape => shape.IsAnyOfShapeSquareActive());
             Debug.Log($"남아있는 블록 개수: {shapeLeft}");
 
             if (shapeLeft == 0)
