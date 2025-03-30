@@ -27,6 +27,7 @@ public class UltimateSkill : ScriptableObject
 
             case UltimateType.NegateDamageCureLifeSteal:
                 character.characterData.IsInvincible = true;
+                EffectManager.Instance.SpawnShield(CharacterManager.currentCharacterInstance);
                 character.characterData.CureStatusEffects();
                 character.characterData.NextAttackLifeSteal = true;
                 Debug.Log($"{character.characterData.CharacterName}의 궁극기 [{skillName}] 발동: 무효화 + 상태이상 치료 + 흡혈 활성화");

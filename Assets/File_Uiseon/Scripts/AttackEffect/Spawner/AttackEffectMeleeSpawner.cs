@@ -103,7 +103,11 @@ public class AttackEffectMeleeSpawner : AttackEffectSpawner {
 
 			VisualEffect attackEffect = Instantiate(AttackEffect);
 			attackEffect.transform.position = transform.position;
+			SoundManager.Instance.PlaySwordSwingSound();
 
+		}
+		else {
+			SoundManager.Instance.PlayBodyHitSound();
 		}
 
 		EffectManager.Instance.OnHit(

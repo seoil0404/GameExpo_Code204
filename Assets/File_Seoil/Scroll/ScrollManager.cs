@@ -49,7 +49,7 @@ public class ScrollManager : MonoBehaviour
         else if (isSlot2Exist) scrollData.Slot2 = ScrollData.ScrollType.None;
         else if (isSlot3Exist) scrollData.Slot3 = ScrollData.ScrollType.None;
 
-        //Write Life Scroll Second Function
+        //Write Life Scroll Second Function 
         {
             CharacterManager.instance.ResetHpAndRecoverThirtyPercent();
         }
@@ -104,6 +104,7 @@ public class ScrollManager : MonoBehaviour
                 {
                     if (stats != null)
                     {
+                        SoundManager.Instance.PlayBuffSound();
                         stats.atk3UpTurnCount += 1;
                     }
                 }

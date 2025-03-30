@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.VFX;
 
 public class Grid : MonoBehaviour
 {
@@ -36,6 +34,11 @@ public class Grid : MonoBehaviour
 
     [SerializeField] private GameObject rewardsScreen;
 
+    [SerializeField] private AudioClip placeMino;
+    [SerializeField] private AudioClip minoDel;
+    private AudioSource place;
+    private AudioSource del;
+
     private void Awake()
     {
         if (instance == null)
@@ -56,6 +59,11 @@ public class Grid : MonoBehaviour
 
     void Start()
     {
+        place = gameObject.AddComponent<AudioSource>();
+        place.clip = placeMino;
+        del = gameObject.AddComponent<AudioSource>();
+        del.clip = minoDel;
+
         _lineIndicator = GetComponent<LineIndicator>();
         CreateGrid();
         resetButton.onClick.AddListener(ResetGrid);
@@ -129,6 +137,7 @@ public class Grid : MonoBehaviour
             foreach (var squareIndex in squareIndexes)
                 _gridSquares[squareIndex].GetComponent<GridSquare>().PlaceShapeOnBoard(shapeColorName);
             GameEvents.SetShapeInactive();
+            place.Play();
             CheckIfAnyLineIsCompleted();
         }
         else
@@ -141,9 +150,6 @@ public class Grid : MonoBehaviour
 
         if (shapeLeft == 0)
         {
-
-            GameEvents.RequestNewShapes();
-
             foreach (var square in _gridSquares)
             {
                 var gs = square.GetComponent<GridSquare>();
@@ -177,7 +183,6 @@ public class Grid : MonoBehaviour
                 }
             }
 
-
             foreach (var enemy in enemies)
             {
                 var enemyStats = enemy.GetComponent<EnemyStats>();
@@ -201,8 +206,6 @@ public class Grid : MonoBehaviour
         }
         CheckIfGameEnded();
     }
-
-
 
     public void CheckIfAnyLineIsCompleted()
     {
@@ -284,19 +287,20 @@ public class Grid : MonoBehaviour
         return linesCompleted;
     }
 
-
     private void DealDamageToSelectedEnemy(int completedLines)
     {
 
-		if (CharacterManager.selectedCharacter.characterData != null) {
+		if (CharacterManager.selectedCharacter.characterData != null)
+        {
 			DealDamageToSelectedEnemyInner(completedLines);
 		}
 
     }
-
-	private void DealDamageToSelectedEnemyInner(int completedLines) {
-
-	    if (selectedEnemy == null)
+	private void DealDamageToSelectedEnemyInner(int completedLines)
+    {
+        place.Stop();
+        del.Play();
+        if (selectedEnemy == null)
         {
             Debug.Log("선택된 적이 없습니다.");
             return;
@@ -318,13 +322,12 @@ public class Grid : MonoBehaviour
 
 		AttackEffectSpawner attackEffectSpawner = 
 			CharacterManager.selectedCharacter.characterData.AttackEffectSpawner;
-
-		if (attackEffectSpawner != null)
+        if (attackEffectSpawner != null)
 		{
 			attackEffectSpawner.Spawn(
 				() => {
 					enemyStats.ReceiveDamage(baseDamage, columns);
-					Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+                    Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
 					CheckIfGameEnded();
 				}
 			);
@@ -332,7 +335,7 @@ public class Grid : MonoBehaviour
 		else 
 		{
 			enemyStats.ReceiveDamage(baseDamage, columns);
-			Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
+            Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
 		}
     }
 
@@ -360,7 +363,6 @@ public class Grid : MonoBehaviour
             MoveNextScene();
         }
     }
-
         
     public void MoveNextScene()
     {
@@ -374,7 +376,6 @@ public class Grid : MonoBehaviour
 
     public void ResetGrid()
     {
-            
         foreach (var square in _gridSquares)
         {
             var gridSquare = square.GetComponent<GridSquare>();
@@ -405,9 +406,7 @@ public class Grid : MonoBehaviour
             }
         }
         
-
         StartCoroutine(EnemyTurnSequence());
-
 
         TreasureEffect treasureEffect = Object.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.CorruptTouch)
@@ -436,19 +435,11 @@ public class Grid : MonoBehaviour
             }
         }
 
-        if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
-        {
-
-            CharacterManager.selectedCharacter.characterData.IsInvincible = false;
-            Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
-        }
-
         Debug.Log("그리드가 리셋되었습니다.");
         comboCount--;
 
         CheckIfGameEnded();
     }
-
 
     public void DestroyRandomPlayerBlock()
     {
@@ -528,8 +519,6 @@ public class Grid : MonoBehaviour
 					
             }
         }
-
-
     }
 
     public void RemoveEnemy(GameObject enemy)
@@ -551,9 +540,6 @@ public class Grid : MonoBehaviour
     {
         return selectedEnemy;
     }
-
-    
-
 
     public void DropAllBlocks()
     {
@@ -591,8 +577,6 @@ public class Grid : MonoBehaviour
         }
         Debug.Log("DropAllBlocks: 모든 블록이 아래로 떨어졌습니다.");
     }
-
-
     public void Spawn3x3PetrifiedBlocks()
     {
         if (_gridSquares.Count == 0)
@@ -685,12 +669,12 @@ public class Grid : MonoBehaviour
         Debug.Log($"힐 미노가 위치 {gs.SquareIndex}에 생성되었습니다. 시전자: {enemy.name}");
     }
 
-
     private IEnumerator EnemyTurnSequence()
     {
         yield return new WaitForSeconds(1.5f);
 
-        
+        GameEvents.RequestNewShapes();
+
 
         enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
         foreach (var enemy in enemies)
@@ -725,17 +709,7 @@ public class Grid : MonoBehaviour
             }
             
         }
-
-        if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
-        {
-            CharacterManager.selectedCharacter.characterData.IsInvincible = false;
-            Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
-        }
-
         yield return new WaitForSeconds(0.5f);
         Debug.Log("[턴 전환] 플레이어 턴 시작!");
     }
-
-
-
 }

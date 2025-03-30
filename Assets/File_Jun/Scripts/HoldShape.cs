@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
@@ -16,14 +15,19 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Vector3 _startPosition;
     private RectTransform _transform;
     private Canvas _canvas;
-	private bool _shapeActive = true;
+    //private bool _shapeActive = true;
 	private Vector2 offset;
     private bool isShapeLocked = false;
+
+    [SerializeField] private AudioClip placeMino;
+    private AudioSource audioSource;
 
     public string HeldShapeColorName => _heldShapeColorName;
 
     public void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = placeMino;
         _transform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         _startPosition = _transform.localPosition;
@@ -168,7 +172,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         List<GridSquare> detectedSquares = new List<GridSquare>();
 
-        foreach (var square in GameObject.FindObjectsOfType<GridSquare>())
+        foreach (var square in GameObject.FindObjectsByType<GridSquare>(FindObjectsSortMode.None))
         {
             if (square.Selected && !square.SquareOccupied)
             {
@@ -183,6 +187,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 gridSquare.PlaceShapeOnBoard(_heldShapeColorName);
             }
             StartCoroutine(ResetHoldShapeAfterPlacement());
+            audioSource.Play();
             Debug.Log("[HoldShape] 블록이 성공적으로 배치됨!");
 
             Grid gridInstance = FindFirstObjectByType<Grid>();
@@ -231,7 +236,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         _currentHoldShape.Clear();
 
-        _shapeActive = false;
+        //_shapeActive = false;
         _transform.localPosition = _startPosition;
 
         if (assignedObject != null)
@@ -285,7 +290,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         _currentHoldShape.Clear();
 
-        _shapeActive = false;
+        //_shapeActive = false;
         _transform.localPosition = _startPosition;
 
         if (assignedObject != null)

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,6 +46,7 @@ public class EnemyStats : MonoBehaviour
 
     public void ActivateDamageMultiplier()
     {
+        EffectManager.Instance.OnDebuff(CharacterManager.currentCharacterInstance, Color.red);
         isDamageMultiplierActive = true;
     }
 
@@ -315,6 +315,7 @@ public class EnemyStats : MonoBehaviour
         }
 
         damageReceivedLastTurn = calculatedDamage;
+        SoundManager.Instance.PlayAttackSound();
 
         int executionThreshold = Mathf.CeilToInt(maxHp * (CharacterManager.selectedCharacter.characterData.ExecutionRate / 100f));
 
@@ -484,6 +485,7 @@ public class EnemyStats : MonoBehaviour
     public void IncreaseATKByOne()
     {
         atk += 1;
+        EffectManager.Instance.OnBuff(gameObject, Color.yellow);
         Debug.Log($"[{gameObject.name}]의 ATK가 1 증가! 현재 ATK: {atk}");
     }
 
@@ -491,6 +493,7 @@ public class EnemyStats : MonoBehaviour
     public void IncreaseThorn()
     {
         thornCount++;
+        EffectManager.Instance.OnBuff(gameObject, Color.yellow);
         Debug.Log($"[{gameObject.name}]의 가시 수치가 1 증가! 현재: {thornCount}");
     }
 
@@ -582,6 +585,14 @@ public class EnemyStats : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         CharacterManager.instance.TickDodgeBuff(); 
         CharacterManager.instance.ClearReflectDamage();
+
+        if (CharacterManager.selectedCharacter.characterData.IsInvincible == true)
+        {
+            CharacterManager.selectedCharacter.characterData.IsInvincible = false;
+            EffectManager.Instance.RemoveShield(CharacterManager.currentCharacterInstance);
+            Debug.Log("[무효화 해제] 턴이 끝났으므로 무효화 효과 종료됨");
+        }
+
         DecideNextAction();
     }
 
@@ -618,6 +629,8 @@ public class EnemyStats : MonoBehaviour
         if (poisonStackFromPlayer > 0)
         {
             hp -= poisonStackFromPlayer;
+            SoundManager.Instance.PlayPoisonSound();
+            EffectManager.Instance.OnPoison(gameObject);
             Debug.Log($"[{gameObject.name}]이(가) 독 {poisonStackFromPlayer} 데미지를 입음!");
             poisonStackFromPlayer--;
 
@@ -634,6 +647,7 @@ public class EnemyStats : MonoBehaviour
     public void ApplyHealingReduction(int stacks)
     {
         healingReductionStacks += stacks;
+        SoundManager.Instance.PlayDebuffSound();    
         Debug.Log($"[{gameObject.name}]에게 치유 감소 {stacks}스택 적용됨. 현재 스택: {healingReductionStacks}");
     }
 

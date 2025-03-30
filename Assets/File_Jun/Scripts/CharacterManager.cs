@@ -146,6 +146,7 @@ public class CharacterManager : MonoBehaviour
         if (selectedCharacter.characterData.IsInvincible)
         {
             Debug.Log($"{selectedCharacter.characterData.CharacterName}은(는) 무효화 상태이므로 피해 {totalDamage} 무효화됨!");
+            SoundManager.Instance.PlayInvincibleSound();
             return;
         }
 
@@ -167,6 +168,7 @@ public class CharacterManager : MonoBehaviour
         if (dodgeRoll < effectiveDodgeChance)
         {
             Debug.Log($"[CharacterManager] {selectedCharacter.characterData.CharacterName}이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
+            EffectManager.Instance.OnMiss(currentCharacterInstance , currentCharacterInstance);
             return;
         }   
 
@@ -242,7 +244,7 @@ public class CharacterManager : MonoBehaviour
 
     private void CharacterDied()
     {
-        ScrollManager scrollManager = FindObjectOfType<ScrollManager>();
+        ScrollManager scrollManager = FindAnyObjectByType<ScrollManager>();
         if (scrollManager != null && scrollManager.OnUseLifeScroll())
         {
             Debug.Log("[Scroll] 생명 스크롤이 사용되어 캐릭터의 죽음을 방지했습니다!");
@@ -376,6 +378,8 @@ public class CharacterManager : MonoBehaviour
     public void SetReflectDamage(int amount)
     {
         reflectDamage += amount;
+        SoundManager.Instance.PlayBuffSound();
+        EffectManager.Instance.OnBuff(currentCharacterInstance , Color.yellow);
         Debug.Log($"[ReflectDamage] 다음 피해 시 반사 데미지 {reflectDamage} 적용 예정.");
     }
 
@@ -402,7 +406,7 @@ public class CharacterManager : MonoBehaviour
 
     public void DamageAllEnemies(int amount)
     {
-        EnemyStats[] enemies = FindObjectsOfType<EnemyStats>();
+        EnemyStats[] enemies = FindObjectsByType<EnemyStats>(FindObjectsSortMode.None);
 
         foreach (var enemy in enemies)
         {

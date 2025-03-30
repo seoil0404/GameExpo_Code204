@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class MouseCursorManager : MonoBehaviour
 {
-    public RectTransform cursorRectTransform; // UI 커서 오브젝트
+    public RectTransform cursorRectTransform;
     public Image cursorImage;
 
     public Sprite idleSprite;
