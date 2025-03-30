@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using static CombatData;
 using System.Collections.Generic;
+using static CombatData;
 
 public class ChestRoom : MonoBehaviour
 {
