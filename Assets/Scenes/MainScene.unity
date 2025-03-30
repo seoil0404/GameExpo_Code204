@@ -4529,6 +4529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldData: {fileID: 11400000, guid: 2b6443eb5e27029409485caa4006d660, type: 2}
   combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
+  scrollData: {fileID: 11400000, guid: b5709d26a81729947a82705913c495ef, type: 2}
 --- !u!4 &1594954442
 Transform:
   m_ObjectHideFlags: 0

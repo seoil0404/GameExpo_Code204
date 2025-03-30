@@ -4,6 +4,7 @@ public class Initializer : MonoBehaviour
 {
     [SerializeField] private GoldData goldData;
     [SerializeField] private CombatData combatData;
+    [SerializeField] private ScrollData scrollData;
 
     public void Initialize()
     {
@@ -11,5 +12,6 @@ public class Initializer : MonoBehaviour
 
         goldData.InGameGold = 0;
         combatData.Initialize();
+        scrollData.Initialize();
     }
 }
