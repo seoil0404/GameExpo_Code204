@@ -485,6 +485,7 @@ public class EnemyStats : MonoBehaviour
     public void IncreaseATKByOne()
     {
         atk += 1;
+        EffectManager.Instance.OnBuff(gameObject, Color.yellow);
         Debug.Log($"[{gameObject.name}]의 ATK가 1 증가! 현재 ATK: {atk}");
     }
 
@@ -492,6 +493,7 @@ public class EnemyStats : MonoBehaviour
     public void IncreaseThorn()
     {
         thornCount++;
+        EffectManager.Instance.OnBuff(gameObject, Color.yellow);
         Debug.Log($"[{gameObject.name}]의 가시 수치가 1 증가! 현재: {thornCount}");
     }
 
