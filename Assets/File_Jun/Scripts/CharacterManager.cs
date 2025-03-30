@@ -146,6 +146,7 @@ public class CharacterManager : MonoBehaviour
         if (selectedCharacter.characterData.IsInvincible)
         {
             Debug.Log($"{selectedCharacter.characterData.CharacterName}은(는) 무효화 상태이므로 피해 {totalDamage} 무효화됨!");
+            SoundManager.Instance.PlayInvincibleSound();
             return;
         }
 
