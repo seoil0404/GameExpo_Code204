@@ -588,7 +588,7 @@ public class EnemyStats : MonoBehaviour
     private IEnumerator DelayedActionCoroutine()
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
         Instantiate(playerTurnStateUIPrefab);
 
