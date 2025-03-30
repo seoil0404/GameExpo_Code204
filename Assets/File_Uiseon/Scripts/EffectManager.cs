@@ -126,6 +126,8 @@ public class EffectManager : MonoBehaviour {
 
 	public void OnPoison(GameObject receiverObject) {
 
+		SoundManager.Instance.PlayPoisonSound();
+
 		VisualEffect instantiated = Instantiate(PoisonObject).GetComponentInChildren<VisualEffect>();
 		instantiated.transform.position = receiverObject.transform.position;
 
@@ -135,6 +137,8 @@ public class EffectManager : MonoBehaviour {
 	}
 
 	public void OnMiss(GameObject receiverObject, GameObject casterObject) {
+
+		SoundManager.Instance.PlayDodgeSound();
 
 		GameObject instantiated = Instantiate(MissObject);
 		instantiated.transform.position = receiverObject.transform.position;
@@ -187,7 +191,7 @@ public class EffectManager : MonoBehaviour {
 	public void RemoveShield(GameObject target) {
 
 		if (shieldEffects.TryGetValue(target, out var instantiated)) {
-			if (instantiated != null && !instantiated.isActiveAndEnabled) {
+			if (instantiated != null || !instantiated.isActiveAndEnabled) {
 				Destroy(instantiated.transform.parent.gameObject);
 			}
 			else {
@@ -200,6 +204,8 @@ public class EffectManager : MonoBehaviour {
 	}
 
 	public void OnBuff(GameObject target, Color color) {
+
+		SoundManager.Instance.PlayBuffSound();
 		
 		VisualEffect instantiated = Instantiate(ArrowUpEffect);
 		instantiated.transform.position = target.transform.position;
@@ -210,6 +216,8 @@ public class EffectManager : MonoBehaviour {
 	}
 
 	public void OnDebuff(GameObject target, Color color) {
+
+		SoundManager.Instance.PlayDebuffSound();
 		
 		VisualEffect instantiated = Instantiate(ArrowDownEffect);
 		instantiated.transform.position = target.transform.position;
@@ -224,6 +232,8 @@ public class EffectManager : MonoBehaviour {
 	}
 
 	private IEnumerator OnDragonBreathInner(GameObject target, GameObject caster) {
+
+		SoundManager.Instance.PlayDragonBreathSound();
 
 		VisualEffect instantiated = Instantiate(DragonBreathObject);
 		instantiated.transform.position = caster.transform.position;

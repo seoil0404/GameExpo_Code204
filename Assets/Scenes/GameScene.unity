@@ -4216,7 +4216,7 @@ MonoBehaviour:
   dragonBreathSound: {fileID: 8300000, guid: c80bb2b91aea9ea4a927b9d6fd78c000, type: 3}
   fireArrowSound: {fileID: 8300000, guid: ec377f484d6c15a4a97fe4044031b878, type: 3}
   buffSound: {fileID: 8300000, guid: 4bce9611c07b2154b94d8f982959cb90, type: 3}
-  debuffSound: {fileID: 0}
+  debuffSound: {fileID: 8300000, guid: 4bce9611c07b2154b94d8f982959cb90, type: 3}
   dodgeSound: {fileID: 8300000, guid: f76586e032bbd7a42b77b97e0cbaed27, type: 3}
   invincibleSound: {fileID: 8300000, guid: 3e23d1b1829a15040ba7eeb2ed5eb7d9, type: 3}
   poisonSound: {fileID: 8300000, guid: c5b5c2e0ada788646afc5f4bb878b2a0, type: 3}
