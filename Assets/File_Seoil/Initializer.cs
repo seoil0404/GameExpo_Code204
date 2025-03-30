@@ -11,6 +11,7 @@ public class Initializer : MonoBehaviour
         Debug.Log("[Initiazer] Initialize");
 
         goldData.InGameGold = 0;
+        ShopRoom_UltimateItemView.Price = 100;
         combatData.Initialize();
         scrollData.Initialize();
     }

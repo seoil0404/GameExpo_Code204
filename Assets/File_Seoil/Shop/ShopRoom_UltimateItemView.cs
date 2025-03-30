@@ -21,21 +21,21 @@ public class ShopRoom_UltimateItemView : MonoBehaviour, IPointerEnterHandler, IP
 
     private DescriptionView currentDescriptionView;
 
-    private static int price = 100;
+    public static int Price = 100;
 
     private void Awake()
     {
-        priceText.text = price.ToString() + "G";
+        priceText.text = Price.ToString() + "G";
     }
 
     public void OnBuy()
     {
-        if (goldData.InGameGold < price) return;
+        if (goldData.InGameGold < Price) return;
 
-        goldData.InGameGold -= price;
-        price = (int)(price *1.2);
+        goldData.InGameGold -= Price;
+        Price = (int)(Price *1.2);
 
-        priceText.text = price.ToString() + "G";
+        priceText.text = Price.ToString() + "G";
 
         CharacterManager.selectedCharacter.characterData.MaxUltimateGauge -= 2;
 
