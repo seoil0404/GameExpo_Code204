@@ -46,6 +46,7 @@ public class EnemyStats : MonoBehaviour
 
     public void ActivateDamageMultiplier()
     {
+        EffectManager.Instance.OnDebuff(CharacterManager.currentCharacterInstance, Color.red);
         isDamageMultiplierActive = true;
     }
 
