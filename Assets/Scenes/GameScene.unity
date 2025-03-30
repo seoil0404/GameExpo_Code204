@@ -759,8 +759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -870, y: 509}
-  m_SizeDelta: {x: 1000, y: 500}
+  m_AnchoredPosition: {x: -850, y: 509}
+  m_SizeDelta: {x: 1300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366733020
 MonoBehaviour:
@@ -3629,6 +3629,8 @@ MonoBehaviour:
   ultimateDamageMultiplier: 1
   additionalExecutionDamage: 0
   rewardsScreen: {fileID: 1755855927}
+  placeMino: {fileID: 8300000, guid: a6c14e9362209c84fadd23b98d049737, type: 3}
+  minoDel: {fileID: 8300000, guid: 6b60a070a6cb84c49b7f71c7f66f92cd, type: 3}
 --- !u!114 &1817219911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4885,6 +4887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888725011}
     m_Modifications:
+    - target: {fileID: 5105528666678824110, guid: 57602e27ba7f19a4abd3df224e0cf5f6, type: 3}
+      propertyPath: placeMino
+      value: 
+      objectReference: {fileID: 8300000, guid: a6c14e9362209c84fadd23b98d049737, type: 3}
     - target: {fileID: 5105528666678824110, guid: 57602e27ba7f19a4abd3df224e0cf5f6, type: 3}
       propertyPath: assignedObject
       value: 

@@ -20,10 +20,15 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 	private Vector2 offset;
     private bool isShapeLocked = false;
 
+    [SerializeField] private AudioClip placeMino;
+    private AudioSource audioSource;
+
     public string HeldShapeColorName => _heldShapeColorName;
 
     public void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = placeMino;
         _transform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
         _startPosition = _transform.localPosition;
@@ -183,6 +188,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 gridSquare.PlaceShapeOnBoard(_heldShapeColorName);
             }
             StartCoroutine(ResetHoldShapeAfterPlacement());
+            audioSource.Play();
             Debug.Log("[HoldShape] 블록이 성공적으로 배치됨!");
 
             Grid gridInstance = FindFirstObjectByType<Grid>();
