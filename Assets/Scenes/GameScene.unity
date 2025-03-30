@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &571649443
 Canvas:
   m_ObjectHideFlags: 0
@@ -1373,7 +1373,7 @@ Canvas:
   m_GameObject: {fileID: 571649440}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1396,7 +1396,7 @@ RectTransform:
   m_GameObject: {fileID: 571649440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9475, y: 0.9475, z: 0.9475}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 260122815}
@@ -1404,9 +1404,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 379, y: 259.5}
-  m_SizeDelta: {x: 800, y: 547.75726}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &588046255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1902,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &927643623
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 980448614890019329, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_Name
+      value: SceneController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.931185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7187281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3917.4592
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608458326764137239, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7f218e5e9e48884cbf999a75cfc4f9f, type: 3}
 --- !u!1 &1077747595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,7 +4056,7 @@ Canvas:
   m_GameObject: {fileID: 1982953489}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -4218,7 +4275,7 @@ MonoBehaviour:
   dragonBreathSound: {fileID: 8300000, guid: c80bb2b91aea9ea4a927b9d6fd78c000, type: 3}
   fireArrowSound: {fileID: 8300000, guid: ec377f484d6c15a4a97fe4044031b878, type: 3}
   buffSound: {fileID: 8300000, guid: 4bce9611c07b2154b94d8f982959cb90, type: 3}
-  debuffSound: {fileID: 0}
+  debuffSound: {fileID: 8300000, guid: 4bce9611c07b2154b94d8f982959cb90, type: 3}
   dodgeSound: {fileID: 8300000, guid: f76586e032bbd7a42b77b97e0cbaed27, type: 3}
   invincibleSound: {fileID: 8300000, guid: 3e23d1b1829a15040ba7eeb2ed5eb7d9, type: 3}
   poisonSound: {fileID: 8300000, guid: c5b5c2e0ada788646afc5f4bb878b2a0, type: 3}
@@ -5421,3 +5478,4 @@ SceneRoots:
   - {fileID: 571649444}
   - {fileID: 1746805216}
   - {fileID: 2000688203}
+  - {fileID: 927643623}

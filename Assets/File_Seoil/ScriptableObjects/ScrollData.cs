@@ -11,6 +11,13 @@ public class ScrollData : ScriptableObject
     public ScrollType Slot2;
     public ScrollType Slot3;
 
+    public void Initialize()
+    {
+        Slot1 = ScrollType.None;
+        Slot2 = ScrollType.None;
+        Slot3 = ScrollType.None;
+    }
+
     #region Scroll
     /// <summary>
     /// ReStart 재시작의 스크롤,

@@ -143,6 +143,8 @@ public class ShieldEffect : MonoBehaviour {
 
 		}
 
+		Debug.Log("Test: Shield Animation Breaked");
+
 		DOTween
 			.To(() => _opacityMultiply, x => _opacityMultiply = x, 0f, _destroyDuration)
 			.SetEase(_destroyEase);

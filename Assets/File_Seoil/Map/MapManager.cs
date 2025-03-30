@@ -84,7 +84,7 @@ public class MapManager : MonoBehaviour
 
     public void ClearGame()
     {
-        Debug.Log("Game Cleared");
+        Scene.Controller.LoadScene(Scene.MainScene);
     }
 
     private void Awake()
@@ -130,6 +130,7 @@ public class MapManager : MonoBehaviour
                 break;
             case EnemyData.HabitatType.Castle:
                 combatData.HabitatType = EnemyData.HabitatType.DevilCastle;
+                ClearGame();
                 break;
             case EnemyData.HabitatType.DevilCastle:
                 ClearGame();

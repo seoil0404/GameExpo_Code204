@@ -44,13 +44,10 @@ public class DescriptionView : MonoBehaviour
 
     private void NormalizeScale()
     {
-        Vector2 parentScale = transform.parent.parent.parent.localScale;
-
-        Debug.Log(parentScale.ToString());
-
+        
         transform.localScale = new Vector2(
-            defaultScale.x,
-            defaultScale.y
+            defaultScale.x / transform.lossyScale.x,
+            defaultScale.y / transform.lossyScale.y
         );
     }
 

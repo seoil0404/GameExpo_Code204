@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class ShopRoom_Manager : MonoBehaviour
 {
+    [Header("Scriptable")]
+    [SerializeField] private CombatData combatData;
+
     [Header("Item Views")]
     [SerializeField] private ShopRoom_ItemView[] itemViews;
 
@@ -112,5 +115,10 @@ public class ShopRoom_Manager : MonoBehaviour
         }
 
         itemView.Price += Random.Range(0, priceVariance);
+
+        if(combatData.TreasureData.Contains(CombatData.TreasureType.EtherMemberShip))
+        {
+            itemView.Price = (int)(itemView.Price * 0.8);
+        }
     }
 }

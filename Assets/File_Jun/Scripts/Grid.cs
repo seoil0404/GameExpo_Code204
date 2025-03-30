@@ -148,7 +148,7 @@ public class Grid : MonoBehaviour
         }
 
         var shapeLeft = shapeStorage.shapeList.Count(shape => shape.IsAnyOfShapeSquareActive());
-        Debug.Log($"³²Àº ºí·Ï °³¼ö: {shapeLeft}");
+        Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: {shapeLeft}");
 
         if (shapeLeft == 0)
         {
@@ -223,7 +223,7 @@ public class Grid : MonoBehaviour
                     {
                         int healAmount = Mathf.RoundToInt(stats.GetMaxHp() * 0.2f);
                         stats.HealByAmount(healAmount);
-                        Debug.Log($"[ÈíÇ÷ ¹Ì³ë] {lifestealOwner.name}ÀÌ(°¡) {healAmount} ¸¸Å­ È¸º¹Çß½À´Ï´Ù.");
+                        Debug.Log($"[ï¿½ï¿½ï¿½ï¿½ ï¿½Ì³ï¿½] {lifestealOwner.name}ï¿½ï¿½(ï¿½ï¿½) {healAmount} ï¿½ï¿½Å­ È¸ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
                     }
                     gs.ClearLifestealMinoOwner();
                 }
@@ -252,14 +252,14 @@ public class Grid : MonoBehaviour
         del.Play();
         if (selectedEnemy == null)
         {
-            Debug.Log("¼±ÅÃµÈ ÀûÀÌ ¾ø½À´Ï´Ù.");
+            Debug.Log("ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
         var enemyStats = selectedEnemy.GetComponent<EnemyStats>();
         if (enemyStats == null)
         {
-            Debug.LogError("ÀûÀÇ EnemyStats¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError("ï¿½ï¿½ï¿½ï¿½ EnemyStatsï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -277,7 +277,9 @@ public class Grid : MonoBehaviour
 			attackEffectSpawner.Spawn(
 				() => {
 					enemyStats.ReceiveDamage(baseDamage, columns);
-                    Debug.Log($"ÃÖÁ¾ µ¥¹ÌÁö: {baseDamage} (Å¬¸®¾î ÁÙ: {completedLines})");
+                    StatisticsManager.Instance.TotalDamageDealtThisRun += baseDamage;
+                    StatisticsManager.Instance.ClearLineCountThisRun += completedLines;
+                    Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: {baseDamage} (Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: {completedLines})");
 					CheckIfGameEnded();
 				}
 			);
@@ -285,7 +287,9 @@ public class Grid : MonoBehaviour
 		else 
 		{
 			enemyStats.ReceiveDamage(baseDamage, columns);
-            Debug.Log($"ÃÖÁ¾ µ¥¹ÌÁö: {baseDamage} (Å¬¸®¾î ÁÙ: {completedLines})");
+            StatisticsManager.Instance.TotalDamageDealtThisRun += baseDamage;
+            StatisticsManager.Instance.ClearLineCountThisRun += completedLines;
+            Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: {baseDamage} (Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: {completedLines})");
 		}
     }
 
@@ -293,20 +297,20 @@ public class Grid : MonoBehaviour
     {
         if (enemies == null)
         {
-            Debug.LogWarning("enemies ¸®½ºÆ®°¡ `null` »óÅÂÀÔ´Ï´Ù. °ÔÀÓ Á¾·á Ã¼Å©¸¦ ÇÏÁö ¾Ê½À´Ï´Ù.");
+            Debug.LogWarning("enemies ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ `null` ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
         bool allEnemiesDefeated = enemies.All(enemy => enemy.GetComponent<EnemyStats>().GetCurrentHp() <= 0);
         if (allEnemiesDefeated)
         {
-            Debug.Log("¸ðµç ÀûÀÌ Ã³Ä¡µÇ¾ú½À´Ï´Ù. ´ÙÀ½ ½ºÅ×ÀÌÁö·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+            Debug.Log("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³Ä¡ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Õ´Ï´ï¿½.");
 
             var treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
             if (treasureEffect != null && treasureEffect.EmergencyFood)
             {
                 CharacterManager.instance.RecoverHp(6);
-                Debug.Log("[EmergencyFood] º¸¹° È¿°ú·Î Ä³¸¯ÅÍ HP 6 È¸º¹µÊ!");
+                Debug.Log("[EmergencyFood] ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ HP 6 È¸ï¿½ï¿½ï¿½ï¿½!");
             }
 
             FindFirstObjectByType<EnemySpawner>().IncreaseDifficulty();
@@ -316,14 +320,16 @@ public class Grid : MonoBehaviour
         
     public void MoveNextScene()
     {
-        Debug.Log("´ÙÀ½ ¾ÀÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Õ´Ï´ï¿½.");
         StatisticsManager.Instance.CurrentRoom++;
+        
         var combatData = FindFirstObjectByType<CombatData>();
         if (combatData != null && combatData.EnemyType == EnemyData.EnemyType.Boss)
         {
             CharacterManager.selectedCharacter.characterData.CurrentHp = CharacterManager.selectedCharacter.characterData.MaxHp;
             CharacterManager.instance.SaveHp();
-            Debug.Log("[Boss Room Clear] Ä³¸¯ÅÍÀÇ Ã¼·ÂÀÌ ÃÖ´ëÄ¡·Î È¸º¹µÇ¾ú½À´Ï´Ù.");
+            StatisticsManager.Instance.HighestFloorReached++;
+            Debug.Log("[Boss Room Clear] Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½Ä¡ï¿½ï¿½ È¸ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
 
         if (rewardsScreen != null)
@@ -349,7 +355,7 @@ public class Grid : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[ResetGrid] HoldShape ÀÎ½ºÅÏ½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("[ResetGrid] HoldShape ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
 
         foreach (var enemy in enemies)
@@ -377,7 +383,7 @@ public class Grid : MonoBehaviour
                 {
                     enemyStats.ReceiveDamage(1, columns);
                     EffectManager.Instance.OnPoison(selectedEnemy);
-                    Debug.Log("[CorruptTouch] ¼±ÅÃµÈ ÀûÀÇ HP°¡ 1 °¨¼ÒµÊ");
+                    Debug.Log("[CorruptTouch] ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ HPï¿½ï¿½ 1 ï¿½ï¿½ï¿½Òµï¿½");
                 }
             }
         }
@@ -389,11 +395,11 @@ public class Grid : MonoBehaviour
             if (turnCounter % 2 == 0)
             {
                 CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
-                Debug.Log("[TalismanOfPower] 2ÅÏ °æ°ú! Ä³¸¯ÅÍ ATK +2 Áõ°¡");
+                Debug.Log("[TalismanOfPower] 2ï¿½ï¿½ ï¿½ï¿½ï¿½! Ä³ï¿½ï¿½ï¿½ï¿½ ATK +2 ï¿½ï¿½ï¿½ï¿½");
             }
         }
 
-        Debug.Log("±×¸®µå°¡ ¸®¼ÂµÇ¾ú½À´Ï´Ù.");
+        Debug.Log("ï¿½×¸ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ÂµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         comboCount--;
 
         CheckIfGameEnded();
@@ -411,7 +417,7 @@ public class Grid : MonoBehaviour
             MinoEffectHelper.Instance.PlayMinoEffectSingle(blockToDestroy);
             gs.ClearOccupied();
             gs.Deactivate();
-            Debug.Log("ÇÃ·¹ÀÌ¾î ºí·Ï ÇÏ³ª°¡ Á¦°ÅµÇ¾ú½À´Ï´Ù.");
+            Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÅµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
     }
 
@@ -419,7 +425,7 @@ public class Grid : MonoBehaviour
     {
         if (_gridSquares.Count == 0)
         {
-            Debug.LogWarning("±×¸®µå¿¡ ºí·ÏÀ» »ý¼ºÇÒ °ø°£ÀÌ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½×¸ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
         List<GridSquare> emptySquares = _gridSquares
@@ -428,7 +434,7 @@ public class Grid : MonoBehaviour
             .ToList();
         if (emptySquares.Count == 0)
         {
-            Debug.LogWarning("¸ðµç Ä­ÀÌ Â÷ ÀÖ¾î¼­ ºí·ÏÀ» »ý¼ºÇÒ °ø°£ÀÌ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
         int randomIndex = Random.Range(0, emptySquares.Count);
@@ -436,7 +442,7 @@ public class Grid : MonoBehaviour
         gs.SetOccupied();
         gs.ActivateSquare();
         gs.SetBlockSpriteToDefault();
-        Debug.Log($"ºí·ÏÀÌ ·£´ýÇÑ À§Ä¡({gs.SquareIndex})¿¡ DefaultSprite·Î »ý¼ºµÇ¾ú½À´Ï´Ù.");
+        Debug.Log($"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡({gs.SquareIndex})ï¿½ï¿½ DefaultSpriteï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         CheckIfAnyLineIsCompleted();
     }
 
@@ -450,20 +456,20 @@ public class Grid : MonoBehaviour
 			attackEffectSpawner.TargetTransform = enemy.transform;
 		}
         selectedEnemy = enemy;
-        Debug.Log($"[{selectedEnemy.name}]À»(¸¦) ¼±ÅÃÇß½À´Ï´Ù.");
+        Debug.Log($"[{selectedEnemy.name}]ï¿½ï¿½(ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
     }
 
     public void DeactivateRandom4x4()
     {
         if (_gridSquares.Count == 0)
         {
-            Debug.LogWarning("±×¸®µå°¡ ºñ¾î ÀÖ¾î ºí·ÏÀ» Á¦°ÅÇÒ ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½×¸ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
         int gridSize = 8;
         int x = Random.Range(0, gridSize - 3);
         int y = Random.Range(0, gridSize - 3);
-        Debug.Log($"[{x}, {y}] À§Ä¡¿¡¼­ 4x4 ºí·ÏÀ» ºñÈ°¼ºÈ­ÇÕ´Ï´Ù.");
+        Debug.Log($"[{x}, {y}] ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ 4x4 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ï¿½Õ´Ï´ï¿½.");
 
         for (int i = x; i < x + 4; i++)
         {
@@ -485,11 +491,11 @@ public class Grid : MonoBehaviour
         {
             enemies.Remove(enemy);
             Destroy(enemy);
-            Debug.Log($"[{enemy.name}]ÀÌ(°¡) ¸®½ºÆ®¿¡¼­ Á¦°ÅµÇ¾ú½À´Ï´Ù.");
+            Debug.Log($"[{enemy.name}]ï¿½ï¿½(ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÅµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
         else
         {
-            Debug.LogWarning($"[{enemy.name}]À»(¸¦) ¸®½ºÆ®¿¡¼­ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogWarning($"[{enemy.name}]ï¿½ï¿½(ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
         CheckIfGameEnded();
     }
@@ -533,13 +539,13 @@ public class Grid : MonoBehaviour
                 gs.SetBlockSpriteToDefault();
             }
         }
-        Debug.Log("DropAllBlocks: ¸ðµç ºí·ÏÀÌ ¾Æ·¡·Î ¶³¾îÁ³½À´Ï´Ù.");
+        Debug.Log("DropAllBlocks: ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
     }
     public void Spawn3x3PetrifiedBlocks()
     {
         if (_gridSquares.Count == 0)
         {
-            Debug.LogWarning("±×¸®µå°¡ ºñ¾î ÀÖ¾î ¼®È­ ºí·ÏÀ» »ý¼ºÇÒ ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½×¸ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -550,7 +556,7 @@ public class Grid : MonoBehaviour
         int centerX = Random.Range(safeMin, safeMaxX + 1);
         int centerY = Random.Range(safeMin, safeMaxY + 1);
 
-        Debug.Log($"[¼®È­] 3x3 ºí·Ï ¼®È­ Áß½É ÁÂÇ¥: ({centerX}, {centerY})");
+        Debug.Log($"[ï¿½ï¿½È­] 3x3 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ß½ï¿½ ï¿½ï¿½Ç¥: ({centerX}, {centerY})");
 
         for (int dy = -1; dy <= 1; dy++)
         {
@@ -577,7 +583,7 @@ public class Grid : MonoBehaviour
     {
         if (_gridSquares.Count == 0)
         {
-            Debug.LogWarning("±×¸®µå¿¡ ºí·ÏÀ» »ý¼ºÇÒ °ø°£ÀÌ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½×¸ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -588,7 +594,7 @@ public class Grid : MonoBehaviour
 
         if (emptySquares.Count == 0)
         {
-            Debug.LogWarning("¸ðµç Ä­ÀÌ Â÷ ÀÖ¾î¼­ ºí·ÏÀ» »ý¼ºÇÒ °ø°£ÀÌ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -601,7 +607,7 @@ public class Grid : MonoBehaviour
         gs.SetSpecialMinoOwner(enemy);
         CheckIfAnyLineIsCompleted();
 
-        Debug.Log($"Æ¯¼ö ºí·ÏÀÌ À§Ä¡ {gs.SquareIndex}¿¡ »ý¼ºµÇ¾ú½À´Ï´Ù. ½ÃÀüÀÚ: {enemy.name}");
+        Debug.Log($"Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ {gs.SquareIndex}ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: {enemy.name}");
     }
 
     public void SpawnHealingMino(GameObject enemy)
@@ -624,7 +630,7 @@ public class Grid : MonoBehaviour
         gs.SetLifestealMinoOwner(enemy);
         CheckIfAnyLineIsCompleted();
 
-        Debug.Log($"Èú ¹Ì³ë°¡ À§Ä¡ {gs.SquareIndex}¿¡ »ý¼ºµÇ¾ú½À´Ï´Ù. ½ÃÀüÀÚ: {enemy.name}");
+        Debug.Log($"ï¿½ï¿½ ï¿½Ì³ë°¡ ï¿½ï¿½Ä¡ {gs.SquareIndex}ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: {enemy.name}");
     }
 
     public void OnPlayerTurnEnded()
@@ -643,7 +649,7 @@ public class Grid : MonoBehaviour
             if (turnCounter % 2 == 0)
             {
                 CharacterManager.selectedCharacter.characterData.CurrentCharacterATK += 1;
-                Debug.Log("[TalismanOfPower] 2ÅÏ °æ°ú! Ä³¸¯ÅÍ ATK +2 Áõ°¡");
+                Debug.Log("[TalismanOfPower] 2ï¿½ï¿½ ï¿½ï¿½ï¿½! Ä³ï¿½ï¿½ï¿½ï¿½ ATK +2 ï¿½ï¿½ï¿½ï¿½");
             }
         }
 
@@ -657,7 +663,7 @@ public class Grid : MonoBehaviour
                 {
                     enemyStats.ReceiveDamage(1, columns);
                     EffectManager.Instance.OnPoison(selectedEnemy);
-                    Debug.Log("[CorruptTouch] ¼±ÅÃµÈ ÀûÀÇ HP°¡ 1 °¨¼ÒµÊ");
+                    Debug.Log("[CorruptTouch] ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ HPï¿½ï¿½ 1 ï¿½ï¿½ï¿½Òµï¿½");
                 }
             }
         }
@@ -714,20 +720,20 @@ public class Grid : MonoBehaviour
                 }
 
                 enemyStats.PerformTurnAction(this);
-                Debug.Log($"[{enemy.name}]ÀÌ(°¡) ÇÃ·¹ÀÌ¾î¸¦ °ø°ÝÇß½À´Ï´Ù.");
+                Debug.Log($"[{enemy.name}]ï¿½ï¿½(ï¿½ï¿½) ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 
                 if (treasureEffect != null && treasureEffect.WoodPile)
                 {
                     if (Random.Range(0f, 1f) < 0.5f)
                     {
                         enemyStats.ApplyHealingReduction(1);
-                        Debug.Log($"[Woodpile] {enemy.name}¿¡°Ô Ä¡À¯ °¨¼Ò ½ºÅÃ 1 Àû¿ëµÊ!");
+                        Debug.Log($"[Woodpile] {enemy.name}ï¿½ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1 ï¿½ï¿½ï¿½ï¿½ï¿½!");
                     }
                 }
             }
             
         }
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("[ÅÏ ÀüÈ¯] ÇÃ·¹ÀÌ¾î ÅÏ ½ÃÀÛ!");
+        Debug.Log("[ï¿½ï¿½ ï¿½ï¿½È¯] ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
     }
 }

@@ -13,6 +13,7 @@ public class RestRoom : MonoBehaviour
 
         Scene.Controller.OnClearScene();
         StatisticsManager.Instance.CurrentRoom++;
+        StatisticsManager.Instance.HighestFloorReached++;
         Debug.Log("ÈÞ½Ä¹æ Á¾·á");
     }
 }

@@ -186,7 +186,6 @@ public class CharacterManager : MonoBehaviour
         if (dodgeRoll < effectiveDodgeChance)
         {
             Debug.Log($"[CharacterManager] {selectedCharacter.characterData.CharacterName}이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
-            SoundManager.Instance.PlayDodgeSound();
             EffectManager.Instance.OnMiss(currentCharacterInstance , currentCharacterInstance);
             return;
         }   

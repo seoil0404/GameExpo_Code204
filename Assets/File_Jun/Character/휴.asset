@@ -18,7 +18,7 @@ MonoBehaviour:
     characterPrefab: {fileID: 2047942871196441207, guid: e52dee6778f06b340882aaaad62edd88, type: 3}
     baseHp: 80
     maxHp: 80
-    currentHp: 77
+    currentHp: 80
     baseUitimateGuage: 15
     maxUltimateGauge: 15
     currentUltimateGauge: 0

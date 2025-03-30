@@ -281,7 +281,6 @@ public class EnemyStats : MonoBehaviour
         if (dodgeRoll < currentDodgeChance)
         {
             EffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
-            SoundManager.Instance.PlayDodgeSound();
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }
@@ -379,6 +378,7 @@ public class EnemyStats : MonoBehaviour
     private void Die()
     {
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
+        StatisticsManager.Instance.MonstersKilledThisRun++;
 
         var treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.SoulLantern)

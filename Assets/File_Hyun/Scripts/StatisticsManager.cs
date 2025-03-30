@@ -91,6 +91,7 @@ public class StatisticsManager : MonoBehaviour
         }
 
         UpdateTotalStatistics();
+        ResetAdventureStats();
     }
 
     public void FailAdventure()

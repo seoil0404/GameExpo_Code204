@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3306394572961429089}
   - component: {fileID: 66885588803235090}
   - component: {fileID: -8400885580612463363}
+  - component: {fileID: 7157735204097231403}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -167,6 +168,18 @@ MonoBehaviour:
   <FadeOutDuration>k__BackingField: 0.1
   <FadeOutEase>k__BackingField: 1
   <FadeAfterTrailGone>k__BackingField: 1
+--- !u!114 &7157735204097231403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4676191168490457199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf40c0250ed8444ea39d70656421557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5274665255969305440
 GameObject:
   m_ObjectHideFlags: 0
