@@ -79,7 +79,7 @@ public class ChestRoom : MonoBehaviour
 
         TreasureType selectedTreasure = candidateTreasures[UnityEngine.Random.Range(0, candidateTreasures.Count)];
         combatData.AddTreasureData(selectedTreasure);
-        relicNameText.text = $"상자 속에서 {selectedTreasure}을 발견했다.";
+        relicNameText.text = "상자 속에서 " + selectedTreasure.ToStringByKorean() + "을(를) 발견했다.";
     }
 
     public void EndChestRoom()

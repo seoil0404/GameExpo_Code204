@@ -1776,6 +1776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5123f86ea0600d449a1f7c6b61adc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatData: {fileID: 11400000, guid: 5bfd983710b137148bf230f85c1c586f, type: 2}
   itemViews:
   - {fileID: 1201680490}
   - {fileID: 1888106815}

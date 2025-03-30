@@ -111,7 +111,7 @@ public class CombatData : ScriptableObject
 
 public static class TreasureExtension
 {
-    public static string ToString(this CombatData.TreasureType type)
+    public static string ToStringByKorean(this CombatData.TreasureType type)
     {
         return type switch
         {
@@ -138,6 +138,7 @@ public static class TreasureExtension
             CombatData.TreasureType.ShoesOfHermes => "헤르메스의 신발",               // ShoesOfHermes : 헤르메스의 신발
             CombatData.TreasureType.GoldenApple => "황금사과",                         // GoldenApple : 황금사과
             CombatData.TreasureType.MultipleCureScroll => "다중 회복 스크롤",          // MultipleCureScroll : 다중 회복 스크롤
+            CombatData.TreasureType.TotemOfResistance => "저항의 토템",
 
             _ => "알 수 없음",  // 기본값
         };
