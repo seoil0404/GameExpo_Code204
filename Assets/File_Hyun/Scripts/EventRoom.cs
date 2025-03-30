@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using static CombatData;
 
 public class EventRoom : MonoBehaviour
 {
     [SerializeField] private Character[] characters = null;
+    public CombatData combatData;
 
     public GoldData goldData;
     public GameObject eventUI;
@@ -19,32 +22,15 @@ public class EventRoom : MonoBehaviour
 
     private string currentEvent;
     private List<string> eventPool = new() { "길가", "굴", "마녀", "보물상자", "딜레마" };
-    private static bool hasDilemmaOccurred = false;
 
     private void Start()
     {
-        eventPool.Remove("딜레마"); //
-        if(characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp <= 1) eventPool.Remove("굴");
+        if (characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp <= 1) eventPool.Remove("굴");
+        if (combatData.TreasureData.Contains(TreasureType.TalismanOfPower)) eventPool.Remove("딜레마");
         ChoiceButtons.SetActive(true);
         EscObject.SetActive(false);
-        TriggerRandomEvent();
-    }
-
-    private void TriggerRandomEvent()
-    {
-        if (hasDilemmaOccurred)
-        {
-            eventPool.Remove("딜레마");
-        }
 
         string randomEvent = eventPool[Random.Range(0, eventPool.Count)];
-
-        if (randomEvent == "딜레마")
-        {
-            hasDilemmaOccurred = true;
-            eventPool.Remove("딜레마");
-        }
-
         Debug.Log($"[이벤트 발생] {randomEvent} 이벤트 시작!");
         StartEvent(randomEvent);
     }
@@ -106,14 +92,14 @@ public class EventRoom : MonoBehaviour
             case "길가":
                 if (Random.value < 0.5f)
                 {
-                    eventText.text = "당신이 잘 알던 모험가가 당신에게 황금 사과를 건넵니다.";
+                    eventText.text = "당신이 잘 알던 모험가가 당신에게 황금 사과를 건넵니다.\n\n최대체력 +5";
                     characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp += 5;
                     Debug.Log("최대 체력 5 증가");
                     RemedyEnd();
                 }
                 else
                 {
-                    eventText.text = "뒤돌아 보았을때는 이미 소매치기가 저멀리 당신의 돈을 들고 도망가고 있었습니다.";
+                    eventText.text = "뒤돌아 보았을때는 이미 소매치기가 저멀리 당신의 돈을 들고 도망가고 있었습니다.\n\n-50G";
                     Debug.Log("돈 50 감소");
                     RemedyEnd();
                 }
@@ -124,14 +110,14 @@ public class EventRoom : MonoBehaviour
                 {
                     Debug.Log("체력 1 감소");
                     characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 1;
-                    SetEvent("아직 바닥이 보이지 않습니다.",
+                    SetEvent("아직 바닥이 보이지 않습니다.\n\n체력 -1",
                     "계속 내려간다", "떠나기");
                 }
                 else
                 {
                     goldData.InGameGold += 100;
                     Debug.Log("돈 100 획득");
-                    eventText.text = "오랫동안 잊혀진, 묻혀진, 숨겨진 보물을 찾았습니다.";
+                    eventText.text = "오랫동안 잊혀진, 묻혀진, 숨겨진 보물을 찾았습니다.\n\n+100G";
                     RemedyEnd();
                 }
                 break;
@@ -139,7 +125,7 @@ public class EventRoom : MonoBehaviour
             case "마녀":
                 if (Random.value < 0.5f)
                 {
-                    eventText.text = "마녀는 붉은 포션을 주었습니다.\n포션은 쓰고 떫었습니다. 당신은 고양감을 느낍니다";
+                    eventText.text = "마녀는 붉은 포션을 주었습니다.\n포션은 쓰고 떫었습니다. 당신은 고양감을 느낍니다\n\n체력 -7\n최대체력 +7";
                     characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 7;
                     characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp += 7;
                     Debug.Log("체력 7 감소, 최대 체력 7 증가");
@@ -147,7 +133,7 @@ public class EventRoom : MonoBehaviour
                 }
                 else
                 {
-                    eventText.text = "마녀는 푸른 포션을 주었습니다.\n포션은 포션은 달고 상쾌했습니다.";
+                    eventText.text = "마녀는 푸른 포션을 주었습니다.\n포션은 포션은 달고 상쾌했습니다.\n\n체력 +13";
                     characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp += 13;
                     Debug.Log("체력 13 증가");
                     RemedyEnd();
@@ -157,14 +143,14 @@ public class EventRoom : MonoBehaviour
             case "보물상자":
                 if (Random.value < 0.8f)
                 {
-                    eventText.text = "당신은 체력 포션을 찾았습니다.";
+                    eventText.text = "당신은 체력 포션을 찾았습니다.\n\n체력 +15";
                     characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp += 15;
                     Debug.Log("체력 15 증가");
                     RemedyEnd();
                 }
                 else
                 {
-                    eventText.text = "미믹이 당신을 가볍게 물고 빠르게 도망칩니다.";
+                    eventText.text = "미믹이 당신을 가볍게 물고 빠르게 도망칩니다.\n\n체력 -5";
                     characters[GameData.SelectedCharacterIndex - 1].characterData.CurrentHp -= 5;
                     Debug.Log("체력 5 감소");
                     RemedyEnd();
@@ -172,9 +158,9 @@ public class EventRoom : MonoBehaviour
                 break;
 
             case "딜레마":
-                eventText.text = "당신은 강력한 힘이 깃든 유물을 얻었지만, 그 대가로 영원히 생명력의 일부를 잃었습니다.";
+                eventText.text = "당신은 강력한 힘이 깃든 유물을 얻었지만, 그 대가로 영원히 생명력의 일부를 잃었습니다.\n\n최대체력 -10\n유물 '증폭하는 힘의 탈리스만' 획득";
                 characters[GameData.SelectedCharacterIndex - 1].characterData.MaxHp -= 10;
-
+                combatData.AddTreasureData(TreasureType.TalismanOfPower);
                 Debug.Log("최대 체력 10 감소, 증폭하는 힘의 탈리스만 획득");
                 RemedyEnd();
                 break;
