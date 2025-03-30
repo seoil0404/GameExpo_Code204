@@ -24,7 +24,7 @@ public class PlayerStatusEffects : MonoBehaviour
 
     private void UpdateStatusEffects()
     {
-        EnemyStats[] enemies = FindObjectsOfType<EnemyStats>();
+        EnemyStats[] enemies = FindObjectsByType<EnemyStats>(FindObjectsSortMode.None);
         PlayerStrength = characterData.CurrentCharacterATK > 0;
 
         PlayerPoison = false;

@@ -15,7 +15,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Vector3 _startPosition;
     private RectTransform _transform;
     private Canvas _canvas;
-	private bool _shapeActive = true;
+    //private bool _shapeActive = true;
 	private Vector2 offset;
     private bool isShapeLocked = false;
 
@@ -172,7 +172,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         List<GridSquare> detectedSquares = new List<GridSquare>();
 
-        foreach (var square in GameObject.FindObjectsOfType<GridSquare>())
+        foreach (var square in GameObject.FindObjectsByType<GridSquare>(FindObjectsSortMode.None))
         {
             if (square.Selected && !square.SquareOccupied)
             {
@@ -236,7 +236,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         _currentHoldShape.Clear();
 
-        _shapeActive = false;
+        //_shapeActive = false;
         _transform.localPosition = _startPosition;
 
         if (assignedObject != null)
@@ -290,7 +290,7 @@ public class HoldShape : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         _currentHoldShape.Clear();
 
-        _shapeActive = false;
+        //_shapeActive = false;
         _transform.localPosition = _startPosition;
 
         if (assignedObject != null)
