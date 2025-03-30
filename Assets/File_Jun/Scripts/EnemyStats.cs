@@ -276,6 +276,7 @@ public class EnemyStats : MonoBehaviour
         if (dodgeRoll < currentDodgeChance)
         {
             EffectManager.Instance.OnMiss(gameObject, CharacterManager.currentCharacterInstance);
+            SoundManager.Instance.PlayDodgeSound();
             Debug.Log($"[{gameObject.name}]이(가) 공격을 회피했습니다! 데미지를 받지 않습니다.");
             return;
         }
@@ -626,7 +627,8 @@ public class EnemyStats : MonoBehaviour
         if (poisonStackFromPlayer > 0)
         {
             hp -= poisonStackFromPlayer;
-            //EffectManager.Instance.OnPoison();
+            SoundManager.Instance.PlayPoisonSound();
+            EffectManager.Instance.OnPoison(gameObject);
             Debug.Log($"[{gameObject.name}]이(가) 독 {poisonStackFromPlayer} 데미지를 입음!");
             poisonStackFromPlayer--;
 
@@ -643,6 +645,7 @@ public class EnemyStats : MonoBehaviour
     public void ApplyHealingReduction(int stacks)
     {
         healingReductionStacks += stacks;
+        SoundManager.Instance.PlayDebuffSound();    
         Debug.Log($"[{gameObject.name}]에게 치유 감소 {stacks}스택 적용됨. 현재 스택: {healingReductionStacks}");
     }
 

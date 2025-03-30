@@ -4210,6 +4210,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b04d55b62839b8a48a4e7733e4cbe456, type: 3}
   - {fileID: 8300000, guid: 00307039297a0d649ae9563f0362a8d2, type: 3}
   - {fileID: 8300000, guid: 9f4507a146c34164cafef4abba956a12, type: 3}
+  spellCastSound: {fileID: 8300000, guid: 8ef14bacd60eb1b46b1582fbbde4f9a0, type: 3}
+  bodyHitSound: {fileID: 8300000, guid: 226c01addac3ee24daa1a2460ab96ec2, type: 3}
+  swordSwingSound: {fileID: 8300000, guid: c7a0a10fc5ff6424b868809119c13547, type: 3}
+  dragonBreathSound: {fileID: 8300000, guid: c80bb2b91aea9ea4a927b9d6fd78c000, type: 3}
+  fireArrowSound: {fileID: 8300000, guid: ec377f484d6c15a4a97fe4044031b878, type: 3}
+  buffSound: {fileID: 8300000, guid: 4bce9611c07b2154b94d8f982959cb90, type: 3}
+  debuffSound: {fileID: 0}
+  dodgeSound: {fileID: 8300000, guid: f76586e032bbd7a42b77b97e0cbaed27, type: 3}
+  invincibleSound: {fileID: 8300000, guid: 3e23d1b1829a15040ba7eeb2ed5eb7d9, type: 3}
+  poisonSound: {fileID: 8300000, guid: c5b5c2e0ada788646afc5f4bb878b2a0, type: 3}
 --- !u!1 &2002858122
 GameObject:
   m_ObjectHideFlags: 0
