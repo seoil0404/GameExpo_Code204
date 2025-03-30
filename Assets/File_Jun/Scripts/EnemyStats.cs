@@ -374,6 +374,7 @@ public class EnemyStats : MonoBehaviour
     private void Die()
     {
         Debug.Log($"{gameObject.name}이(가) 죽었습니다!");
+        StatisticsManager.Instance.MonstersKilledThisRun++;
 
         var treasureEffect = GameObject.FindFirstObjectByType<TreasureEffect>();
         if (treasureEffect != null && treasureEffect.SoulLantern)

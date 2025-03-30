@@ -205,6 +205,7 @@ public class EventRoom : MonoBehaviour
     {
         Scene.Controller.OnClearScene();
         StatisticsManager.Instance.CurrentRoom++;
+        StatisticsManager.Instance.HighestFloorReached++;
         Debug.Log("이벤트방 종료");
     }
 }

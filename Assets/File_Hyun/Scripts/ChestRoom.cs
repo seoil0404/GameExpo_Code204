@@ -52,6 +52,7 @@ public class ChestRoom : MonoBehaviour
     {
         Scene.Controller.OnClearScene();
         StatisticsManager.Instance.CurrentRoom++;
+        StatisticsManager.Instance.HighestFloorReached++;
         Debug.Log("상자방 종료");
     }
 }

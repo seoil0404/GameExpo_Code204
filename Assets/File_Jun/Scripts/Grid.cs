@@ -327,6 +327,8 @@ public class Grid : MonoBehaviour
 			attackEffectSpawner.Spawn(
 				() => {
 					enemyStats.ReceiveDamage(baseDamage, columns);
+                    StatisticsManager.Instance.TotalDamageDealtThisRun += baseDamage;
+                    StatisticsManager.Instance.ClearLineCountThisRun += completedLines;
                     Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
 					CheckIfGameEnded();
 				}
@@ -335,6 +337,8 @@ public class Grid : MonoBehaviour
 		else 
 		{
 			enemyStats.ReceiveDamage(baseDamage, columns);
+            StatisticsManager.Instance.TotalDamageDealtThisRun += baseDamage;
+            StatisticsManager.Instance.ClearLineCountThisRun += completedLines;
             Debug.Log($"최종 데미지: {baseDamage} (클리어 줄: {completedLines})");
 		}
     }
@@ -368,6 +372,7 @@ public class Grid : MonoBehaviour
     {
         Debug.Log("다음 씬으로 이동합니다.");
         StatisticsManager.Instance.CurrentRoom++;
+        StatisticsManager.Instance.HighestFloorReached++;
         if (rewardsScreen != null)
             rewardsScreen.SetActive(true);
         else
