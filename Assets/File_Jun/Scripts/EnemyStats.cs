@@ -315,6 +315,7 @@ public class EnemyStats : MonoBehaviour
         }
 
         damageReceivedLastTurn = calculatedDamage;
+        SoundManager.Instance.PlayAttackSound();
 
         int executionThreshold = Mathf.CeilToInt(maxHp * (CharacterManager.selectedCharacter.characterData.ExecutionRate / 100f));
 
