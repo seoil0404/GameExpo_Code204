@@ -376,6 +376,8 @@ public class CharacterManager : MonoBehaviour
     public void SetReflectDamage(int amount)
     {
         reflectDamage += amount;
+        SoundManager.Instance.PlayBuffSound();
+        EffectManager.Instance.OnBuff(currentCharacterInstance , Color.yellow);
         Debug.Log($"[ReflectDamage] 다음 피해 시 반사 데미지 {reflectDamage} 적용 예정.");
     }
 

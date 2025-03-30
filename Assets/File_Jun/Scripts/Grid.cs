@@ -150,8 +150,6 @@ public class Grid : MonoBehaviour
 
         if (shapeLeft == 0)
         {
-            GameEvents.RequestNewShapes();
-
             foreach (var square in _gridSquares)
             {
                 var gs = square.GetComponent<GridSquare>();
@@ -579,7 +577,6 @@ public class Grid : MonoBehaviour
         }
         Debug.Log("DropAllBlocks: 모든 블록이 아래로 떨어졌습니다.");
     }
-
     public void Spawn3x3PetrifiedBlocks()
     {
         if (_gridSquares.Count == 0)
@@ -676,7 +673,8 @@ public class Grid : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        
+        GameEvents.RequestNewShapes();
+
 
         enemies = enemies.Where(enemy => enemy != null && enemy.GetComponent<EnemyStats>() != null).ToList();
         foreach (var enemy in enemies)
