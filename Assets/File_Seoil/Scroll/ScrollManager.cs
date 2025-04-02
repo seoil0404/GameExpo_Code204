@@ -155,23 +155,34 @@ public class ScrollManager : MonoBehaviour
     {
         int maxNum = typeof(ScrollData.ScrollType).GetEnumValues().Length;
 
-        int random = Random.Range(0, maxNum);
+        int random = Random.Range(1, maxNum);
         
-        if(slot1ScrollView.scrollType == ScrollData.ScrollType.None)
+        if(scrollData.Slot1 == ScrollData.ScrollType.None)
         {
             slot1ScrollView.scrollType = (ScrollData.ScrollType)random;
             slot1Image.sprite = scrollData.GetImage((ScrollData.ScrollType)(random));
+            scrollData.Slot1 = (ScrollData.ScrollType)random;
         }
-        if (slot2ScrollView.scrollType == ScrollData.ScrollType.None)
+
+        random = Random.Range(1, maxNum);
+
+        if (scrollData.Slot2 == ScrollData.ScrollType.None)
         {
             slot2ScrollView.scrollType = (ScrollData.ScrollType)random;
             slot2Image.sprite = scrollData.GetImage((ScrollData.ScrollType)(random));
+            scrollData.Slot2 = (ScrollData.ScrollType)random;
         }
-        if (slot3ScrollView.scrollType == ScrollData.ScrollType.None)
+
+        random = Random.Range(1, maxNum);
+
+        if (scrollData.Slot3 == ScrollData.ScrollType.None)
         {
             slot3ScrollView.scrollType = (ScrollData.ScrollType)random;
             slot3Image.sprite = scrollData.GetImage((ScrollData.ScrollType)(random));
+            scrollData.Slot3 = (ScrollData.ScrollType)random;
         }
+
+        SyncScroll();
     }
 
     private void SyncScroll()
